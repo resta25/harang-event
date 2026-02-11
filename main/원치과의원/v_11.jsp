@@ -48,7 +48,7 @@ html, body {font-size: 10px;}
 
 /* 상단 타이머 */
 .time-content {padding-top: 5.2rem;}
-.timer-box {color: #000; display: flex; align-items: center; gap: 2rem; font-size: 2.4rem; border: 1px solid #fff; border-radius: 0.9rem; padding: 1.4rem 2.3rem; width: max-content; margin: 0 auto; letter-spacing: -1.23px; background: rgba(255, 255, 255, 0.75);}
+.timer-box {color: #000; display: flex; justify-content: space-between; align-items: center; gap: 2rem; font-size: 2.4rem; border: 1px solid #fff; border-radius: 0.9rem; padding: 1rem 4rem; width: 80%; margin: 0 auto; letter-spacing: -1.23px; background: rgba(255, 255, 255, 0.75);}
 .timer-box .text-box {width: 18rem;display: flex; align-items: center; gap: 1rem;}
 .timer-box .text-box .text {font-weight: 800; letter-spacing: -1.23px;}
 .timer-box .text-box img{ display: inline-block; animation: spin 1.1s linear infinite; transform-origin: 50% 50%; width: 17%;}
