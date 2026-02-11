@@ -38,7 +38,7 @@ pageEncoding="UTF-8"%>
          url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Bold.otf') format('opentype');
 }
 html, body {font-size: 10px;}
-.page_inner {padding: 2.9rem 3.6rem;}
+.page_inner {padding: 1.9rem 3.6rem;}
 #wrap {max-width: 600px; font-family: 'Pretendard'; height: 100dvh; background: url("//static.resta.co.kr/event_wynd/v_${eventSeq}/bg_01.jpg") no-repeat center top; background-size: 100% 100%;}
 .form {background: transparent; height: 100%;}
 #form-1 {height: 100%;}
