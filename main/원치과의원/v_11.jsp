@@ -134,7 +134,7 @@ html, body {font-size: 10px;}
 .container:hover input[type="radio"]:checked + .radio-circle::before {background-color: #555;}
 
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 500px) { 
     html, body {font-size: 1.7vw;}
 
     .radio-circle {width: 30px; height: 30px;}
