@@ -338,25 +338,13 @@ html, body {font-size: 10px;}
             disableOnInteraction: false,
         },
         loop:true,
-        touchReleaseOnEdges: true,
-        resistanceRatio: 0.85,
-        threshold: 10,            // 아주 살짝 터치로 넘어가는 것 방지
-        longSwipesRatio: 0.25,    // 긴 스와이프 판정 완화(너무 민감하면 0.3~0.4)
-        shortSwipes: true,
-        longSwipes: true,
-        followFinger: true,
-        on: {
-            touchStart: function () {
-                if (this.autoplay) this.autoplay.stop();
-            },
-            touchEnd: function () {
-                var self = this;
-                // 손 떼자마자 바로 start하면 튕김 느낌 나는 경우가 있어 살짝 딜레이
-                setTimeout(function () {
-                    if (self.autoplay) self.autoplay.start();
-                }, 150);
-            }
-        }
+        allowTouchMove: true,
+        slideToClickedSlide: false,
+        preventClicks: true,
+        preventClicksPropagation: true,
+        touchStartPreventDefault: true,   // 터치 시작시 기본동작 막기
+        threshold: 15,                     // 살짝 터치로 넘어가는 거 더 둔감하게
+        
     });
 
     // 버튼 페이지 이동 함수 (다음)
