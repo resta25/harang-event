@@ -18,7 +18,9 @@ html, body {font-size: 10px;}
 
 /* 슬라이드 영역 */
 .swiper {position: absolute !important; top: 43%; left: 50%; transform: translateX(-50%); width: 85%;}
+.swiper .swiper-slide {  width:100% !important; flex:0 0 100% !important;}
 .swiper .swiper-slide img { width: 100%; text-align: center;}
+.swiper-wrapper{ align-items:stretch; }
 
 /* 이름, 나이, 연락처 입력칸 */
 .form .page-inner {padding: 3rem;}
@@ -332,7 +334,9 @@ html, body {font-size: 10px;}
     // 상단 슬라이드
     var swiper = new Swiper(".mySwiper", {
         // spaceBetween: 30,
-        centeredSlides: true,
+        slidesPerView: 1,
+        centeredSlides: false,
+        freeMode: false,
         autoplay: {
             delay: 2500,
             disableOnInteraction: false,
