@@ -34,7 +34,7 @@ html, body {font-size: 10px;}
 /* 개인정보처리방침 영역 */
 .form .agGroup {position: absolute; bottom: 5%; left: 50%; transform: translateX(-50%); width: 100%;}
 .form .agBox {margin: 3% auto; font-size: 2rem;}
-.form .agree-btn {font-size: 3rem; text-align: center; width: 55%; margin: 0 auto; background: linear-gradient(260deg,rgba(218, 46, 140, 1) 0%, rgba(111, 56, 145, 1) 100%); color: #fff; padding: 1.5rem 0; border-radius: 1rem; font-weight: 700; letter-spacing: -1px; cursor: pointer;}
+.form .agree-btn {font-size: 3rem; text-align: center; width: 70%; margin: 0 auto; background: linear-gradient(260deg,rgba(218, 46, 140, 1) 0%, rgba(111, 56, 145, 1) 100%); color: #fff; padding: 2rem 0; border-radius: 1rem; font-weight: 700; letter-spacing: -1px; cursor: pointer; animation: pulsating 0.8s linear infinite;}
 .form .agBox .btn-agreement {font-size: 1.95rem; cursor: pointer;}
 
 /* 이벤트기간, 안심문구, 대상 영역 */
@@ -44,8 +44,8 @@ html, body {font-size: 10px;}
 .form .description .ad_txt { padding: 0;}
 
 /* submit */
-.form .submit {width: 60%; margin: 2rem auto 0;}
-.form .submit .btn-submit {background: linear-gradient(260deg,rgb(202, 99, 156) 0%, rgba(111, 56, 145, 1) 100%); color: #fff; font-size: 3rem; text-align: center; width: 100; padding: 2rem 0; width: 100%; border-radius: 1rem; font-weight: 700; letter-spacing: -1px;}
+.form .submit {width: 80%; margin: 2rem auto 0;}
+.form .submit .btn-submit {background: linear-gradient(260deg,rgb(202, 99, 156) 0%, rgba(111, 56, 145, 1) 100%); color: #fff; font-size: 3.5rem; text-align: center; width: 100; padding: 3rem 0; width: 100%; border-radius: 1rem; font-weight: 700; letter-spacing: -1px; animation: pulsating 0.8s linear infinite;}
 
 /* 실시간 신청 현황 */
 .subscribe {height: 185px; overflow: hidden; padding: 2% 5%; background: #f1f1f1; border-radius: 0.8em; font-family: 'noto sans kr';}
@@ -88,6 +88,11 @@ html, body {font-size: 10px;}
 .agreeModalBox .newAgreement h3 {margin: 1% 0; font-size: 11px;}
 .agreeModalBox .newAgreement ol li {line-height: 12px; font-size: 10px;}
 
+@keyframes pulsating {
+	0% {transform: scale(1);}
+	50% {transform: scale(0.95);}
+	100% {transform: scale(1);}
+}
 
 @media screen and (max-width: 500px){
     html,body {font-size: 1.5vw;}

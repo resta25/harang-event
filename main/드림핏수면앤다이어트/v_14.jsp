@@ -43,7 +43,13 @@ html, body {font-size: 10px;}
 
 /* submit */
 .form .submit {width: 100%; margin: 0 auto;}
-.form .submit input[type="image"] {width: 100%;}
+.form .submit input[type="image"] {width: 100%; animation: pulsating 0.8s linear infinite;}
+@keyframes pulsating {
+	0% {transform: scale(1);}
+	50% {transform: scale(0.95);}
+	100% {transform: scale(1);}
+}
+
 
 /* 플로팅 이미지 영역 */
 .floatingImg{z-index:999; position:absolute; top:650px; right: 3%; margin-left:2%; width:30%; max-width:215px; cursor: pointer; animation: upDown 1s infinite;}
