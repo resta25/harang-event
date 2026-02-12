@@ -17,7 +17,7 @@ html, body {font-size: 10px;}
 }
 
 /* 슬라이드 영역 */
-.swiper {position: absolute !important; top: 43%; left: 51.5%; transform: translateX(-50%); width: 85%;}
+.swiper {position: absolute !important; top: 43%; left: 50%; transform: translateX(-50%); width: 85%;}
 .swiper .swiper-slide img { width: 100%; text-align: center;}
 
 /* 이름, 나이, 연락처 입력칸 */
@@ -147,7 +147,7 @@ html, body {font-size: 10px;}
             </div>
             <div class="text-box">
                 <img src="//static.resta.co.kr/event_wynd/v_${eventSeq}/loading.png">
-                <span class="text">현재 신청 가능</span>
+                <span class="text">현재 접수 가능</span>
             </div>
         </div>
     </div>
@@ -331,7 +331,7 @@ html, body {font-size: 10px;}
 
     // 상단 슬라이드
     var swiper = new Swiper(".mySwiper", {
-        spaceBetween: 30,
+        // spaceBetween: 30,
         centeredSlides: true,
         autoplay: {
             delay: 2500,
