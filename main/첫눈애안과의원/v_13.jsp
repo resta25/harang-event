@@ -49,8 +49,8 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 
 /* 상단 타이머 */
 .time-content {padding: 3.2rem 3.6rem 0;}
-.timer-box {color: #fff; display: flex; align-items: center; gap: 2rem; font-size: 2.4rem; border: 1px solid #797979; border-radius: 0.9rem; padding: 1.4rem 2.3rem; width: 100%; margin: 0 auto; letter-spacing: -1.23px; background: #000; box-sizing: border-box;}
-.timer-box .text-box {width: 18rem;}
+.timer-box {color: #fff; display: flex; align-items: center; justify-content: space-between; gap: 2rem; font-size: 2.4rem; border: 1px solid #797979; border-radius: 0.9rem; padding: 1.4rem 2.3rem; width: 100%; margin: 0 auto; letter-spacing: -1.23px; background: #000; box-sizing: border-box;}
+.timer-box .text-box {width: 18rem; display: flex; align-items: center; justify-content: space-between;}
 .timer-box .text-box .text {font-weight: 800; letter-spacing: -1.23px;}
 .timer-box .text-box img{ display: inline-block; animation: spin 1.1s linear infinite; transform-origin: 50% 50%; width: 17%;}
 
