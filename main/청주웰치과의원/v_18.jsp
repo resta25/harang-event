@@ -21,7 +21,9 @@ background-size: 100% 100%;}
 
 
 /* 첫번째 페이지 */
-#page-1 .page_inner {background: #8ee6ff; border-radius: 3.5rem 3.5rem 0 0; padding: 2.8rem 4.5rem 4.2rem; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; box-sizing: border-box;}
+.page-inner-bg {position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; box-sizing: border-box;}
+.page-inner-bg .top-img {margin-bottom: 2rem;}
+#page-1 .page_inner {background: #8ee6ff; border-radius: 3.5rem 3.5rem 0 0; padding: 2.8rem 4.5rem 4.2rem; }
 .page_inner .bar {width: 12rem; height: 0.7rem ; border-radius: 5rem; background: #19c6f7; display: block; margin: 0 auto 3rem;}
 .page_inner .question {line-height: 1.29; letter-spacing: -0.98px; text-align: center; color: #363942; font-size: 2.4rem; font-weight: 800; margin-bottom: 1rem;}
 .page_inner input[name="name"] {background: #fff;  border: solid 2px #36c5ed; border-radius: 1.5rem; font-size: 3rem;  line-height: 1.29; letter-spacing: -1.4px; padding: 1.4rem 0; width: 100%; text-align: center; margin-bottom: 2rem;}
@@ -105,16 +107,18 @@ background-size: 100% 100%;}
             <section class="page section01" id="page-1">
                 <div class="img-area"><img src="//static.resta.co.kr/event_wynd/v_${eventSeq}/event_main_01.png"></div>
                 <div class="img-area"><img src="//static.resta.co.kr/event_wynd/v_${eventSeq}/event_main_02.png"></div>
-                <div class="img-area"><img src="//static.resta.co.kr/event_wynd/v_${eventSeq}/txt_01.png"></div>
-                <div class="page_inner">
-                    <span class="bar"></span>
-                    <div class="question">▼ 혜택 받으실 분 ▼</div>
-                    <input type="text" id="name" name="name" class="inp" required="" autocomplete="off" placeholder="성함을 입력해주세요 ">
-                    <div class="next img-area"  onclick="pageFuc(1,$(this))"><img src="//static.resta.co.kr/event_wynd/v_${eventSeq}/btn_newSb_01.png"></div>
-                    <div class="agBox">
-                        개인정보 처리방침
-                        <a href="#" class="btn-agreement">[자세히 보기]</a>
-                        <input type="hidden" name="agBox" value="Y" checked>
+                <div class="page-inner-bg">
+                    <div class="img-area top-img"><img src="//static.resta.co.kr/event_wynd/v_${eventSeq}/txt_01.png"></div>
+                    <div class="page_inner">
+                        <span class="bar"></span>
+                        <div class="question">▼ 혜택 받으실 분 ▼</div>
+                        <input type="text" id="name" name="name" class="inp" required="" autocomplete="off" placeholder="성함을 입력해주세요 ">
+                        <div class="next img-area"  onclick="pageFuc(1,$(this))"><img src="//static.resta.co.kr/event_wynd/v_${eventSeq}/btn_newSb_01.png"></div>
+                        <div class="agBox">
+                            개인정보 처리방침
+                            <a href="#" class="btn-agreement">[자세히 보기]</a>
+                            <input type="hidden" name="agBox" value="Y" checked>
+                        </div>
                     </div>
                 </div>
             </section>
