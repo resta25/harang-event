@@ -81,10 +81,11 @@ html, body {font-size: 10px;}
 
 @media screen and (max-width: 500px) { 
     html, body {font-size: 1.7vw;}
-    .form .page-inner {top: 20%;}
+    .form .page-inner {top: 20%; width: 90%;}
     .form .db-box {width: 88%; top: 12%;}
 }
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 395px) {
+    .form .db-box {top: 13%;}
 }
 
 @media screen and (max-width: 375px) {
