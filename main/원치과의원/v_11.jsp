@@ -39,7 +39,7 @@ pageEncoding="UTF-8"%>
 }
 html, body {font-size: 10px;}
 .page_inner {padding: 1.9rem 3.6rem;}
-#wrap {max-width: 600px; font-family: 'Pretendard'; height: 100dvh; background: url("//static.resta.co.kr/event_wynd/v_${eventSeq}/bg_01.jpg") no-repeat center top; background-size: 100% 100%;}
+#wrap {max-width: 600px; font-family: 'Pretendard'; height: 100dvh; background: url("//static.harang-event.com/event/v_${eventSeq}/bg_01.jpg") no-repeat center top; background-size: 100% 100%;}
 .form {background: transparent; height: 100%;}
 #form-1 {height: 100%;}
 #wrap .formContents {height: calc(100% - 11.1rem); display: flex; flex-direction: column;}
@@ -186,7 +186,7 @@ html, body {font-size: 10px;}
                     <span id="minute"></span>
                 </div>
                 <div class="text-box">
-                    <img src="//static.resta.co.kr/event_wynd/v_${eventSeq}/loading.png">
+                    <img src="//static.harang-event.com/event/v_${eventSeq}/loading.png">
                     <span class="text">현재 접수 가능</span>
                 </div>
             </div>
@@ -194,10 +194,10 @@ html, body {font-size: 10px;}
         <div class="formContents">
             <section class="page section01" id="page-1">
                 <div class="page_inner">
-                    <div class="img-area"><img src="//static.resta.co.kr/event_wynd/v_${eventSeq}/event_main_01.png"></div>
+                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.png"></div>
                     <div class="question-box">
                         <div class="question">
-                            <img src="//static.resta.co.kr/event_wynd/v_${eventSeq}/icon_01.png">
+                            <img src="//static.harang-event.com/event/v_${eventSeq}/icon_01.png">
                             <span class="q-text"><span class="underline">임플란트,</span> 몇 개 필요하신가요?</span>
                         </div>
                         <div class="q-select">
@@ -229,13 +229,13 @@ html, body {font-size: 10px;}
                         <a href="#" class="btn-agreement">[자세히 보기]</a>
                         <input type="hidden" name="agBox" value="Y" checked>
                     </div>
-					<div class="next img-area"  onclick="pageFuc(1,$(this))"><img src="//static.resta.co.kr/event_wynd/v_${eventSeq}/btn_newSb_01.png"></div>
+					<div class="next img-area"  onclick="pageFuc(1,$(this))"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.png"></div>
                 </div>
             </section>
 
             <section class="page hide section02" id="page-2">
 				<div class="page-inner">
-					<div class="img-area"><img src="//static.resta.co.kr/event_wynd/v_${eventSeq}/event_main_02.png"></div>
+					<div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.png"></div>
 					<div class="db-box">
                         <div class="question">
                             <span class="q-text"><span class="underline">성함과 연락처를</span> 남겨주시면<br/>연락 드리겠습니다.</span>
@@ -254,7 +254,7 @@ html, body {font-size: 10px;}
 								<input type="tel" id="phone" name="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="전화번호를 입력해 주세요">
 							</div>
 						</div>
-						<div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.resta.co.kr/event_wynd/v_${eventSeq}/btn_newSb.png"></div>
+						<div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"></div>
 						<div class="description bottom">
 							<p id="event-period">이벤트 기간 : <?=date("Y년 m월 01일")." ~ ".date("Y년 m월 t일 까지")?></p>
                             <div class="ad_txt">안심하세요! ${resVo.agent}에서는 고객님의 소중한 개인정보를 <br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
@@ -264,8 +264,8 @@ html, body {font-size: 10px;}
 				</div>
             </section>
             <div class="container-bottom">
-                <!-- <div class="img-area"><img src="//static.resta.co.kr/event_wynd/v_${eventSeq}/notice.png"></div> -->
-                <div class="img-area"><img src="//static.resta.co.kr/event_wynd/v_${eventSeq}/footer.jpg"></div>	
+                <!-- <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.png"></div> -->
+                <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	
             </div>
             
         </div>

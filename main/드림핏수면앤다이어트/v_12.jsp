@@ -153,7 +153,7 @@ html, body {font-size: 10px;}
                 <span id="minute"></span>
             </div>
             <div class="text-box">
-                <img src="//static.resta.co.kr/event_wynd/v_${eventSeq}/loading.png">
+                <img src="//static.harang-event.com/event/v_${eventSeq}/loading.png">
                 <span class="text">현재 접수 가능</span>
             </div>
         </div>
@@ -164,19 +164,19 @@ html, body {font-size: 10px;}
 		<div class="formContents "> 
             <section class="page section01" id="page-1">
                 <div class="img-area">
-                    <img src="//static.resta.co.kr/event_wynd/v_${eventSeq}/event_main_01.jpg">
+                    <img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.jpg">
                     <!-- 슬라이드 -->
                     <div class="swiper mySwiper">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img src="//static.resta.co.kr/event_wynd/v_${eventSeq}/slide_01.png"></div>
-                            <div class="swiper-slide"><img src="//static.resta.co.kr/event_wynd/v_${eventSeq}/slide_02.png"></div>
-                            <div class="swiper-slide"><img src="//static.resta.co.kr/event_wynd/v_${eventSeq}/slide_03.png"></div>
+                            <div class="swiper-slide"><img src="//static.harang-event.com/event/v_${eventSeq}/slide_01.png"></div>
+                            <div class="swiper-slide"><img src="//static.harang-event.com/event/v_${eventSeq}/slide_02.png"></div>
+                            <div class="swiper-slide"><img src="//static.harang-event.com/event/v_${eventSeq}/slide_03.png"></div>
                         </div>
                     </div>
                 </div>
-                <div class="img-area"><img src="//static.resta.co.kr/event_wynd/v_${eventSeq}/event_main_02.jpg"></div>
+                <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.jpg"></div>
                 <div class="img-area">
-                    <img src="//static.resta.co.kr/event_wynd/v_${eventSeq}/event_main_03.jpg">
+                    <img src="//static.harang-event.com/event/v_${eventSeq}/event_main_03.jpg">
                     <div class="agGroup">
                         <div class="agBox"><div class="btn-agreement">[개인정보처리방침]</div></div>
                         <div class="agree-btn" onclick="pageFuc(1,$(this))">
@@ -188,7 +188,7 @@ html, body {font-size: 10px;}
 			</section>
 
 			<section class="page section02" id="page-2">
-                <div class="img-area"><img src="//static.resta.co.kr/event_wynd/v_${eventSeq}/event_main_04.jpg"></div>
+                <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_04.jpg"></div>
                 <div class="page-inner">
                     <div class="description top">
                         <div class="ad_txt">안심하세요! ${resVo.agent}에서는 고객님의 소중한 개인정보를 <br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
@@ -216,8 +216,8 @@ html, body {font-size: 10px;}
                     <div class="subscribe" data-limit="10"></div>
                 </div>
                 <div class="container">
-                    <div class="img-area"><img src="//static.resta.co.kr/event_wynd/v_${eventSeq}/notice.jpg"></div>
-                    <!-- <div class="img-area"><img src="//static.resta.co.kr/event_wynd/v_${eventSeq}/footer.jpg"></div> -->
+                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.jpg"></div>
+                    <!-- <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div> -->
                 </div>
 			</section>
 		</div>
@@ -243,7 +243,7 @@ html, body {font-size: 10px;}
 		</form>
 	</div>
 
-    <!-- <div class="img-area fixed db_btn"><img src="//static.resta.co.kr/event_wynd/v_${eventSeq}/btn_newSb_01.gif"></div> -->
+    <!-- <div class="img-area fixed db_btn"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.gif"></div> -->
 </div>
 <!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->
 <script>

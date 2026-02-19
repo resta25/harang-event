@@ -5,51 +5,16 @@ html, body {font-size: 10px;}
 #wrap {max-width: 600px; font-family: 'Pretendard'; height: 99.99dvh; background: url("//static.harang-event.com/event/v_${eventSeq}/bg_01.jpg") no-repeat center top;
 background-size: 100% 100%;}
 .form {background: transparent; height: 100%;}
-#form-1 {height: 100%;}
 #wrap .formContents {height: 100%;}
-.page { height: 100%; flex-grow: 1; position: relative; box-sizing: border-box;}
+.page {position: relative; box-sizing: border-box;}
 .hide {display: none;}
 
-/* 공통 */
-.form .name-result {display: block; letter-spacing: -2.48px; text-align: center; color: #fffe3d; font-size: 4.5rem; margin-bottom: 2rem; font-weight: 800;}
-
-/* 개별 */
-#page-2 {padding: 4rem; padding-bottom: 0;}
-#page-1 .page_inner .img-area:not(.next) {width: 100%; margin: 0 auto;}
-#page-3 {display: flex; flex-direction: column; height: 99.9%;}
-#page-3 .page_inner {flex-grow: 1;}
-
+.page_inner {padding: 6rem;}
 
 /* 첫번째 페이지 */
-.page-inner-bg {position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; box-sizing: border-box;}
-.page-inner-bg .top-img {margin-bottom: 2rem;}
-#page-1 .page_inner {background: #8ee6ff; border-radius: 3.5rem 3.5rem 0 0; padding: 2.8rem 4.5rem 4.2rem; }
-.page_inner .bar {width: 12rem; height: 0.7rem ; border-radius: 5rem; background: #19c6f7; display: block; margin: 0 auto 3rem;}
-.page_inner .question {line-height: 1.29; letter-spacing: -0.98px; text-align: center; color: #363942; font-size: 2.4rem; font-weight: 800; margin-bottom: 1rem;}
-.page_inner input[name="name"] {background: #fff;  border: solid 2px #36c5ed; border-radius: 1.5rem; font-size: 3rem;  line-height: 1.29; letter-spacing: -1.4px; padding: 1.4rem 0; width: 100%; text-align: center; margin-bottom: 2rem;}
+.page .sub-img {margin: 0 auto 3rem; width: 80%;}
+.page #location {width: 100%; margin: 0 auto; border-radius: 1.7rem;}
 
-/* 설문영역 */
-.q_select {display: flex; flex-flow: row wrap; gap: 1.5rem; margin-top: 4rem;}
-.q_select label {width: calc(100% / 2 - 1rem);}
-.q_select label img {width: 100%;}
-
-/* 마지막 페이지 */
-#page-3 {display: none;}
-#page-3 .page_inner {padding: 4rem; padding-bottom: 0;}
-.page input[name="phone"] {    background: #fff; text-align: center; font-size: 3rem; border-radius: 1.5rem; border: solid 2px #36c5ed; padding: 1.3rem 0; height: auto; margin-top: 4rem;}
-
-.form {position: relative;}
-.form .next {width: 100%; margin: 0 auto;}
-.form .next img {width: 100%;}
-.form .submit {width: 100%; margin: 1rem auto 0;}
-.form .submit input[type="image"] {width: 100%;}
-
-/* 안심문구, 대상, 이벤트기간 */
-.form .description .ad_txt,
-.form .description p,
-.form .description span {font-weight: normal; font-size: 1.3rem; padding: 0; margin: 0; color: #006885; letter-spacing: -0.65px;}
-
-.form .agBox { font-size: 1.2rem; padding: 2rem 0 0; width: 100%; margin: 0 auto;}
 
 /* 모달창 - 개인정보처리방침 */
 .overlay {z-index: 888; position: fixed; display: none; width: 100vw; height: 100vh; opacity: 0.5; background-color: #000;}
@@ -104,22 +69,21 @@ background-size: 100% 100%;}
 	<div class="form">
 		<form id="form-1" method="POST" accept-charset="utf-8">
         <div class="formContents">
-            <section class="page section01" id="page-1">
-                <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.png"></div>
-                <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.png"></div>
-                <div class="page-inner-bg">
-                    <div class="img-area top-img"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_01.png"></div>
-                    <div class="page_inner">
-                        <span class="bar"></span>
-                        <div class="question">▼ 혜택 받으실 분 ▼</div>
-                        <input type="text" id="name" name="name" class="inp" required="" autocomplete="off" placeholder="성함을 입력해주세요 ">
-                        <div class="next img-area"  onclick="pageFuc(1,$(this))"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.png"></div>
-                        <div class="agBox">
-                            개인정보 처리방침
-                            <a href="#" class="btn-agreement">[자세히 보기]</a>
-                            <input type="hidden" name="agBox" value="Y" checked>
-                        </div>
-                    </div>
+            <section class="page section01" id="page-1"> 
+                <div class="page_inner">
+                    <div class="img-area top-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.png"></div>
+                    <div class="img-area sub-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.png"></div>
+                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_03.png"></div>
+                    <video id="location" playsinline loop autoplay muted src="//static.harang-event.com/event/v_${eventSeq}/20251212.mp4" type="video/mp4"></video>
+                    <script>setTimeout(function(){ $('#location').trigger('play'); },500);</script>
+                    <div class="img-area text-img"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_01.png"></div>
+
+                    <div class="next img-area"  onclick="pageFuc(1,$(this))"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.png"></div>
+                    <!-- <div class="agBox">
+                        개인정보 처리방침
+                        <a href="#" class="btn-agreement">[자세히 보기]</a>
+                        <input type="hidden" name="agBox" value="Y" checked>
+                    </div> -->
                 </div>
             </section>
 
@@ -195,15 +159,15 @@ background-size: 100% 100%;}
     // 버튼 페이지 이동 함수 (다음)
     function pageFuc(num, obj) {
         // 선택된 라디오 버튼 확인 (section03 페이지일 때)
-        if (num === 1) {
-            let inputValue = $('input[name="name"]').val();
-            const isChecked = inputValue.length > 1;
+        // if (num === 1) {
+        //     let inputValue = $('input[name="name"]').val();
+        //     const isChecked = inputValue.length > 1;
 
-            if (!isChecked) {
-                alert("정확한 이름을 입력해주세요.");
-                return; // 선택되지 않았으면 페이지 이동 안함
-            }
-        }
+        //     if (!isChecked) {
+        //         alert("정확한 이름을 입력해주세요.");
+        //         return; // 선택되지 않았으면 페이지 이동 안함
+        //     }
+        // }
 
         // 페이지 이동 처리
         $('.section0' + num).fadeOut(function() {

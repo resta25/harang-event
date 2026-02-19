@@ -132,29 +132,29 @@ html, body {font-size: 10px;}
                     <span id="minute"></span>
                 </div>
                 <div class="text-box">
-                    <img src="//static.resta.co.kr/event_wynd/v_${eventSeq}/loading.png">
+                    <img src="//static.harang-event.com/event/v_${eventSeq}/loading.png">
                     <span class="text">현재 접수 가능</span>
                 </div>
             </div>
         </div>
         <div class="formContents">
             <section class="page section01" id="page-1">
-                <div class="img-area"><img src="//static.resta.co.kr/event_wynd/v_${eventSeq}/event_main_01.jpg"></div>
+                <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.jpg"></div>
                 <div class="page_inner">
-                    <div class="img-area"><img src="//static.resta.co.kr/event_wynd/v_${eventSeq}/event_main_02.png"></div>
+                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.png"></div>
                     <div class="agBox">
                         개인정보 처리방침
                         <a href="#" class="btn-agreement">[자세히 보기]</a>
                         <input type="hidden" name="agBox" value="Y" checked>
                     </div>
-					<div class="next img-area"  onclick="pageFuc(1,$(this))"><img src="//static.resta.co.kr/event_wynd/v_${eventSeq}/btn_newSb_01.png"></div>
+					<div class="next img-area"  onclick="pageFuc(1,$(this))"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.png"></div>
                 </div>
             </section>
 
             <section class="page hide section02" id="page-2">
-                <img src="//static.resta.co.kr/event_wynd/v_${eventSeq}/event_main_01.jpg">
+                <img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.jpg">
 				<div class="page-inner">
-                    <img src="//static.resta.co.kr/event_wynd/v_${eventSeq}/event_main_03.png">
+                    <img src="//static.harang-event.com/event/v_${eventSeq}/event_main_03.png">
 					<div class="db-box">
                         <div class="question"> <b>성함과 연락처</b>를 남겨주시면<br/>연락 드리겠습니다. </div>
 						<div class="user-box">
@@ -171,7 +171,7 @@ html, body {font-size: 10px;}
 								<input type="tel" id="phone" name="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="전화번호를 입력해 주세요">
 							</div>
 						</div>
-						<div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.resta.co.kr/event_wynd/v_${eventSeq}/btn_newSb_02.png"></div>
+						<div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_02.png"></div>
 						<div class="description bottom">
 							<p id="event-period">이벤트 기간 : <?=date("Y년 m월 01일")." ~ ".date("Y년 m월 t일 까지")?></p>
                             <div class="ad_txt">안심하세요! ${resVo.agent}에서는 고객님의 소중한 개인정보를 <br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
@@ -181,8 +181,8 @@ html, body {font-size: 10px;}
 				</div>
             </section>
             <div class="container-bottom">
-                <!-- <div class="img-area"><img src="//static.resta.co.kr/event_wynd/v_${eventSeq}/notice.png"></div> -->
-                <!-- <div class="img-area"><img src="//static.resta.co.kr/event_wynd/v_${eventSeq}/footer.jpg"></div>	 -->
+                <!-- <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.png"></div> -->
+                <!-- <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	 -->
             </div>
             
         </div>
