@@ -2,18 +2,46 @@
 pageEncoding="UTF-8"%>
 <style>
 html, body {font-size: 10px;}
-#wrap {max-width: 600px; font-family: 'Pretendard'; height: 99.99dvh; background: url("//static.harang-event.com/event/v_${eventSeq}/bg_01.jpg") no-repeat center top;
+#wrap {font-family: 'Pretendard'; background: url("//static.harang-event.com/event/v_${eventSeq}/bg_01.jpg") no-repeat center top;
 background-size: 100% 100%;}
 .form {background: transparent; height: 100%;}
 #wrap .formContents {height: 100%;}
-.page {position: relative; box-sizing: border-box;}
+.page {position: relative; box-sizing: border-box; height: 135vh;}
 .hide {display: none;}
 
-.page_inner {padding: 6rem;}
+.page_inner {padding: 4rem 6rem; padding-bottom: 0;}
 
 /* 첫번째 페이지 */
+.page .top-img {width: 50%; margin: 0 auto 3rem;}
 .page .sub-img {margin: 0 auto 3rem; width: 80%;}
-.page #location {width: 100%; margin: 0 auto; border-radius: 1.7rem;}
+.page #location {width: 100%; margin: 0 auto 3rem; border-radius: 1.7rem;}
+.page .touch-img {width: 70%; margin: 0 auto 3rem;}
+.page .text-img {margin-bottom: 2rem;}
+
+/* 두번째 페이지 */
+.page .bottom-img {padding-bottom: 5rem; width: 80%; margin: 0 auto;}
+
+/* 설문영역 */
+.question_box {}
+.question {width: 70%; margin: 0 auto 4rem; }
+.question_box .q_select {margin-bottom: 5rem;}
+.question_box .q_select label {width: 100%;}
+.question_box .q_select label:not(:last-child) {margin-bottom: 2rem;}
+.question_box .q_select label img {width: 100%;}
+
+/* db 영역 */
+.form .db-box input {background: #ddf2e9; border-radius: 2.1rem; border: solid 4px #fff; padding: 1.5rem; text-align: center; font-size: 5rem;  letter-spacing: -2.98px; margin-bottom: 2rem;}
+/* .form .db-box input:nth-of-type(1) {margin-top: 3rem;} */
+.form .db-box input::placeholder {color: #7fac98;}
+
+/* 개인정보 처리방침 */
+.form .agBox {color: #fff; margin: 4rem auto 0; font-size: 1.5rem;}
+
+/* 대상, 안심문구, 이벤트기간 */
+.form .description {margin: 2rem auto; width: 100%;}
+.form .description p,
+.form .description span,
+.form .description .ad_txt {color: #fff; font-size: 1.5rem; padding: 0;}
 
 
 /* 모달창 - 개인정보처리방침 */
@@ -30,17 +58,12 @@ background-size: 100% 100%;}
 
 @media screen and (max-width: 500px) { 
     html, body {font-size: 1.7vw;}
-    .form .page-inner {top: 20%; width: 90%;}
-    .form .db-box {width: 88%;}
+    .form .db-box input {font-size: 3rem;}
 }
 @media screen and (max-width: 395px) {
-    /* .form .db-box {top: 13%;} */
-    .form .page-inner {top: 26%;}
 }
 
 @media screen and (max-width: 375px) {
-    /* .form .page-inner { top: 23%; } */
-    /* .form .db-box {top: 13%;} */
 }
 
 </style>
@@ -73,40 +96,44 @@ background-size: 100% 100%;}
                 <div class="page_inner">
                     <div class="img-area top-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.png"></div>
                     <div class="img-area sub-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.png"></div>
-                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_03.png"></div>
+                    <div class="img-area touch-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_03.png"></div>
                     <video id="location" playsinline loop autoplay muted src="//static.harang-event.com/event/v_${eventSeq}/20251212.mp4" type="video/mp4"></video>
                     <script>setTimeout(function(){ $('#location').trigger('play'); },500);</script>
                     <div class="img-area text-img"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_01.png"></div>
 
-                    <div class="next img-area"  onclick="pageFuc(1,$(this))"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.png"></div>
-                    <!-- <div class="agBox">
+                    <div class="next img-area"  onclick="pageFuc(1,$(this))"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"></div>
+                    <div class="agBox">
                         개인정보 처리방침
                         <a href="#" class="btn-agreement">[자세히 보기]</a>
                         <input type="hidden" name="agBox" value="Y" checked>
-                    </div> -->
+                    </div>
                 </div>
             </section>
 
             <section class="page hide section02" id="page-2">
-                <span class="name-result"></span>
-                <div class="question_box">
-                    <div class="img-area question-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_03.png"></div>
-                    <div class="q_select">
-                        <label><input type="radio" name="tadd1" onclick="pageFuc(2,$(this))" value="1-3개"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_01.png"></label>
-                        <label><input type="radio" name="tadd1" onclick="pageFuc(2,$(this))" value="4-5개"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_02.png"></label>
-                        <label><input type="radio" name="tadd1" onclick="pageFuc(2,$(this))" value="6개 이상"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_03.png"></label>
-                        <label><input type="radio" name="tadd1" onclick="pageFuc(2,$(this))" value="상담 필요"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_04.png"></label>
+                <div class="page_inner">
+                    <div class="img-area top-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.png"></div>
+                    <div class="question_box">
+                        <div class="img-area question"><img src="//static.harang-event.com/event/v_${eventSeq}/q_01.png"></div>
+                        <div class="q_select">
+                            <label><input type="radio" name="tadd1" onclick="pageFuc(2,$(this))" value="씹을 때 아프다"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_01.png"></label>
+                            <label><input type="radio" name="tadd1" onclick="pageFuc(2,$(this))" value="잇몸이 붓고 시리다"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_02.png"></label>
+                            <label><input type="radio" name="tadd1" onclick="pageFuc(2,$(this))" value="기타"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_03.png"></label>
+                        </div>
                     </div>
+                    <div class="img-area bottom-img"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_02.png"></div>
                 </div>
-				
             </section>
 
             <search class="page hide section03" id="page-3">
                 <div class="page_inner">
-                    <span class="name-result"></span>
-                    <div class="img-area question-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_04.png"></div>
-                    <input type="tel" id="phone" name="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="전화번호를 입력해 주세요">
-                    <div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"></div>
+                    <div class="img-area top-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.png"></div>
+                    <div class="db-box">
+                        <div class="img-area question"><img src="//static.harang-event.com/event/v_${eventSeq}/q_02.png"></div>
+                        <input type="text" id="name" name="name" class="inp" required="" autocomplete="off" placeholder="이름 ">
+                        <input type="tel" id="phone" name="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="연락처">
+                    </div>
+                    <div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.png"></div>
                     <div class="description bottom">
                         <p id="event-period">이벤트 기간 : <?=date("Y년 m월 01일")." ~ ".date("Y년 m월 t일 까지")?></p>
                         <div class="ad_txt">안심하세요! ${resVo.agent}에서는 고객님의 소중한 개인정보를 <br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
@@ -114,7 +141,8 @@ background-size: 100% 100%;}
                     </div>
                 </div>
                 <div class="container-bottom">
-                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.png"></div>
+                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_04.jpg"></div>
+                    <!-- <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.png"></div> -->
                     <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	
                 </div>
             </search>
@@ -154,6 +182,19 @@ background-size: 100% 100%;}
         if (event.key === 'Enter') {
         event.preventDefault(); // 기본 전송 동작 방지
         }
+    });
+
+    // 비디오 소리 켜기
+    $('#wrap').on('click', function(){
+
+        var video = $('#location').get(0);
+
+        if(video){
+            video.muted = false;
+            // video.volume = 1;
+            // video.play();
+        }
+
     });
 
     // 버튼 페이지 이동 함수 (다음)
