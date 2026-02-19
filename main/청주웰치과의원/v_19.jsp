@@ -6,7 +6,7 @@ html, body {font-size: 10px;}
 background-size: 100% 100%;}
 .form {background: transparent; height: 100%;}
 #wrap .formContents {height: 100%;}
-.page {position: relative; box-sizing: border-box; height: 135vh;}
+.page {position: relative; box-sizing: border-box; height: 140vh;}
 .hide {display: none;}
 
 .page_inner {padding: 11rem 6rem 0; padding-bottom: 0;}
@@ -30,7 +30,7 @@ background-size: 100% 100%;}
 .question_box .q_select label img {width: 100%;}
 
 /* db 영역 */
-.form .db-box input {background: #ddf2e9; border-radius: 2.1rem; border: solid 4px #fff; padding: 1.5rem; text-align: center; font-size: 5rem;  letter-spacing: -2.98px; margin-bottom: 2rem;}
+.form .db-box input {background: #ddf2e9; border-radius: 2.1rem; border: solid 4px #fff; padding: 1.5rem; text-align: center; font-size: 5rem;  letter-spacing: -2.98px; margin-bottom: 2rem; font-family: 'Paperlogy';}
 /* .form .db-box input:nth-of-type(1) {margin-top: 3rem;} */
 .form .db-box input::placeholder {color: #7fac98;}
 
@@ -68,6 +68,7 @@ background-size: 100% 100%;}
 
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard.css" type="text/css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonts-archive/Paperlogy/Paperlogy.css" type="text/css"/>
 <div class="overlay"></div>
 <div class="agreeModalBox">
 	<div class="closeBtn">X</div>          
