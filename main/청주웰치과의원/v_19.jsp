@@ -9,7 +9,7 @@ background-size: 100% 100%;}
 .page {position: relative; box-sizing: border-box; height: 135vh;}
 .hide {display: none;}
 
-.page_inner {padding: 4rem 6rem; padding-bottom: 0;}
+.page_inner {padding: 11rem 6rem 0; padding-bottom: 0;}
 
 /* 첫번째 페이지 */
 .page .top-img {width: 50%; margin: 0 auto 3rem;}
@@ -101,7 +101,7 @@ background-size: 100% 100%;}
                     <script>setTimeout(function(){ $('#location').trigger('play'); },500);</script>
                     <div class="img-area text-img"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_01.png"></div>
 
-                    <div class="next img-area"  onclick="pageFuc(1,$(this))"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"></div>
+                    <div class="next img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"></div>
                     <div class="agBox">
                         개인정보 처리방침
                         <a href="#" class="btn-agreement">[자세히 보기]</a>
@@ -194,6 +194,19 @@ background-size: 100% 100%;}
             // video.volume = 1;
             // video.play();
         }
+
+    });
+    // 비디오 소리 멈춤
+    var video = $('#location').get(0);
+    $('.next').on('click', function(){
+        // 🔹 1. 영상 정지 + 음소거
+        if(video){
+            video.pause();
+            video.muted = true;
+            video.currentTime = 0; // 원하면 유지
+        }
+        // 🔹 2. 기존 함수 실행
+        pageFuc(1, $(this));
 
     });
 
