@@ -86,11 +86,11 @@ html, body {font-size: 10px;}
 }
 @media screen and (max-width: 395px) {
     /* .form .db-box {top: 13%;} */
-    .form .page-inner {top: 22%;}
+    .form .page-inner {top: 18%;}
 }
 
 @media screen and (max-width: 375px) {
-    .form .page-inner { top: 23%; }
+    /* .form .page-inner { top: 23%; } */
     /* .form .db-box {top: 13%;} */
 }
 
