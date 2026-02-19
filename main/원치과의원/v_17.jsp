@@ -293,13 +293,13 @@ html, body {font-size: 10px;}
 		/* form id로 proc */
 		let procForm = document.getElementById(formId);
 		
-		let selectedRadio1 = procForm.querySelector(`input[name="tadd1"]:checked`);
-		if (!selectedRadio1) {
-			alert("설문을 선택해주세요.");
-			return;
-		} else {
-			procForm.querySelector("input[name='add1']").value = selectedRadio1.value;
-		}
+		// let selectedRadio1 = procForm.querySelector(`input[name="tadd1"]:checked`);
+		// if (!selectedRadio1) {
+		// 	alert("설문을 선택해주세요.");
+		// 	return;
+		// } else {
+		// 	procForm.querySelector("input[name='add1']").value = selectedRadio1.value;
+		// }
 		
 		// let selectedRadio2 = procForm.querySelector('input[name="tadd2"]:checked');
 		// if (!selectedRadio2) {
@@ -322,7 +322,7 @@ html, body {font-size: 10px;}
 			'name': '이름'
 			,'age': '나이'
 			,'phone': '전화번호'
-			,'add1': '설문'
+			// ,'add1': '설문'
 			// ,'add2': '설문'
 			// ,'add3': '설문'
 			// ,'branch': '지점'
