@@ -100,7 +100,7 @@ background-size: 100% 100%;}
                     <div class="img-area touch-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_03.png"></div>
                     <video id="location" playsinline loop autoplay muted src="//static.harang-event.com/event/v_${eventSeq}/video.mp4" type="video/mp4"></video>
                     <script>setTimeout(function(){ $('#location').trigger('play'); },500);</script>
-                    <div class="img-area text-img"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_02.png"></div>
+                    <div class="img-area text-img"><img src="//static.harang-event.com/event/v_${eventSeq}/text_01.png"></div>
 
                     <div class="next img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"></div>
                     <div class="agBox">
@@ -122,7 +122,7 @@ background-size: 100% 100%;}
                             <label><input type="radio" name="tadd1" onclick="pageFuc(2,$(this))" value="기타"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_03.png"></label>
                         </div>
                     </div>
-                    <div class="img-area bottom-img"><img src="//static.harang-event.com/event/v_${eventSeq}/text_01.png"></div>
+                    <div class="img-area bottom-img"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_02.png"></div>
                 </div>
             </section>
 
