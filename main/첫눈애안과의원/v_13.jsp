@@ -250,6 +250,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 		</form>
 	</div>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->
 <script>
     $(document).ready(function () {

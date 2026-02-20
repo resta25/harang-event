@@ -33,6 +33,7 @@
 		<c:choose>
 			<c:when test="${resVo.collectYn eq '1'}">
 				<p class="btn-group"><a href="#" onClick="fnCollectMove('${ eventSeq }');" class="btn btn_confirm"><img src="//static.harang-event.com/event/thanks/btn_thx_01.png"></a></p>
+				<p class="btn-group"><a href="#" onClick="fnCollectMove('${ eventSeq }');" class="btn btn_confirm"><img src="//static.harang-event.com/event/thanks/btn_thx_01.png"></a></p>
 			</c:when>
 			<c:otherwise>
 				<p class="btn-group"><a href="#" onClick="fnHisBack();" class="btn btn_confirm"><img src="//static.harang-event.com/event/thanks/btn_newSb.png"></a></p>
@@ -40,6 +41,7 @@
 		</c:choose>
 	</div>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 	blockSourceView();

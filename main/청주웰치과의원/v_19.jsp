@@ -98,9 +98,9 @@ background-size: 100% 100%;}
                     <div class="img-area top-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.png"></div>
                     <div class="img-area sub-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.png"></div>
                     <div class="img-area touch-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_03.png"></div>
-                    <video id="location" playsinline loop autoplay muted src="//static.harang-event.com/event/v_${eventSeq}/20251212.mp4" type="video/mp4"></video>
+                    <video id="location" playsinline loop autoplay muted src="//static.harang-event.com/event/v_${eventSeq}/video.mp4" type="video/mp4"></video>
                     <script>setTimeout(function(){ $('#location').trigger('play'); },500);</script>
-                    <div class="img-area text-img"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_01.png"></div>
+                    <div class="img-area text-img"><img src="//static.harang-event.com/event/v_${eventSeq}/text_01.png"></div>
 
                     <div class="next img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"></div>
                     <div class="agBox">
@@ -115,10 +115,10 @@ background-size: 100% 100%;}
                 <div class="page_inner">
                     <div class="img-area top-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.png"></div>
                     <div class="question_box">
-                        <div class="img-area question"><img src="//static.harang-event.com/event/v_${eventSeq}/q_01.png"></div>
+                        <div class="img-area question"><img src="//static.harang-event.com/event/v_${eventSeq}/question_01.png"></div>
                         <div class="q_select">
-                            <label><input type="radio" name="tadd1" onclick="pageFuc(2,$(this))" value="씹을 때 아프다"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_01.png"></label>
-                            <label><input type="radio" name="tadd1" onclick="pageFuc(2,$(this))" value="잇몸이 붓고 시리다"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_02.png"></label>
+                            <label><input type="radio" name="tadd1" onclick="pageFuc(2,$(this))" value="양치할 때 피가 난다"><img src="//static.harang-event.com/event/v_${eventSeq}/event_select_off_01.png"></label>
+                            <label><input type="radio" name="tadd1" onclick="pageFuc(2,$(this))" value="식사할 때 통증이 있다"><img src="//static.harang-event.com/event/v_${eventSeq}/event_select_off_02.png"></label>
                             <label><input type="radio" name="tadd1" onclick="pageFuc(2,$(this))" value="기타"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_03.png"></label>
                         </div>
                     </div>

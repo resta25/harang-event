@@ -214,7 +214,7 @@ html, body {font-size: 10px;}
                     </ol><br/>
                     <h3>개인정보 취급 위탁</h3>
                     <ol>
-                        <li>개인정보 취급 위탁을 받는자 : (주)리스타</li>
+                        <li>개인정보 취급 위탁을 받는자 : (주)하랑고치</li>
                         <li>개인정보 취급 위탁을 하는 업무의 내용 : 고객정보 저장 및 서버관리</li>
                         <li class="desc">*상기 동의를 거부할 권리가 있으나, 수집 및 이용에 동의하지 않을 경우 ${resVo.objectName} 상담 및 이벤트 참여가 불가능합니다.</li>
                     </ol>
@@ -254,6 +254,7 @@ html, body {font-size: 10px;}
     </div>
     <!-- <div class="img-area fixed db_btn"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.gif"></div> -->
 </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->
 <script>
     $(document).ready(function(){
