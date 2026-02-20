@@ -254,6 +254,7 @@ html, body {font-size: 10px;}
     </div>
     <!-- <div class="img-area fixed db_btn"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.gif"></div> -->
 </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->
 <script>
     $(document).ready(function(){
