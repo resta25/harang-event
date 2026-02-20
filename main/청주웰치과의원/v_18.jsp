@@ -102,6 +102,7 @@ background-size: 100% 100%;}
 </div>
 <div id="wrap">
 	<div class="form">
+        <audio id="location" playsinline="" src="//static.harang-event.com/event/v_${eventSeq}/audio_01.mp3" type="audio/mp3"></audio>
 		<form id="form-1" method="POST" accept-charset="utf-8">
         <div class="formContents">
             <section class="page section01" id="page-1">
@@ -126,12 +127,12 @@ background-size: 100% 100%;}
             <section class="page hide section02" id="page-2">
                 <span class="name-result"></span>
                 <div class="question_box">
-                    <div class="img-area question-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_03.png"></div>
+                    <div class="img-area question-img"><img src="//static.harang-event.com/event/v_${eventSeq}/q_03.png"></div>
                     <div class="q_select">
-                        <label><input type="radio" name="tadd1" onclick="pageFuc(2,$(this))" value="1-3개"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_01.png"></label>
-                        <label><input type="radio" name="tadd1" onclick="pageFuc(2,$(this))" value="4-5개"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_02.png"></label>
-                        <label><input type="radio" name="tadd1" onclick="pageFuc(2,$(this))" value="6개 이상"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_03.png"></label>
-                        <label><input type="radio" name="tadd1" onclick="pageFuc(2,$(this))" value="상담 필요"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_04.png"></label>
+                        <label><input type="radio" name="tadd1" onclick="pageFuc(2,$(this))" value="1-3개"><img src="//static.harang-event.com/event/v_${eventSeq}/event_select_off_01.png"></label>
+                        <label><input type="radio" name="tadd1" onclick="pageFuc(2,$(this))" value="4-5개"><img src="//static.harang-event.com/event/v_${eventSeq}/event_select_off_02.png"></label>
+                        <label><input type="radio" name="tadd1" onclick="pageFuc(2,$(this))" value="6개 이상"><img src="//static.harang-event.com/event/v_${eventSeq}/event_select_off_03.png"></label>
+                        <label><input type="radio" name="tadd1" onclick="pageFuc(2,$(this))" value="상담 필요"><img src="//static.harang-event.com/event/v_${eventSeq}/event_select_off_04.png"></label>
                     </div>
                 </div>
 				
@@ -192,9 +193,32 @@ background-size: 100% 100%;}
         }
     });
 
+    // 비디오 소리 켜기
+$('#wrap').on('click', function(e){
+
+    // ✅ .next(또는 그 자식 img 등)를 눌렀으면 wrap 로직 실행 금지
+    if ($(e.target).closest('.next').length) return;
+
+    if ($('.section01').is(':visible')) {
+        playAudio(1);
+    }
+});
+
+    $(document).on('click', '.next', function(e){
+        e.stopPropagation();   // ✅ wrap으로 이벤트 전달 차단
+    });
+
+    const $audio = $('#location');
+    function playAudio(pageNum) {
+        $audio.attr('src', '//static.harang-event.com/event/v_' + '${eventSeq}' + '/audio_0' + pageNum + '.mp3');
+        $audio.trigger('play');
+    }
+    
+
     // 버튼 페이지 이동 함수 (다음)
     function pageFuc(num, obj) {
         // 선택된 라디오 버튼 확인 (section03 페이지일 때)
+        
         if (num === 1) {
             let inputValue = $('input[name="name"]').val();
             const isChecked = inputValue.length > 1;
@@ -205,10 +229,13 @@ background-size: 100% 100%;}
             }
         }
 
+        var nextPage = num + 1;
         // 페이지 이동 처리
         $('.section0' + num).fadeOut(function() {
             $('.section0' + (num + 1)).css({ 'display': 'flex', 'flex-direction': 'column' });
             $(document).scrollTop(0);
+
+            playAudio(nextPage);
         });
     }
 
