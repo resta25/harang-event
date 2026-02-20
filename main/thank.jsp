@@ -27,16 +27,16 @@
 	<div class="thanks-container">
 		<h1 class="blind">이벤트 등록 완료</h1>
 		<div class="message">
-			<div class="img-area"><img src="//static.resta.co.kr/event/thanks/txt_thx_01.png"></div>
-			<div class="img-area dot"><img src="//static.resta.co.kr/event/thanks/ico_thx_03.png"></div>
-			<div class="img-area"><img src="//static.resta.co.kr/event/thanks/ico_thx_04.png"></div>
+			<div class="img-area"><img src="//static.harang-event.com/event/thanks/txt_thx_01.png"></div>
+			<div class="img-area dot"><img src="//static.harang-event.com/event/thanks/ico_thx_03.png"></div>
+			<div class="img-area"><img src="//static.harang-event.com/event/thanks/ico_thx_04.png"></div>
 		</div>
 		<c:choose>
 			<c:when test="${resVo.collectYn eq '1'}">
-				<p class="btn-group"><a href="#" onClick="fnCollectMove('${ eventSeq }');" class="btn btn_confirm"><img src="//static.resta.co.kr/event/thanks/btn_thx_01.png"></a></p>
+				<p class="btn-group"><a href="#" onClick="fnCollectMove('${ eventSeq }');" class="btn btn_confirm"><img src="//static.harang-event.com/event/thanks/btn_thx_01.png"></a></p>
 			</c:when>
 			<c:otherwise>
-				<p class="btn-group"><a href="#" onClick="fnHisBack();" class="btn btn_confirm"><img src="//static.resta.co.kr/event/thanks/btn_thx_01.png"></a></p>
+				<p class="btn-group"><a href="#" onClick="fnHisBack();" class="btn btn_confirm"><img src="//static.harang-event.com/event/thanks/btn_thx_01.png"></a></p>
 			</c:otherwise>
 		</c:choose>
 	</div>
