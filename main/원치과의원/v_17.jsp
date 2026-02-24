@@ -36,10 +36,10 @@ html, body {font-size: 10px;}
 .form .submit input[type="image"] {width: 100%;}
 
 /* db 영역 */
-.form .page-inner {position: absolute; bottom: 6%; width: 86%; height: max-content; left: 50%; transform: translateX(-50%);}
+.form .page-inner {position: absolute; bottom: 10%; width: 80%; height: max-content; left: 50%; transform: translateX(-50%);}
 .form .page-inner > img {width: 100%;}
 .form .db-box {background: #fff; position: absolute; bottom: 3%; left: 50%; transform: translateX(-50%); width: 90%;}
-.form .db-box .question {font-size: 3rem; text-align: center; letter-spacing: -1.44px; line-height: 1.2;}
+.form .db-box .question {font-size: 2.5rem; text-align: center; letter-spacing: -1.44px; line-height: 1.2;}
 .form .user-box {margin-top: 1rem;}
 .form .user-box .user-info {display: flex; align-items: center; justify-content: space-between;}
 .form .user-box .user-info:not(:last-child) {margin-bottom: 1rem;}
@@ -83,7 +83,7 @@ html, body {font-size: 10px;}
 
 @media screen and (max-width: 500px) { 
     html, body {font-size: 1.7vw;}
-    .form .page-inner {top: 20%; width: 90%;}
+    .form .page-inner {top: 20%; width: 85%;}
     .form .db-box {width: 88%;}
 }
 @media screen and (max-width: 395px) {
@@ -182,7 +182,7 @@ html, body {font-size: 10px;}
 					</div>
 				</div>
                 <div class="container-bottom">
-                    <!-- <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.png"></div> -->
+                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.jpg"></div>
                     <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	
                 </div>
             </section>

@@ -47,7 +47,7 @@ html, body {font-size: 10px;}
 .hide {display: none;}
 
 /* 상단 타이머 */
-.time-content {padding-top: 5.2rem;}
+.time-content {padding-top: 4.2rem;}
 .timer-box {color: #000; display: flex; justify-content: space-between; align-items: center; gap: 2rem; font-size: 2.4rem; border: 1px solid #fff; border-radius: 0.9rem; padding: 1rem 4rem; width: 80%; margin: 0 auto; letter-spacing: -1.23px; background: rgba(255, 255, 255, 0.75);}
 .timer-box .text-box {width: 18rem;display: flex; align-items: center; gap: 1rem;}
 .timer-box .text-box .text {font-weight: 800; letter-spacing: -1.23px;}
@@ -264,7 +264,7 @@ html, body {font-size: 10px;}
 					</div>
 				</div>
                 <div class="container-bottom">
-                    <!-- <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.png"></div> -->
+                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.jpg"></div>
                     <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	
                 </div>
             </section>
