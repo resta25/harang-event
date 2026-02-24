@@ -83,7 +83,7 @@ html, body {font-size: 10px;}
 
 @media screen and (max-width: 500px) { 
     html, body {font-size: 1.7vw;}
-    .form .page-inner {top: 20%; width: 85%;}
+    .form .page-inner {top: 20%; width: 90%;}
     .form .db-box {width: 88%;}
 }
 @media screen and (max-width: 395px) {
