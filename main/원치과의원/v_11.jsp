@@ -42,7 +42,7 @@ html, body {font-size: 10px;}
 #wrap {max-width: 600px; font-family: 'Pretendard'; height: 100dvh; background: url("//static.harang-event.com/event/v_${eventSeq}/bg_01.jpg") no-repeat center top; background-size: 100% 100%;}
 .form {background: transparent; height: 100%;}
 #form-1 {height: 100%;}
-#wrap .formContents {height: calc(100% - 11.1rem); display: flex; flex-direction: column;}
+#wrap .formContents {height: calc(100% - 10.1rem); display: flex; flex-direction: column;}
 .page { height: 100%; flex-grow: 1;}
 .hide {display: none;}
 
