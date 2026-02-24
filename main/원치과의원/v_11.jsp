@@ -59,6 +59,7 @@ html, body {font-size: 10px;}
 }
 
 #page-1 .page_inner .img-area:not(.next) {width: 80.32%; margin: 0 auto;}
+#page-2 .page-inner {flex-grow: 1;}
 
 /* 설문영역 */
 .question-box {background: #f4f4f4; font-size: 3.7rem; padding: 4.1rem 0 6.3rem; margin-top: 5.18%; border-radius: 2rem;}
@@ -262,11 +263,11 @@ html, body {font-size: 10px;}
 						</div>
 					</div>
 				</div>
+                <div class="container-bottom">
+                    <!-- <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.png"></div> -->
+                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	
+                </div>
             </section>
-            <div class="container-bottom">
-                <!-- <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.png"></div> -->
-                <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	
-            </div>
             
         </div>
             <input type="hidden" id="branch" 		name="branch" value="${resVo.branch}"/>
@@ -356,7 +357,7 @@ html, body {font-size: 10px;}
 
         // 페이지 이동 처리
         $('.section0' + num).fadeOut(function() {
-            $('.section0' + (num + 1)).css('display','flex');
+            $('.section0' + (num + 1)).css({ 'display': 'flex', 'flex-direction': 'column' });
             $(document).scrollTop(0);
         });
     }

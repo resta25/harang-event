@@ -24,6 +24,8 @@ html, body {font-size: 10px;}
 
 #page-1 .page_inner .img-area:not(.next) {width: 100%; margin: 0 auto;}
 
+.container-bottom {position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%;}
+
 /* 개별 */
 .section02 > img {width: 100%;}
 
@@ -34,7 +36,7 @@ html, body {font-size: 10px;}
 .form .submit input[type="image"] {width: 100%;}
 
 /* db 영역 */
-.form .page-inner {position: absolute; bottom: 5%; width: 86%; height: max-content; left: 50%; transform: translateX(-50%);}
+.form .page-inner {position: absolute; bottom: 6%; width: 86%; height: max-content; left: 50%; transform: translateX(-50%);}
 .form .page-inner > img {width: 100%;}
 .form .db-box {background: #fff; position: absolute; bottom: 3%; left: 50%; transform: translateX(-50%); width: 90%;}
 .form .db-box .question {font-size: 3rem; text-align: center; letter-spacing: -1.44px; line-height: 1.2;}
@@ -179,11 +181,11 @@ html, body {font-size: 10px;}
 						</div>
 					</div>
 				</div>
+                <div class="container-bottom">
+                    <!-- <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.png"></div> -->
+                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	
+                </div>
             </section>
-            <div class="container-bottom">
-                <!-- <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.png"></div> -->
-                <!-- <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	 -->
-            </div>
             
         </div>
             <input type="hidden" id="branch" 		name="branch" value="${resVo.branch}"/>
