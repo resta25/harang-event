@@ -100,19 +100,13 @@ html, body {font-size: 10px;}
     .formGroup .user_info .legend {width: 13rem; font-size: 3.2rem;}
     .formGroup .user_info input {font-size: 3rem}
     .form .agBox {margin: 1rem auto; font-size: 1.5rem;}
-    .floatingImg {top: calc(100vh - 42px - 110px);}
+    .floatingImg {top: calc(100vh - 42px - 140px);}
 }
 
 @media screen and (max-width: 395px){
-    .floatingImg {top: calc(100vh - 42px - 90px);}
 }
 
 @media screen and (max-width: 380px){
-    .floatingImg {top: calc(100vh - 42px - 100px);}
-}
-
-@media screen and (max-width: 375px){
-    .floatingImg {top: calc(100vh - 42px - 90px);}
 }
 </style>
 <!-- Include -->
