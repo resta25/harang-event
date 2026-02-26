@@ -8,8 +8,8 @@ html, body {font-size: 10px;}
 /* 상단 타이머 */
 .time-content {padding-top: 5.2rem; position: absolute; top: 0%; left: 50%; transform: translateX(-50%); width: 90%; z-index: 9;}
 .timer-box {color: #fff; display: flex; align-items: center; justify-content: space-between; gap: 2rem; font-size: 3.5rem; border: 1px solid #797979; border-radius: 0.9rem; padding: 1.4rem 2.3rem; margin: 0 auto; letter-spacing: -1.98px; background: #000;}
-.timer-box .text-box { width: 40%; display: flex; align-items: center; gap: 1rem;}
-.timer-box .text-box .text {font-weight: 800; letter-spacing: -1.23px;}ㅋ
+.timer-box .text-box {width: 36%;}
+.timer-box .text-box img{ display: inline-block; animation: spin 1.1s linear infinite; transform-origin: 50% 50%; width: 17%;}
 @keyframes spin{
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
