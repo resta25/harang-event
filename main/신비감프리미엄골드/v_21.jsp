@@ -9,8 +9,7 @@ html, body {font-size: 10px;}
 .time-content {padding-top: 5.2rem; position: absolute; top: 0%; left: 50%; transform: translateX(-50%); width: 90%; z-index: 9;}
 .timer-box {color: #fff; display: flex; align-items: center; justify-content: space-between; gap: 2rem; font-size: 3.5rem; border: 1px solid #797979; border-radius: 0.9rem; padding: 1.4rem 2.3rem; margin: 0 auto; letter-spacing: -1.98px; background: #000;}
 .timer-box .text-box { width: 40%; display: flex; align-items: center; gap: 1rem;}
-.timer-box .text-box .text {font-weight: 800; letter-spacing: -1.23px;}
-.timer-box .text-box img{ display: inline-block; animation: spin 1.1s linear infinite; transform-origin: 50% 50%; width: 17%;}
+.timer-box .text-box .text {font-weight: 800; letter-spacing: -1.23px;}ㅋ
 @keyframes spin{
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
@@ -34,7 +33,7 @@ html, body {font-size: 10px;}
 /* 개인정보처리방침 영역 */
 .form .agGroup {position: absolute; bottom: 5%; left: 50%; transform: translateX(-50%); width: 100%;}
 .form .agBox {margin: 3% auto; font-size: 2rem;}
-.form .agree-btn {font-size: 3rem; text-align: center; width: 70%; margin: 0 auto; background: linear-gradient(260deg,rgba(218, 46, 140, 1) 0%, rgba(111, 56, 145, 1) 100%); color: #fff; padding: 2rem 0; border-radius: 1rem; font-weight: 700; letter-spacing: -1px; cursor: pointer; animation: pulsating 0.8s linear infinite;}
+.form .agree-btn {width: 70%; margin: 0 auto; cursor: pointer; animation: pulsating 0.8s linear infinite;}
 .form .agBox .btn-agreement {font-size: 1.95rem; cursor: pointer;}
 
 /* 이벤트기간, 안심문구, 대상 영역 */
@@ -45,7 +44,7 @@ html, body {font-size: 10px;}
 
 /* submit */
 .form .submit {width: 80%; margin: 2rem auto 0;}
-.form .submit .btn-submit {background: linear-gradient(260deg,rgb(202, 99, 156) 0%, rgba(111, 56, 145, 1) 100%); color: #fff; font-size: 3.5rem; text-align: center; width: 100; padding: 3rem 0; width: 100%; border-radius: 1rem; font-weight: 700; letter-spacing: -1px; animation: pulsating 0.8s linear infinite;}
+.form .submit input[type="image"] {width: 100%; animation: pulsating 0.8s linear infinite;}
 
 /* 실시간 신청 현황 */
 .subscribe {height: 185px; overflow: hidden; padding: 2% 5%; background: #f1f1f1; border-radius: 0.8em; font-family: 'noto sans kr';}
@@ -181,7 +180,7 @@ html, body {font-size: 10px;}
                         <div class="agBox"><div class="btn-agreement">[개인정보처리방침]</div></div>
                         <div class="agree-btn" onclick="pageFuc(1,$(this))">
                             <input type="checkbox" name="agBox" value="Y" checked>
-                            구매 혜택 받기 (동의)
+                            <img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.png">
                         </div>
                     </div>
                 </div>
@@ -207,7 +206,7 @@ html, body {font-size: 10px;}
                             <input type="tel" id="phone" name="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="전화번호를 입력해 주세요">
                         </div>
                     </div>
-                    <div class="submit"><button type="submit" onclick="fnForm('form-1');" class="btn-submit">혜택 신청 완료</button></div>
+                    <div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"></div>
                     <div class="description bottom">
                         <p id="event-period">이벤트 기간 : <?=date("Y년 m월 01일")." ~ ".date("Y년 m월 t일 까지")?></p>
                         <span>대상 :  ${resVo.target}</span>
