@@ -1,34 +1,70 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <style>
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Regular.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Regular.woff') format('woff'),
+         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Medium.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Medium.woff') format('woff'),
+         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Medium.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-SemiBold.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-SemiBold.woff') format('woff'),
+         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-SemiBold.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Bold.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Bold.woff') format('woff'),
+         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Bold.otf') format('opentype');
+}
 html, body {font-size: 10px;}
 #wrap {font-family: "Pretendard", sans-serif; background: #fff;}
 
 /* 상단 타이머 */
-.time-content {position: relative; width: 100%;}
+/* .time-content {position: relative; width: 100%;} */
 .time-content > img {width: 100%;}
-.timer-box {color: #fff; display: flex; align-items: center; justify-content: space-between; gap: 2rem; font-size: 2.7rem; padding: 1.4rem 6rem; margin: 0 auto; letter-spacing: -1.98px; background: #000; position: absolute; top: 3%; left: 50%; transform: translateX(-50%); width: 90%; box-sizing: border-box; border-radius: 0.9rem;}
+.timer-box {color: #fff; display: flex; align-items: center; justify-content: space-between; gap: 2rem; font-size: 2.7rem; padding: 1.4rem 6rem; margin: 0 auto; letter-spacing: -1.98px; background: #000; box-sizing: border-box; font-family: 'Pretendard'; font-weight: 500;}
 .timer-box .text-box { width: 30%; display: flex; align-items: center; justify-content: center; gap: 1rem; }
 .timer-box .text-box .text {font-weight: 800; letter-spacing: -1.23px; font-size: 2.5rem;}
-.timer-box .text-box img{ display: inline-block; animation: spin 1.1s linear infinite; transform-origin: 50% 50%; width: 15%;}
+.timer-box .text-box img {display: inline-block; animation: spin 1.1s linear infinite; transform-origin: 50% 50%; width: 11.5%;}
 @keyframes spin{
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
 }
 
 /* 슬라이드 영역 */
-.swiper {position: absolute !important; bottom: 2%; left: 51.5%; transform: translateX(-50%); width: 90%;}
+.swiper {position: absolute !important; top: 22.5%; left: 50%; transform: translateX(-50%); width: 78.49%;}
 .swiper .swiper-slide img { width: 100%; text-align: center;}
 
 /* 이름, 나이, 연락처 입력칸 */
-.form_inner {background: #111; padding: 3rem;}
-.formGroup {padding: 9.5rem 4.5rem; border: 3px dashed #fdff74; border-radius: 3rem;}
-.formGroup .user_info {display: flex; align-items: center; gap: 2rem; justify-content: space-between;}
+.form_inner {background: #0b644c; padding: 3rem 8.8rem; padding-top: 0;}
+.formGroup {padding: 0;}
+.formGroup .user_info {display: flex; align-items: center; gap: 3rem; justify-content: space-between; background-color: #fff; padding: 2.6rem 3.2rem; border-radius: 1rem;}
 .formGroup .user_info:not(:last-child) {margin-bottom: 2rem;}
-.formGroup .user_info .legend {font-size: 4rem; font-weight: 700; letter-spacing: -1px; text-align: justify; text-align-last: justify; display: inline-block; width: 13rem; position: relative; padding-right: 2rem; color: #fff;}
-/* .formGroup .user_info .legend::after {display: inline-block; content: ''; background: #000; width: 0.2rem; height: 3rem; position: absolute; right: 0; top: 50%; transform: translateY(-50%);} */
-.formGroup .user_info input {font-size: 3.3rem; font-weight: 700; letter-spacing: -0.83px; padding: 2rem 4rem; padding-right: 0;  width: 75%; background: #f4f4f4;  border: solid 2px #1f8eff; border-radius: 4.3rem; }
-.formGroup .user_info input::placeholder {color: #c9c9c9;}
+.formGroup .user_info .legend {flex-shrink: 0; font-size: 3.6rem; line-height: 1; height: 3.3rem; font-weight: 700; letter-spacing: -1px; text-align: justify; display: inline-block; border-right: 2px solid #000; width: 15.3rem; position: relative; padding-right: 2rem; color: #000; box-sizing: border-box;}
+.formGroup .user_info .legend::after {content: ''; height: 3.3rem; display: inline-block; width: 100%;}
+.formGroup .user_info input {font-size: 3.3rem; font-weight: 700; letter-spacing: -0.83px; padding: 0; width: 75%; font-family: 'Pretendard'; line-height: 1;}
+.formGroup .user_info input::placeholder {color: #ccc; font-weight: 500;}
 
 /* 개인정보처리방침 영역 */
 .form .agBox {margin: 3% auto; font-size: 2rem; color: #fff;}
@@ -60,8 +96,9 @@ html, body {font-size: 10px;}
     html,body {font-size: 1.5vw;}
     .timer-box {font-size: 3rem;}
     .timer-box .text-box {width: 40%;}
-    .formGroup {padding: 4.5rem 3.5rem;}
-    .formGroup .user_info .legend {width: 13rem; font-size: 3.5rem;}
+    .form_inner {padding: 0 4rem 3rem;}
+    .formGroup {padding: 0 3.5rem 4.5rem;}
+    .formGroup .user_info .legend {width: 13rem; font-size: 3.2rem;}
     .formGroup .user_info input {font-size: 3rem}
     .form .agBox {margin: 1rem auto; font-size: 1.5rem;}
     .floatingImg {top: 350px;}
@@ -81,7 +118,6 @@ html, body {font-size: 10px;}
 <div id="wrap">
     <!-- 타이머 박스 -->
     <div class="time-content">
-        <img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.jpg">
         <div class="timer-box">
             <div class="date">
                 <span id="year"></span>
@@ -95,18 +131,21 @@ html, body {font-size: 10px;}
             </div>
             <div class="text-box">
                 <img src="//static.harang-event.com/event/v_${eventSeq}/loading.png">
-                <span class="text">현재 신청 가능</span>
+                <span class="text">현재 접수 가능</span>
             </div>
         </div>
-        <!-- 슬라이드 -->
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="//static.harang-event.com/event/v_${eventSeq}/slide_01.png"></div>
-                <div class="swiper-slide"><img src="//static.harang-event.com/event/v_${eventSeq}/slide_02.png"></div>
+        <div class="img-area">
+            <img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.jpg">
+            <!-- 슬라이드 -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="//static.harang-event.com/event/v_${eventSeq}/slide_01.png"></div>
+                    <div class="swiper-slide"><img src="//static.harang-event.com/event/v_${eventSeq}/slide_02.png"></div>
+                </div>
             </div>
         </div>
-    </div>
-
+    </div>    
+    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_06.gif"></div>
     <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.jpg"></div>
 
     <!-- 플로팅 버튼 -->
@@ -125,7 +164,7 @@ html, body {font-size: 10px;}
                     <input type="tel" name="age" id="age" class="inp" required="" autocomplete="off" maxlength="2" placeholder="나이">
                 </div>
                 <div class="user_info">
-                    <span class="legend">연 락 처</span>
+                    <span class="legend">전화번호</span>
                     <input type="tel" name="phone" id="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="연락처">
                 </div>
                 <div class="agBox">
