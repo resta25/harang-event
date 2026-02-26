@@ -164,7 +164,7 @@ html, body {font-size: 10px;}
                 </div>
                 <div class="user_info">
                     <span class="legend">전화번호</span>
-                    <input type="tel" name="phone" id="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="연락처">
+                    <input type="tel" name="phone" id="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="'-'없이 입력">
                 </div>
                 <div class="agBox">
                     <label><input name="agBox" type="checkbox" checked><span>개인정보 수집 및 이용에 관한 내용을 확인하고 동의함</span></label> <a href="#" class="btn-agreement">[자세히 보기]</a>
@@ -234,8 +234,8 @@ html, body {font-size: 10px;}
                     <input type="tel" name="age" id="age" class="inp" required="" autocomplete="off" maxlength="2" placeholder="나이">
                 </div>
                 <div class="user_info">
-                    <span class="legend">연 락 처</span>
-                    <input type="tel" name="phone" id="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="연락처">
+                    <span class="legend">전화번호</span>
+                    <input type="tel" name="phone" id="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="'-'없이 입력">
                 </div>
                 <div class="agBox">
                     <label><input name="agBox" type="checkbox" checked><span>개인정보 수집 및 이용에 관한 내용을 확인하고 동의함</span></label> <a href="#" class="btn-agreement">[자세히 보기]</a>
