@@ -44,7 +44,7 @@ html, body {font-size: 10px;}
 /* .time-content {position: relative; width: 100%;} */
 .time-content > img {width: 100%;}
 .timer-box {color: #fff; display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; font-size: 2.7rem; padding: 1.8rem 13.1%; margin: 0 auto; letter-spacing: -1.98px; background: #000; box-sizing: border-box; font-family: 'Pretendard'; font-weight: 500;}
-.timer-box .text-box {background-color: #222; border-radius: 999px;  width: 27.36%; display: flex; align-items: center; justify-content: center; gap: 1rem; padding: 1.7rem 3.4rem; line-height: 1;}
+.timer-box .text-box {background-color: #222; border-radius: 999px; display: flex; align-items: center; justify-content: center; gap: 1rem; padding: 1.7rem 3.4rem; line-height: 1;}
 .timer-box .text-box .text {font-weight: 800; letter-spacing: -1.23px; font-size: 2.5rem;}
 .timer-box .text-box img {display: inline-block; animation: spin 1.1s linear infinite; transform-origin: 50% 50%; width: 11.5%;}
 @keyframes spin{
