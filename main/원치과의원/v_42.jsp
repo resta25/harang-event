@@ -110,10 +110,8 @@ html, body {font-size: 10px;}
 .form .user-box .user-info:not(:last-child) {margin-bottom: 0.95rem;}
 .form .user-box .user-info .legend {width: 6.6rem;/* 라벨 고정 폭 */ margin-right: 2.2rem; text-align: justify; text-align-last: justify; display: inline-block;   font-family: 'Pretendard'; font-size: 2.6rem; font-weight: 700; letter-spacing: -0.52px; color: #004a97; flex-shrink: 0;}
 .form .user-box .user-info .legend img {width: 100%;}
-.form .user-box .user-info input {  border-radius: 6px;
-  border: solid 1px #004a97;
-  background-color: #f5fdff; font-size: 2.4rem; padding: 1.25rem 1rem;}
-.form .user-box .user-info input::placeholder {font-weight: 700; letter-spacing: -0.5px; text-align: justify; color: #c9c9c9;}
+.form .user-box .user-info input { border-radius: 6px; border: solid 1px #004a97; background-color: #f5fdff; font-size: 2.4rem; padding: 1.25rem 1rem; color: #004A97;}
+.form .user-box .user-info input::placeholder {font-weight: 700; letter-spacing: -0.5px; text-align: justify; color: #8FACCA;}
 
 /* 안심문구, 대상, 이벤트기간 */
 .form .description .ad_txt,
