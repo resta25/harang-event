@@ -176,7 +176,7 @@ background: linear-gradient(90deg, rgba(85, 23, 130, 1)  0%, rgba(50, 11, 139, 1
     .form .submit{width: 80%;}
     .agreeModalBox {padding: 12% 4% 5%; width: 95%;} /* 모달창 */
 
-    .sub-txt {font-size: 80%;}
+    .sub-txt {font-size: 77%;}
 
     .progress {font-size: 24px;}
     .paging_btn button {max-width: 43px;}
@@ -388,10 +388,10 @@ background: linear-gradient(90deg, rgba(85, 23, 130, 1)  0%, rgba(50, 11, 139, 1
     // 첫번째 페이지
     function show1pg(){    
         const animation01 = gsap.timeline();
-        animation01.from('#page-1 .poster_01', { y: +50, delay: 0.2, opacity: 0, ease: "power1.out"},0);
-        animation01.from('#page-1 .btn-agreement', { y: +50, delay: 0.4, opacity: 0, stagger: 0.1, ease: "power1.out"},0);
-        animation01.from('#page-1 .poster_02', { y: +50, delay: 0.6, opacity: 0, stagger: 0.1, ease: "power1.out"},0);
-        animation01.from('#page-1 .poster_03', { y: +50, delay: 0.8, opacity: 0, stagger: 0.1, ease: "power1.out"},0);
+        animation01.from('#page-1 .poster_01', { y: +50, delay: 0, opacity: 0, ease: "power1.out"},0);
+        animation01.from('#page-1 .btn-agreement', { y: +50, delay: 0.2, opacity: 0, stagger: 0.1, ease: "power1.out"},0);
+        animation01.from('#page-1 .poster_02', { y: +50, delay: 0.4, opacity: 0, stagger: 0.1, ease: "power1.out"},0);
+        animation01.from('#page-1 .poster_03', { y: +50, delay: 0.6, opacity: 0, stagger: 0.1, ease: "power1.out"},0);
     }
     show1pg();
     // 두번째 페이지
@@ -404,10 +404,10 @@ background: linear-gradient(90deg, rgba(85, 23, 130, 1)  0%, rgba(50, 11, 139, 1
                 isAnimating = false; // 애니메이션 끝나면 플래그 해제
             }
         });
-        animation02.to('#page-1 .poster_01', { x: -100, opacity: 0, delay: 0.2, duration: 0.2, ease: "power1.out"}, 0);
+        animation02.to('#page-1 .poster_01', { x: -100, opacity: 0, delay: 0, duration: 0.2, ease: "power1.out"}, 0);
         // animation02.to('#page-1 .btn-agreement', { x: -100, opacity: 0, delay: 0.4, duration: 0.2, ease: "power1.out"}, 0);
-        animation02.to('#page-1 .poster_02', { x: -100, opacity: 0, delay: 0.4, duration: 0.2, ease: "power1.out"}, 0);
-        animation02.to('#page-1 .poster_03', { x: -100, opacity: 0, delay: 0.6, duration: 0.2, ease: "power1.out"}, 0);
+        animation02.to('#page-1 .poster_02', { x: -100, opacity: 0, delay: 0.2, duration: 0.2, ease: "power1.out"}, 0);
+        animation02.to('#page-1 .poster_03', { x: -100, opacity: 0, delay: 0.4, duration: 0.2, ease: "power1.out"}, 0);
         animation02.to('#page-1', { display: 'none' });
         animation02.to('#page-2', { display: 'block', duration: 0 });
         $('.progress i').text('1');
@@ -425,9 +425,9 @@ background: linear-gradient(90deg, rgba(85, 23, 130, 1)  0%, rgba(50, 11, 139, 1
                 isAnimating = false; // 애니메이션 끝나면 플래그 해제
             }
         });
-        animation03.to('#page-2 .poster_04', { x: -100, opacity: 0, delay: 0.2, duration: 0.2, ease: "power1.out"}, 0);
-        animation03.to('#page-2 .poster_05', { x: -100, opacity: 0, delay: 0.4, duration: 0.2, ease: "power1.out"}, 0);
-        animation03.to('#page-2 .poster_06', { x: -100, opacity: 0, delay: 0.6, duration: 0.2, ease: "power1.out"}, 0);
+        animation03.to('#page-2 .poster_04', { x: -100, opacity: 0, delay: 0, duration: 0.2, ease: "power1.out"}, 0);
+        animation03.to('#page-2 .poster_05', { x: -100, opacity: 0, delay: 0.2, duration: 0.2, ease: "power1.out"}, 0);
+        animation03.to('#page-2 .poster_06', { x: -100, opacity: 0, delay: 0.4, duration: 0.2, ease: "power1.out"}, 0);
         animation03.to('#page-2', { display: 'none' });
         animation03.to('#page-3', { display: 'block', duration: 0.1 });
         $('.progress i').text('2');
@@ -445,8 +445,8 @@ background: linear-gradient(90deg, rgba(85, 23, 130, 1)  0%, rgba(50, 11, 139, 1
                 isAnimating = false; // 애니메이션 끝나면 플래그 해제
             }
         });
-        animation04.to('#page-3 .poster_07', { x: -100, opacity: 0, delay: 0.2, duration: 0.2, ease: "power1.out"}, 0);
-        animation04.to('#page-3 .poster_08', { x: -100, opacity: 0, delay: 0.4, duration: 0.2, ease: "power1.out"}, 0);
+        animation04.to('#page-3 .poster_07', { x: -100, opacity: 0, delay: 0, duration: 0.2, ease: "power1.out"}, 0);
+        animation04.to('#page-3 .poster_08', { x: -100, opacity: 0, delay: 0.2, duration: 0.2, ease: "power1.out"}, 0);
         animation04.to('#page-3 .poster_09', { x: -100, opacity: 0, delay: 0.4, duration: 0.2, ease: "power1.out"}, 0);
         animation04.to('#page-3', { display: 'none' });
         animation04.to('#page-4', { display: 'block', duration: 0.1 });
@@ -462,11 +462,10 @@ background: linear-gradient(90deg, rgba(85, 23, 130, 1)  0%, rgba(50, 11, 139, 1
         var $section = $('#page-'+page_num).closest('section');
 
         // 1. 현재 페이지를 먼저 숨김
-        $section.fadeOut(200, function(){
-            
+        $section.fadeOut(0, function(){
             // 2. 페이드 아웃이 "완전히 끝난 후" 다음 페이지 보여주기
             var $nextSection = $section.next('.page');
-            $nextSection.fadeIn(50);
+            $nextSection.fadeIn(0);
 
             // 3. 페이지 번호에 맞춰서 텍스트 변경
             if(page_num == 1) {
