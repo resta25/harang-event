@@ -456,44 +456,50 @@ background: linear-gradient(90deg, rgba(85, 23, 130, 1)  0%, rgba(50, 11, 139, 1
     }
 
     // 설문 Click bind
-	$('input[name*=tadd], button.first').off('click').bind('click', function(){
-        var page_num = $('.page:visible').index() + 1;
-        var numImg = page_num;
-        var $section = $('#page-'+page_num).closest('section');
-
-        // 1. 현재 페이지를 먼저 숨김
-        $section.fadeOut(0, function(){
-            // 2. 페이드 아웃이 "완전히 끝난 후" 다음 페이지 보여주기
-            var $nextSection = $section.next('.page');
-            $nextSection.fadeIn(0);
-
-            // 3. 페이지 번호에 맞춰서 텍스트 변경
-            if(page_num == 1) {
-                $('.progress i').text('1');
-                show2pg();
-                
-            } else if (page_num == 2){
-                $('.progress i').text('2');
-                show3pg();
-            } else if (page_num == 3){
-                $('.progress i').text('3');
-                show4pg();
-            }
-
-            $(document).scrollTop(0);
-        });
-
-        // 상단바 표시는 즉시 실행 (레이아웃 깨짐 방지)
-        $(".paging_btn, .progress").css({display: "flex"});
+	$('input[name*=tadd], button.first').off('click').on('click', function(){
+        var $btn = $(this);
 
         // add 설문을 클릭했다면
-        if(!$(this).hasClass('first')){
-            $('label', $(this).parents('.q_select')).each(function(i,t) {
-                $('img', t).attr('src', $('img', t).attr('src').replace('_on', '_off'));
+        if(!$btn.hasClass('first')){
+            const $labels = $btn.closest('.q_select').find('label');
+
+            $labels.each(function(){
+                const $img = $('img', this);
+                $img.attr('src', $img.attr('src').replace('_on', '_off'));
             });
-            $('img', $(this.parentNode)).attr('src', $('img', $(this.parentNode)).attr('src').replace('_off', '_on'));
+
+            const $img = $btn.parent().find('img');
+            $img.attr('src', $img.attr('src').replace('_off', '_on'));
         }
-	});
+
+        // 잠깐 보여주기
+        setTimeout(function(){
+
+            var page_num = $('.page:visible').index() + 1;
+            var $section = $('#page-'+page_num);
+
+            $section.fadeOut(0,function(){
+                var $nextSection = $section.next('.page');
+                $nextSection.fadeIn(0);
+
+                if(page_num == 1){
+                    $('.progress i').text('1');
+                    show2pg();
+                }else if(page_num == 2){
+                    $('.progress i').text('2');
+                    show3pg();
+                }else if(page_num == 3){
+                    $('.progress i').text('3');
+                    show4pg();
+                }
+
+                $(document).scrollTop(0);
+            });
+
+            $(".paging_btn, .progress").css({display:"flex"});
+
+        },200); // ← 이 시간만큼 on 이미지가 보임
+    });
 
     // 버튼 페이지 이동 함수
     // function validator(idx) {
