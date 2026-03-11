@@ -150,7 +150,7 @@ button img {display: block; width: 100%;}
 .form .description span {padding: 0;}
 
 @media screen and (max-width: 500px){
-    .timer-box {font-size: 125%;}
+    .timer-box {font-size: 110%;}
     .timer-box .time {margin-left: 5.5%;}
     .page-inner::before {top: 4%; width: 29.25%; height: 5px;}
     .page-inner > img {top: -2%;}
