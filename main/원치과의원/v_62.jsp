@@ -87,17 +87,17 @@ html, body {font-size: 10px;}
 
 .form .next {width: 80%; margin: 0 auto;}
 .form .next img {width: 100%;}
-.form .submit {width: 100%; margin: 1rem auto 0;}
+.form .submit {width: 100%;}
 .form .submit input[type="image"] {width: 100%;}
 
 /* 설문영역 */
-.form .page-inner {padding: 2.8rem 3.6rem 1rem;}
-.form .db-box {background: #fff; padding: 3.7rem 5.7rem 2.6rem; margin-top: 2.8rem; border-radius: 2rem;}
-.form .db-box .question {font-size: 3.7rem; text-align: center; }
+.form .page-inner {padding: 2.8rem 1.6rem 1rem;}
+.form .db-box {background: #fff; padding: 2.7rem 3.7rem 1.6rem; margin-top: 2.8rem; border-radius: 2rem;}
+.form .db-box .question {font-size: 3.2rem; text-align: center; }
 .form .db-box  .question .q-text {padding: 0; border-bottom: 0; line-height: 1.07;}
 .form .user-box {margin-top: 2rem;}
 .form .user-box .user-info {display: flex; align-items: center; justify-content: space-between;}
-.form .user-box .user-info:not(:last-child) {margin-bottom: 2rem;}
+.form .user-box .user-info:not(:last-child) {margin-bottom: 1rem;}
 .form .user-box .user-info .legend {  width: 10.5rem;/* 라벨 고정 폭 */ text-align: justify; text-align-last: justify; display: inline-block; font-weight: 700; font-size: 3rem; flex-shrink: 0;}
 .form .user-box .user-info .legend img {width: 100%;}
 .form .user-box .user-info input {background: #f4f4f4; border: 2px solid #0066ff; font-size: 200%; letter-spacing: -0.5px; font-weight: 700; padding: 1rem 2.4rem; font-family: 'Pretendard'; width: 70%;}
@@ -108,7 +108,7 @@ html, body {font-size: 10px;}
 .form .description p,
 .form .description span {font-weight: normal; font-size: 1.3rem; padding: 0; margin: 0; color: #6e6e6e; letter-spacing: -0.65px;}
 
-.form .agBox {color: #fff; font-size: 1.6rem; padding: 3rem 0 2rem; width: 100%;}
+.form .agBox {font-size: 1.2rem; width: 100%; margin: 0.5rem auto;}
 
 /* 모달창 - 개인정보처리방침 */
 .overlay {z-index: 888; position: fixed; display: none; width: 100vw; height: 100vh; opacity: 0.5; background-color: #000;}
@@ -204,38 +204,33 @@ html, body {font-size: 10px;}
                         <div class="q-select">
                             <label class="container">
                                 <span class="radio-label">1개</span>
-                                <input type="radio" name="tadd1" value="1개">
+                                <input onclick="pageFuc(1,$(this))" type="radio" name="tadd1" value="1개">
                                 <div class="radio-circle"></div>
                             </label>
                             <label class="container">
                                 <span class="radio-label">2개</span>
-                                <input type="radio" name="tadd1" value="2개">
+                                <input onclick="pageFuc(1,$(this))" type="radio" name="tadd1" value="2개">
                                 <div class="radio-circle"></div>
                             </label>
                             <label class="container">
                                 <span class="radio-label">3개</span>
-                                <input type="radio" name="tadd1" value="3개">
+                                <input onclick="pageFuc(1,$(this))" type="radio" name="tadd1" value="3개">
                                 <div class="radio-circle"></div>
                             </label>
                             <label class="container">
                                 <span class="bage">최저가 혜택</span>
                                 <span class="radio-label">4개 이상</span>
-<<<<<<< HEAD
-                                <input type="radio" name="tadd1" value="4개 이상">
-                                <div class="radio-circle"></div>
-=======
                                 <input onclick="pageFuc(1,$(this))" type="radio" name="tadd1" value="4개 이상">
-                                <div class="radio-circle"></div> 
->>>>>>> 4a23378a5f3969817622c25fda87c6c931eca0c7
+                                <div class="radio-circle"></div>
                             </label>
                         </div>
                     </div>
-                    <div class="agBox">
+                    <!-- <div class="agBox">
                         개인정보 처리방침
                         <a href="#" class="btn-agreement">[자세히 보기]</a>
                         <input type="hidden" name="agBox" value="Y" checked>
-                    </div>
-					<div class="next img-area"  onclick="pageFuc(1,$(this))"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.png"></div>
+                    </div> -->
+					<!-- <div class="next img-area"  onclick="pageFuc(1,$(this))"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.png"></div> -->
                 </div>
             </section>
 
@@ -260,6 +255,9 @@ html, body {font-size: 10px;}
 								<input type="tel" id="phone" name="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="전화번호를 입력해 주세요">
 							</div>
 						</div>
+                        <div class="agBox">
+                            <label><input name="agBox" type="checkbox"><span>개인정보 수집 및 이용에 관한 내용을 확인하고 동의함</span></label> <a href="#" class="btn-agreement">[자세히 보기]</a>
+                        </div>
 						<div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"></div>
 						<div class="description bottom">
 							<p id="event-period">이벤트 기간 : <?=date("Y년 m월 01일")." ~ ".date("Y년 m월 t일 까지")?></p>
@@ -351,14 +349,14 @@ html, body {font-size: 10px;}
     // 버튼 페이지 이동 함수 (다음)
     function pageFuc(num, obj) {
         // 선택된 라디오 버튼 확인 (section03 페이지일 때)
-        if (num === 1) {
-            const isChecked = $('input[name="tadd1"]:checked').length > 0;
+        // if (num === 1) {
+        //     const isChecked = $('input[name="tadd1"]:checked').length > 0;
 
-            if (!isChecked) {
-                alert("설문을 선택해주세요");
-                return; // 선택되지 않았으면 페이지 이동 안함
-            }
-        }
+        //     if (!isChecked) {
+        //         alert("설문을 선택해주세요");
+        //         return; // 선택되지 않았으면 페이지 이동 안함
+        //     }
+        // }
 
         // 페이지 이동 처리
         $('.section0' + num).fadeOut(function() {
