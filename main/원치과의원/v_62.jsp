@@ -220,8 +220,13 @@ html, body {font-size: 10px;}
                             <label class="container">
                                 <span class="bage">최저가 혜택</span>
                                 <span class="radio-label">4개 이상</span>
+<<<<<<< HEAD
                                 <input type="radio" name="tadd1" value="4개 이상">
                                 <div class="radio-circle"></div>
+=======
+                                <input onclick="pageFuc(1,$(this))" type="radio" name="tadd1" value="4개 이상">
+                                <div class="radio-circle"></div> 
+>>>>>>> 4a23378a5f3969817622c25fda87c6c931eca0c7
                             </label>
                         </div>
                     </div>
