@@ -158,7 +158,7 @@ button img {display: block; width: 100%;}
     .form .description .ad_txt,
     .form .description span {font-size: 80%;}
 
-    .form .form_box .user-info input {border-radius: 12px;}
+    .form .form_box .user-info input {border-radius: 12px; font-size: 150%;}
     .form .form_box > div + div {margin-top: 2%;}
 
     .question,
