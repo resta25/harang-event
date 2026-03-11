@@ -108,7 +108,7 @@ html, body {font-size: 10px;}
 .form .description p,
 .form .description span {font-weight: normal; font-size: 1.3rem; padding: 0; margin: 0; color: #6e6e6e; letter-spacing: -0.65px;}
 
-.form .agBox {font-size: 1.2rem; width: 100%; margin: 0.5rem auto;}
+.form .agBox {font-size: 1.5rem; width: 100%; margin: 1.5rem auto;}
 
 /* 모달창 - 개인정보처리방침 */
 .overlay {z-index: 888; position: fixed; display: none; width: 100vw; height: 100vh; opacity: 0.5; background-color: #000;}
