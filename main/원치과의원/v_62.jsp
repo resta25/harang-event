@@ -87,7 +87,7 @@ html, body {font-size: 10px;}
 
 .form .next {width: 80%; margin: 0 auto;}
 .form .next img {width: 100%;}
-.form .submit {width: 100%;}
+.form .submit {width: 100%; padding: 0 0 7px;}
 .form .submit input[type="image"] {width: 100%;}
 
 /* 설문영역 */
@@ -108,8 +108,9 @@ html, body {font-size: 10px;}
 .form .description p,
 .form .description span {font-weight: normal; font-size: 1.3rem; padding: 0; margin: 0; color: #6e6e6e; letter-spacing: -0.65px;}
 
-.form .agBox {font-size: 1.5rem; width: 100%; margin: 1.5rem auto;}
-
+.form .agBox {font-size: 2rem; width: 100%; margin: 1.5rem auto;}
+.form input[type="checkbox"] + span, .form input[type="radio"] + span {padding: 0 4px 0 30px;}
+.form input[type="checkbox"] + span:before, .form input[type="radio"] + span:before {width: 18px; height: 18px;}
 /* 모달창 - 개인정보처리방침 */
 .overlay {z-index: 888; position: fixed; display: none; width: 100vw; height: 100vh; opacity: 0.5; background-color: #000;}
 .agreeModalBox {z-index: 999; display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 60px 30px 40px; width: 90%; max-width: 500px; box-sizing: border-box; border-radius: 10px; font-family: 'Noto Sans KR', sans-serif; background-color: #f5f6f7; box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;}
@@ -256,7 +257,7 @@ html, body {font-size: 10px;}
 							</div>
 						</div>
                         <div class="agBox">
-                            <label><input name="agBox" type="checkbox"><span>개인정보 수집 및 이용에 관한 내용을 확인하고 동의함</span></label> <a href="#" class="btn-agreement">[자세히 보기]</a>
+                            <label><input name="agBox" type="checkbox"><span>개인정보 수집 및 이용에 동의함</span></label> <a href="#" class="btn-agreement">[자세히 보기]</a>
                         </div>
 						<div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"></div>
 						<div class="description bottom">
@@ -386,7 +387,7 @@ html, body {font-size: 10px;}
 			return;
 		} else {
 			procForm.querySelector("input[name='add1']").value = selectedRadio1.value;
-		}
+		} 
 		
 		// let selectedRadio2 = procForm.querySelector('input[name="tadd2"]:checked');
 		// if (!selectedRadio2) {
