@@ -179,14 +179,13 @@ button img {display: block; width: 100%;}
         <ol>
             <li>개인정보 수집주체 : ${resVo.agent}</li>
             <li>개인정보 수집항목 : ${resVo.objectItems}</li>
-            <li>개인정보 수집 및 이용목적 : ${resVo.agent}에서 ${resVo.objectName} 상담활용(문자)</li>
+            <li>개인정보 수집 및 이용목적 : ${resVo.agent}에서 ${resVo.objectName} 상담활용(전화,문자)</li>
             <li>개인정보 보유 및 이용기간 : 수집일로부터 6개월 (고객 동의 철회시 지체없이 파기)</li>
         </ol><br/>
         <h3>개인정보 취급 위탁</h3>
         <ol>
-            <li>개인정보 취급 위탁을 받는자 : (주)리스타</li>
+            <li>개인정보 취급 위탁을 받는자 : (주)하랑고치</li>
             <li>개인정보 취급 위탁을 하는 업무의 내용 : 고객정보 저장 및 서버관리</li>
-            <br/>
             <li class="desc">*상기 동의를 거부할 권리가 있으나, 수집 및 이용에 동의하지 않을 경우 ${resVo.objectName} 상담 및 이벤트 참여가 불가능합니다.</li>
         </ol>
 	</div>	
