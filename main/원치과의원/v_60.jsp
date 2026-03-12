@@ -204,9 +204,11 @@ button img {display: block; width: 100%;}
 @media screen and (max-width: 500px){
     .timer-box {font-size: 110%;}
     .timer-box .time {margin-left: 5.5%;}
-
+    
     .page-inner {margin-top: 2.1875rem;}
-
+    
+    .chat_counsel {font-size: 110%;}
+    .chat_box {font-size: 110%;}
     .chat_set.right .chat_box {width: 4rem; padding: 0.75rem 0.5rem;}
 
     .form .description p,
@@ -221,9 +223,16 @@ button img {display: block; width: 100%;}
 
     .form {height: 92%;}
 
-    .input_box .label {font-size: 125%;}
+    .input_box .label {font-size: 120%; width: 20.5%;}
+    .form .inp {font-size: 125%;}
     .form .description .ad_txt {padding-top: 0;}
     .form .submit {margin-bottom: 2%;}
+
+    .form .formContents .description {margin-right: 0;}
+
+    .form .description p, .form .description .ad_txt, .form .description span {
+        font-size: 70%;
+    }
 
 }
 
