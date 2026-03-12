@@ -1,9 +1,60 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
 <style>
+@font-face {
+  font-family: 'SUIT';
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: url('https://cdn.jsdelivr.net/gh/fonts-archive/SUIT/SUIT-Light.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/fonts-archive/SUIT/SUIT-Light.woff') format('woff'),
+    url('https://cdn.jsdelivr.net/gh/fonts-archive/SUIT/SUIT-Light.otf') format('opentype'),
+    url('https://cdn.jsdelivr.net/gh/fonts-archive/SUIT/SUIT-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'SUIT';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('https://cdn.jsdelivr.net/gh/fonts-archive/SUIT/SUIT-Regular.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/fonts-archive/SUIT/SUIT-Regular.woff') format('woff'),
+    url('https://cdn.jsdelivr.net/gh/fonts-archive/SUIT/SUIT-Regular.otf') format('opentype'),
+    url('https://cdn.jsdelivr.net/gh/fonts-archive/SUIT/SUIT-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'SUIT';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url('https://cdn.jsdelivr.net/gh/fonts-archive/SUIT/SUIT-Medium.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/fonts-archive/SUIT/SUIT-Medium.woff') format('woff'),
+    url('https://cdn.jsdelivr.net/gh/fonts-archive/SUIT/SUIT-Medium.otf') format('opentype'),
+    url('https://cdn.jsdelivr.net/gh/fonts-archive/SUIT/SUIT-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'SUIT';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url('https://cdn.jsdelivr.net/gh/fonts-archive/SUIT/SUIT-SemiBold.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/fonts-archive/SUIT/SUIT-SemiBold.woff') format('woff'),
+    url('https://cdn.jsdelivr.net/gh/fonts-archive/SUIT/SUIT-SemiBold.otf') format('opentype'),
+    url('https://cdn.jsdelivr.net/gh/fonts-archive/SUIT/SUIT-SemiBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'SUIT';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('https://cdn.jsdelivr.net/gh/fonts-archive/SUIT/SUIT-Bold.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/fonts-archive/SUIT/SUIT-Bold.woff') format('woff'),
+    url('https://cdn.jsdelivr.net/gh/fonts-archive/SUIT/SUIT-Bold.otf') format('opentype'),
+    url('https://cdn.jsdelivr.net/gh/fonts-archive/SUIT/SUIT-Bold.ttf') format('truetype');
+}
 html, body {font-size: 10px;}
 .page_inner {padding: 4.3rem 3.6rem 0;}
-#wrap {max-width: 600px; font-family: 'Pretendard'; height: 100dvh; background: #0C152B ;}
+#wrap {max-width: 600px; font-family: 'Pretendard'; height: 100dvh; overflow: hidden; height: 100vh; /* fallback */ height: 100dvh; /* 최신 브라우저용 */
+padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); background: #0C152B ;}
 .form {background: transparent; height: 100%;}
 #form-1 {height: 100%;}
 #wrap .formContents {display: flex; flex-direction: column; height: 100%;}
@@ -36,15 +87,17 @@ html, body {font-size: 10px;}
 .form .submit input[type="image"] {width: 100%;}
 
 /* db 영역 */
-.form .page-inner {position: absolute; bottom: 10%; width: 80%; height: max-content; left: 50%; transform: translateX(-50%);}
-.form .page-inner > img {width: 100%;}
-.form .db-box {background: #fff; position: absolute; bottom: 3%; left: 50%; transform: translateX(-50%); width: 90%;}
-.form .db-box .question {font-size: 2.5rem; text-align: center; letter-spacing: -1.44px; line-height: 1.2;}
+.form .page-inner {padding: 5.335% 5.5% 0;}
+/* .form .page-inner {position: absolute; bottom: 10%; width: 80%; height: max-content; left: 50%; transform: translateX(-50%);} */
+/* .form .page-inner > img {width: 100%;} */
+/* .form .db-box {background: #fff; width: 100%;} */
+.form .db-box .question {margin-bottom: 3.9%; font-size: 2.5rem; text-align: center; letter-spacing: -1.44px; line-height: 1.2; color: #fff; font-family: 'SUIT'; font-weight: 300;}
+.form .db-box .question b {color: #8bf9fa; font-weight: 800;}
 .form .user-box {margin-top: 1rem;}
 .form .user-box .user-info {display: flex; align-items: center; justify-content: space-between;}
 .form .user-box .user-info:not(:last-child) {margin-bottom: 1rem;}
-.form .user-box .user-info .legend { width: 7.7rem;/* 라벨 고정 폭 */ text-align: justify; text-align-last: justify; display: inline-block; font-weight: 700; font-size: 2.2rem; flex-shrink: 0; }
-.form .user-box .user-info .legend img {width: 100%;}
+.form .user-box .user-info .legend {width: 17%;/* 라벨 고정 폭 */ text-align: justify; text-align-last: justify; display: inline-block; color: #fff; font-weight: 700; font-size: 265%; flex-shrink: 0; letter-spacing: -0.66px;}
+/* .form .user-box .user-info .legend img {width: 100%;} */
 .form .user-box .user-info input {background: #f3f3f3; border: 1px solid #cecece; font-size: 2.2rem; letter-spacing: -0.5px; font-weight: 500; padding: 1rem 2.4rem; font-family: 'Pretendard'; width: 80%; border-radius: 1rem;}
 .form .user-box .user-info input::placeholder {font-weight: 500; letter-spacing: -0.5px; text-align: justify;  color: rgba(0, 0, 0, 0.5);}
 
@@ -83,12 +136,12 @@ html, body {font-size: 10px;}
 
 @media screen and (max-width: 500px) { 
     html, body {font-size: 1.7vw;}
-    .form .page-inner {top: 20%; width: 90%;}
-    .form .db-box {width: 88%;}
+    /* .form .page-inner {top: 20%; width: 90%;} */
+    /* .form .db-box {width: 88%;} */
 }
 @media screen and (max-width: 395px) {
     /* .form .db-box {top: 13%;} */
-    .form .page-inner {top: 26%;}
+    /* .form .page-inner {top: 26%;} */
 }
 
 @media screen and (max-width: 375px) {
@@ -121,24 +174,6 @@ html, body {font-size: 10px;}
 <div id="wrap">
 	<div class="form">
 		<form id="form-1" method="POST" accept-charset="utf-8">
-        <div class="time-content">
-            <div class="timer-box">
-                <div class="date">
-                    <span id="year"></span>
-                    <span id="month"></span>
-                    <span id="day"></span>
-                    <span id="week-day"></span>
-                </div>
-                <div class="time">
-                    <span id="hour"></span>
-                    <span id="minute"></span>
-                </div>
-                <div class="text-box">
-                    <img src="//static.harang-event.com/event/v_${eventSeq}/loading.png">
-                    <span class="text">현재 접수 가능</span>
-                </div>
-            </div>
-        </div>
         <div class="formContents">
             <section class="page section01" id="page-1">
                 <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.jpg"></div>
@@ -154,11 +189,11 @@ html, body {font-size: 10px;}
             </section>
 
             <section class="page hide section02" id="page-2">
-                <img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.jpg">
+                <img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.jpg">
 				<div class="page-inner">
-                    <img src="//static.harang-event.com/event/v_${eventSeq}/event_main_03.png">
+                    <!-- <img src="//static.harang-event.com/event/v_${eventSeq}/event_main_03.png"> -->
 					<div class="db-box">
-                        <div class="question"> <b>성함과 연락처</b>를 남겨주시면<br/>연락 드리겠습니다. </div>
+                        <div class="question"> <b>성함과 연락처</b>를 남겨주시면 연락 드리겠습니다. </div>
 						<div class="user-box">
 							<div class="user-info">
 								<span class="legend">이 름</span>
@@ -173,7 +208,7 @@ html, body {font-size: 10px;}
 								<input type="tel" id="phone" name="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="전화번호를 입력해 주세요">
 							</div>
 						</div>
-						<div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_02.png"></div>
+						<div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"></div>
 						<div class="description bottom">
 							<p id="event-period">이벤트 기간 : <?=date("Y년 m월 01일")." ~ ".date("Y년 m월 t일 까지")?></p>
                             <div class="ad_txt">안심하세요! ${resVo.agent}에서는 고객님의 소중한 개인정보를 <br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
@@ -216,50 +251,6 @@ html, body {font-size: 10px;}
         initDate();/* 기간항목 start */
         blockSourceView();//드래그, 우클릭 방지
 	})
-
-    // 상단 타이머
-    $(function () {
-        function pad2(n) {
-            return (n < 10 ? '0' : '') + n;
-        }
-
-        function renderNow() {
-            var now = new Date();
-
-            var y = now.getFullYear();
-            var m = pad2(now.getMonth() + 1);
-            var d = pad2(now.getDate());
-
-            // 0=일,1=월,...6=토
-            var week = ['일', '월', '화', '수', '목', '금', '토'][now.getDay()];
-
-            var hh = pad2(now.getHours());
-            var mm = pad2(now.getMinutes());
-
-            $('#year').text(y + '.');
-            $('#month').text(m + '.');
-            $('#day').text(d + '(' + week + ')');
-            $('#week-day').text(''); // day에 요일까지 붙였으니 비워둠(원하면 아래 주석 참고)
-
-            $('#hour').text(hh + ':');
-            $('#minute').text(mm);
-        }
-
-        renderNow();
-
-        // 매 분 정각에 맞춰 갱신되게(드리프트 최소화)
-        var now = new Date();
-        var msToNextMinute = (60 - now.getSeconds()) * 1000 - now.getMilliseconds();
-
-        setTimeout(function () {
-            renderNow();
-            setInterval(renderNow, 60 * 1000);
-        }, msToNextMinute);
-
-        // 만약 week-day를 따로 쓰고 싶으면 renderNow에서 아래처럼 바꾸면 됨:
-        // $('#day').text(d);
-        // $('#week-day').text('(' + week + ')');
-    });
 
     // 버튼 페이지 이동 함수 (다음)
     function pageFuc(num, obj) {
