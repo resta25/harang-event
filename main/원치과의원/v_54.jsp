@@ -81,7 +81,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 .section02 > img {width: 100%;}
 
 .form {position: relative;}
-.form .next {width: 80%; margin: 0 auto;}
+/* .form .next {width: 80%; margin: 0 auto;} */
 .form .next img {width: 100%;}
 .form .submit {width: 100%; margin: 1rem auto 0;}
 .form .submit input[type="image"] {width: 100%;}
