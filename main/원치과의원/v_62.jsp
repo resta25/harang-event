@@ -143,6 +143,8 @@ html, body {font-size: 10px;}
     .radio-circle::before {width: 17px; height: 17px;}
 
     .form .user-box .user-info input {font-size: 240%; padding: 1.25rem 2rem;}
+    .form input[type="checkbox"] + span:before, .form input[type="radio"] + span:before {width: 15px; height: 15px;}
+    form input[type="checkbox"] + span, .form input[type="radio"] + span { padding: 0 4px 0 25px; }
 }
 @media screen and (max-width: 430px) {
 }
