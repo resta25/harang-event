@@ -136,7 +136,8 @@ button img {display: block; width: 100%;}
 
 /* 채팅 right */
 .chat_set.right {display: flex; justify-content: flex-end;}
-.chat_set.right .chat_box {width: 8rem; padding: 1rem 0.5rem; text-align: center; font-weight: 700; background-color: #6045f4; color: #fff;}
+.chat_set.right .chat_box {width: 8rem; padding: 1rem 0.5rem; text-align: center; font-weight: 700; background-color: #0f1417; color: #fff;}
+.chat_set.right label.active .chat_box {background-color: #6045f4;}
 .chat_set.right .chat_box span {font-size: 70%; font-weight: 400;}
 .chat_set.right .chat_box.agree_btn, .chat_set.right .chat_box.disagree_btn {display: block; cursor: pointer;}
 .chat_set.right .chat_box.disagree_btn { background-color: #404040; }
@@ -312,7 +313,7 @@ button img {display: block; width: 100%;}
 
                     <div class="chat_set right hide question_box" data-value="1">
                         <div class="q_select btn_box paging">
-                            <label onclick="show2pg()"><input type="hidden" name="agBox" value="Y"><div class="chat_box">네<span>(동의)</span></div></label>
+                            <label onclick="show2pg()"><input type="hidden" name="agBox" value="Y"><div class="chat_box">네 <span>(동의)</span></div></label>
                         </div>
                     </div>
                 </div>
@@ -517,8 +518,12 @@ button img {display: block; width: 100%;}
             showNextComment(2, 3, true);
             showNextComment(2, 3, false);
         }, 1000);
-        
     }
+
+    $('.q_select label').on('click', function() {
+        $(this).closest('.q_select').find('label').removeClass('active');
+        $(this).addClass('active');
+    });
 
     // 개인정보처리방침 클릭 시 오픈
     $('.agree_txt').on('click', function() {
