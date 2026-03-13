@@ -1,56 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
 <style>
-@font-face {
-    font-family: 'Pretendard';
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-    src: url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Regular.woff2') format('woff2'),
-         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Regular.woff') format('woff'),
-         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Regular.otf') format('opentype');
-}
-@font-face {
-    font-family: 'Pretendard';
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-    src: url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Medium.woff2') format('woff2'),
-         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Medium.woff') format('woff'),
-         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Medium.otf') format('opentype');
-}
-@font-face {
-    font-family: 'Pretendard';
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-    src: url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-SemiBold.woff2') format('woff2'),
-         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-SemiBold.woff') format('woff'),
-         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-SemiBold.otf') format('opentype');
-}
-@font-face {
-    font-family: 'Pretendard';
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-    src: url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Bold.woff2') format('woff2'),
-         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Bold.woff') format('woff'),
-         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Bold.otf') format('opentype');
-}
 html, body {font-size: 10px;}
-.page_inner {padding: 1.9rem 3.6rem;}
-#wrap {max-width: 600px; font-family: 'Pretendard'; height: 100dvh; background: url("//static.harang-event.com/event/v_${eventSeq}/bg_01.jpg") no-repeat center top; background-size: 100% 100%;}
+.page_inner {padding: 4.3rem 3.6rem 0;}
+#wrap {max-width: 600px; font-family: 'Pretendard'; height: 100dvh; background: #e8edff;}
 .form {background: transparent; height: 100%;}
 #form-1 {height: 100%;}
-#wrap .formContents {height: calc(100% - 10.1rem); display: flex; flex-direction: column;}
-.page { height: 100%; flex-grow: 1;}
+#wrap .formContents {display: flex; flex-direction: column; height: 100%;}
+.page { height: 100%; flex-grow: 1; position: relative;}
 .hide {display: none;}
 
 /* 상단 타이머 */
-.time-content {padding-top: 4.2rem;}
-.timer-box {color: #000; display: flex; justify-content: space-between; align-items: center; gap: 2rem; font-size: 2.4rem; border: 1px solid #fff; border-radius: 0.9rem; padding: 1rem 4rem; width: 80%; margin: 0 auto; letter-spacing: -1.23px; background: rgba(255, 255, 255, 0.75);}
+.time-content {}
+.timer-box {color: #1f1f1f; display: flex; justify-content: space-between; align-items: center; gap: 2rem; font-size: 2.4rem; border: 1px solid #fff; border-radius: 1.6rem; padding: 1rem 4rem; width: 80%; margin: 0 auto; letter-spacing: -1.23px; background: #f4f6ff; position: absolute; top: 3%; left: 50%; transform: translateX(-50%); z-index: 99;}
 .timer-box .text-box {width: 18rem;display: flex; align-items: center; gap: 1rem;}
-.timer-box .text-box .text {font-weight: 800; letter-spacing: -1.23px;}
+.timer-box .text-box .text {font-weight: 800; letter-spacing: -1.23px; color: #0f76f6;}
 .timer-box .text-box img{ display: inline-block; animation: spin 1.1s linear infinite; transform-origin: 50% 50%; width: 17%;}
 
 @keyframes spin{
@@ -58,57 +22,43 @@ html, body {font-size: 10px;}
   to   { transform: rotate(360deg); }
 }
 
-#page-1 .page_inner .img-area:not(.next) {width: 80.32%; margin: 0 auto;}
-#page-2 .page-inner {flex-grow: 1;}
+#page-1 .page_inner .img-area:not(.next) {width: 100%; margin: 0 auto;}
 
-/* 설문영역 */
-.question-box {background: #f4f4f4; font-size: 3.7rem; padding: 4.1rem 0 6.3rem; margin-top: 5.18%; border-radius: 2rem;}
-.question {display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2.4rem;}
-.question img {width: 7%;}
-.question .q-text {letter-spacing: -0.93px; font-weight: 600; padding: 0 1rem 2.4rem; border-bottom: 0.2rem solid #159bf8; font-family: 'Pretendard';}
-.question .q-text .underline {position: relative; z-index: 1; color: #0056ba; font-weight: 700;}
-.question .q-text .underline::after {content: ''; display: inline-block; width: 100%; height: 1.7rem; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); z-index: -1; background: #fffca1;}
-.q-select {display: flex; align-items: center; justify-content: space-between; padding: 6rem 6.65% 0;}
+/* .container-bottom {position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%;} */
 
+/* 개별 */
+.section02 > img {width: 100%;}
 
-@keyframes pop {
- 0% {
-  transform: scale(1);
- }
-
- 50% {
-  transform: scale(0.9);
- }
-
- 100% {
-  transform: scale(1);
- }
-}
-
+.form {position: relative;}
 .form .next {width: 80%; margin: 0 auto;}
 .form .next img {width: 100%;}
-.form .submit {width: 100%; margin: 1rem auto 0;}
+.form .submit {width: 100%; margin: 2rem auto 0; padding: 0;}
 .form .submit input[type="image"] {width: 100%;}
 
-/* 설문영역 */
-.form .page-inner {padding: 2.8rem 3.6rem 1rem;}
-.form .db-box {background: #fff; padding: 3.7rem 5.7rem 2.6rem; margin-top: 2.8rem; border-radius: 2rem;}
-.form .db-box .question {font-size: 3.7rem; text-align: center; }
-.form .db-box  .question .q-text {padding: 0; border-bottom: 0; line-height: 1.07;}
-.form .user-box {margin-top: 2rem;}
+/* db 영역 */
+.form .page-inner {padding: 2.4% 11.585% 0; background-color: #e8edff;}
+/* .form .page-inner {position: absolute; bottom: 10%; width: 80%; height: max-content; left: 50%; transform: translateX(-50%);} */
+/* .form .page-inner > img {width: 100%;} */
+/* .form .db-box {position: absolute; bottom: 3%; left: 50%; transform: translateX(-50%); width: 90%;} */
+.form .db-box .question {font-size: 2.5rem; text-align: center; letter-spacing: -1.44px; line-height: 1.2;}
+.form .user-box {margin-top: 1rem;}
 .form .user-box .user-info {display: flex; align-items: center; justify-content: space-between;}
-.form .user-box .user-info:not(:last-child) {margin-bottom: 2rem;}
-.form .user-box .user-info .legend {  width: 10.5rem;/* 라벨 고정 폭 */ text-align: justify; text-align-last: justify; display: inline-block; font-weight: 700; font-size: 3rem; flex-shrink: 0;}
-.form .user-box .user-info .legend img {width: 100%;}
-.form .user-box .user-info input {background: #f4f4f4; border: 2px solid #0066ff; font-size: 200%; letter-spacing: -0.5px; font-weight: 700; padding: 1rem 2.4rem; font-family: 'Pretendard'; width: 70%;}
-.form .user-box .user-info input::placeholder {font-weight: 700; letter-spacing: -0.5px; text-align: justify; color: #c9c9c9;}
+.form .user-box .user-info:not(:last-child) {margin-bottom: 1rem;}
+.form .user-box .user-info .legend {position: relative; padding-right: 12px; display: inline-block; font-weight: 400; font-size: 2rem; flex-shrink: 0; }
+.form .user-box .user-info .legend::after {content: ''; position: absolute; top: 3px; right: 1px; width: 5px; height: 5px; border-radius: 50%; background-color: #ec0001;}
+/* .form .user-box .user-info .legend img {width: 100%;} */
+.form .user-box .user-info input {background: #fff; border: 1px solid #fff; font-size: 2rem; letter-spacing: -0.5px; font-weight: 500; padding: 1rem 2.4rem; font-family: 'Pretendard'; width: 80%; border-radius: 1.5rem;}
+.form .user-box .user-info input:focus {border: 1px solid #5fb0f2;}
+.form .user-box .user-info input::placeholder {font-weight: 300; letter-spacing: -0.5px; color: #20191980}
+
 
 /* 안심문구, 대상, 이벤트기간 */
+.form .description {margin: 3% auto;}
 .form .description .ad_txt,
 .form .description p,
 .form .description span {font-weight: normal; font-size: 1.3rem; padding: 0; margin: 0; color: #6e6e6e; letter-spacing: -0.65px;}
 
-.form .agBox {color: #fff; font-size: 1.6rem; padding: 3rem 0 2rem; width: 100%;}
+.form .agBox {color: rgba(0, 0, 0, 0.9); font-size: 1.6rem; padding: 3rem 0 2rem; width: 100%;}
 
 /* 모달창 - 개인정보처리방침 */
 .overlay {z-index: 888; position: fixed; display: none; width: 100vw; height: 100vh; opacity: 0.5; background-color: #000;}
@@ -137,16 +87,17 @@ html, body {font-size: 10px;}
 
 @media screen and (max-width: 500px) { 
     html, body {font-size: 1.7vw;}
-
-    .radio-circle {width: 30px; height: 30px;}
-    .radio-circle::before {width: 17px; height: 17px;}
-
-    .form .user-box .user-info input {font-size: 240%; padding: 1.25rem 2rem;}
+    /* .form .page-inner {top: 20%; width: 90%;} */
+    /* .form .db-box {width: 88%;} */
 }
-@media screen and (max-width: 430px) {
-}
-
 @media screen and (max-width: 395px) {
+    /* .form .db-box {top: 13%;} */
+    /* .form .page-inner {top: 26%;} */
+}
+
+@media screen and (max-width: 375px) {
+    /* .form .page-inner { top: 23%; } */
+    /* .form .db-box {top: 13%;} */
 }
 
 </style>
@@ -194,37 +145,9 @@ html, body {font-size: 10px;}
         </div>
         <div class="formContents">
             <section class="page section01" id="page-1">
+                <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.jpg"></div>
                 <div class="page_inner">
-                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.png"></div>
-                    <div class="question-box">
-                        <div class="question">
-                            <img src="//static.harang-event.com/event/v_${eventSeq}/icon_01.png">
-                            <span class="q-text"><span class="underline">임플란트,</span> 몇 개 필요하신가요?</span>
-                        </div>
-                        <div class="q-select">
-                            <label class="container">
-                                <span class="radio-label">1개</span>
-                                <input type="radio" name="tadd1" value="1개">
-                                <div class="radio-circle"></div>
-                            </label>
-                            <label class="container">
-                                <span class="radio-label">2개</span>
-                                <input type="radio" name="tadd1" value="2개">
-                                <div class="radio-circle"></div>
-                            </label>
-                            <label class="container">
-                                <span class="radio-label">3개</span>
-                                <input type="radio" name="tadd1" value="3개">
-                                <div class="radio-circle"></div>
-                            </label>
-                            <label class="container">
-                                <span class="bage">최저가 혜택</span>
-                                <span class="radio-label">4개 이상</span>
-                                <input type="radio" name="tadd1" value="4개 이상">
-                                <div class="radio-circle"></div>
-                            </label>
-                        </div>
-                    </div>
+                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.png"></div>
                     <div class="agBox">
                         개인정보 처리방침
                         <a href="#" class="btn-agreement">[자세히 보기]</a>
@@ -235,19 +158,20 @@ html, body {font-size: 10px;}
             </section>
 
             <section class="page hide section02" id="page-2">
+                <img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.jpg">
 				<div class="page-inner">
-					<div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.png"></div>
+                    <div class="img-area">
+                        <img src="//static.harang-event.com/event/v_${eventSeq}/event_main_04.png">
+                    </div>
 					<div class="db-box">
-                        <div class="question">
-                            <span class="q-text"><span class="underline">성함과 연락처를</span> 남겨주시면<br/>연락 드리겠습니다.</span>
-                        </div>
+                        <!-- <div class="question"> <b>성함과 연락처</b>를 남겨주시면<br/>연락 드리겠습니다. </div> -->
 						<div class="user-box">
 							<div class="user-info">
-								<span class="legend">이 름</span>
+								<span class="legend">이름</span>
 								<input type="text" id="name" name="name" class="inp" required="" autocomplete="off" placeholder="성함을 입력해주세요 ">
 							</div>
 							<div class="user-info">
-								<span class="legend">나 이</span>
+								<span class="legend">나이</span>
 								<input type="tel" id="age" name="age" class="inp" required="" autocomplete="off" maxlength="2" placeholder="나이를 입력해주세요">
 							</div>
 							<div class="user-info">
@@ -346,14 +270,14 @@ html, body {font-size: 10px;}
     // 버튼 페이지 이동 함수 (다음)
     function pageFuc(num, obj) {
         // 선택된 라디오 버튼 확인 (section03 페이지일 때)
-        if (num === 1) {
-            const isChecked = $('input[name="tadd1"]:checked').length > 0;
+        // if (num === 1) {
+        //     const isChecked = $('input[name="tadd1"]:checked').length > 0;
 
-            if (!isChecked) {
-                alert("설문을 선택해주세요");
-                return; // 선택되지 않았으면 페이지 이동 안함
-            }
-        }
+        //     if (!isChecked) {
+        //         alert("설문을 선택해주세요");
+        //         return; // 선택되지 않았으면 페이지 이동 안함
+        //     }
+        // }
 
         // 페이지 이동 처리
         $('.section0' + num).fadeOut(function() {
@@ -377,13 +301,13 @@ html, body {font-size: 10px;}
 		/* form id로 proc */
 		let procForm = document.getElementById(formId);
 		
-		let selectedRadio1 = procForm.querySelector(`input[name="tadd1"]:checked`);
-		if (!selectedRadio1) {
-			alert("설문을 선택해주세요.");
-			return;
-		} else {
-			procForm.querySelector("input[name='add1']").value = selectedRadio1.value;
-		}
+		// let selectedRadio1 = procForm.querySelector(`input[name="tadd1"]:checked`);
+		// if (!selectedRadio1) {
+		// 	alert("설문을 선택해주세요.");
+		// 	return;
+		// } else {
+		// 	procForm.querySelector("input[name='add1']").value = selectedRadio1.value;
+		// }
 		
 		// let selectedRadio2 = procForm.querySelector('input[name="tadd2"]:checked');
 		// if (!selectedRadio2) {
@@ -406,7 +330,7 @@ html, body {font-size: 10px;}
 			'name': '이름'
 			,'age': '나이'
 			,'phone': '전화번호'
-			,'add1': '설문'
+			// ,'add1': '설문'
 			// ,'add2': '설문'
 			// ,'add3': '설문'
 			// ,'branch': '지점'
