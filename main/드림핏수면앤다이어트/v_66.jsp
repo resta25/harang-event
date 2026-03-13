@@ -39,7 +39,7 @@
          url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Bold.otf') format('opentype');
 }
 
-#wrap {font-family: "Pretendard", sans-serif; background: #fff; padding-bottom:  clamp(7rem, 11vw, 11.5rem);} 
+#wrap {font-family: "Pretendard", sans-serif; background: #fff; padding-bottom:  clamp(5rem, 11vw, 11.5rem);} 
 
 /* pc 버전 */
 /* .form .form_inner.is-pc {padding: 3rem 2rem 2rem; background: #fff; }
@@ -135,7 +135,10 @@
 
 /* 고정버튼 */
 .fixed {position: fixed; z-index: 9; bottom: 0%; cursor: pointer; width: 100vw;
-    max-width: 818px;}
+    max-width: 818px; text-align: center;}
+.fixed img {border-radius: 999px; -webkit-box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.35);
+box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.35);  width: 83.63%;
+    margin-bottom: 16px}
 
 @media screen and (max-width: 500px){
     /* .form_inner {padding: 0 0 4rem;} */
@@ -283,7 +286,7 @@
 		<div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.png"></div>
 		<div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>
     </div>
-    <div class="img-area fixed db_btn"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.png"></div>
+    <div class="img-area fixed db_btn"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.gif"></div>
 </div>
 <!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->
 <script>
