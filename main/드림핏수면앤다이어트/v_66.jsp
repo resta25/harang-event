@@ -308,9 +308,7 @@
         $('html, body').animate({
             scrollTop: formOffset
         }, 500); // 500ms 동안 스크롤 이동
-
-        fnForm('form-1');
-    })
+    });
 
 	function fnForm(formId){
         /* form 자동 처리 방지 */
