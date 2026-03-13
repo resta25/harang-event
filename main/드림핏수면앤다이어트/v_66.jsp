@@ -101,7 +101,7 @@
 
 /* 이벤트기간, 안심문구, 대상 영역 */
 .form .description {padding-top: 3%; width: 100%;}
-.form .description p {font-size: 1.3rem; padding: 0; font-weight: normal;}
+.form .description p {font-size: 0.95rem; padding: 0; font-weight: normal;}
 .form .description span {font-size: 0.95rem; padding: 0;}
 .form .description .ad_txt {font-size: 0.95rem; padding: 0;}
 
@@ -151,7 +151,7 @@
     .formGroup .user_info input {padding: 0.8rem 0 0.8rem 0.8rem;}
 
     .form .agBox {font-size: 0.7rem;}
-    .form .description p {font-size: 0.9rem;}
+    .form .description p {font-size: 0.7rem;}
     .form .description .ad_txt,
     .form .description span {font-size: 0.6rem;}
 
@@ -166,7 +166,7 @@
 }
 
 @media screen and (max-width: 395px){
-    .form .description p {font-size: 0.7rem;}
+    .form .description p {font-size: 0.5rem;}
     .form .description .ad_txt, .form .description span {font-size: 0.5rem;}
 
     .form .agBox {font-size: 0.6rem;}
