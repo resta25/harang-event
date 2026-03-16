@@ -67,7 +67,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 .question-box .q-text {z-index: 0; position: relative; display: block; font-size: 247%; font-weight: 600;  letter-spacing: -0.98px; line-height: 1.2; text-align: center; color: #000;}
 .question-box .q-text .underline {position: relative; font-weight: 800; color: #085771;}
 /* .question-box .q-text .underline::before {content: ''; z-index: -1; position: absolute; top: 50%; transform: translateY(-50%); width: 100%; height: 100%; opacity: 0.2; border-radius: 8px; background-color: #f3ea82;} */
-.question-box .q_select {display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: 5.145%; width: 100%;}
+.question-box .q_select {display: flex; align-items: center; justify-content: center; gap: 1rem; padding-top: 5.145%; width: 100%;}
 .question-box .q_select label {width: calc((100% / 3 ) - 0.5rem);}
 .question-box .q_select label img {display: block; width: 100%; height: 100%;}
 
@@ -180,7 +180,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                         </div>
                         <div class="q_select">
                             <label><input type="radio" name="tadd1" value="예"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_01.png"></label>
-                            <label><input type="radio" name="tadd1" value="아니오"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_02.png"></label>
+                            <!-- <label><input type="radio" name="tadd1" value="아니오"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_02.png"></label> -->
                             <label><input type="radio" name="tadd1" value="상담 필요"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_03.png"></label>
                         </div>
                     </div>
