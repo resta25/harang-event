@@ -358,6 +358,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 
     // 버튼 페이지 이동 함수 (다음)
     function pageFuc(num, obj) {
+        console.log(num)
         // 선택된 라디오 버튼 확인 (section03 페이지일 때)
         
         if (num === 1) {
@@ -369,6 +370,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                 $('input[name="name"]').focus();
                 return; // 선택되지 않았으면 페이지 이동 안함
             }
+
         }
 
         var nextPage = num + 1;
@@ -380,8 +382,13 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
             // playAudio(nextPage);
         });
 
+        if(num === 1 || num === 2 || num === 3){
+            $('.container').css({'background-color': '#fff1f5'});
+        }
+
         if(num === 4) {
             $('#wrap').css({'overflowY': 'auto'});
+            $('.container').css({'background-color': '#ffc1d1'});
         }
     }
 
