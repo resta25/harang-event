@@ -125,7 +125,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
     #page-4 .name-box, #page-4 .add-box {font-size: 145%;}
     #page-4 .confirm-txt {font-size: 145%;}
     #page-5 .page_inner {padding-top: 7.32%;}
-    #page-5 .page_inner .name-result {font-size: 195%;}
+    #page-5 .page_inner .name-result {font-size: 175%;}
     #page-5 .result-area .name-result {font-size: 105%;}
     #page-5 .page_inner .question {margin-top: 4.363%; font-size: 155%;}
     .page_inner input[name="phone"] {font-size: 120%;}
