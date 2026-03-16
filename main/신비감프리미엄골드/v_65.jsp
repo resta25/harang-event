@@ -176,6 +176,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                         <div class="swiper-wrapper">
                             <div class="swiper-slide"><img src="//static.harang-event.com/event/v_${eventSeq}/slide_01.png"></div>
                             <div class="swiper-slide"><img src="//static.harang-event.com/event/v_${eventSeq}/slide_02.png"></div>
+                            <div class="swiper-slide"><img src="//static.harang-event.com/event/v_${eventSeq}/slide_03.png"></div>
                         </div>
                     </div>
                 </div>
@@ -320,11 +321,11 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
     // 상단 슬라이드
     var swiper = new Swiper(".mySwiper", {
         spaceBetween: 30,
-        centeredSlides: true,
-        // autoplay: {
-        //     delay: 2500,
-        //     disableOnInteraction: false,
-        // },
+        // centeredSlides: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
         loop:true,
     });
 
@@ -358,7 +359,6 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 
     // 버튼 페이지 이동 함수 (다음)
     function pageFuc(num, obj) {
-        console.log(num)
         // 선택된 라디오 버튼 확인 (section03 페이지일 때)
         
         if (num === 1) {
@@ -444,7 +444,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
     });
 
     //설문 on/off
-    $('input[name*="tadd"]').on('click', function(){
+    $('input[name*="tadd"], #page-4 .q_select input').on('click', function(){
         $('label', $(this).parents('.q_select')).each(function(i,t) {
             $('label').removeClass('active');
             // $('img', t).attr('src', $('img', t).attr('src').replace('_on', '_off'));
