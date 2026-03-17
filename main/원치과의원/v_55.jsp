@@ -38,17 +38,18 @@ pageEncoding="UTF-8"%>
          url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Bold.otf') format('opentype');
 }
 html, body {font-size: 10px;}
-.page_inner {padding: 1.9rem 3.6rem;}
-#wrap {max-width: 600px; font-family: 'Pretendard'; height: 100dvh; background: url("//static.harang-event.com/event/v_${eventSeq}/bg_01.jpg") no-repeat center top; background-size: 100% 100%;}
+.page_inner {padding: 3.3rem 3.6rem;}
+#wrap {max-width: 600px; font-family: 'Pretendard'; height: 100dvh; overflow: hidden; height: 100vh; /* fallback */ height: 100dvh; /* 최신 브라우저용 */
+padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); background: url("//static.harang-event.com/event/v_${eventSeq}/bg_01.jpg") no-repeat center top; background-size: 100% 100%;}
 .form {background: transparent; height: 100%;}
 #form-1 {height: 100%;}
-#wrap .formContents {height: calc(100% - 10.1rem); display: flex; flex-direction: column;}
+#wrap .formContents {height: calc(100% - 9.7rem); display: flex; flex-direction: column;}
 .page { height: 100%; flex-grow: 1;}
 .hide {display: none;}
 
 /* 상단 타이머 */
-.time-content {padding-top: 4.2rem;}
-.timer-box {color: #000; display: flex; justify-content: space-between; align-items: center; gap: 2rem; font-size: 2.4rem; border: 1px solid #fff; border-radius: 0.9rem; padding: 1rem 4rem; width: 80%; margin: 0 auto; letter-spacing: -1.23px; background: rgba(255, 255, 255, 0.75);}
+.time-content {padding-top: 3.7rem;}
+.timer-box {color: #000; display: flex; justify-content: space-between; align-items: center; gap: 2rem; font-size: 2.4rem; border: 1px solid #d7dfda; border-radius: 0.9rem; padding: 1rem 4rem; width: 80%; margin: 0 auto; letter-spacing: -1.23px; background: #d7dfda;}
 .timer-box .text-box {width: 18rem;display: flex; align-items: center; gap: 1rem;}
 .timer-box .text-box .text {font-weight: 800; letter-spacing: -1.23px;}
 .timer-box .text-box img{ display: inline-block; animation: spin 1.1s linear infinite; transform-origin: 50% 50%; width: 17%;}
@@ -62,12 +63,12 @@ html, body {font-size: 10px;}
 #page-2 .page-inner {flex-grow: 1;}
 
 /* 설문영역 */
-.question-box {background: #f4f4f4; font-size: 3.7rem; padding: 4.1rem 0 6.3rem; margin-top: 5.18%; border-radius: 2rem;}
+.question-box {background: #fff; border: 1px solid #565b59; font-size: 3.7rem; padding: 4.1rem 0 6.3rem; margin-top: 5.18%; border-radius: 2rem;}
 .question {display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2.4rem;}
 .question img {width: 7%;}
-.question .q-text {letter-spacing: -0.93px; font-weight: 600; padding: 0 1rem 2.4rem; border-bottom: 0.2rem solid #159bf8; font-family: 'Pretendard';}
-.question .q-text .underline {position: relative; z-index: 1; color: #0056ba; font-weight: 700;}
-.question .q-text .underline::after {content: ''; display: inline-block; width: 100%; height: 1.7rem; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); z-index: -1; background: #fffca1;}
+.question .q-text {letter-spacing: -0.93px; font-weight: 600; padding: 0 1rem 2.4rem; border-bottom: 0.2rem solid #3cac66; font-family: 'Pretendard';}
+.question .q-text .underline {position: relative; z-index: 1; color: #3cac66; font-weight: 700;}
+/* .question .q-text .underline::after {content: ''; display: inline-block; width: 100%; height: 1.7rem; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); z-index: -1; background: #fffca1;} */
 .q-select {display: flex; align-items: center; justify-content: space-between; padding: 6rem 6.65% 0;}
 
 
@@ -92,7 +93,7 @@ html, body {font-size: 10px;}
 
 /* 설문영역 */
 .form .page-inner {padding: 2.8rem 3.6rem 1rem;}
-.form .db-box {background: #fff; padding: 3.7rem 5.7rem 2.6rem; margin-top: 2.8rem; border-radius: 2rem;}
+.form .db-box {background: #fff; padding: 3.7rem 5.7rem 2.6rem; margin-top: 2.8rem; border-radius: 2rem; border: 1px solid #565b59;}
 .form .db-box .question {font-size: 3.7rem; text-align: center; }
 .form .db-box  .question .q-text {padding: 0; border-bottom: 0; line-height: 1.07;}
 .form .user-box {margin-top: 2rem;}
@@ -100,7 +101,7 @@ html, body {font-size: 10px;}
 .form .user-box .user-info:not(:last-child) {margin-bottom: 2rem;}
 .form .user-box .user-info .legend {  width: 10.5rem;/* 라벨 고정 폭 */ text-align: justify; text-align-last: justify; display: inline-block; font-weight: 700; font-size: 3rem; flex-shrink: 0;}
 .form .user-box .user-info .legend img {width: 100%;}
-.form .user-box .user-info input {background: #f4f4f4; border: 2px solid #0066ff; font-size: 200%; letter-spacing: -0.5px; font-weight: 700; padding: 1rem 2.4rem; font-family: 'Pretendard'; width: 70%;}
+.form .user-box .user-info input {background: #f4f4f4; border: 2px solid #3cac66; border-radius: 8px; font-size: 200%; letter-spacing: -0.5px; font-weight: 700; padding: 1rem 2.4rem; font-family: 'Pretendard'; width: 70%;}
 .form .user-box .user-info input::placeholder {font-weight: 700; letter-spacing: -0.5px; text-align: justify; color: #c9c9c9;}
 
 /* 안심문구, 대상, 이벤트기간 */
@@ -108,7 +109,7 @@ html, body {font-size: 10px;}
 .form .description p,
 .form .description span {font-weight: normal; font-size: 1.3rem; padding: 0; margin: 0; color: #6e6e6e; letter-spacing: -0.65px;}
 
-.form .agBox {color: #fff; font-size: 1.6rem; padding: 3rem 0 2rem; width: 100%;}
+.form .agBox {color: #565b59; font-size: 1.6rem; padding: 3rem 0 2rem; width: 100%; font-family: 'Pretendard';}
 
 /* 모달창 - 개인정보처리방침 */
 .overlay {z-index: 888; position: fixed; display: none; width: 100vw; height: 100vh; opacity: 0.5; background-color: #000;}
@@ -126,10 +127,10 @@ html, body {font-size: 10px;}
 .container input[type="radio"] {display: none;}
 .radio-circle {width: 38px; height: 38px; border-radius: 50%; border: 2px solid #aaa; position: relative;}
 .radio-circle::before {content: ""; display: block; width: 25px; height: 25px; border-radius: 50%; background-color: #ddd; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); transition: all 0.2s ease-in-out;}
-.container input[type="radio"]:checked + .radio-circle {border-color: #1074fe;}
+.container input[type="radio"]:checked + .radio-circle {border-color: #3cac66;}
 .container input[type="radio"]:checked + .radio-circle::before {transform: translate(-50%, -50%) scale(1);}
-.container input[type="radio"]:checked + .radio-circle::before {background-color: #1074fe;}
-.bage {font-size: 1.5rem; background: #1074fe; color: #fff609; text-align: center; padding: 0.2rem 0.8rem; border-radius: 0.4rem; font-weight: 700; position: absolute; top: -40%; left: 50%; transform: translateX(-50%); width: max-content;}
+.container input[type="radio"]:checked + .radio-circle::before {background-color: #3cac66;}
+.bage {font-size: 1.5rem; background: #3cac66; color: #f6ff62; text-align: center; padding: 0.2rem 0.8rem; border-radius: 0.4rem; font-weight: 700; position: absolute; top: -40%; left: 50%; transform: translateX(-50%); width: max-content;}
 .radio-label {font-size: 79%; font-weight: 700; font-family: 'Pretendard'; line-height: 1;}
 .container:hover .radio-circle {border-color: #555;}
 .container:hover input[type="radio"]:checked + .radio-circle::before {background-color: #555;}
@@ -187,7 +188,7 @@ html, body {font-size: 10px;}
                     <span id="minute"></span>
                 </div>
                 <div class="text-box">
-                    <img src="//static.harang-event.com/event/v_${eventSeq}/loading.png">
+                    <img src="//static.harang-event.com/event/v_${eventSeq}/loading_01.png">
                     <span class="text">현재 접수 가능</span>
                 </div>
             </div>
@@ -239,7 +240,7 @@ html, body {font-size: 10px;}
 					<div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.png"></div>
 					<div class="db-box">
                         <div class="question">
-                            <span class="q-text"><span class="underline">성함과 연락처를</span> 남겨주시면<br/>연락 드리겠습니다.</span>
+                            <span class="q-text"><span class="underline">성함과 연락처</span>를 남겨주시면<br/>연락 드리겠습니다.</span>
                         </div>
 						<div class="user-box">
 							<div class="user-info">
@@ -264,7 +265,7 @@ html, body {font-size: 10px;}
 					</div>
 				</div>
                 <div class="container-bottom">
-                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.jpg"></div>
+                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.png"></div>
                     <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	
                 </div>
             </section>
