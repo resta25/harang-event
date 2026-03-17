@@ -59,7 +59,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
   to   { transform: rotate(360deg); }
 }
 
-#page-1 .page_inner .img-area:not(.next) {width: 80.32%; margin: 0 auto;}
+/* #page-1 .page_inner .img-area:not(.next) {width: 80.32%; margin: 0 auto;} */
 #page-2 .page-inner {flex-grow: 1;}
 
 /* 설문영역 */
