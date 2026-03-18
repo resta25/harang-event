@@ -1,10 +1,47 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
 <style>
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Regular.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Regular.woff') format('woff'),
+         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Medium.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Medium.woff') format('woff'),
+         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Medium.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-SemiBold.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-SemiBold.woff') format('woff'),
+         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-SemiBold.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Bold.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Bold.woff') format('woff'),
+         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Bold.otf') format('opentype');
+}
 html, body {font-size: 10px;}
-#wrap {max-width: 600px; font-family: 'Pretendard'; height: 99.99dvh; background: url("//static.harang-event.com/event/v_${eventSeq}/bg_01.jpg") no-repeat center top;
-background-size: 100% 100%;}
-.form {background: transparent; height: 100%;}
+#wrap {max-width: 600px; display: flex; flex-direction: column; font-family: 'Pretendard'; height: 99.99dvh; background: url("//static.harang-event.com/event/v_${eventSeq}/bg_01.jpg") no-repeat center top;
+background-size: 100% 100%; overflow: hidden; height: 100vh; /* fallback */ height: 100dvh; /* 최신 브라우저용 */
+padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);}
+.form {background: transparent; flex-grow: 1;}
 #form-1 {height: 100%;}
 #wrap .formContents {height: 100%;}
 .page { height: 100%; flex-grow: 1; position: relative; box-sizing: border-box;}
@@ -14,19 +51,34 @@ background-size: 100% 100%;}
 .form .name-result {display: block; letter-spacing: -2.48px; text-align: center; color: #fffe3d; font-size: 4.5rem; margin-bottom: 2rem; font-weight: 800;}
 
 /* 개별 */
-#page-2 {padding: 4rem; padding-bottom: 0;}
+#page-2 {padding: 4rem; padding-bottom: 0; flex-grow: 1;}
+#page-2 .img-area:nth-child(2) {width: 73.077%; margin: 8% auto 5%;}
 #page-1 .page_inner .img-area:not(.next) {width: 100%; margin: 0 auto;}
 #page-3 {display: flex; flex-direction: column; height: 99.9%;}
 #page-3 .page_inner {flex-grow: 1;}
 
 
 /* 첫번째 페이지 */
-.page-inner-bg {position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; box-sizing: border-box;}
+#page-1 {padding-top: 3.167%;}
+#page-1 .img-area:nth-child(1) {width: 91.667%; margin: 0 auto;}
+#page-1 .img-area:nth-child(2) {width: 38.335%; margin: 0 auto 2.667%;}
+.video-area {width: 59%;
+    padding: 2% 2%;
+    margin: 0 auto;
+    border-radius: 9px;
+    box-shadow: 7.2px 6.9px 8px 0 rgba(0, 0, 0, 0.5);
+    border: solid 1px #a6a6a6;
+    background-color: #222021}
+.video-area video {display: block; width: 100%; height: 100%;}
+
+#page-1 .next.img-area {width: 69.835%; margin-top: 2%;}
+
+.page-inner-bg {width: 100%; box-sizing: border-box;}
 .page-inner-bg .top-img {margin-bottom: 2rem;}
-#page-1 .page_inner {background: #8ee6ff; border-radius: 3.5rem 3.5rem 0 0; padding: 2.8rem 4.5rem 4.2rem; }
+/* #page-1 .page_inner {background: #8ee6ff; border-radius: 3.5rem 3.5rem 0 0; padding: 2.8rem 4.5rem 4.2rem; } */
 .page_inner .bar {width: 12rem; height: 0.7rem ; border-radius: 5rem; background: #19c6f7; display: block; margin: 0 auto 3rem;}
 .page_inner .question {line-height: 1.29; letter-spacing: -0.98px; text-align: center; color: #363942; font-size: 2.4rem; font-weight: 800; margin-bottom: 1rem;}
-.page_inner input[name="name"] {background: #fff;  border: solid 2px #36c5ed; border-radius: 1.5rem; font-size: 3rem;  line-height: 1.29; letter-spacing: -1.4px; padding: 1.4rem 0; width: 100%; text-align: center; margin-bottom: 2rem;}
+
 
 /* 설문영역 */
 .q_select {display: flex; flex-flow: row wrap; gap: 1.5rem; margin-top: 4rem;}
@@ -34,9 +86,20 @@ background-size: 100% 100%;}
 .q_select label img {width: 100%;}
 
 /* 마지막 페이지 */
-#page-3 {display: none;}
-#page-3 .page_inner {padding: 4rem; padding-bottom: 0;}
-.page input[name="phone"] {    background: #fff; text-align: center; font-size: 3rem; border-radius: 1.5rem; border: solid 2px #36c5ed; padding: 1.3rem 0; height: auto; margin-top: 4rem;}
+/* #page-3 {display: none;}
+#page-3 .page_inner {padding: 4rem; padding-bottom: 0;} */
+
+#page-2 .info-top {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+#page-2 .info-bottom {
+    margin-top: 8px;
+}
+.page_inner input[name="name"] {background: #fff; border-radius: 1.5rem; font-size: 3rem;  line-height: 1.29; letter-spacing: -1.4px; padding: 1.4rem 0; width: 100%; text-align: center;}
+.page input[name="phone"] {background: #fff; text-align: center; font-size: 3rem; border-radius: 1.5rem; padding: 1.3rem 0; height: auto;}
+.page input[name="age"] {background: #fff; text-align: center; font-size: 3rem; border-radius: 1.5rem; padding: 1.3rem 0; height: auto;}
 
 .form {position: relative;}
 .form .next {width: 100%; margin: 0 auto;}
@@ -47,9 +110,9 @@ background-size: 100% 100%;}
 /* 안심문구, 대상, 이벤트기간 */
 .form .description .ad_txt,
 .form .description p,
-.form .description span {font-weight: normal; font-size: 1.3rem; padding: 0; margin: 0; color: #006885; letter-spacing: -0.65px;}
+.form .description span {font-weight: normal; font-size: 1.3rem; padding: 0; margin: 0; color: #fff; letter-spacing: -0.65px;}
 
-.form .agBox { font-size: 1.2rem; padding: 2rem 0 0; width: 100%; margin: 0 auto;}
+.form .agBox { font-size: 1.2rem; padding: 2rem 0 0; width: 100%; margin: 0 auto; color: #fff;}
 
 /* 모달창 - 개인정보처리방침 */
 .overlay {z-index: 888; position: fixed; display: none; width: 100vw; height: 100vh; opacity: 0.5; background-color: #000;}
@@ -102,31 +165,28 @@ background-size: 100% 100%;}
 </div>
 <div id="wrap">
 	<div class="form">
-        <audio id="location" playsinline="" src="//static.harang-event.com/event/v_${eventSeq}/audio_01.mp3" type="audio/mp3"></audio>
+        <audio id="location01" src="//static.harang-event.com/event/v_${eventSeq}/video_01.mp4" type="audio/mp4"></audio>
 		<form id="form-1" method="POST" accept-charset="utf-8">
         <div class="formContents">
             <section class="page section01" id="page-1">
                 <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.png"></div>
                 <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.png"></div>
+                <div class="img-area video-area">
+                    <video id="location02" preload muted src="//static.harang-event.com/event/v_${eventSeq}/video_01.mp4" type="video/mp4"></video>
+                </div>
                 <div class="page-inner-bg">
-                    <div class="img-area top-img"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_01.png"></div>
-                    <div class="page_inner">
-                        <span class="bar"></span>
-                        <div class="question">▼ 혜택 받으실 분 ▼</div>
-                        <input type="text" id="name" name="name" class="inp" required="" autocomplete="off" placeholder="성함을 입력해주세요 ">
-                        <div class="next img-area"  onclick="pageFuc(1,$(this))"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.png"></div>
-                        <div class="agBox">
-                            개인정보 처리방침
-                            <a href="#" class="btn-agreement">[자세히 보기]</a>
-                            <input type="hidden" name="agBox" value="Y" checked>
-                        </div>
+                    <div class="agBox">
+                        개인정보 처리방침 
+                        <a href="#" class="btn-agreement">동의 후 혜택받으세요</a>
+                        <input type="hidden" name="agBox" value="Y" checked>
                     </div>
+                    <div class="next img-area" onclick="pageFuc(1,$(this))"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.png"></div>
                 </div>
             </section>
 
             <section class="page hide section02" id="page-2">
-                <span class="name-result"></span>
-                <div class="question_box">
+                <!-- <span class="name-result"></span> -->
+                <!-- <div class="question_box">
                     <div class="img-area question-img"><img src="//static.harang-event.com/event/v_${eventSeq}/q_03.png"></div>
                     <div class="q_select">
                         <label><input type="radio" name="tadd1" onclick="pageFuc(2,$(this))" value="1-3개"><img src="//static.harang-event.com/event/v_${eventSeq}/event_select_off_01.png"></label>
@@ -134,14 +194,32 @@ background-size: 100% 100%;}
                         <label><input type="radio" name="tadd1" onclick="pageFuc(2,$(this))" value="6개 이상"><img src="//static.harang-event.com/event/v_${eventSeq}/event_select_off_03.png"></label>
                         <label><input type="radio" name="tadd1" onclick="pageFuc(2,$(this))" value="상담 필요"><img src="//static.harang-event.com/event/v_${eventSeq}/event_select_off_04.png"></label>
                     </div>
+                </div> -->
+				<div class="page_inner">
+                    <!-- <span class="name-result"></span> -->
+                    <div class="img-area question-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_04.png"></div>
+                    <div class="img-area question-img"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_01.png"></div>
+                    <div class="info-top">
+                        <input type="text" id="name" name="name" class="inp" required="" autocomplete="off" placeholder="이름">
+                        <input type="tel" name="age" id="age" class="inp" required="" autocomplete="off" maxlength="2" placeholder="나이">
+                    </div>
+                    <div class="info-bottom">
+                        <input type="tel" id="phone" name="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="전화번호">
+                    </div>
+                    <div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"></div>
+                    <div class="description bottom">
+                        <p id="event-period">이벤트 기간 : <?=date("Y년 m월 01일")." ~ ".date("Y년 m월 t일 까지")?></p>
+                        <div class="ad_txt">안심하세요! ${resVo.agent}에서는 고객님의 소중한 개인정보를 <br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
+                        <span>대상 :  ${resVo.target}</span>
+                    </div>
                 </div>
-				
             </section>
 
-            <search class="page hide section03" id="page-3">
+            <!-- <search class="page hide section03" id="page-3">
                 <div class="page_inner">
                     <span class="name-result"></span>
                     <div class="img-area question-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_04.png"></div>
+                    <input type="text" id="name" name="name" class="inp" required="" autocomplete="off" placeholder="성함을 입력해주세요 ">
                     <input type="tel" id="phone" name="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="전화번호를 입력해 주세요">
                     <div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"></div>
                     <div class="description bottom">
@@ -150,11 +228,7 @@ background-size: 100% 100%;}
                         <span>대상 :  ${resVo.target}</span>
                     </div>
                 </div>
-                <div class="container-bottom">
-                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.png"></div>
-                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	
-                </div>
-            </search>
+            </search> -->
             
         </div>
             <input type="hidden" id="branch" 		name="branch" value="${resVo.branch}"/>
@@ -177,6 +251,11 @@ background-size: 100% 100%;}
             <input type="hidden" id="objectName" 	name="objectName" 	value="${resVo.objectName}"/>
 		</form>
 	</div>
+
+    <div class="container-bottom">
+        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.jpg"></div>
+        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	
+    </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->
@@ -194,40 +273,58 @@ background-size: 100% 100%;}
     });
 
     // 비디오 소리 켜기
-$('#wrap').on('click', function(e){
+let step = 0;
+let isVideoEnded = false;
 
-    // ✅ .next(또는 그 자식 img 등)를 눌렀으면 wrap 로직 실행 금지
+    const video = document.getElementById('location02');
+    const audio = document.getElementById('location01');
+
+    $('#wrap').on('click', function(e){
+
     if ($(e.target).closest('.next').length) return;
 
-    if ($('.section01').is(':visible')) {
-        playAudio(1);
+    // 👉 1️⃣ 첫 클릭 → video 재생
+    if($('.section01').is(':visible')){
+        if (step === 0) {
+            video.muted = false;
+    
+            video.play().then(() => {
+                step = 1;
+            });
+    
+            return;
+        }
+        
     }
-});
+    // 👉 2️⃣ video 끝난 후에만 audio 재생
+    if (step === 1 && isVideoEnded) {
+            audio.currentTime = 0;
+            video.pause();
+            audio.play();
 
-    $(document).on('click', '.next', function(e){
-        e.stopPropagation();   // ✅ wrap으로 이벤트 전달 차단
+            step = 2;
+        }
     });
 
-    const $audio = $('#location');
-    function playAudio(pageNum) {
-        $audio.attr('src', '//static.harang-event.com/event/v_' + '${eventSeq}' + '/audio_0' + pageNum + '.mp3');
-        $audio.trigger('play');
-    }
-    
+
+    video.addEventListener('ended', () => {
+        isVideoEnded = true;
+    });
+        
 
     // 버튼 페이지 이동 함수 (다음)
     function pageFuc(num, obj) {
         // 선택된 라디오 버튼 확인 (section03 페이지일 때)
         
-        if (num === 1) {
-            let inputValue = $('input[name="name"]').val();
-            const isChecked = inputValue.length > 1;
+        // if (num === 1) {
+        //     let inputValue = $('input[name="name"]').val();
+        //     const isChecked = inputValue.length > 1;
 
-            if (!isChecked) {
-                alert("정확한 이름을 입력해주세요.");
-                return; // 선택되지 않았으면 페이지 이동 안함
-            }
-        }
+        //     if (!isChecked) {
+        //         alert("정확한 이름을 입력해주세요.");
+        //         return; // 선택되지 않았으면 페이지 이동 안함
+        //     }
+        // }
 
         var nextPage = num + 1;
         // 페이지 이동 처리
@@ -235,7 +332,7 @@ $('#wrap').on('click', function(e){
             $('.section0' + (num + 1)).css({ 'display': 'flex', 'flex-direction': 'column' });
             $(document).scrollTop(0);
 
-            playAudio(nextPage);
+            // playAudio(nextPage);
         });
     }
 
@@ -268,13 +365,13 @@ $('#wrap').on('click', function(e){
 		/* form id로 proc */
 		let procForm = document.getElementById(formId);
 		
-		let selectedRadio1 = procForm.querySelector(`input[name="tadd1"]:checked`);
-		if (!selectedRadio1) {
-			alert("설문을 선택해주세요.");
-			return;
-		} else {
-			procForm.querySelector("input[name='add1']").value = selectedRadio1.value;
-		}
+		// let selectedRadio1 = procForm.querySelector(`input[name="tadd1"]:checked`);
+		// if (!selectedRadio1) {
+		// 	alert("설문을 선택해주세요.");
+		// 	return;
+		// } else {
+		// 	procForm.querySelector("input[name='add1']").value = selectedRadio1.value;
+		// }
 		
 		// let selectedRadio2 = procForm.querySelector('input[name="tadd2"]:checked');
 		// if (!selectedRadio2) {
@@ -295,9 +392,9 @@ $('#wrap').on('click', function(e){
 
 		var required = {
 			'name': '이름'
-			// ,'age': '나이'
+			,'age': '나이'
 			,'phone': '전화번호'
-			,'add1': '설문'
+			// ,'add1': '설문'
 			// ,'add2': '설문'
 			// ,'add3': '설문'
 			// ,'branch': '지점'
