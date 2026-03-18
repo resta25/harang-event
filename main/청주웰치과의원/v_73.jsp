@@ -172,7 +172,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                 <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.png"></div>
                 <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.png"></div>
                 <div class="img-area video-area">
-                    <video id="location02" playsinline muted src="//static.harang-event.com/event/v_${eventSeq}/video_01.mp4" type="video/mp4"></video>
+                    <video id="location02" playsinline muted src="//static.harang-event.com/event/v_${eventSeq}/video_01.mp4" poster="//static.harang-event.com/event/v_${eventSeq}/thumbnail.png" type="video/mp4"></video>
                 </div>
                 <div class="page-inner-bg">
                     <div class="agBox">
