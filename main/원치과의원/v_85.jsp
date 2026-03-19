@@ -142,7 +142,7 @@ button img {display: block; width: 100%;}
 .chat_set.right .chat_box.agree_btn, .chat_set.right .chat_box.disagree_btn {display: block; cursor: pointer;}
 .chat_set.right .chat_box.disagree_btn { background-color: #404040; }
 .chat_set.right .chat_box.agree_btn.selected, .chat_set.right .chat_box.input_box_changed {background-color: #151598; color: #fff;}
-#page-3 .chat_set.right {flex-direction: column; align-items: flex-end;}
+#page-2 .chat_set.right {flex-direction: column; align-items: flex-end;}
 
 /* chat_box 로딩 */
 .chat_set.left .chat_box {position: relative; overflow: hidden;}
@@ -174,7 +174,7 @@ button img {display: block; width: 100%;}
 .form .form_box {padding: 0 2rem;}
 .form .question_box {text-align: center; padding: 0; margin-bottom: 1%;}
 .form .question_box .q_select {display: flex; align-items: center; column-gap: 13px; justify-content: space-between;}
-.form #page-3 .question_box .q_select {justify-content: center; column-gap: 2.2%; }
+.form #page-2 .question_box .q_select {justify-content: center; column-gap: 2.2%; }
 .form .question_box .q_select label{width:100%;}
 .form .question_box .q_select label img{width:100%;}
 .form .form_box > div + div {margin-top: 1.83%;}
@@ -318,10 +318,10 @@ button img {display: block; width: 100%;}
                     </div>
                 </div>
             </section>
-
-            <section class="page" id="page-2">
+            
+            <!-- chat02 -->
+            <!-- <section class="page" id="page-2">
                 <div class="page-inner">
-                    <!-- chat02 -->
                     <div class="chat_set left" data-value="2">
                         <div class="chat_profile_01"><img src="//static.harang-event.com/event/v_${eventSeq}/profile_01.png"></div>
                         <div class="chat_container">
@@ -345,13 +345,12 @@ button img {display: block; width: 100%;}
                         </div>
                     </div>
                 </div>
-                <!-- <div class="next_btn_inQuestion"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_02.png"></div> -->
-            </section>
+            </section> -->
 
-            <section class="page" id="page-3">
+            <!-- chat03 -->
+            <section class="page" id="page-2">
                 <div class="page-inner">
-                    <!-- chat03 -->
-                    <div class="chat_set left" data-value="3">
+                    <div class="chat_set left" data-value="2">
                         <div class="chat_profile_01"><img src="//static.harang-event.com/event/v_${eventSeq}/profile_01.png"></div>
                         <div class="chat_container">
                             <p class="chat_counsel">상담사 김지연</p>
@@ -367,7 +366,7 @@ button img {display: block; width: 100%;}
                         </div>
                     </div>
     
-                    <div class="chat_set right hide question_box" data-value="3">
+                    <div class="chat_set right hide question_box" data-value="2">
                         <div class="input_box">
                             <span class="label">이 름</span>
                             <input type="text" name="name" id="name" value="" class="inp" required autocomplete="off" placeholder="이름 입력" />
@@ -607,13 +606,13 @@ button img {display: block; width: 100%;}
 		let procForm = document.getElementById(formId);
 		
 		// 라디오버튼에 대한 필수값 확인 - 체크된게 하나도 없을때 경고창
-		let selectedRadio1 = procForm.querySelector('input[name="tadd1"]:checked');
-		if (!selectedRadio1) {
-			alert("설문을 선택해주세요.");
-			return;
-		} else {
-			procForm.querySelector("input[name='add1']").value = selectedRadio1.value;
-		}
+		// let selectedRadio1 = procForm.querySelector('input[name="tadd1"]:checked');
+		// if (!selectedRadio1) {
+		// 	alert("설문을 선택해주세요.");
+		// 	return;
+		// } else {
+		// 	procForm.querySelector("input[name='add1']").value = selectedRadio1.value;
+		// }
 
 		// let selectedRadio2 = procForm.querySelector('input[name="tadd2"]:checked');
 		// if (!selectedRadio2) {
@@ -636,7 +635,7 @@ button img {display: block; width: 100%;}
 			'name': '이름'
 			// ,'age': '나이'
 			,'phone': '전화번호'
-			,'add1': '설문1'
+			// ,'add1': '설문1'
 			// ,'add2': '설문2'
 			// ,'add3': '지역'
 			// ,'add4': '지역'
