@@ -38,12 +38,12 @@ pageEncoding="UTF-8"%>
          url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Bold.otf') format('opentype');
 }
 html, body {font-size: 10px;}
-.page_inner {padding: 1.9rem 3.6rem;}
+.page_inner {padding: 1.9rem 3.6rem; flex-grow: 1;}
 #wrap {max-width: 600px; font-family: 'Pretendard'; height: 100dvh; background: url("//static.harang-event.com/event/v_${eventSeq}/bg_01.jpg") no-repeat center top; background-size: 100% 100%;}
 .form {background: transparent; height: 100%;}
 #form-1 {height: 100%;}
 #wrap .formContents {height: calc(100% - 10.1rem); display: flex; flex-direction: column;}
-.page { height: 100%; flex-grow: 1;}
+.page { height: 100%; flex-grow: 1; display: flex; flex-direction: column;}
 .hide {display: none;}
 
 /* 상단 타이머 */
@@ -232,6 +232,8 @@ html, body {font-size: 10px;}
                     </div>
 					<div class="next img-area"  onclick="pageFuc(1,$(this))"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.png"></div>
                 </div>
+                <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.jpg"></div>
+
             </section>
 
             <section class="page hide section02" id="page-2">
