@@ -7,7 +7,7 @@ html, body {font-size: 10px;}
 padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);}
 .form {background: transparent; height: 100%;}
 #wrap .formContents {height: 100%;}
-.page {position: relative; box-sizing: border-box; min-height: 140vh;}
+.page {position: relative; box-sizing: border-box; min-height: 100vh;}
 .hide {display: none;}
 
 /* .page_inner {padding: 11rem 6rem 0; padding-bottom: 0;} */
