@@ -232,8 +232,6 @@ html, body {font-size: 10px;}
                     </div>
 					<div class="next img-area"  onclick="pageFuc(1,$(this))"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.png"></div>
                 </div>
-                <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.jpg"></div>
-
             </section>
 
             <section class="page hide section02" id="page-2">
@@ -265,11 +263,11 @@ html, body {font-size: 10px;}
 						</div>
 					</div>
 				</div>
-                <div class="container-bottom">
-                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.jpg"></div>
-                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	
-                </div>
             </section>
+            <div class="container-bottom">
+                <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.jpg"></div>
+                <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	
+            </div>
             
         </div>
             <input type="hidden" id="branch" 		name="branch" value="${resVo.branch}"/>
