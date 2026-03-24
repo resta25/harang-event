@@ -211,6 +211,10 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                     </div>
 					<div class="next img-area"  onclick="pageFuc(1,$(this))"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.png"></div>
                 </div>
+                <div class="container-bottom">
+                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.jpg"></div>
+                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	
+                </div>
             </section>
 
             <section class="page hide section02" id="page-2">
