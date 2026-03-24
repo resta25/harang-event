@@ -43,7 +43,7 @@ html, body {font-size: 10px;}
 padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); background: url("//static.harang-event.com/event/v_${eventSeq}/bg_01.jpg") no-repeat center top; background-size: 100% 100%;}
 .form {background: transparent; height: 100%;}
 #form-1 {height: 100%;}
-#wrap .formContents {height: calc(100% - 10.1rem); display: flex; flex-direction: column;}
+#wrap .formContents {height: calc(100% - 9.1rem); display: flex; flex-direction: column;}
 .page { height: 100%; flex-grow: 1; display: flex; flex-direction: column;}
 .hide {display: none;}
 
