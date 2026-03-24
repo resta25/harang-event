@@ -143,7 +143,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
     #page-4 .popup .popup-content {width: 80%;}
     #page-4 .popup .btn-close-popup {font-size: 145%;}
     #page-8 .q_select label {width: 47.7%;}
-    .form .checkbox {font-size: 175%;}
+    .form .checkbox {font-size: 195%;}
     .form .checkbox input[type="checkbox"] {width: 18px; height: 18px; margin-right: 4px;}
 }
 @media screen and (max-width: 395px) {
