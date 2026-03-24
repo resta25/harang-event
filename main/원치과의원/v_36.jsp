@@ -61,6 +61,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 
 #page-1 .page_inner .img-area:not(.next) {width: 80.32%; margin: 0 auto;}
 #page-2 .page-inner {flex-grow: 1;}
+#page-2 .page-inner .img-area:not(.next) {width: 80.32%; margin: 0 auto;}
 
 /* 설문영역 */
 .question-box {background: #f4f4f4; font-size: 3.7rem; padding: 4.1rem 0 1.3rem; margin-top: 5.18%; border-radius: 2rem;}
