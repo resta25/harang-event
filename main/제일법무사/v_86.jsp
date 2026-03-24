@@ -54,7 +54,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 /* 공통 */
 .container { text-align: center; font-size: 120%; letter-spacing: -0.36px; color: #b77587; font-family: 'Pretendard';}
 .form .result-box {margin-top: 12.32%; margin-bottom: 8.155%; font-family: 'SUIT'; font-size: 255%; font-weight: 800; line-height: 1.48; letter-spacing: -1.23px; text-align: center; color: #2d2d2d;}
-.form strong {color: #ff4a79; font-weight: 800; font-family: 'SUIT';}
+.form strong {color: #f20000; font-weight: 800; font-family: 'SUIT';}
 .form .name-result {}
 .next {cursor: pointer;}
 .page:not(#page-1):not(#page-10) {padding: 7.167% 8.335%; padding: 4% 8.335%; font-size: 16px;}
