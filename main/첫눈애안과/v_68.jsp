@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <style>
 @font-face {
     font-family: 'Pretendard';
@@ -38,70 +39,100 @@ pageEncoding="UTF-8"%>
          url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Bold.otf') format('opentype');
 }
 html, body {font-size: 10px;}
-.page_inner {padding: 0 3.6rem;}
-#wrap {max-width: 600px; font-family: 'Pretendard'; overflow: hidden; height: 100vh; /* fallback */ height: 100dvh; /* 최신 브라우저용 */
-padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); background: url("//static.harang-event.com/event/v_${eventSeq}/bg_01.jpg") no-repeat center top; background-size: 100% 100%;}
-.form {background: transparent; height: 100%;}
-#form-1 {height: 100%;}
-#wrap .formContents {height: calc(100% - 10rem); display: flex; flex-direction: column;}
-.page { height: 100%; flex-grow: 1;}
+#wrap {font-family: 'Pretendard'; max-width: 600px; display: flex; flex-direction: column; background: url("//static.harang-event.com/event/v_${eventSeq}/bg_01.jpg") no-repeat center top; background-size: 100% 100%; height: 100dvh; overflow: hidden; height: 100vh; /* fallback */ height: 100dvh; /* 최신 브라우저용 */
+padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);}
+.form {background: transparent; flex-grow: 1;}
+/* #wrap .formContents {height: 100%;} */
+.page {position: relative; box-sizing: border-box; flex-grow: 1;}
 .hide {display: none;}
 
-/* 상단 타이머 */
-.time-content {padding: 3.2rem 3.6rem 0;}
-.timer-box {color: #fff; display: flex; align-items: center; justify-content: space-between; gap: 2rem; font-size: 2.4rem; border: 1px solid #797979; border-radius: 0.9rem; padding: 1.4rem 2.3rem; width: 100%; margin: 0 auto; letter-spacing: -1.23px; background: #000; box-sizing: border-box;}
-.timer-box .text-box {width: 18rem; display: flex; align-items: center; justify-content: space-between;}
-.timer-box .text-box .text {font-weight: 800; letter-spacing: -1.23px;}
-.timer-box .text-box img{ display: inline-block; animation: spin 1.1s linear infinite; transform-origin: 50% 50%; width: 17%;}
+/* .page_inner {padding: 11rem 6rem 0; padding-bottom: 0;} */
 
-@keyframes spin{
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+/* 첫번째 페이지 */
+#page-1 .top-img {position: relative; z-index: 0; width: 96%; margin: 0 auto; padding-bottom: 13.5%;}
+.section01 {text-align: center;}
+.page .sub-img {margin: 0 auto 3rem; width: 80%;}
+.page #location {position: absolute; width: 88.335%; border-radius: 20px; top: 22.81%; left: 50%; transform: translateX(-50%);}
+.page .touch-img {width: 70%; margin: 0 auto 3rem;}
+.page .text-img {padding: 0 5.834%;}
+.page .next {padding: 1.667% 5.834%;}
+
+/* 게이지 */
+.timer_03_pointer .count_box {font-size: 1rem; text-align: center; font-size: 1.5rem; font-weight: 800; font-family: 'Pretendard'; color: #0059FF;}
+.timer_03_pointer .font-red {color: #FF8A00 ;}
+/* .timer_03_pointer .gauge-box {background-color: #274fe8;} */
+.timer_03_pointer .gauge-box .gauge {width: 100%; display: block; height: 35px; background: #0d89e7; border-radius: 999px;}
+.timer_03_pointer .gauge-box .progress {position: relative; display: block; width: 0%; height: 100%; border-radius: 999px; background: #F6FF0D ;
+background: linear-gradient(90deg, rgba(255, 255, 255, 1)  0%, rgba(246, 255, 13, 1)  100%); animation: gaugeAni 1s forwards;}
+.timer_03_pointer .gauge-box .progress.active1 {animation: gaugeAni1 1s forwards;}
+.timer_03_pointer .gauge-box .progress.active2 {animation: gaugeAni2 1s forwards;}
+.timer_03_pointer .gauge-box .progress.active3 {animation: gaugeAni3 1s forwards;}
+.timer_03_pointer .gauge-box .pointer {position: absolute; top: -100%; right: 0; transform: translateX(50%); box-sizing: border-box; transition: 0s;}
+.timer_03_pointer .count {color: #00fff0;}
+.timer_03_pointer #page-4 .gauge-box .pointer {right: 9%;}
+
+.gauge-box .pointer-pin {position: absolute; top: -5.5px; right: -8px;}
+
+@keyframes gaugeAni {
+    0% {width: 0;}
+    100% {width: 33.3333%;}
 }
 
-/* 설문영역 */
-.question-box {margin-top: 5.984%; padding: 5.625% 6.608% 4.645%; background-color: #f4f4f4; border-radius: 12px; font-size: 150%;}
-.question-box .question {padding-bottom: 5.865%; border-bottom: 2px solid #ff6d15;}
-.question-box .q-text {z-index: 0; position: relative; display: block; font-size: 247%; font-weight: 600; letter-spacing: -0.93px; text-align: center; color: #000;}
-.question-box .q-text .underline {position: relative; font-weight: 800; color: #ff6d15;}
-.question-box .q-text .underline::before {content: ''; z-index: -1; position: absolute; top: 50%; transform: translateY(-50%); width: 100%; height: 100%; opacity: 0.2; border-radius: 8px; background-color: #f3ea82;}
-.question-box .q_select {display: flex; align-items: center; flex-wrap: wrap; column-gap: 3%; row-gap: 12px; padding-top: 5.145%;}
-.question-box .q_select label {width: calc((100% - 3%) / 2);}
-.question-box .q_select label img {display: block; width: 100%; height: 100%;}
+@keyframes gaugeAni1 {
+    0% {width: 33.3333%;}
+    100% {width: 66.6666%;}
+}
 
-.form .next {width: 80%; margin: 0 auto;}
-.form .next img {width: 100%;}
-.form .submit {width: 100%; margin: 1rem auto 0;}
-.form .submit input[type="image"] {width: 100%;}
+@keyframes gaugeAni2 {
+    0% {width: 66.66666%;}
+    100% {width: 100%;}
+}
 
-#page-1 .icon {display: block; max-width: 6.6rem; margin: 3.75% auto 1.79%;}
-#page-1 .icon + img {display: block; width: 71.43%; margin: 0 auto;}
+/* 설문 이미지 */
+.txt-area {width: 39.057%; margin: 4.34% auto 2.265%;}
 
 /* 설문영역 */
-#page-2 .top-area {width: 76.136%; margin: 0 auto;}
-.form .page-inner {width: 100%; padding: 2.8rem 3.6rem 1rem;}
-.form .db-box {margin-top: 5.984%; width: 100%; padding: 5.625% 6.608% 4.645%; background-color: #f4f4f4; border-radius: 12px; font-size: 150%; box-sizing: border-box;}
-.form .db-box .question .q-text {z-index: 0; position: relative; display: block; font-size: 247%; font-weight: 600; letter-spacing: -0.93px; text-align: center; color: #000; line-height: 1.25;}
-.form .db-box .question .q-text .underline {position: relative; font-weight: 800; color: #ff6d15;}
-.form .db-box .question .q-text .underline::before {content: ''; z-index: -1; position: absolute; bottom: -7%; width: 100%; height: 50%; opacity: 0.2; background-color: #f3ea82;}
-.form .user-box {margin-top: 2rem;}
-.form .user-box .user-info {display: flex; align-items: center; justify-content: space-between;}
-.form .user-box .user-info:not(:last-child) {margin-bottom: 2rem;}
-.form .user-box .user-info .legend {margin-right: 1.9rem; flex-shrink: 0; width: 18.12%; text-align: justify; font-size: 160%; font-weight: 700; letter-spacing: -0.6px; text-align: justify; color: #2f2f2f; height: 4.7rem; font-family: 'Pretendard';}
-.form .user-box .user-info .legend::after {content: ''; display: inline-block; width: 100%;}
+.question_box {}
+.question {width: 100%; margin: 0 auto 4.4546%;}
+.question_box .q_select {padding: 0 4.246%;}
+.question_box .q_select label {width: 100%;}
+.page:not(#page-1):not(#page-2) .question_box .q_select label:not(:last-child) {margin-bottom: 2rem;}
+.question_box .q_select label img {width: 100%;}
+
+/* 두번째 페이지 */
+.page:not(#page-1) .page_inner {padding: 9.167% 5.834% 1.667%;}
+.page .bottom-img {padding-bottom: 5rem; width: 80%; margin: 0 auto;}
+#page-2 .question_box .q_select {display: flex; align-items: center; column-gap: 13px; padding: 0;}
+#page-2 .question_box .q_select label {width: max-content;}
 
 
-.form .user-box .user-info input {border: 2px solid #ff6d15; font-size: 2rem; letter-spacing: -0.5px; font-weight: 700; padding: 1.5rem 2rem; padding-right: 0; }
-.form .user-box .user-info input::placeholder {color: #c9c9c9;}
+/* db 영역 */
+.form .db-box {font-size: 150%;}
+.form .db-box input {border-radius: 20px; background-color: #fff; padding: 1.9% 0; margin-bottom: 1rem; font-family: 'Pretendard'; font-size: 290%; font-weight: 700; letter-spacing: -0.71px; text-align: center;}
+.form .db-box input::placeholder {color: rgba(47, 47, 47, 0.2);}
 
+.icon-area {width: 25.5%; margin: 0 auto;}
 
+/* 개인정보 처리방침 */
+.form .agBox {color: #fff; margin: 0 auto 0; font-size: 175%; font-weight: 600; text-decoration: underline; font-family: 'Pretendard';}
 
-/* 안심문구, 대상, 이벤트기간 */
-.form .description .ad_txt,
+/* 대상, 안심문구, 이벤트기간 */
+.form .description {margin: 2rem auto; width: 100%;}
 .form .description p,
-.form .description span {font-weight: normal; font-size: 1.3rem; padding: 0; margin: 0; color: #6e6e6e; letter-spacing: -0.65px;}
+.form .description span,
+.form .description .ad_txt {color: #fff; font-size: 1.5rem; padding: 0;}
 
-.form .agBox {color: #fff; font-size: 1.6rem; padding: 3.95rem 0 1.23rem; width: 100%;}
+.form .description + .img-area {width: 85.5%; margin: 0 auto;}
+.form .description ~ .bottom-area {width: 71%; margin: 4% auto 2%;}
+
+
+.form .submit {position: relative; z-index: 1;}
+#page-4 .top-img {margin: 3.02% 0;}
+#page-4 .page_inner {flex-grow: 1;}
+#page-4 .gif-area {width: 32.076%; margin: -5% auto 0; position: relative; z-index: 0;}
+.result-box {position: relative; margin: 3% 5.26% 0; padding: 0;}
+#result {position: absolute; top: 50%; transform: translateY(-50%); right: 20.75%; display: flex; align-items: center; justify-content: center; overflow: hidden; width: 25.91%; height: 56%; font-size: 225%; border-radius: 6px; background-color: #fff;}
+
 
 /* 모달창 - 개인정보처리방침 */
 .overlay {z-index: 888; position: fixed; display: none; width: 100vw; height: 100vh; opacity: 0.5; background-color: #000;}
@@ -114,17 +145,24 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 .agreeModalBox .newAgreement h3 {margin: 1% 0; font-size: 11px;}
 .agreeModalBox .newAgreement ol li {line-height: 12px; font-size: 10px;}
 
-@media screen and (max-width: 500px) {
+
+@media screen and (max-width: 500px) { 
     html, body {font-size: 1.7vw;}
+    .form .db-box input {font-size: 3rem; border-radius: 10px;}
+
+    .timer_03_pointer .gauge-box .gauge {height: 21px;}
+    .timer_03_pointer .gauge-box .pointer {top: calc(-100% - 5px);}
+    .timer_03_pointer .gauge-box .img-area {width: 80%; margin: 0 auto;}
 }
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 395px) {
 }
 
-@media screen and (max-width: 395px) {
+@media screen and (max-width: 375px) {
 }
 
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard.css" type="text/css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonts-archive/Paperlogy/Paperlogy.css" type="text/css"/>
 <div class="overlay"></div>
 <div class="agreeModalBox">
 	<div class="closeBtn">X</div>          
@@ -146,88 +184,99 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 	</div>	
 </div>
 <div id="wrap">
-	<div class="form">
+	<div class="form timer_03_pointer">
 		<form id="form-1" method="POST" accept-charset="utf-8">
-        <div class="time-content">
-            <div class="timer-box">
-                <div class="date">
-                    <span id="year"></span>
-                    <span id="month"></span>
-                    <span id="day"></span>
-                    <span id="week-day"></span>
-                </div>
-                <div class="time">
-                    <span id="hour"></span>
-                    <span id="minute"></span>
-                </div>
-                <div class="text-box">
-                    <img src="//static.harang-event.com/event/v_${eventSeq}/loading_01.png">
-                    <span class="text">현재 접수 가능</span>
-                </div>
-            </div>
-        </div>
         <div class="formContents">
-            <section class="page section01" id="page-1">
+            <section class="page section01" id="page-1"> 
                 <div class="page_inner">
-                    <div class="img-area">
-                        <img class="icon" src="//static.harang-event.com/event/v_${eventSeq}/icon_01.png">
-                        <img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.png">
-                    </div>
-                    <div class="question-box">
-                        <div class="question">
-                            <span class="q-text"><span class="underline">증상</span>을 알려주세요</span>
-                        </div>
-                        <div class="q_select">
-                            <label><input type="radio" name="tadd1" value="시야 흐림"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_01.png"></label>
-                            <label><input type="radio" name="tadd1" value="눈이 피로함"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_02.png"></label>
-                            <label><input type="radio" name="tadd1" value="시력저하"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_03.png"></label>
-                            <label><input type="radio" name="tadd1" value="기타 증상"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_04.png"></label>
-                        </div>
-                    </div>
-                    <div class="agBox">
-                        개인정보 처리방침
-                        <a href="#" class="btn-agreement">[자세히 보기]</a>
-                        <input type="hidden" name="agBox" value="Y" checked>
-                    </div>
-					<div class="next img-area"  onclick="pageFuc(1,$(this))"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.png"></div>
+                    <div class="img-area top-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.png"></div>
+                    <video id="location" playsinline loop autoplay muted src="//static.harang-event.com/event/v_${eventSeq}/video_01.mp4" type="video/mp4"></video>
+                    <script>setTimeout(function(){ $('#location').trigger('play'); },500);</script>
+                    <div class="img-area text-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.png"></div>
+                    <div class="next img-area" onclick="pageFuc(1,$(this))"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.png"></div>
                 </div>
             </section>
 
             <section class="page hide section02" id="page-2">
-				<div class="page-inner">
-					<div class="img-area top-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.png"></div>
-					<div class="db-box">
-                        <div class="question">
-                            <span class="q-text"><span class="underline">성함과 연락처</span>를 남겨주시면<br/>연락 드리겠습니다.</span>
+                <div class="page_inner">
+                    <div class="count_box">
+                        <div class="gauge-box">
+                            <span class="gauge">
+                                <span class="progress">
+                                    <span class="pointer"><div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/gage_01.png"></div></span>
+                                </span>
+                            </span>
                         </div>
-						<div class="user-box">
-							<div class="user-info">
-								<span class="legend">이 름</span>
-								<input type="text" id="name" name="name" class="inp" required="" autocomplete="off" placeholder="이름">
-							</div>
-							<div class="user-info">
-								<span class="legend">나 이</span>
-								<input type="tel" id="age" name="age" class="inp" required="" autocomplete="off" maxlength="2" placeholder="나이">
-							</div>
-							<div class="user-info">
-								<span class="legend">전화번호</span>
-								<input type="tel" id="phone" name="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="연락처 ('-'없이 입력)">
-							</div>
-						</div>
-						<div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"></div>
-						<div class="description bottom">
-							<p id="event-period">이벤트 기간 : <?=date("Y년 m월 01일")." ~ ".date("Y년 m월 t일 까지")?></p>
-                            <div class="ad_txt">안심하세요! ${resVo.agent}에서는 고객님의 소중한 개인정보를 <br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
-							<span>대상 :  ${resVo.target}</span>
-						</div>
-					</div>
-				</div>
+                    </div>
+                    <div class="img-area txt-area"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_01.png"></div>
+                    <div class="question_box">
+                        <div class="img-area question"><img src="//static.harang-event.com/event/v_${eventSeq}/q_01.png"></div>
+                        <div class="q_select">
+                            <label><input type="radio" name="tadd1" onclick="pageFuc(2,$(this))" value="아니오"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_02.png"></label>
+                            <label><input type="radio" name="tadd1" onclick="pageFuc(2,$(this))" value="네"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_03.png"></label>
+                        </div>
+                    </div>
+                    <!-- <div class="img-area bottom-img"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_02.png"></div> -->
+                </div>
             </section>
-            <div class="container-bottom">
-                <!-- <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.png"></div> -->
-                <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	
-            </div>
-            
+            <section class="page hide section03" id="page-3">
+                <div class="page_inner">
+                    <div class="count_box">
+                        <div class="gauge-box">
+                            <span class="gauge">
+                                <span class="progress">
+                                    <span class="pointer"><div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/gage_02.png"></div></span>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="img-area txt-area"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_02.png"></div>
+                    <div class="question_box">
+                        <div class="img-area question"><img src="//static.harang-event.com/event/v_${eventSeq}/q_02.png"></div>
+                        <div class="q_select">
+                            <label><input type="radio" name="tage" onclick="pageFuc(3,$(this))" value="50"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_01.png"></label>
+                            <label><input type="radio" name="tage" onclick="pageFuc(3,$(this))" value="60"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_02.png"></label>
+                            <label><input type="radio" name="tage" onclick="pageFuc(3,$(this))" value="70"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_03.png"></label>
+                        </div>
+                    </div>
+                    <!-- <div class="img-area bottom-img"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_02.png"></div> -->
+                </div>
+            </section>
+
+            <search class="page hide section04" id="page-4">
+                <div class="page_inner">
+                    <div class="count_box">
+                        <div class="gauge-box">
+                            <span class="gauge">
+                                <span class="progress">
+                                    <span class="pointer"><div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/gage_03.png"></div></span>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="img-area top-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_03.png"></div>
+                    <div class="db-box">
+                        <input type="text" id="name" name="name" class="inp" required="" autocomplete="off" placeholder="이름 ">
+                        <input type="tel" id="phone" name="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="연락처">
+                    </div>
+                    <div class="agBox">
+                        <a href="#" class="btn-agreement">개인정보 처리방침</a>
+                        <input type="hidden" name="agBox" value="Y" checked>
+                    </div>
+                    <div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"></div>
+                    <div class="img-area gif-area"><img src="//static.harang-event.com/event/v_${eventSeq}/arrow_01.gif"></div>
+                    <div class="result-box">
+                        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_04.png"></div>
+                        <span id="result"></span>
+                        <script>$('input[name="name"]').keyup(function(){$("#result").text($('input[name="name"]').val());});</script>
+                    </div>
+                    <div class="description bottom">
+                        <p id="event-period">이벤트 기간 : <?=date("Y년 m월 01일")." ~ ".date("Y년 m월 t일 까지")?></p>
+                        <div class="ad_txt">안심하세요! ${resVo.agent}에서는 고객님의 소중한 개인정보를 <br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
+                        <span>대상 :  ${resVo.target}</span>
+                    </div>
+                </div>
+            </search>
         </div>
             <input type="hidden" id="branch" 		name="branch" value="${resVo.branch}"/>
             <input type="hidden" id="eventSeq" 		name="eventSeq" value="${resVo.eventSeq}"/>
@@ -237,6 +286,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
             <input type="hidden" id="checkAgeMin" 	name="checkAgeMin" value="${resVo.checkAgeMin}"/>
             <input type="hidden" id="checkAgeMax" 	name="checkAgeMax" value="${resVo.checkAgeMax}"/>
             <input type="hidden" id="checkGender" 	name="checkGender" value="${resVo.checkGender}"/>
+            <input type="hidden" id="age" 			name="age" value=""/>
             <input type="hidden" id="add1" 			name="add1" value=""/>
             <input type="hidden" id="add2" 			name="add2" value=""/>
             <input type="hidden" id="add3" 			name="add3" value=""/>
@@ -249,81 +299,84 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
             <input type="hidden" id="objectName" 	name="objectName" 	value="${resVo.objectName}"/>
 		</form>
 	</div>
+    <div class="container-bottom">
+        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	
+    </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->
 <script>
     $(document).ready(function () {
         initDate();/* 기간항목 start */
         blockSourceView();//드래그, 우클릭 방지
-	})
+	});
 
-    // 상단 타이머
-    $(function () {
-        function pad2(n) {
-            return (n < 10 ? '0' : '') + n;
+    // 엔터키 막기
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+        event.preventDefault(); // 기본 전송 동작 방지
         }
-
-        function renderNow() {
-            var now = new Date();
-
-            var y = now.getFullYear();
-            var m = pad2(now.getMonth() + 1);
-            var d = pad2(now.getDate());
-
-            // 0=일,1=월,...6=토
-            var week = ['일', '월', '화', '수', '목', '금', '토'][now.getDay()];
-
-            var hh = pad2(now.getHours());
-            var mm = pad2(now.getMinutes());
-
-            $('#year').text(y + '.');
-            $('#month').text(m + '.');
-            $('#day').text(d + '(' + week + ')');
-            $('#week-day').text(''); // day에 요일까지 붙였으니 비워둠(원하면 아래 주석 참고)
-
-            $('#hour').text(hh + ':');
-            $('#minute').text(mm);
-        }
-
-        renderNow();
-
-        // 매 분 정각에 맞춰 갱신되게(드리프트 최소화)
-        var now = new Date();
-        var msToNextMinute = (60 - now.getSeconds()) * 1000 - now.getMilliseconds();
-
-        setTimeout(function () {
-            renderNow();
-            setInterval(renderNow, 60 * 1000);
-        }, msToNextMinute);
-
-        // 만약 week-day를 따로 쓰고 싶으면 renderNow에서 아래처럼 바꾸면 됨:
-        // $('#day').text(d);
-        // $('#week-day').text('(' + week + ')');
     });
+
+    // 비디오 소리 켜기
+    // $('#wrap').on('click', function(){
+
+    //     var video = $('#location').get(0);
+
+    //     if(video){
+    //         video.muted = false;
+    //         // video.volume = 1;
+    //         // video.play();
+    //     }
+
+    // });
+    // 비디오 소리 멈춤
+    // var video = $('#location').get(0);
+    // $('.next').on('click', function(){
+    //     // 🔹 1. 영상 정지 + 음소거
+    //     if(video){
+    //         video.pause();
+    //         video.muted = true;
+    //         video.currentTime = 0; // 원하면 유지
+    //     }
+    //     // 🔹 2. 기존 함수 실행
+    //     pageFuc(1, $(this));
+
+    // });
 
     // 버튼 페이지 이동 함수 (다음)
     function pageFuc(num, obj) {
         // 선택된 라디오 버튼 확인 (section03 페이지일 때)
-        if (num === 1) {
-            const isChecked = $('input[name="tadd1"]:checked').length > 0;
+        // if (num === 1) {
+        //     let inputValue = $('input[name="name"]').val();
+        //     const isChecked = inputValue.length > 1;
 
-            if (!isChecked) {
-                alert("설문을 선택해주세요");
-                return; // 선택되지 않았으면 페이지 이동 안함
-            }
-        }
+        //     if (!isChecked) {
+        //         alert("정확한 이름을 입력해주세요.");
+        //         return; // 선택되지 않았으면 페이지 이동 안함
+        //     }
+        // }
 
         // 페이지 이동 처리
         $('.section0' + num).fadeOut(function() {
-            if(num + 1 == 1){
-                $('.section0' + (num + 1)).css('display','block');
-                return;
-            }
-            $('.section0' + (num + 1)).css('display','flex');
+            $('.section0' + (num + 1)).css({ 'display': 'flex', 'flex-direction': 'column' });
+            $('.gauge-box .progress').addClass('active' + (num - 1));
             $(document).scrollTop(0);
         });
     }
+
+    //설문 on/off
+    $('input[name*="tadd"], input[name*="tage"]').on('click', function(){
+        $('label', $(this).parents('.q_select')).each(function(i,t) {
+            $('img', t).attr('src', $('img', t).attr('src').replace('_on', '_off'));
+        });
+        $('img', $(this.parentNode)).attr('src', $('img', $(this.parentNode)).attr('src').replace('_off', '_on'));
+    });
+
+    //이름 텍스트 출력
+    $('input[name="name"]').on('keyup', function(){
+        var nameValue = $(this).val();
+        $('.name-result').text(nameValue + '님');
+    });
 
     // 개인정보처리방침 팝업 관련
 	$('.btn-agreement').on('click', function(e) {
@@ -332,14 +385,6 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
     });
     $('.agreeModalBox .closeBtn').on('click', function() {
         $('.agreeModalBox').fadeOut();
-    });
-
-    //설문 클릭시 이미지 on/off
-    $('input[name="tadd1"]').on('click', function(){
-        $('label', $(this).parents('.q_select')).each(function(i,t) {
-            $('img', t).attr('src', $('img', t).attr('src').replace('_on', '_off'));
-        });
-        $('img', $(this.parentNode)).attr('src', $('img', $(this.parentNode)).attr('src').replace('_off', '_on'));
     });
 
     function fnForm(formId){
@@ -354,6 +399,14 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 			return;
 		} else {
 			procForm.querySelector("input[name='add1']").value = selectedRadio1.value;
+		}
+
+        let tage = procForm.querySelector('input[name="tage"]:checked');
+		if (!tage) {
+			alert("나이대를 선택해주세요.");
+			return;
+		} else {
+			procForm.querySelector("input[name='age']").value = tage.value;
 		}
 		
 		// let selectedRadio2 = procForm.querySelector('input[name="tadd2"]:checked');
@@ -375,7 +428,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 
 		var required = {
 			'name': '이름'
-			,'age': '나이'
+			,'age': '나이대'
 			,'phone': '전화번호'
 			,'add1': '설문'
 			// ,'add2': '설문'
