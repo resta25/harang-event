@@ -244,7 +244,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                         </div>
                         <div class="q_select">
                             <label><input type="radio" name="tadd3" value="2,000만원~3,000만원">2,000만원~3,000만원</label>
-                            <label><input type="radio" name="tadd3" value="2,000만원~3,000만원">2,000만원~3,000만원</label>
+                            <label><input type="radio" name="tadd3" value="3,000만원~5,000만원">3,000만원~5,000만원</label>
                             <label><input type="radio" name="tadd3" value="5,000만원~1억원">5,000만원~1억원</label>
                             <label><input type="radio" name="tadd3" value="1억원 이상">1억원 이상</label>
                         </div>
