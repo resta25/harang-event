@@ -39,7 +39,8 @@ pageEncoding="UTF-8"%>
 }
 html, body {font-size: 10px;}
 .page_inner {padding: 1.9rem 3.6rem; flex-grow: 1;}
-#wrap {max-width: 600px; font-family: 'Pretendard'; height: 100dvh; background: url("//static.harang-event.com/event/v_${eventSeq}/bg_01.jpg") no-repeat center top; background-size: 100% 100%;}
+#wrap {max-width: 600px; font-family: 'Pretendard';  overflow: hidden; height: 100vh; /* fallback */ height: 100dvh; /* 최신 브라우저용 */
+padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); background: url("//static.harang-event.com/event/v_${eventSeq}/bg_01.jpg") no-repeat center top; background-size: 100% 100%;}
 .form {background: transparent; height: 100%;}
 #form-1 {height: 100%;}
 #wrap .formContents {height: calc(100% - 10.1rem); display: flex; flex-direction: column;}
@@ -62,7 +63,8 @@ html, body {font-size: 10px;}
 #page-2 .page-inner {flex-grow: 1;}
 
 /* 설문영역 */
-.question-box {background: #f4f4f4; font-size: 3.7rem; padding: 4.1rem 0 6.3rem; margin-top: 5.18%; border-radius: 2rem;}
+.question-box {background: #f4f4f4; font-size: 3.7rem; padding: 4.1rem 0 1.3rem; margin-top: 5.18%; border-radius: 2rem;}
+.sub-txt {text-align: center; font-size: 43%; padding: 0.5% 1% 0.25%; width: max-content; margin: 8% auto 0; color: #fff; background: rgba(109, 109, 109, 0.7); border-radius: 5px; font-weight: 700; font-family: 'Pretendard';}
 .question {display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2.4rem;}
 .question img {width: 7%;}
 .question .q-text {letter-spacing: -0.93px; font-weight: 600; padding: 0 1rem 2.4rem; border-bottom: 0.2rem solid #159bf8; font-family: 'Pretendard';}
@@ -108,7 +110,7 @@ html, body {font-size: 10px;}
 .form .description p,
 .form .description span {font-weight: normal; font-size: 1.3rem; padding: 0; margin: 0; color: #6e6e6e; letter-spacing: -0.65px;}
 
-.form .agBox {color: #fff; font-size: 1.6rem; padding: 3rem 0 2rem; width: 100%;}
+.form .agBox {color: #fff; font-size: 1.6rem; padding: 2rem 0 1.2rem; width: 100%; line-height: 1;}
 
 /* 모달창 - 개인정보처리방침 */
 .overlay {z-index: 888; position: fixed; display: none; width: 100vw; height: 100vh; opacity: 0.5; background-color: #000;}
@@ -132,7 +134,7 @@ html, body {font-size: 10px;}
 .bage {font-size: 1.5rem; background: #1074fe; color: #fff609; text-align: center; padding: 0.2rem 0.8rem; border-radius: 0.4rem; font-weight: 700; position: absolute; top: -40%; left: 50%; transform: translateX(-50%); width: max-content;}
 .radio-label {font-size: 79%; font-weight: 700; font-family: 'Pretendard'; line-height: 1;}
 .container:hover .radio-circle {border-color: #555;}
-.container:hover input[type="radio"]:checked + .radio-circle::before {background-color: #555;}
+.container:hover input[type="radio"]:checked + .radio-circle::before {background-color: #1074fe;}
 
 
 @media screen and (max-width: 500px) { 
@@ -218,12 +220,13 @@ html, body {font-size: 10px;}
                                 <div class="radio-circle"></div>
                             </label>
                             <label class="container">
-                                <span class="bage">최저가 혜택</span>
+                                <span class="bage">추가 혜택 적용</span>
                                 <span class="radio-label">4개 이상</span>
                                 <input type="radio" name="tadd1" value="4개 이상">
                                 <div class="radio-circle"></div>
                             </label>
                         </div>
+                        <div class="sub-txt">*4개 이상 시 추가 혜택 적용!</div>
                     </div>
                     <div class="agBox">
                         개인정보 처리방침
