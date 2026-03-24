@@ -134,7 +134,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
     #page-1 .next {border-radius: 15px;}
     .q_select label {font-size: 125%;}
     .paging .prev, .paging .next {font-size: 125%;}
-    #page-10 .paging {font-size: 175%; margin-top: 3.4%;}
+    #page-10 .paging {font-size: 175%; margin-top: 4.4%;}
     #page-10 .prev, .form .submit input[type="submit"]  {font-size: 170%;}
     .q_select .sub_txt {font-size: 95%;}
     .q_select .inp {font-size: 105%;}
@@ -143,8 +143,8 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
     #page-4 .popup .popup-content {width: 80%;}
     #page-4 .popup .btn-close-popup {font-size: 145%;}
     #page-8 .q_select label {width: 47.7%;}
-    .form .checkbox {font-size: 195%;}
-    .form .checkbox input[type="checkbox"] {width: 18px; height: 18px; margin-right: 4px;}
+    .form .checkbox {font-size: 220%; margin-top: 4.335%;}
+    .form .checkbox input[type="checkbox"] {width: 22px; height: 22px; margin-right: 4px;}
 }
 @media screen and (max-width: 395px) {
     /* .form .db-box {top: 13%;} */
