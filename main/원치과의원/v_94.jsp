@@ -38,8 +38,9 @@ pageEncoding="UTF-8"%>
          url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Bold.otf') format('opentype');
 }
 html, body {font-size: 10px;}
-.page_inner {padding: 1.9rem 3.6rem; flex-grow: 1;}
-#wrap {max-width: 600px; font-family: 'Pretendard'; height: 100dvh; background: url("//static.harang-event.com/event/v_${eventSeq}/bg_01.jpg") no-repeat center top; background-size: 100% 100%;}
+.page_inner {padding: 5.667% 3.6rem; flex-grow: 1;}
+#wrap {max-width: 600px; font-family: 'Pretendard'; height: 100dvh; overflow: hidden; height: 100vh; /* fallback */ height: 100dvh; /* 최신 브라우저용 */
+padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); background: url("//static.harang-event.com/event/v_${eventSeq}/bg_01.jpg") no-repeat center top; background-size: 100% 100%;}
 .form {background: transparent; height: 100%;}
 #form-1 {height: 100%;}
 #wrap .formContents {height: calc(100% - 10.1rem); display: flex; flex-direction: column;}
@@ -47,8 +48,8 @@ html, body {font-size: 10px;}
 .hide {display: none;}
 
 /* 상단 타이머 */
-.time-content {padding-top: 4.2rem;}
-.timer-box {color: #000; display: flex; justify-content: space-between; align-items: center; gap: 2rem; font-size: 2.4rem; border: 1px solid #fff; border-radius: 0.9rem; padding: 1rem 4rem; width: 80%; margin: 0 auto; letter-spacing: -1.23px; background: rgba(255, 255, 255, 0.75);}
+.time-content {padding-top: 4.5%;}
+.timer-box {color: #fff; display: flex; justify-content: space-between; align-items: center; gap: 2rem; font-size: 2.4rem; border: 1px solid #193446; border-radius: 0.9rem; padding: 1rem 4rem; width: 80%; margin: 0 auto; letter-spacing: -1.23px; background: rgba(0, 0, 0, 0.75);}
 .timer-box .text-box {width: 18rem;display: flex; align-items: center; gap: 1rem;}
 .timer-box .text-box .text {font-weight: 800; letter-spacing: -1.23px;}
 .timer-box .text-box img{ display: inline-block; animation: spin 1.1s linear infinite; transform-origin: 50% 50%; width: 17%;}
@@ -58,15 +59,18 @@ html, body {font-size: 10px;}
   to   { transform: rotate(360deg); }
 }
 
-#page-1 .page_inner .img-area:not(.next) {width: 80.32%; margin: 0 auto;}
+.page_inner .img-area:not(.next):not(.icon-area) {width: 78.98%; margin: 0 auto;}
 #page-2 .page-inner {flex-grow: 1;}
 
+.intro-box {background: #f4f4f4; font-size: 3.7rem; padding: 9.47% 0 5.684%; margin-top: 5.18%; border-radius: 2rem;}
+.intro-box .icon-area {width: 7.576%; height: 100%; margin: 0 auto 5.115%;}
+.intro-box .icon-area img {display: block; width: 100%; height: 100%;}
+
 /* 설문영역 */
-.question-box {background: #f4f4f4; font-size: 3.7rem; padding: 4.1rem 0 6.3rem; margin-top: 5.18%; border-radius: 2rem;}
 .question {display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2.4rem;}
 .question img {width: 7%;}
 .question .q-text {letter-spacing: -0.93px; font-weight: 600; padding: 0 1rem 2.4rem; border-bottom: 0.2rem solid #159bf8; font-family: 'Pretendard';}
-.question .q-text .underline {position: relative; z-index: 1; color: #0056ba; font-weight: 700;}
+.question .q-text .underline {position: relative; z-index: 1; color: #0056ba; font-weight: 800;}
 .question .q-text .underline::after {content: ''; display: inline-block; width: 100%; height: 1.7rem; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); z-index: -1; background: #fffca1;}
 .q-select {display: flex; align-items: center; justify-content: space-between; padding: 6rem 6.65% 0;}
 
@@ -196,34 +200,9 @@ html, body {font-size: 10px;}
             <section class="page section01" id="page-1">
                 <div class="page_inner">
                     <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.png"></div>
-                    <div class="question-box">
-                        <div class="question">
-                            <img src="//static.harang-event.com/event/v_${eventSeq}/icon_01.png">
-                            <span class="q-text"><span class="underline">임플란트,</span> 몇 개 필요하신가요?</span>
-                        </div>
-                        <div class="q-select">
-                            <label class="container">
-                                <span class="radio-label">1개</span>
-                                <input type="radio" name="tadd1" value="1개">
-                                <div class="radio-circle"></div>
-                            </label>
-                            <label class="container">
-                                <span class="radio-label">2개</span>
-                                <input type="radio" name="tadd1" value="2개">
-                                <div class="radio-circle"></div>
-                            </label>
-                            <label class="container">
-                                <span class="radio-label">3개</span>
-                                <input type="radio" name="tadd1" value="3개">
-                                <div class="radio-circle"></div>
-                            </label>
-                            <label class="container">
-                                <span class="bage">최저가 혜택</span>
-                                <span class="radio-label">4개 이상</span>
-                                <input type="radio" name="tadd1" value="4개 이상">
-                                <div class="radio-circle"></div>
-                            </label>
-                        </div>
+                    <div class="intro-box">
+                        <div class="img-area icon-area"><img src="//static.harang-event.com/event/v_${eventSeq}/icon_01.png"></div>
+                        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_01.png"></div>
                     </div>
                     <div class="agBox">
                         개인정보 처리방침
@@ -263,12 +242,11 @@ html, body {font-size: 10px;}
 						</div>
 					</div>
 				</div>
+                <div class="container-bottom">
+                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.jpg"></div>
+                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	
+                </div>
             </section>
-            <div class="container-bottom">
-                <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.jpg"></div>
-                <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	
-            </div>
-            
         </div>
             <input type="hidden" id="branch" 		name="branch" value="${resVo.branch}"/>
             <input type="hidden" id="eventSeq" 		name="eventSeq" value="${resVo.eventSeq}"/>
@@ -346,14 +324,14 @@ html, body {font-size: 10px;}
     // 버튼 페이지 이동 함수 (다음)
     function pageFuc(num, obj) {
         // 선택된 라디오 버튼 확인 (section03 페이지일 때)
-        if (num === 1) {
-            const isChecked = $('input[name="tadd1"]:checked').length > 0;
+        // if (num === 1) {
+        //     const isChecked = $('input[name="tadd1"]:checked').length > 0;
 
-            if (!isChecked) {
-                alert("설문을 선택해주세요");
-                return; // 선택되지 않았으면 페이지 이동 안함
-            }
-        }
+        //     if (!isChecked) {
+        //         alert("설문을 선택해주세요");
+        //         return; // 선택되지 않았으면 페이지 이동 안함
+        //     }
+        // }
 
         // 페이지 이동 처리
         $('.section0' + num).fadeOut(function() {
@@ -377,13 +355,13 @@ html, body {font-size: 10px;}
 		/* form id로 proc */
 		let procForm = document.getElementById(formId);
 		
-		let selectedRadio1 = procForm.querySelector(`input[name="tadd1"]:checked`);
-		if (!selectedRadio1) {
-			alert("설문을 선택해주세요.");
-			return;
-		} else {
-			procForm.querySelector("input[name='add1']").value = selectedRadio1.value;
-		}
+		// let selectedRadio1 = procForm.querySelector(`input[name="tadd1"]:checked`);
+		// if (!selectedRadio1) {
+		// 	alert("설문을 선택해주세요.");
+		// 	return;
+		// } else {
+		// 	procForm.querySelector("input[name='add1']").value = selectedRadio1.value;
+		// }
 		
 		// let selectedRadio2 = procForm.querySelector('input[name="tadd2"]:checked');
 		// if (!selectedRadio2) {
@@ -406,7 +384,7 @@ html, body {font-size: 10px;}
 			'name': '이름'
 			,'age': '나이'
 			,'phone': '전화번호'
-			,'add1': '설문'
+			// ,'add1': '설문'
 			// ,'add2': '설문'
 			// ,'add3': '설문'
 			// ,'branch': '지점'
