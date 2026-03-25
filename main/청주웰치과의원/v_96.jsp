@@ -106,7 +106,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
     .form .description {padding-bottom: 3.7rem;}
     #page-1 .paging {padding: 2.5% 5% 15%;}
 
-    .formContents p {font-size: 270%;}
+    .formContents p {font-size: 250%;}
     .form-group .inp {font-size: 125%;}
 }
 @media screen and (max-width: 415px){
