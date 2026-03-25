@@ -41,7 +41,7 @@ pageEncoding="UTF-8"%>
 html, body {font-size: 10px;}
 #wrap {font-family: 'Pretendard'; max-width: 600px; display: flex; flex-direction: column; background: url("//static.harang-event.com/event/v_${eventSeq}/bg_01.jpg") no-repeat center top; background-size: 100% 100%; height: 100dvh; overflow: hidden; height: 100vh; /* fallback */ height: 100dvh; /* 최신 브라우저용 */
 padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);}
-.form {background: transparent; flex-grow: 1;}
+.form {background: transparent; flex-grow: 1; height: 93%;}
 /* #wrap .formContents {height: 100%;} */
 .page {position: relative; box-sizing: border-box; flex-grow: 1;}
 .hide {display: none;}
@@ -49,7 +49,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 /* .page_inner {padding: 11rem 6rem 0; padding-bottom: 0;} */
 
 /* 첫번째 페이지 */
-#page-1 .top-img {position: relative; z-index: 0; width: 96%; margin: 0 auto; padding-bottom: 13.5%;}
+#page-1 .top-img {position: relative; z-index: 0; width: 100%; padding-bottom: 9.5%;}
 .section01 {text-align: center;}
 .page .sub-img {margin: 0 auto 3rem; width: 80%;}
 .page #location {position: absolute; width: 88.335%; border-radius: 20px; top: 22.81%; left: 50%; transform: translateX(-50%);}
@@ -133,6 +133,8 @@ background: linear-gradient(90deg, rgba(255, 255, 255, 1)  0%, rgba(246, 255, 13
 /* .result-box {position: relative; margin: 3% 5.26% 0; padding: 0;}
 #result {position: absolute; top: 50%; transform: translateY(-50%); right: 20.75%; display: flex; align-items: center; justify-content: center; overflow: hidden; width: 25.91%; height: 56%; font-size: 225%; border-radius: 6px; background-color: #fff;} */
 
+/* notice 영역 */
+.sub-txt {text-align: center; color: #fff; font-family: 'pretendard'; font-weight: 300; margin: 1.167% 0;}
 
 /* 모달창 - 개인정보처리방침 */
 .overlay {z-index: 888; position: fixed; display: none; width: 100vw; height: 100vh; opacity: 0.5; background-color: #000;}
@@ -186,98 +188,98 @@ background: linear-gradient(90deg, rgba(255, 255, 255, 1)  0%, rgba(246, 255, 13
 <div id="wrap">
 	<div class="form timer_03_pointer">
 		<form id="form-1" method="POST" accept-charset="utf-8">
-        <div class="formContents">
-            <section class="page section01" id="page-1"> 
-                <div class="page_inner">
-                    <div class="img-area top-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.png"></div>
-                    <video id="location" playsinline loop autoplay muted src="//static.harang-event.com/event/v_${eventSeq}/video_01.mp4" type="video/mp4"></video>
-                    <script>setTimeout(function(){ $('#location').trigger('play'); },500);</script>
-                    <div class="img-area text-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.png"></div>
-                    <div class="next img-area" onclick="pageFuc(1,$(this))"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.png"></div>
-                </div>
-            </section>
+            <div class="formContents">
+                <section class="page section01" id="page-1"> 
+                    <div class="page_inner">
+                        <div class="img-area top-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.png"></div>
+                        <video id="location" playsinline loop autoplay muted src="//static.harang-event.com/event/v_${eventSeq}/video_01.mp4" type="video/mp4"></video>
+                        <script>setTimeout(function(){ $('#location').trigger('play'); },500);</script>
+                        <div class="img-area text-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.png"></div>
+                        <div class="next img-area" onclick="pageFuc(1,$(this))"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.png"></div>
+                    </div>
+                </section>
 
-            <section class="page hide section02" id="page-2">
-                <div class="page_inner">
-                    <div class="count_box">
-                        <div class="gauge-box">
-                            <span class="gauge">
-                                <span class="progress">
-                                    <span class="pointer"><div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/gage_01.png"></div></span>
+                <section class="page hide section02" id="page-2">
+                    <div class="page_inner">
+                        <div class="count_box">
+                            <div class="gauge-box">
+                                <span class="gauge">
+                                    <span class="progress">
+                                        <span class="pointer"><div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/gage_01.png"></div></span>
+                                    </span>
                                 </span>
-                            </span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="img-area txt-area"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_01.png"></div>
-                    <div class="question_box">
-                        <div class="img-area question"><img src="//static.harang-event.com/event/v_${eventSeq}/q_01.png"></div>
-                        <div class="q_select">
-                            <label><input type="radio" name="tadd1" onclick="pageFuc(2,$(this))" value="아니오"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_02.png"></label>
-                            <label><input type="radio" name="tadd1" onclick="pageFuc(2,$(this))" value="네"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_03.png"></label>
+                        <div class="img-area txt-area"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_01.png"></div>
+                        <div class="question_box">
+                            <div class="img-area question"><img src="//static.harang-event.com/event/v_${eventSeq}/q_01.png"></div>
+                            <div class="q_select">
+                                <label><input type="radio" name="tadd1" onclick="pageFuc(2,$(this))" value="아니오"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_02.png"></label>
+                                <label><input type="radio" name="tadd1" onclick="pageFuc(2,$(this))" value="네"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_03.png"></label>
+                            </div>
                         </div>
+                        <!-- <div class="img-area bottom-img"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_02.png"></div> -->
                     </div>
-                    <!-- <div class="img-area bottom-img"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_02.png"></div> -->
-                </div>
-            </section>
-            <section class="page hide section03" id="page-3">
-                <div class="page_inner">
-                    <div class="count_box">
-                        <div class="gauge-box">
-                            <span class="gauge">
-                                <span class="progress">
-                                    <span class="pointer"><div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/gage_02.png"></div></span>
+                </section>
+                <section class="page hide section03" id="page-3">
+                    <div class="page_inner">
+                        <div class="count_box">
+                            <div class="gauge-box">
+                                <span class="gauge">
+                                    <span class="progress">
+                                        <span class="pointer"><div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/gage_02.png"></div></span>
+                                    </span>
                                 </span>
-                            </span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="img-area txt-area"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_02.png"></div>
-                    <div class="question_box">
-                        <div class="img-area question"><img src="//static.harang-event.com/event/v_${eventSeq}/q_02.png"></div>
-                        <div class="q_select">
-                            <label><input type="radio" name="tage" onclick="pageFuc(3,$(this))" value="50"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_01.png"></label>
-                            <label><input type="radio" name="tage" onclick="pageFuc(3,$(this))" value="60"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_02.png"></label>
-                            <label><input type="radio" name="tage" onclick="pageFuc(3,$(this))" value="70"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_03.png"></label>
+                        <div class="img-area txt-area"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_02.png"></div>
+                        <div class="question_box">
+                            <div class="img-area question"><img src="//static.harang-event.com/event/v_${eventSeq}/q_02.png"></div>
+                            <div class="q_select">
+                                <label><input type="radio" name="tage" onclick="pageFuc(3,$(this))" value="50"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_01.png"></label>
+                                <label><input type="radio" name="tage" onclick="pageFuc(3,$(this))" value="60"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_02.png"></label>
+                                <label><input type="radio" name="tage" onclick="pageFuc(3,$(this))" value="70"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_03.png"></label>
+                            </div>
                         </div>
+                        <!-- <div class="img-area bottom-img"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_02.png"></div> -->
                     </div>
-                    <!-- <div class="img-area bottom-img"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_02.png"></div> -->
-                </div>
-            </section>
+                </section>
 
-            <search class="page hide section04" id="page-4">
-                <div class="page_inner">
-                    <div class="count_box">
-                        <div class="gauge-box">
-                            <span class="gauge">
-                                <span class="progress">
-                                    <span class="pointer"><div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/gage_03.png"></div></span>
+                <search class="page hide section04" id="page-4">
+                    <div class="page_inner">
+                        <div class="count_box">
+                            <div class="gauge-box">
+                                <span class="gauge">
+                                    <span class="progress">
+                                        <span class="pointer"><div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/gage_03.png"></div></span>
+                                    </span>
                                 </span>
-                            </span>
+                            </div>
+                        </div>
+                        <div class="img-area top-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_03.png"></div>
+                        <div class="db-box">
+                            <input type="text" id="name" name="name" class="inp" required="" autocomplete="off" placeholder="이름 ">
+                            <input type="tel" id="phone" name="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="연락처">
+                        </div>
+                        <div class="agBox">
+                            <a href="#" class="btn-agreement">개인정보 처리방침</a>
+                            <input type="hidden" name="agBox" value="Y" checked>
+                        </div>
+                        <div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"></div>
+                        <div class="img-area gif-area"><img src="//static.harang-event.com/event/v_${eventSeq}/arrow_01.gif"></div>
+                        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_04.png"></div>
+                        <!-- <div class="result-box">
+                            <span id="result"></span>
+                            <script>$('input[name="name"]').keyup(function(){$("#result").text($('input[name="name"]').val());});</script>
+                        </div> -->
+                        <div class="description bottom">
+                            <p id="event-period">이벤트 기간 : <?=date("Y년 m월 01일")." ~ ".date("Y년 m월 t일 까지")?></p>
+                            <div class="ad_txt">안심하세요! ${resVo.agent}에서는 고객님의 소중한 개인정보를 <br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
+                            <span>대상 :  ${resVo.target}</span>
                         </div>
                     </div>
-                    <div class="img-area top-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_03.png"></div>
-                    <div class="db-box">
-                        <input type="text" id="name" name="name" class="inp" required="" autocomplete="off" placeholder="이름 ">
-                        <input type="tel" id="phone" name="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="연락처">
-                    </div>
-                    <div class="agBox">
-                        <a href="#" class="btn-agreement">개인정보 처리방침</a>
-                        <input type="hidden" name="agBox" value="Y" checked>
-                    </div>
-                    <div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"></div>
-                    <div class="img-area gif-area"><img src="//static.harang-event.com/event/v_${eventSeq}/arrow_01.gif"></div>
-                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_04.png"></div>
-                    <!-- <div class="result-box">
-                        <span id="result"></span>
-                        <script>$('input[name="name"]').keyup(function(){$("#result").text($('input[name="name"]').val());});</script>
-                    </div> -->
-                    <div class="description bottom">
-                        <p id="event-period">이벤트 기간 : <?=date("Y년 m월 01일")." ~ ".date("Y년 m월 t일 까지")?></p>
-                        <div class="ad_txt">안심하세요! ${resVo.agent}에서는 고객님의 소중한 개인정보를 <br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
-                        <span>대상 :  ${resVo.target}</span>
-                    </div>
-                </div>
-            </search>
-        </div>
+                </search>
+            </div>
             <input type="hidden" id="branch" 		name="branch" value="${resVo.branch}"/>
             <input type="hidden" id="eventSeq" 		name="eventSeq" value="${resVo.eventSeq}"/>
             <input type="hidden" id="site" 			name="site" value="${site}"/>
@@ -297,9 +299,10 @@ background: linear-gradient(90deg, rgba(255, 255, 255, 1)  0%, rgba(246, 255, 13
             <input type="hidden" id="agent" 		name="agent" 		value="${resVo.agent}"/>
             <input type="hidden" id="objectItems" 	name="objectItems" 	value="${resVo.objectItems}"/>
             <input type="hidden" id="objectName" 	name="objectName" 	value="${resVo.objectName}"/>
-		</form>
-	</div>
+        </form>
+    </div>
     <div class="container-bottom">
+        <div class="sub-txt">*본 페이지의 일부 배너 및 디자인물에는 AI로 생성 또는 수정된 인물이 포함될 수 있습니다.</div>
         <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	
     </div>
 </div>
@@ -308,6 +311,8 @@ background: linear-gradient(90deg, rgba(255, 255, 255, 1)  0%, rgba(246, 255, 13
     $(document).ready(function () {
         initDate();/* 기간항목 start */
         blockSourceView();//드래그, 우클릭 방지
+
+        $('.sub-txt').hide();
 	});
 
     // 엔터키 막기
@@ -362,6 +367,10 @@ background: linear-gradient(90deg, rgba(255, 255, 255, 1)  0%, rgba(246, 255, 13
             $('.gauge-box .progress').addClass('active' + (num - 1));
             $(document).scrollTop(0);
         });
+
+        if(num == 3){
+            $('.sub-txt').fadeIn();
+        }
     }
 
     //설문 on/off
