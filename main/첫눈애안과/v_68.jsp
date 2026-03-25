@@ -214,7 +214,7 @@ background: linear-gradient(90deg, rgba(255, 255, 255, 1)  0%, rgba(246, 255, 13
                         <div class="question_box">
                             <div class="img-area question"><img src="//static.harang-event.com/event/v_${eventSeq}/q_01.png"></div>
                             <div class="q_select">
-                                <label><input type="radio" name="tadd1" onclick="pageFuc(2,$(this))" value="아니오"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_02.png"></label>
+                                <label><input type="radio" name="tadd1" onclick="alert('눈 상태가 불편하신 분들을 위한 혜택입니다. 다시 확인 부탁드립니다.')" value="아니오"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_02.png"></label>
                                 <label><input type="radio" name="tadd1" onclick="pageFuc(2,$(this))" value="네"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_03.png"></label>
                             </div>
                         </div>
