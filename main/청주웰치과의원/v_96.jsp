@@ -31,6 +31,7 @@ body {background: #000;}
 #wrap{letter-spacing: -1px; font-family: 'Pretendard', sans-serif; max-width: 600px;  height: 100vh; /* fallback */ height: 100dvh; /* 최신 브라우저용 */
 padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);}
 .form {height: 100%; background: url("//static.harang-event.com/event/v_${eventSeq}/bg_01.jpg") no-repeat center; background-size: 100% 100%;}
+#form-1 {height: 100%;}
 .page:not(#page-1){display: none;}
 
 /* 첫번째 페이지 */
@@ -49,7 +50,8 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 .paging{display: flex; justify-content: center; padding: 3.5% 5%;}
 .paging button img{width: 100%;}
 
-#page-2 {padding: 10% 0 0; background: url("//static.harang-event.com/event/v_${eventSeq}/bg_02.jpg") no-repeat center top / 100% 100%;}
+#page-2 {height: 94.5%; flex-direction: column; padding: 10% 0 0; background: url("//static.harang-event.com/event/v_${eventSeq}/bg_02.jpg") no-repeat center top / 100% 100%;}
+#page-2 .page_inner {flex-grow: 1;}
 #page-2 .img-area:nth-child(1) {width: 86.167%; margin: 0 auto;}
 #page-2 .open_btn {border-radius: 24px; box-shadow: 0 0 15px 0 rgba(108, 170, 208, 0.25);}
 
@@ -151,15 +153,17 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
         </section>
 
         <section class="page" id="page-2">
-            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_04.png"></div>
-            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_03.png"></div>
-            <div class="description">
-                <b id="event-period"></b>
-                <div class="ad_txt">안심하세요!  ${resVo.agent} 에서는 고객님의 소중한 개인정보를 <br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
-                <span>대상 :  ${resVo.target}</span>
-            </div>
-            <div class="paging">
-                <button type="button" class="open_btn" onclick="showFloatingBox()"><img class="animate__animated animate__pulse" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_02.png"></button>
+            <div class="page_inner">
+                <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_04.png"></div>
+                <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_03.png"></div>
+                <div class="description">
+                    <b id="event-period"></b>
+                    <div class="ad_txt">안심하세요!  ${resVo.agent} 에서는 고객님의 소중한 개인정보를 <br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
+                    <span>대상 :  ${resVo.target}</span>
+                </div>
+                <div class="paging">
+                    <button type="button" class="open_btn" onclick="showFloatingBox()"><img class="animate__animated animate__pulse" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_02.png"></button>
+                </div>
             </div>
             <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.png"></div>
             <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>
@@ -247,7 +251,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
         const currentPage = $('.page:visible');
         currentPage.hide();
         $('html, body').animate( { scrollTop : 0 }, 0 );
-        currentPage.next().show();
+        currentPage.next().css({'display': 'flex'});
         showFloatingBox();
     }
     $('.floating_box .close_btn').on('click', function(){
