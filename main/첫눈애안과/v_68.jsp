@@ -130,8 +130,8 @@ background: linear-gradient(90deg, rgba(255, 255, 255, 1)  0%, rgba(246, 255, 13
 #page-4 .top-img {margin: 3.02% 0;}
 #page-4 .page_inner {flex-grow: 1;}
 #page-4 .gif-area {width: 32.076%; margin: -5% auto 0; position: relative; z-index: 0;}
-.result-box {position: relative; margin: 3% 5.26% 0; padding: 0;}
-#result {position: absolute; top: 50%; transform: translateY(-50%); right: 20.75%; display: flex; align-items: center; justify-content: center; overflow: hidden; width: 25.91%; height: 56%; font-size: 225%; border-radius: 6px; background-color: #fff;}
+/* .result-box {position: relative; margin: 3% 5.26% 0; padding: 0;}
+#result {position: absolute; top: 50%; transform: translateY(-50%); right: 20.75%; display: flex; align-items: center; justify-content: center; overflow: hidden; width: 25.91%; height: 56%; font-size: 225%; border-radius: 6px; background-color: #fff;} */
 
 
 /* 모달창 - 개인정보처리방침 */
@@ -265,11 +265,11 @@ background: linear-gradient(90deg, rgba(255, 255, 255, 1)  0%, rgba(246, 255, 13
                     </div>
                     <div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"></div>
                     <div class="img-area gif-area"><img src="//static.harang-event.com/event/v_${eventSeq}/arrow_01.gif"></div>
-                    <div class="result-box">
-                        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_04.png"></div>
+                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_04.png"></div>
+                    <!-- <div class="result-box">
                         <span id="result"></span>
                         <script>$('input[name="name"]').keyup(function(){$("#result").text($('input[name="name"]').val());});</script>
-                    </div>
+                    </div> -->
                     <div class="description bottom">
                         <p id="event-period">이벤트 기간 : <?=date("Y년 m월 01일")." ~ ".date("Y년 m월 t일 까지")?></p>
                         <div class="ad_txt">안심하세요! ${resVo.agent}에서는 고객님의 소중한 개인정보를 <br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
@@ -373,10 +373,10 @@ background: linear-gradient(90deg, rgba(255, 255, 255, 1)  0%, rgba(246, 255, 13
     });
 
     //이름 텍스트 출력
-    $('input[name="name"]').on('keyup', function(){
-        var nameValue = $(this).val();
-        $('.name-result').text(nameValue + '님');
-    });
+    // $('input[name="name"]').on('keyup', function(){
+    //     var nameValue = $(this).val();
+    //     $('.name-result').text(nameValue + '님');
+    // });
 
     // 개인정보처리방침 팝업 관련
 	$('.btn-agreement').on('click', function(e) {
