@@ -105,7 +105,6 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
     .floating_box .formContents .txt_img{padding: 0;}
     /* .form-group, .form .submit{width: 90%;} */
     .agreeModalBox {padding: 12% 4% 5%; width: 95%;} /* 모달창 */
-    .form .description {padding-bottom: 3.7rem;}
     #page-1 .paging {padding: 2.5% 5% 15%;}
 
     .formContents p {font-size: 250%;}
