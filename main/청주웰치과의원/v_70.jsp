@@ -94,7 +94,9 @@ html, body {font-size: 10px;}
 .video-area video {display: block; width: 100%; height: 100%;}
 
 /* 카운트 인원 */
-.count-box {position: absolute; bottom: 2.5%; left: 50%; transform: translateX(-50%); width: max-content; display: flex; align-items: center; justify-content: center; color: #fff; font-family: 'Paperlogy'; font-size: 280%; column-gap: 0.4rem;}
+.count-group {position: relative; padding: 2% 0; color: #fff; font-family: 'Paperlogy'; border-top: 1px solid #f7d9a5; border-bottom: 1px solid #f7d9a5;}
+.count-group > span {display: block; font-size: 280%; column-gap: 0.4rem; text-align: center;}
+.count-box {display: flex; align-items: center; justify-content: center; color: #fff; font-family: 'Paperlogy'; font-size: 280%; column-gap: 0.4rem;}
 .count-box span img {display: block; width: 100%; height: 100%;}
 #count {color: #fffd4b; font-size: 2.5rem; font-weight: 800; font-family: 'Paperlogy';}
 
@@ -195,15 +197,18 @@ html, body {font-size: 10px;}
             <div class="img-area video-area">
                 <video id="location" playsinline loop autoplay muted src="//static.harang-event.com/event/v_${eventSeq}/video_01.mp4" type="video/mp4"></video>
                 <script>setTimeout(function(){ $('#location').trigger('play'); },500);</script>
-                <div class="count-box">
-                    <span class="icon-box">
-                        <img src="//static.harang-event.com/event/v_${eventSeq}/icon_01.png" alt="">
-                    </span>
-                    오늘 마감까지
-                    <span id="count"></span> 남았습니다
-                    <span class="icon-box">
-                        <img src="//static.harang-event.com/event/v_${eventSeq}/icon_01.png" alt="">
-                    </span>
+                <div class="count-group">
+                    <span>최대 할인 마지막 기회</span>
+                    <div class="count-box">
+                        <span class="icon-box">
+                            <img src="//static.harang-event.com/event/v_${eventSeq}/icon_01.png" alt="">
+                        </span>
+                        오늘 마감까지
+                        <span id="count"></span> 남았습니다
+                        <span class="icon-box">
+                            <img src="//static.harang-event.com/event/v_${eventSeq}/icon_01.png" alt="">
+                        </span>
+                    </div>
                 </div>
             </div>
             <section class="page section01" id="page-1">
