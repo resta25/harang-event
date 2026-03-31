@@ -75,6 +75,7 @@ html, body {font-size: 10px;}
 @media screen and (max-width: 500px) { 
     html, body {font-size: 1.7vw;}
     .form .db-box input {font-size: 3rem;}
+    .page {min-height: 87vh;}
 }
 @media screen and (max-width: 395px) {
 }
