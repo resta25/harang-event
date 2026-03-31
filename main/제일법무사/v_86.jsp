@@ -57,11 +57,16 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 .form strong {color: #f20000; font-weight: 800; font-family: 'SUIT';}
 .form .name-result {}
 .next {cursor: pointer;}
-.page:not(#page-1):not(#page-10) {padding: 7.167% 8.335%; padding: 4% 8.335%; font-size: 16px;}
-.page:not(#page-1):not(#page-10) .question .img-area {width: 87.8%; margin: 0 auto;}
+.page:not(#page-1):not(#page-10) {padding: 7.335% 8.335%; font-size: 16px;}
+.page#page-1 .question .img-area, .page#page-2 .question .img-area {width: 87.8%; margin: 0 auto;}
+.page:not(#page-1):not(#page-2) .question .img-area {width: 98.6%; margin: 0 auto;}
+
+.page-box {text-align: center; margin-bottom: 4.8%;}
+.page-box .page-num {font-family: 'Pretendard'; font-size: 188%; font-weight: 500; letter-spacing: -0.6px; color: #676767;}
+.page-box .page-num .current {color: #013797;}
 
 /* 이전,다음 버튼 */
-.paging {margin-top: 7.4%; display: flex; align-items: center; column-gap: 7px;}
+.paging {margin-top: 7.6%; display: flex; align-items: center; column-gap: 7px;}
 .paging button {background-color: transparent;}
 .paging .prev {flex-shrink: 0; width: 32.6%; padding: 3.2% 0; background-color: #dedede; font-family: 'Pretendard'; font-weight: 700; font-size: 170%; border-radius: 10px; color: #222;}
 .paging .next {flex-shrink: 0; width: 65.93%; padding: 3.2% 0; background-color: #013797; font-family: 'Pretendard'; font-weight: 700; font-size: 170%; border-radius: 10px; color: #fff;}
@@ -72,13 +77,13 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 #page-1 {height: 100%;}
 #page-1 .video-area {padding: 2.5% 4.585% 0;}
 #page-1 .video-area video {display: block; width: 100%; height: 100%; border-radius: 30px;}
-#page-1 .agBox {font-size: 150%; font-family: 'Pretendard'; font-weight: 500; margin: 3.835% auto 3.667%;}
+#page-1 .agBox {font-size: 150%; font-family: 'Pretendard'; font-weight: 500; margin: 3.667% auto 3.585%;}
 #page-1 .agBox a {text-decoration: underline;}
-#page-1 .next {display: flex; align-items: center; justify-content: center; width: 63.167%; margin: 0 auto; padding: 2.835% 0; font-size: 300%; font-family: 'Pretendard'; color: #fff; background-color: #013797; border-radius: 20px; font-weight: 700; text-align: center;}
+#page-1 .next {display: flex; align-items: center; justify-content: center; width: 63.167%; margin: 0 auto; padding: 3.417% 0; font-size: 300%; font-family: 'Pretendard'; color: #fff; background-color: #013797; border-radius: 20px; font-weight: 700; text-align: center;}
 
 /* 설문영역 */
-.q_select {display: flex; flex-flow: row wrap; justify-content: center; gap: 1rem; margin-top: 5.2%;}
-.q_select label {width: 100%; border: 2px solid #dedede; font-family: 'Pretendard'; font-size: 170%; color: #222; display: flex; align-items: center; justify-content: center; padding: 2.6% 0; border-radius: 10px; font-weight: 500; background-color: #f7f5f2;}
+.q_select {display: flex; flex-flow: row wrap; justify-content: center; gap: 1.1rem; margin-top: 5.6%;}
+.q_select label {width: 100%; border: 2px solid #dedede; font-family: 'Pretendard'; font-size: 169%; color: #222; display: flex; align-items: center; justify-content: center; padding: 2.6% 0; border-radius: 10px; font-weight: 500; background-color: #f7f5f2;}
 .q_select label.active {border-color: #013797; background-color: #e1eafa; color: #013797; font-weight: 700;}
 .q_select .sub_txt {margin: 0; text-align: center; color: #666; font-size: 130%; font-family: 'Pretendard'; font-weight: 500;}
 
@@ -99,11 +104,12 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 .form .submit {flex-shrink: 0; width: 65.93%; padding: 0;}
 .form .submit input[type="submit"] {width: 100%; padding: 4.305% 0; border: none; background-color: #013797; font-family: 'Pretendard'; font-weight: 700; font-size: 170%; border-radius: 10px; color: #fff;}
 
-.form .checkbox {text-align: center; display: flex; align-items: center; justify-content: center; font-family: 'Pretendard'; font-size: 220%; font-weight: 700; margin-top: 2.335%}
+.form .checkbox {text-align: center; display: flex; align-items: center; justify-content: center; font-family: 'Pretendard'; font-size: 138%; font-weight: 700; margin-top: 4.2%;}
+.form .checkbox label {line-height: 1;}
 .form .checkbox input[type="checkbox"] {width: 28px; height: 28px; margin-right: 7px; appearance: none; background: url("//static.harang-event.com/event/v_${eventSeq}/check_off.png") no-repeat center center / 100% 100%; clip: unset; position: static; transition: 0s;}
 .form .checkbox input[type="checkbox"]:checked {background-image: url("//static.harang-event.com/event/v_${eventSeq}/check_on.png");}
 
-.toast {display: none; position: absolute; left: 50%; bottom: 15%; transform: translateX(-50%); text-align: center; width: 92.5%; background-color: rgba(0, 0, 0, 0.8); color: #fff; font-size: 200%; font-family: 'Pretendard'; font-weight: 600; border-radius: 8px; padding: 2.75% 2%; box-sizing: border-box;}
+.toast {display: none; position: absolute; left: 50%; bottom: 15%; transform: translateX(-50%); text-align: center; width: 92.5%; background-color: rgba(0, 0, 0, 0.8); color: #fff; font-size: 125%; font-family: 'Pretendard'; font-weight: 600; border-radius: 8px; padding: 2.75% 2%; box-sizing: border-box;}
 .toast strong {color: #fff949;}
 
 /* 안심문구, 대상, 이벤트기간 */
@@ -132,10 +138,12 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
     html, body {font-size: 1.7vw;}
 
     #page-1 .next {border-radius: 15px;}
+    .page-box .page-num {font-size: 158%;}
     .q_select label {font-size: 125%;}
     .paging .prev, .paging .next {font-size: 125%;}
-    #page-10 .paging {font-size: 175%; margin-top: 4.4%;}
-    #page-10 .prev, .form .submit input[type="submit"]  {font-size: 170%;}
+    #page-8 .paging {font-size: 175%; margin-top: 4.4%;}
+    #page-8 .prev, .form .submit input[type="submit"]  {font-size: 80%;}
+    .form .submit {padding: 0.045% 0;}
     .q_select .sub_txt {font-size: 95%;}
     .q_select .inp {font-size: 105%;}
     .q_select textarea {font-size: 105%;}
@@ -143,8 +151,9 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
     #page-4 .popup .popup-content {width: 80%;}
     #page-4 .popup .btn-close-popup {font-size: 145%;}
     #page-8 .q_select label {width: 47.7%;}
-    .form .checkbox {font-size: 220%; margin-top: 4.335%;}
+    .form .checkbox {font-size: 100%; margin-top: 5.335%;}
     .form .checkbox input[type="checkbox"] {width: 22px; height: 22px; margin-right: 4px;}
+    .toast {font-size: 80%;}
 }
 @media screen and (max-width: 395px) {
     /* .form .db-box {top: 13%;} */
@@ -204,6 +213,9 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                 <div class="page_inner">
                     <div class="question_box">
                         <div class="question">
+                            <div class="page-box">
+                                <span class="page-num"><span class="current">1</span>/6</span>
+                            </div>
                             <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_01.png"></div>
                         </div>
                         <div class="q_select">
@@ -222,11 +234,16 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                 <div class="page_inner">
                     <div class="question_box">
                         <div class="question">
+                            <div class="page-box">
+                                <span class="page-num"><span class="current">2</span>/6</span>
+                            </div>
                             <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_02.png"></div>
                         </div>
                         <div class="q_select">
-                            <label><input type="radio" name="tadd2" value="아니요. 없습니다">아니요, 없습니다</label>
-                            <label><input type="radio" name="tadd2" value="네. 있습니다">네, 있습니다</label>
+                            <label><input type="radio" name="tadd2" value="2,000만원~3,000만원">2,000만원~3,000만원</label>
+                            <label><input type="radio" name="tadd2" value="3,000만원~5,000만원">3,000만원~5,000만원</label>
+                            <label><input type="radio" name="tadd2" value="5,000만원~1억원">5,000만원~1억원</label>
+                            <label><input type="radio" name="tadd2" value="1억원 이상">1억원 이상</label>
                         </div>
                     </div>
                 </div>
@@ -240,13 +257,14 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                 <div class="page_inner">
                     <div class="question_box">
                         <div class="question">
+                            <div class="page-box">
+                                <span class="page-num"><span class="current">3</span>/6</span>
+                            </div>
                             <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_03.png"></div>
                         </div>
                         <div class="q_select">
-                            <label><input type="radio" name="tadd3" value="2,000만원~3,000만원">2,000만원~3,000만원</label>
-                            <label><input type="radio" name="tadd3" value="3,000만원~5,000만원">3,000만원~5,000만원</label>
-                            <label><input type="radio" name="tadd3" value="5,000만원~1억원">5,000만원~1억원</label>
-                            <label><input type="radio" name="tadd3" value="1억원 이상">1억원 이상</label>
+                            <label><input type="radio" name="tadd3" value="네">네</label>
+                            <label><input type="radio" name="tadd3" value="아니요">아니요</label>
                         </div>
                     </div>
                 </div>
@@ -267,13 +285,14 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                 <div class="page_inner">
                     <div class="question_box">
                         <div class="question">
+                            <div class="page-box">
+                                <span class="page-num"><span class="current">4</span>/6</span>
+                            </div>
                             <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_04.png"></div>
                         </div>
                         <div class="q_select">
-                            <label><input type="radio" name="tadd4" value="200만원 미만">200만원 미만</label>
-                            <label><input type="radio" name="tadd4" value="300만원 미만">300만원 미만</label>
-                            <label><input type="radio" name="tadd4" value="400만원 미만">400만원 미만</label>
-                            <label><input type="radio" name="tadd4" value="400만원 이상">400만원 이상</label>
+                            <label><input type="radio" name="tadd4" value="네, 알고 있습니다.">네, 알고 있습니다.</label>
+                            <label><input type="radio" name="tadd4" value="아니요">아니요</label>
                         </div>
                     </div>
                 </div>
@@ -287,11 +306,14 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                 <div class="page_inner">
                     <div class="question_box">
                         <div class="question">
+                            <div class="page-box">
+                                <span class="page-num"><span class="current">5</span>/6</span>
+                            </div>
                             <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_05.png"></div>
                         </div>
                         <div class="q_select">
-                            <p class="sub_txt">한글 성함을 입력해주세요</p>
-                            <input type="text" id="name" name="name" class="inp" required="" autocomplete="off" placeholder="성함을 입력해주세요 ">
+                            <label><input type="radio" name="tadd5" value="네, 있습니다.">네, 있습니다.</label>
+                            <label><input type="radio" name="tadd5" value="아니요">아니요</label>
                         </div>
                     </div>
                 </div>
@@ -305,9 +327,14 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                 <div class="page_inner">
                     <div class="question_box">
                         <div class="question">
+                            <div class="page-box">
+                                <span class="page-num"><span class="current">6</span>/6</span>
+                            </div>
                             <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_06.png"></div>
                         </div>
                         <div class="q_select">
+                            <p class="sub_txt">한글 성함을 입력해주세요</p>
+                            <input type="text" id="name" name="name" class="inp" required="" autocomplete="off" placeholder="성함을 입력해주세요 ">
                             <p class="sub_txt">010 포함 11자리를 숫자만 입력해주세요</p>
                             <input type="tel" id="phone" name="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="연락처를 입력해 주세요">
                         </div>
@@ -319,7 +346,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                 </div>
             </section>
 
-            <section class="page hide section08" id="page-8">
+            <!-- <section class="page hide section08" id="page-8">
                 <div class="page_inner">
                     <div class="question_box">
                         <div class="question">
@@ -343,9 +370,9 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                     <button type="button" class="prev">이전</button>	
                     <button type="button" class="next" onclick="pageFuc(8,$(this))">다음</button>
                 </div>
-            </section>
+            </section> -->
 
-            <section class="page hide section09" id="page-9">
+            <!-- <section class="page hide section09" id="page-9">
                 <div class="page_inner">
                     <div class="question_box">
                         <div class="question">
@@ -360,9 +387,9 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                     <button type="button" class="prev">이전</button>	
                     <button type="button" class="next" onclick="pageFuc(9,$(this))">다음</button>
                 </div>
-            </section>
+            </section> -->
 
-            <section class="page hide section10" id="page-10">
+            <section class="page hide section08" id="page-8">
                 <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.png"></div>
                 <div class="checkbox confirm">
                     <label>
@@ -574,10 +601,10 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
         }
     });
 
-    $('#page-4 .popup .btn-close-popup').on('click', function(){
-        var $popup = $('#page-4 .popup');
-        $popup.fadeOut();
-    });
+    // $('#page-4 .popup .btn-close-popup').on('click', function(){
+    //     var $popup = $('#page-4 .popup');
+    //     $popup.fadeOut();
+    // });
 
     //설문 on/off
     $('input[name*="tadd"]').on('click', function(){
@@ -617,8 +644,8 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 		/* form id로 proc */
 		let procForm = document.getElementById(formId);
 
-        const isChecked = $('#page-10 .checkbox input[type="checkbox"]').is(':checked');
-        const $toast = $('#page-10 .toast');
+        const isChecked = $('#page-8 .checkbox input[type="checkbox"]').is(':checked');
+        const $toast = $('#page-8 .toast');
 
           if (!isChecked) {
             $toast.fadeIn();
@@ -672,8 +699,8 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 			procForm.querySelector("input[name='add5']").value = selectedRadio5.value;
 		}
 
-        let selectedRadio6 = procForm.querySelector('textarea[name="tadd6"]').value;
-        procForm.querySelector("input[name='add6']").value = selectedRadio6;
+        // let selectedRadio6 = procForm.querySelector('textarea[name="tadd6"]').value;
+        // procForm.querySelector("input[name='add6']").value = selectedRadio6;
 
 		// let selectedRadio2 = procForm.querySelector(`input[name="tadd2"]:checked`);
 		// if (!selectedRadio2) {
