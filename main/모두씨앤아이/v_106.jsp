@@ -4,8 +4,8 @@ pageEncoding="UTF-8"%>
 <style>
 html, body {font-size: 10px;}
 #wrap {font-family: 'Pretendard'; max-width: 600px; background: url("//static.harang-event.com/event/v_${eventSeq}/bg_01.jpg") no-repeat center top; background-size: 100% 100%;}
-.form {background: transparent; height: 100%;}
-#wrap .formContents {height: 100%;}
+.form {background: transparent;}
+/* #wrap .formContents {height: 100%;} */
 .page {position: relative; box-sizing: border-box; min-height: 94vh;}
 .hide {display: none;}
 
