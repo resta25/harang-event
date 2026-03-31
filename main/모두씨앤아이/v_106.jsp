@@ -3,11 +3,10 @@ pageEncoding="UTF-8"%>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <style>
 html, body {font-size: 10px;}
-#wrap {font-family: 'Pretendard'; max-width: 600px; background: url("//static.harang-event.com/event/v_${eventSeq}/bg_01.jpg") no-repeat center top; background-size: 100% 100%; height: 100dvh; overflow: hidden; height: 100vh; /* fallback */ height: 100dvh; /* 최신 브라우저용 */
-padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);}
+#wrap {font-family: 'Pretendard'; max-width: 600px; background: url("//static.harang-event.com/event/v_${eventSeq}/bg_01.jpg") no-repeat center top; background-size: 100% 100%;}
 .form {background: transparent; height: 100%;}
 #wrap .formContents {height: 100%;}
-.page {position: relative; box-sizing: border-box; min-height: 100vh;}
+.page {position: relative; box-sizing: border-box; min-height: 94vh;}
 .hide {display: none;}
 
 /* .page_inner {padding: 11rem 6rem 0; padding-bottom: 0;} */
@@ -182,11 +181,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                     </div>
                     <div class="img-area bottom-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_07.gif"></div>
                 </div>
-                <div class="container-bottom">
-                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	
-                </div>
             </search>
-            
         </div>
             <input type="hidden" id="branch" 		name="branch" value="${resVo.branch}"/>
             <input type="hidden" id="eventSeq" 		name="eventSeq" value="${resVo.eventSeq}"/>
@@ -209,6 +204,9 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
             <input type="hidden" id="objectName" 	name="objectName" 	value="${resVo.objectName}"/>
 		</form>
 	</div>
+    <div class="container-bottom">
+        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	
+    </div>
 </div>
 <!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->
 <script>
@@ -308,12 +306,6 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
             $('.section0' + (num + 1)).css({ 'display': 'flex', 'flex-direction': 'column' });
             $(document).scrollTop(0);
         });
-
-        if(num == 3){
-            // $('html').css({'overflow': 'auto'});
-            $('#wrap').css({'height': 'auto'});
-            $('#wrap').css({'overflow': 'unset'});
-        }
     }
 
     //설문 on/off
