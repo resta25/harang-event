@@ -57,7 +57,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 .form strong {color: #f20000; font-weight: 800; font-family: 'SUIT';}
 .form .name-result {}
 .next {cursor: pointer;}
-.page:not(#page-1):not(#page-10) {padding: 7.335% 8.335%; font-size: 16px;}
+.page:not(#page-1):not(#page-8) {padding: 7.335% 8.335%; font-size: 16px;}
 .page#page-1 .question .img-area, .page#page-2 .question .img-area {width: 87.8%; margin: 0 auto;}
 .page:not(#page-1):not(#page-2) .question .img-area {width: 98.6%; margin: 0 auto;}
 
@@ -92,10 +92,10 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 #page-4 .popup .img-area {width: 70%; margin: 0 auto;}
 #page-4 .popup .btn-close-popup {display: flex; align-items: center; justify-content: center; width: 100%; margin: 7% auto 0; padding: 2.835% 0; font-size: 210%; font-family: 'Pretendard'; color: #fff; background-color: #013797; border-radius: 20px; font-weight: 700; text-align: center;}
 
-#page-8 .q_select label {width: 48.2%;}
+/* #page-8 .q_select label {width: 48.2%;} */
 
-#page-10 {position: relative;}
-#page-10 .paging {padding: 0 8.335%; font-size: 125%;}
+#page-8 {position: relative;}
+#page-8 .paging {padding: 0 8.335%; font-size: 125%;     margin-top: 2.667%;}
 
 .q_select .inp {background-color: #fff; padding: 2.99%; border: 2px solid #dedede; border-radius: 10px; color: #222; font-size: 150%; font-weight: 700; font-family: 'Pretendard'; text-align: center;}
 .q_select .inp::placeholder {color: #dedede;}
@@ -104,12 +104,12 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 .form .submit {flex-shrink: 0; width: 65.93%; padding: 0;}
 .form .submit input[type="submit"] {width: 100%; padding: 4.305% 0; border: none; background-color: #013797; font-family: 'Pretendard'; font-weight: 700; font-size: 170%; border-radius: 10px; color: #fff;}
 
-.form .checkbox {text-align: center; display: flex; align-items: center; justify-content: center; font-family: 'Pretendard'; font-size: 138%; font-weight: 700; margin-top: 4.2%;}
+.form .checkbox {text-align: center; display: flex; align-items: center; justify-content: center; font-family: 'Pretendard'; font-size: 220%; font-weight: 700; margin-top: 4.2%;}
 .form .checkbox label {line-height: 1;}
 .form .checkbox input[type="checkbox"] {width: 28px; height: 28px; margin-right: 7px; appearance: none; background: url("//static.harang-event.com/event/v_${eventSeq}/check_off.png") no-repeat center center / 100% 100%; clip: unset; position: static; transition: 0s;}
 .form .checkbox input[type="checkbox"]:checked {background-image: url("//static.harang-event.com/event/v_${eventSeq}/check_on.png");}
 
-.toast {display: none; position: absolute; left: 50%; bottom: 15%; transform: translateX(-50%); text-align: center; width: 92.5%; background-color: rgba(0, 0, 0, 0.8); color: #fff; font-size: 125%; font-family: 'Pretendard'; font-weight: 600; border-radius: 8px; padding: 2.75% 2%; box-sizing: border-box;}
+.toast {display: none; position: absolute; left: 50%; bottom: 15%; transform: translateX(-50%); text-align: center; width: 92.5%; background-color: rgba(0, 0, 0, 0.8); color: #fff; font-size: 200%; font-family: 'Pretendard'; font-weight: 600; border-radius: 8px; padding: 2.75% 2%; box-sizing: border-box;}
 .toast strong {color: #fff949;}
 
 /* 안심문구, 대상, 이벤트기간 */
@@ -141,8 +141,9 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
     .page-box .page-num {font-size: 158%;}
     .q_select label {font-size: 125%;}
     .paging .prev, .paging .next {font-size: 125%;}
+    
     #page-8 .paging {font-size: 175%; margin-top: 4.4%;}
-    #page-8 .prev, .form .submit input[type="submit"]  {font-size: 80%;}
+    #page-8 .prev, .form .submit input[type="submit"]  {font-size: 170%;}
     .form .submit {padding: 0.045% 0;}
     .q_select .sub_txt {font-size: 95%;}
     .q_select .inp {font-size: 105%;}
@@ -151,9 +152,9 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
     #page-4 .popup .popup-content {width: 80%;}
     #page-4 .popup .btn-close-popup {font-size: 145%;}
     #page-8 .q_select label {width: 47.7%;}
-    .form .checkbox {font-size: 100%; margin-top: 5.335%;}
+    .form .checkbox {font-size: 220%; margin-top: 4.335%;}
     .form .checkbox input[type="checkbox"] {width: 22px; height: 22px; margin-right: 4px;}
-    .toast {font-size: 80%;}
+    /* .toast {font-size: 80%;} */
 }
 @media screen and (max-width: 395px) {
     /* .form .db-box {top: 13%;} */
