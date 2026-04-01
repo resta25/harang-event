@@ -284,11 +284,19 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 	            $(selector).append(html);
 	        });
 	    });
-        initMarquee();
+
+        setTimeout(function() {
+            initMarquee();
+        }, 200);
 	}
 	
 	// 마퀴 초기화 및 재적용
 	function initMarquee() {
+        if (typeof $.fn.marquee !== 'function') {
+            console.warn('Marquee library is not loaded yet. Retrying...');
+            return; 
+        }
+
         $('.marquee1, .marquee2, .marquee3').marquee('destroy');
         $('.marquee1, .marquee2, .marquee3').marquee({
             duration: 20000,
@@ -398,12 +406,13 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
             
             // 4페이지(마지막 페이지)로 진입했을 때 마퀴 재초기화
             if (num === 3) {
-                $('.subscribe-box').show();
+                // $('.subscribe-box').show();
                 // 중요: 요소가 눈에 보이는 상태가 된 후 약간의 지연을 주어 너비를 계산하게 함
+                // section04가 완전히 나타난(fadeIn 완료) 후 호출하는 것이 가장 안전합니다.
                 setTimeout(function() {
                     initMarquee();
-                }, 100); 
-            }
+                }, 300);
+                        }
             
             $(document).scrollTop(0);
         });
