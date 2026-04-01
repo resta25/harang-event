@@ -4,7 +4,7 @@ pageEncoding="UTF-8"%>
 <style>
 html, body {font-size: 10px;}
 #wrap {font-family: 'Pretendard'; max-width: 600px; display: flex; flex-direction: column; background-color: #fff; height: 100vh; /* fallback */ height: 100dvh; /* 최신 브라우저용 */
-padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); overflow-x: hidden;}
+padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);}
 .form {background: transparent; height: 95%;}
 #form-1 {height: 100%;}
 #wrap .formContents {height: 100%;}
@@ -77,7 +77,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 
 /* 실시간 신청현황 01 기본 */
 .js-marquee-wrapper {display: flex;}
-.subscribe-box {padding: 6% 0; background-color: #f1f1f1;}
+.subscribe-box {padding: 6% 0; background-color: #f1f1f1; width: 100%; /* 너비를 명시적으로 지정 */ overflow: hidden;}
 .subscribe-box .title {font-size: 310%; font-weight: 700; text-align: center; color: #ff2652; padding-bottom: 5%;}
 .marquee-wrap > div + div {margin-top: 2%;}
 .marquee-wrap .sign {padding: 0; width: max-content; gap: 1.5em;}
@@ -216,6 +216,21 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                     </div>
                     <div class="img-area bottom-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_08.gif"></div>
 
+                    <div class="subscribe-box">
+                        <div class="title">선착순 신청자 현황</div>
+                        <div class="marquee-wrap">
+                            <div class="marquee1">
+                                <div class="sign"><div class="subscribe"></div></div>
+                            </div>
+                            <div class="marquee2">
+                                <div class="sign"><div class="subscribe"></div></div>
+                            </div>
+                            <div class="marquee3">
+                                <div class="sign"><div class="subscribe"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.jpg"></div>	
                 </div>
             </search>
@@ -241,21 +256,6 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
             <input type="hidden" id="objectName" 	name="objectName" 	value="${resVo.objectName}"/>
 		</form>
 	</div>
-
-    <!-- <div class="subscribe-box">
-        <div class="title">선착순 신청자 현황</div>
-        <div class="marquee-wrap">
-            <div class="marquee1">
-                <div class="sign"><div class="subscribe"></div></div>
-            </div>
-            <div class="marquee2">
-                <div class="sign"><div class="subscribe"></div></div>
-            </div>
-            <div class="marquee3">
-                <div class="sign"><div class="subscribe"></div></div>
-            </div>
-        </div>
-    </div> -->
 
     <div class="container-bottom">
         <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	
@@ -392,7 +392,18 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 
         // 페이지 이동 처리
         $('.section0' + num).fadeOut(function() {
-            $('.section0' + (num + 1)).css({ 'display': 'flex', 'flex-direction': 'column' });
+            var nextSection = $('.section0' + (num + 1));
+            nextSection.css({ 'display': 'flex', 'flex-direction': 'column' });
+            
+            // 4페이지(마지막 페이지)로 진입했을 때 마퀴 재초기화
+            if (num === 3) {
+                $('.subscribe-box').show();
+                // 중요: 요소가 눈에 보이는 상태가 된 후 약간의 지연을 주어 너비를 계산하게 함
+                setTimeout(function() {
+                    initMarquee();
+                }, 100); 
+            }
+            
             $(document).scrollTop(0);
         });
     }
