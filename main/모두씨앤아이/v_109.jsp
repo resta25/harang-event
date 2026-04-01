@@ -261,8 +261,8 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
     </div>
 </div>
 <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-<!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->
 <script src="https://cdn.jsdelivr.net/npm/jquery.marquee@1.5.0/jquery.marquee.min.js"></script>
+<!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->
 <script>
     $(document).ready(function () {
         initDate();/* 기간항목 start */
