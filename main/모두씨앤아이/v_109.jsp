@@ -270,8 +270,25 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
         blockSourceView();//드래그, 우클릭 방지
 
         getCommentMarquee(`${eventSeq}`); // 댓글 관련 함수
-
     });
+
+    // 마퀴 초기화 및 재적용
+	function initMarquee() {
+        if (typeof $.fn.marquee !== 'function') {
+            console.warn('Marquee library is not loaded yet. Retrying...');
+            return; 
+        }
+
+        $('.marquee1, .marquee2, .marquee3').marquee('destroy');
+        $('.marquee1, .marquee2, .marquee3').marquee({
+            duration: 20000,
+            gap: 20,
+            delayBeforeStart: 0,
+            direction: 'left',
+            duplicated: true,
+            startVisible: true
+        });
+    }
 
     function returnComment(resultData, meoreData){
 	    ['.marquee1 .subscribe', '.marquee2 .subscribe', '.marquee3 .subscribe'].forEach(function(selector) {
@@ -289,24 +306,6 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
             initMarquee();
         }, 200);
 	}
-	
-	// 마퀴 초기화 및 재적용
-	function initMarquee() {
-        if (typeof $.fn.marquee !== 'function') {
-            console.warn('Marquee library is not loaded yet. Retrying...');
-            return; 
-        }
-
-        $('.marquee1, .marquee2, .marquee3').marquee('destroy');
-        $('.marquee1, .marquee2, .marquee3').marquee({
-            duration: 20000,
-            gap: 20,
-            delayBeforeStart: 0,
-            direction: 'left',
-            duplicated: true,
-            startVisible: true
-        });
-    }
 
     $(document).ready(function () {
         // 타이머
