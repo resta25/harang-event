@@ -120,7 +120,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 #result {position: absolute; top: 50%; transform: translateY(-50%); left: 10.55%; display: flex; align-items: center; justify-content: center; overflow: hidden; width: 20.9%; height: 60%; font-size: 150%; border-radius: 8px; background-color: #fff;}
 
 /* cta 버튼 */
-.form .submit{width: 80%; margin: 0 auto; transition: transform 0.1s ease-in-out;}
+.form .submit{flex-shrink: 0; width: 37%; margin: 0 auto; transition: transform 0.1s ease-in-out;}
 .form .submit:active{transform: scale(0.95);}
 .form .submit input[type="image"]{width: 100%;}
 
@@ -140,7 +140,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 .agreeModalBox .newAgreement ol li {line-height: 12px; font-size: 10px;}
 
 @media screen and (max-width: 500px){
-    .form .submit{width: 80%;}
+    /* .form .submit{width: 80%;} */
     .agreeModalBox {padding: 12% 4% 5%; width: 95%;} /* 모달창 */
 
     .sub-txt {font-size: 77%;}
@@ -151,14 +151,17 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 
     .paging_btn button {max-width: 20px;}
 
-    .question_box .question {font-size: 210%;}
-    .question_box .q_select label .sel-item {font-size: 170%;}
+    .question_box .question {font-size: 190%;}
+    .question_box .q_select label .sel-item {font-size: 150%;}
     .question_box .q_select label + label {margin-top: 10px;}
-
-    .txt_01 {font-size: 24px;}
+    .form-group .inp {font-size: 125%;}
+    
+    .txt_01 {font-size: 100%; margin-bottom: 0;}
 
     .form-group > .item {border-radius: 19px;}
     #result {border-radius: 7px;}
+
+    .form .description p {font-size: 80%;}
 }
 
 @media screen and (max-width: 415px){
