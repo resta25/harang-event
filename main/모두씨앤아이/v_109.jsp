@@ -2,7 +2,6 @@
 pageEncoding="UTF-8"%>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery.marquee@1.5.0/jquery.marquee.min.js"></script>
-<!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->
 
 <style>
 html, body {font-size: 10px;}
@@ -264,49 +263,18 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
         <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	
     </div>
 </div>
+<!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->
 <script>
     $(document).ready(function () {
         initDate();/* 기간항목 start */
         blockSourceView();//드래그, 우클릭 방지
 
         getCommentMarquee(`${eventSeq}`); // 댓글 관련 함수
+
     });
-
-    // 마퀴 초기화 및 재적용
-    function initMarquee() {
-        // 1. 라이브러리가 로드되었는지 확인
-        if (typeof $.fn.marquee !== 'function') {
-            console.warn('Marquee library is not loaded yet. Retrying in 100ms...');
-            // 로드되지 않았다면 100ms 후에 다시 시도 (재귀 호출)
-            setTimeout(initMarquee, 100);
-            return; 
-        }
-
-        // 2. 라이브러리가 로드되었다면 초기화 진행
-        console.log('Marquee library loaded! Initializing...');
-        
-        const targets = $('.marquee1, .marquee2, .marquee3');
-        
-        // 기존 마퀴가 있다면 제거 후 재생성
-        try {
-            targets.marquee('destroy');
-        } catch(e) {
-            // destroy할 대상이 없어도 무시
-        }
-
-        targets.marquee({
-            duration: 20000,
-            gap: 20,
-            delayBeforeStart: 0,
-            direction: 'left',
-            duplicated: true,
-            startVisible: true
-        });
-    }
 
     function returnComment(resultData, meoreData){
 	    ['.marquee1 .subscribe', '.marquee2 .subscribe', '.marquee3 .subscribe'].forEach(function(selector) {
-            $(selector).empty(); // 중복 방지를 위해 비워주기
 	        resultData.forEach(function(item) {
 	            var html  = '<div class="content" data-id="'+ item.seq +'">';
 	                html += '   <div class="phone">'+ (item.name || '') + ' ' + (item.phone || '') + '</div>';
@@ -316,9 +284,21 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 	            $(selector).append(html);
 	        });
 	    });
-
         initMarquee();
 	}
+	
+	// 마퀴 초기화 및 재적용
+	function initMarquee() {
+        $('.marquee1, .marquee2, .marquee3').marquee('destroy');
+        $('.marquee1, .marquee2, .marquee3').marquee({
+            duration: 20000,
+            gap: 20,
+            delayBeforeStart: 0,
+            direction: 'left',
+            duplicated: true,
+            startVisible: true
+        });
+    }
 
     $(document).ready(function () {
         // 타이머
@@ -418,13 +398,12 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
             
             // 4페이지(마지막 페이지)로 진입했을 때 마퀴 재초기화
             if (num === 3) {
-                // $('.subscribe-box').show();
+                $('.subscribe-box').show();
                 // 중요: 요소가 눈에 보이는 상태가 된 후 약간의 지연을 주어 너비를 계산하게 함
-                // section04가 완전히 나타난(fadeIn 완료) 후 호출하는 것이 가장 안전합니다.
                 setTimeout(function() {
                     initMarquee();
-                }, 300);
-                        }
+                }, 100); 
+            }
             
             $(document).scrollTop(0);
         });
