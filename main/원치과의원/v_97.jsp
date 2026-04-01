@@ -107,7 +107,7 @@ html, body {font-size: 10px;}
 .form .description p,
 .form .description span {font-weight: normal; font-size: 1.3rem; padding: 0; margin: 0; color: #6e6e6e; letter-spacing: -0.65px;}
 
-.form .agBox {position: relative; top: -3%; color: #fff; font-size: 120%; padding: 0; width: 100%; font-family: 'Pretendard'; margin-bottom: 0;}
+.form .agBox {position: relative; top: 0; color: #fff; font-size: 120%; padding: 2% 0; width: 100%; font-family: 'Pretendard'; margin-bottom: 0;}
 
 /* 모달창 - 개인정보처리방침 */
 .overlay {z-index: 888; position: fixed; display: none; width: 100vw; height: 100vh; opacity: 0.5; background-color: #000;}
