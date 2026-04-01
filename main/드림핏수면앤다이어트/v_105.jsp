@@ -159,7 +159,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
     .txt_01 {font-size: 100%; margin-bottom: 0;}
 
     .form-group > .item {border-radius: 19px;}
-    #result {border-radius: 7px;}
+    #result {border-radius: 7px; font-size: 120%;}
 
     .form .description p {font-size: 80%;}
 }
