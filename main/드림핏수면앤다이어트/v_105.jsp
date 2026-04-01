@@ -3,6 +3,15 @@ pageEncoding="UTF-8"%>
 <style>
 @font-face {
     font-family: 'Pretendard';
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Light.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Light.woff') format('woff'),
+         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Light.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Pretendard';
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -37,88 +46,91 @@ pageEncoding="UTF-8"%>
          url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Bold.woff') format('woff'),
          url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Bold.otf') format('opentype');
 }
-html, body {font-size: 10px;}
-.page_inner {position: relative;}
-#wrap {font-family: 'Pretendard';}
-.form {height: 100%;}
+/* 리셋 */
+input{font-family: 'Pretendard', sans-serif;}
+button{margin: 0; padding: 0; background-color: transparent; border: none; cursor: pointer;}
+i{font-style: normal;}
+
+/* 공통 */
+#wrap{background: #551782 ;
+background: linear-gradient(180deg, #f5eded  0%, #feb0ab 100%); letter-spacing: -1px; font-family: 'Pretendard', sans-serif; max-width: 600px; overflow: hidden; height: 100vh; /* fallback */ height: 100dvh; /* 최신 브라우저용 */
+padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);}
+.form{background-color: transparent; overflow: hidden; height: 100%;}
 #form-1 {height: 100%;}
-#wrap .formContents {height: calc(100% - 0.1rem); display: flex; flex-direction: column;}
-.bg-box {background: url("//static.harang-event.com/event/v_${eventSeq}/bg_01.jpg") no-repeat center top / 100% 100%; height: 100%; flex-grow: 1; display: flex; flex-direction: column;}
-.hide {display: none;}
+#wrap .formContents {height: 100%;}
+.page {height: 100%; display: flex; flex-direction: column;}
+.page:not(#page-1){display:none;}
+.pointColor{background-color: #d047ed; border-radius: 10px; color: #fff; font-weight: 800; padding: 0.5% 3%;}
+.footer {margin-top: auto;}
 
-/* 상단 타이머 */
-.time-content {padding-top: 4.2rem;}
-.timer-box {color: #000; display: flex; justify-content: space-between; align-items: center; gap: 2rem; font-size: 2.4rem; border: 1px solid #fff; border-radius: 0.9rem; padding: 1rem 4rem; width: 80%; margin: 0 auto; letter-spacing: -1.23px; background: rgba(255, 255, 255, 0.75);}
-.timer-box .text-box {width: 18rem;display: flex; align-items: center; gap: 1rem;}
-.timer-box .text-box .text {font-weight: 800; letter-spacing: -1.23px;}
-.timer-box .text-box img{ display: inline-block; animation: spin 1.1s linear infinite; transform-origin: 50% 50%; width: 17%;}
+/* video */
+.video-area {width: 83.667%; margin: 0 auto; border: 3px solid #fff; border-radius: 20px; overflow: hidden;}
+.video-area video {display: block; width: 100%; height: 100%;}
 
-@keyframes spin{
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
+.sub-txt {margin-top: 1%; font-family: 'Pretendard'; font-size: 100%; font-weight: 300; letter-spacing: -0.83px; text-align: center; color: rgba(255, 255, 255, 0.2);}
 
-/* 슬라이드 영역 */
-.slide-area {padding: 0 7.335% 7.335%;}
-.swiper .swiper-slide img { width: 100%; text-align: center;}
+/* 개인정보 처리방침 */
+.form .agBox{width:100%;margin:2vmin 0 0; padding: 0 0 3%;  font-size:clamp(11px, 3vmin, 16px); font-weight:400; color: #000;}
+.form .btn-agreement {font-weight: 700;}
+.form .agBox a {opacity: 1 !important;}
+.form input[type="checkbox"] + span:before, .form input[type="radio"] + span:before {border-color: #0b3040ca;}
 
-#page-1 .time-content + .img-area {width: 81.541%; margin: 0 auto;}
-#page-2 .page-inner {padding: 3% 5.991% 0;}
-#page-2 .img-area:nth-child(3) {padding: 0 7.335% 7.335%;}
-#page-2 .time-content + .img-area {width: 81.541%; margin: 0 auto;}
+/* paging */
+.page .paging {width: 75.167%; margin: 0 auto;}
+.page .paging button {width: 100%;}
+.page .paging img {display: block; width: 100%; height: 100%;}
 
-/* 설문영역 */
-.question-box {background: #f4f4f4; font-size: 3.7rem; padding: 4.1rem 0 6.3rem; margin-top: 5.18%; border-radius: 2rem;}
-.question {display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2.4rem;}
-.question img {width: 7%;}
-.question .q-text {letter-spacing: -0.93px; font-weight: 600; padding: 0 1rem 2.4rem; border-bottom: 0.2rem solid #159bf8; font-family: 'Pretendard';}
-.question .q-text .underline {position: relative; z-index: 1; color: #0056ba; font-weight: 700;}
-.question .q-text .underline::after {content: ''; display: inline-block; width: 100%; height: 1.7rem; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); z-index: -1; background: #fffca1;}
-.q-select {display: flex; align-items: center; justify-content: space-between; padding: 6rem 6.65% 0;}
+/* 설문 영역 */
+.question_box {padding: 0 12% 7%;}
+.question_box .question {margin-bottom: 7.676%; text-align: center; color: #000; font-size: 250%; font-weight: 500; font-family: 'Pretendard'; letter-spacing: -0.04em; line-height: 1.18;}
+.question_box .question strong {color: #ff4355; font-weight: 700;}
+.question_box .q_select label {width: 100%;}
+.question_box .q_select label + label {margin-top: 18px;}
+.question_box .q_select label .sel-item {padding: 3.73% 5%; border: 1px solid #ff7b74; font-weight: 500; font-size: 190%; background-color: #fff; text-align: center; border-radius: 10px; font-family: 'Pretendard';}
+.question_box .q_select label .sel-item.active {background: #ffffd8; color: #ff4155; font-weight: 700;}
 
+#page-4 .question_box {display: flex; align-items: center; column-gap: 12px; padding: 0 4% 2%;}
+#page-4 .poster_10 .img-area {width: 91.167%; margin: 3% auto;}
 
-@keyframes pop {
- 0% {
-  transform: scale(1);
- }
+/* 이전,다음 버튼 */
+.paging_btn{position: relative; display: none; justify-content: center; align-items: center; width: 100%; height: 127px; padding: 0 15%; box-sizing: border-box;}
+.paging_btn button{position: absolute; top: 50%; left: 7.34%; transform: translateY(-50%); max-width: 63px; background-color: transparent; cursor: pointer;}
+.paging_btn img{ width: 100%;}
+/* .paging_btn button:active {transform: scale(0.95);} */
 
- 50% {
-  transform: scale(0.9);
- }
+.txt_01 {font-family: 'Pretendard'; font-size: 113%; font-weight: 500; line-height: 1.33; color: #3a3a3a; padding-left: 4%;}
+.txt_01 strong {font-weight: 700; color: #000;}
 
- 100% {
-  transform: scale(1);
- }
-}
+/* 진행 상태 */
+/* .progress{margin: 0; display: flex; align-items: center; column-gap: 5%; width: 50%; text-align: center; font-weight: 700;   font-family: 'Pretendard'; font-size: 51px; font-weight: 300; letter-spacing: -2.55px; color: #fff;} */
 
-.form .next {position: absolute; bottom: 5.605%; left: 50%; transform: translateX(-50%); width: 67.115%; margin: 0 auto; }
-.form .next img {width: 100%;}
-.form .submit {width: 81.325%; margin: 1rem auto 0;}
-.form .submit input[type="image"] {width: 100%;}
+/* db단 */
+/* .form-group {display: grid; gap: 11px; width: 100%; margin: 0 auto;} */
+.form-group .inp {height: auto; border-radius: 10px; padding: 3.37% 2.45%; background-color: #f6f6f6; text-align: center; font-size: 155%; font-weight: 700; text-align: center;}
+.form-group .inp + .inp {margin-top: 3.295%;}
+.form-group .inp::placeholder {color: #818181;}
 
-/* 설문영역 */
-.form .page-inner {padding: 2.8rem 3.6rem 1rem;}
-.form .db-box {}
-.form .db-box .question {font-size: 3.7rem; text-align: center; }
-.form .db-box  .question .q-text {padding: 0; border-bottom: 0; line-height: 1.07;}
-.form .user-box {margin-top: 1.5rem;}
-.form .user-box .user-info {display: flex; align-items: center; justify-content: space-between; border: 2px solid #ddd; border-radius: 10px; padding: 2.848% 4.28%; column-gap: 3rem;}
-.form .user-box .user-info:not(:last-child) {margin-bottom: 1.3rem;}
-.form .user-box .user-info .legend {width: 8.3rem; color: #000; display: inline-block; font-weight: 700; font-size: 300%; flex-shrink: 0; font-family: 'Pretendard'; }
-.form .user-box .user-info input {font-size: 300%; letter-spacing: -0.5px; font-weight: 700; font-family: 'Pretendard';}
-.form .user-box .user-info input::placeholder {font-weight: 400; letter-spacing: -0.5px; color: #868b95;}
+/* description */
+.form .description{color: #000;}
+.form .description p {font-size: 100%;}
 
-/* 안심문구, 대상, 이벤트기간 */
-.form .description {width: 100%;}
-.form .description .ad_txt {width: 100%; padding: 2.34%; border-radius: 10px; background-color: #f1f1f1; color: #999; font-size: 180%; font-family: 'Pretendard'; box-sizing: border-box;}
-.form .description p,
-.form .description span {font-weight: normal; font-size: 1.3rem; padding: 0; margin: 0; color: #6e6e6e; letter-spacing: -0.65px;}
+.description + .img-area {margin-top: 3%;}
 
-.form .agBox {position: relative; top: -3%; color: #fff; font-size: 120%; padding: 0; width: 100%; font-family: 'Pretendard'; margin-bottom: 0;}
+.result-box {position: relative; margin: 3% 5.26% 0; padding: 0;}
+#result {position: absolute; top: 50%; transform: translateY(-50%); left: 10.55%; display: flex; align-items: center; justify-content: center; overflow: hidden; width: 20.9%; height: 60%; font-size: 150%; border-radius: 8px; background-color: #fff;}
+
+/* cta 버튼 */
+.form .submit{width: 80%; margin: 0 auto; transition: transform 0.1s ease-in-out;}
+.form .submit:active{transform: scale(0.95);}
+.form .submit input[type="image"]{width: 100%;}
+
+/* 안심문구, 이벤트기간, 대상 */
+.form .description {text-align: center; width: 75%; }
+.form .description p {}
 
 /* 모달창 - 개인정보처리방침 */
 .overlay {z-index: 888; position: fixed; display: none; width: 100vw; height: 100vh; opacity: 0.5; background-color: #000;}
-.agreeModalBox {z-index: 999; display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 60px 30px 40px; width: 90%; max-width: 500px; box-sizing: border-box; border-radius: 10px; font-family: 'Noto Sans KR', sans-serif; background-color: #f5f6f7; box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;}
+.agreeModalBox {z-index: 999; display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 60px 30px 40px; width: 65%; max-width: 500px; box-sizing: border-box; border-radius: 10px; font-family: 'Noto Sans KR', sans-serif; background-color: #f5f6f7; box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;}
 .agreeModalBox .closeBtn {position: absolute; top: 0; right: 2%; padding: 2%; cursor: pointer; font-size: 25px; color: #5e5e5e;}
 .agreeModalBox .newAgreement {position: relative; padding: 2% 4%; height: 150px; overflow-y: scroll; border: 1px solid #dadada;}
 .agreeModalBox .newAgreement .button {position: absolute; right: 3%; width: 95px;}
@@ -127,65 +139,45 @@ html, body {font-size: 10px;}
 .agreeModalBox .newAgreement h3 {margin: 1% 0; font-size: 11px;}
 .agreeModalBox .newAgreement ol li {line-height: 12px; font-size: 10px;}
 
-.containers {display: flex; flex-direction: column; color: white;}
-.container {display: flex; flex-direction: column; align-items: center; row-gap: 1.6rem; cursor: pointer; position: relative;}
-.container input[type="radio"] {display: none;}
-.radio-circle {width: 38px; height: 38px; border-radius: 50%; border: 2px solid #aaa; position: relative;}
-.radio-circle::before {content: ""; display: block; width: 25px; height: 25px; border-radius: 50%; background-color: #ddd; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); transition: all 0.2s ease-in-out;}
-.container input[type="radio"]:checked + .radio-circle {border-color: #1074fe;}
-.container input[type="radio"]:checked + .radio-circle::before {transform: translate(-50%, -50%) scale(1);}
-.container input[type="radio"]:checked + .radio-circle::before {background-color: #1074fe;}
-.bage {font-size: 1.5rem; background: #1074fe; color: #fff609; text-align: center; padding: 0.2rem 0.8rem; border-radius: 0.4rem; font-weight: 700; position: absolute; top: -40%; left: 50%; transform: translateX(-50%); width: max-content;}
-.radio-label {font-size: 79%; font-weight: 700; font-family: 'Pretendard'; line-height: 1;}
-.container:hover .radio-circle {border-color: #555;}
-.container:hover input[type="radio"]:checked + .radio-circle::before {background-color: #555;}
+@media screen and (max-width: 500px){
+    .form .submit{width: 80%;}
+    .agreeModalBox {padding: 12% 4% 5%; width: 95%;} /* 모달창 */
 
-.subscribe_container {background: #f1f1f1; width: 85%; margin: 5% auto; padding: 3%; border-radius: 0.8em;}
-.subscribe {height: 250px; overflow: hidden; background-color: transparent;}
-.subscribe_bg {background-color:#1c1c34 ;}
-.subscribe .content {padding: 0; display: flex; align-items: center; font-size: 100%; margin: 1% 0; justify-content: space-between; border-bottom: 1px solid #f3f3f3; column-gap: 14%;}
-.subscribe .content + .content {padding-top: 2.877%; margin-top: 2.877%; border-top: 1px solid rgba(40, 40, 40, 0.1);}
-/* .subscribe .content > div {width: calc(100% / 3); text-align: center;} */
-.subscribe .content .date {flex-shrink: 0; text-align: center; background: #fff; font-size: 250%; font-weight: 500; font-family: 'Pretendard'; letter-spacing: -0.03em; border-radius: 10px; width: 37.097%;}
-.subscribe .content > div:last-child {margin-right: 0; width: 64%; display: flex; justify-content: space-between; align-items: center; font-size: 250%; font-weight: 500; font-family: 'Pretendard';}
-.subscribe .content > div:last-child img {flex-shrink: 0; display: block; width: 10.5%; height: 100%;}
-.subscribe .content .text { text-align: center; width: 17%; font-weight: 700; border-radius: 999px; background-color: #faead2;}
-.subscribe .content .text.color-bg {background-color: #ffef82;}
+    .sub-txt {font-size: 77%;}
 
-.sub-txt {font-size: 140%; font-family: 'Pretendard'; color: rgba(22, 22, 22, 0.5); text-align: center;}
+    .progress {font-size: 24px;}
+    .paging_btn button {max-width: 43px;}
+    .paging_btn {height: 87px;}
 
-.section02 {padding-bottom: 5%;}
+    .paging_btn button {max-width: 20px;}
 
-@media screen and (max-width: 500px) { 
-    html, body {font-size: 1.7vw;}
+    .question_box .question {font-size: 210%;}
+    .question_box .q_select label .sel-item {font-size: 170%;}
+    .question_box .q_select label + label {margin-top: 10px;}
 
-    .radio-circle {width: 30px; height: 30px;}
-    .radio-circle::before {width: 17px; height: 17px;}
+    .txt_01 {font-size: 24px;}
 
-    .form .user-box .user-info {column-gap: 1.5rem;}
-    .form .user-box .user-info .legend {font-size: 240%; width: 7.3rem;}
-    .form .user-box .user-info input {font-size: 240%;}
-
-    .subscribe .content {column-gap: 14%;}
-    .subscribe .content .date {font-size: 210%; border-radius: 5px;}
-    .subscribe .content > div:last-child {font-size: 210%;}
-}
-@media screen and (max-width: 430px) {
+    .form-group > .item {border-radius: 19px;}
+    #result {border-radius: 7px;}
 }
 
-@media screen and (max-width: 395px) {
+@media screen and (max-width: 415px){
 }
 
+@media screen and (max-width: 375px){
+}
 </style>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard.css" type="text/css"/>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
-<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+<!-- include -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- include -->
+<!-- 개인정보처리방침 모달창 -->
 <div class="overlay"></div>
 <div class="agreeModalBox">
-	<div class="closeBtn">X</div>          
-	<div class="newAgreement">
-		<div class="button"><a href="${resVo.agreementUrl}" target="_agreement" onclick="window.open(this.href, this.target,'resizable=no, scrollbars=yes, width=1000, height=800, left=200, top=200'); return false;"  target="_blank">개인정보 처리방침</a></div>
-		<h3>개인정보처리방침</h3>
+    <div class="closeBtn">X</div>          
+    <div class="newAgreement">
+        <div class="button"><a href="${resVo.agreementUrl}" target="_agreement" onclick="window.open(this.href, this.target,'resizable=no, scrollbars=yes, width=1000, height=800, left=200, top=200'); return false;"  target="_blank">개인정보 처리방침</a></div>
+        <h3>개인정보처리방침</h3>
         <ol>
             <li>개인정보 수집주체 : ${resVo.agent}</li>
             <li>개인정보 수집항목 : ${resVo.objectItems}</li>
@@ -198,116 +190,115 @@ html, body {font-size: 10px;}
             <li>개인정보 취급 위탁을 하는 업무의 내용 : 고객정보 저장 및 서버관리</li>
             <li class="desc">*상기 동의를 거부할 권리가 있으나, 수집 및 이용에 동의하지 않을 경우 ${resVo.objectName} 상담 및 이벤트 참여가 불가능합니다.</li>
         </ol>
-	</div>	
+    </div>	
 </div>
-<div id="wrap">
-	<div class="form">
-		<form id="form-1" method="POST" accept-charset="utf-8">
+
+<div id="wrap"> 
+    <div class="form">
+        <form id="form-1" method="POST" accept-charset="utf-8">
+            
             <div class="formContents">
-                <section class="page section01" id="page-1">
-                    <div class="bg-box">
-                        <div class="time-content">
-                            <div class="timer-box">
-                                <div class="date">
-                                    <span id="year"></span>
-                                    <span id="month"></span>
-                                    <span id="day"></span>
-                                    <span id="week-day"></span>
-                                </div>
-                                <div class="time">
-                                    <span id="hour"></span>
-                                    <span id="minute"></span>
-                                </div>
-                                <div class="text-box">
-                                    <img src="//static.harang-event.com/event/v_${eventSeq}/loading.png">
-                                    <span class="text">현재 접수 가능</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.png"></div>
-                        <div class="slide-area">
-                            <div class="swiper mySwiper">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide"><img src="//static.harang-event.com/event/v_${eventSeq}/slide_01.png"></div>
-                                    <div class="swiper-slide"><img src="//static.harang-event.com/event/v_${eventSeq}/slide_02.png"></div>
-                                    <div class="swiper-slide"><img src="//static.harang-event.com/event/v_${eventSeq}/slide_03.png"></div>
-                                </div>
-                            </div>
+                <section class="page" id="page-1">
+                    <div class="poster_01">
+                        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.jpg"></div>
+                        <div class="img-area video-area">
+                            <video id="location" playsinline loop autoplay muted src="//static.harang-event.com/event/v_${eventSeq}/video.mp4" type="video/mp4"></video>
+                            <script>setTimeout(function(){ $('#location').trigger('play'); },500);</script>
                         </div>
                     </div>
 
-                    <div class="page_inner">
-                        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.jpg"></div>
-                        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_03.jpg"></div>
-                        <div class="next img-area"  onclick="pageFuc(1,$(this))"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.png"></div>
+                    <div class="btn_box paging poster_02">
+                        <div class="agBox">
+                            <input name="agBox" type="checkbox" checked value="Y">개인정보 수집 및 처리방침에 동의합니다 
+                            <a href="#" class="btn-agreement">[보기]</a>
+                        </div>
+                        <div class="paging">
+                            <!-- <button type="button" onclick="alert('미동의 시 이벤트에 참여할 수 없습니다.');"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.png"></button>	 -->
+                            <button type="button" class="first"><img src="//static.harang-event.com/event/v_${eventSeq}/next_btn_01.png"></button>	
+                        </div>
+                    </div>
+                    <div class="poster_03 footer">
+                        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>
                     </div>
                 </section>
 
-                <section class="page hide section02" id="page-2">
-                    <div class="bg-box">
-                        <div class="time-content">
-                            <div class="timer-box">
-                                <div class="date">
-                                    <span id="year2"></span>
-                                    <span id="month2"></span>
-                                    <span id="day2"></span>
-                                    <span id="week-day2"></span>
-                                </div>
-                                <div class="time">
-                                    <span id="hour2"></span>
-                                    <span id="minute2"></span>
-                                </div>
-                                <div class="text-box">
-                                    <img src="//static.harang-event.com/event/v_${eventSeq}/loading.png">
-                                    <span class="text">현재 접수 가능</span>
-                                </div>
-                            </div>
+                <section class="page" id="page-2">
+                    <div class="poster_04">
+                        <div class="paging_btn">
+                            <button type="button" class="pre"><img src="//static.harang-event.com/event/v_${eventSeq}/icon_01.png"></button>
                         </div>
-                        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.png"></div>
-                        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.png"></div>
                     </div>
-
-                    <div class="page-inner">
-                        <div class="description">
-                            <div class="ad_txt">안심하세요! ${resVo.agent}에서는 고객님의 소중한 개인정보를 <br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
-                        </div>
-                        <div class="db-box">
-                            <div class="user-box">
-                                <div class="user-info">
-                                    <span class="legend">이름</span>
-                                    <input type="text" id="name" name="name" class="inp" required="" autocomplete="off" placeholder="성함을 입력해주세요 ">
-                                </div>
-                                <div class="user-info">
-                                    <span class="legend">나이</span>
-                                    <input type="tel" id="age" name="age" class="inp" required="" autocomplete="off" maxlength="2" placeholder="나이를 입력해주세요">
-                                </div>
-                                <div class="user-info">
-                                    <span class="legend">연락처</span>
-                                    <input type="tel" id="phone" name="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="전화번호를 입력해 주세요">
-                                </div>
-                            </div>
-                            <div class="agBox">
-                                개인정보 처리방침
-                                <a href="#" class="btn-agreement">[자세히 보기]</a>
-                                <input type="hidden" name="agBox" value="Y" checked>
-                            </div>
-                            <div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"></div>
-                            <div class="description bottom">
-                                <p id="event-period">이벤트 기간 : <?=date("Y년 m월 01일")." ~ ".date("Y년 m월 t일 까지")?></p>
-                                <span>대상 :  ${resVo.target}</span>
+                    <div class="poster_05">
+                        <div class="question_box">
+                            <div class="question"><strong>감량하고 싶은 체중 구간</strong>을 <br />선택해 주세요</div>
+                            <div class="q_select">
+                                <label><input type="radio" name="tadd1" value="~7kg"><div class="sel-item">~7kg</div></label>
+                                <label><input type="radio" name="tadd1" value="8~12kg"><div class="sel-item">8~12kg</div></label>
+                                <label><input type="radio" name="tadd1" value="13~15kg"><div class="sel-item">13~15kg</div></label>
+                                <label><input type="radio" name="tadd1" value="15kg 이상"><div class="sel-item">15kg 이상</div></label>
                             </div>
                         </div>
                     </div>
-                    <div class="subscribe_container">
-                        <div class="subscribe" data-limit="10"></div>
+                    <div class="poster_06 footer">
+                        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>
                     </div>
-                    <p class="sub-txt">본 페이지의 일부 배너 및 디자인물에는 AI로 생성 또는 수정된 인물이 포함될 수 있습니다.</p>
                 </section>
-                <!-- <div class="container-bottom">
-                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.jpg"></div>
-                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	
-                </div> -->
+
+                <section class="page" id="page-3">
+                    <div class="poster_07">
+                        <div class="paging_btn">
+                            <button type="button" class="pre"><img src="//static.harang-event.com/event/v_${eventSeq}/icon_01.png"></button>
+                            <!-- <button type="button" class="next"><img src="//static.harang-event.com/event/v_${eventSeq}/next.png"></button> -->
+                        </div>
+                    </div>
+                    <div class="poster_08">
+                        <div class="question_box">
+                            <div class="question"><strong>귀하의 현재나이</strong>를 <br />를 선택해 주세요</div>
+                            <div class="q_select">
+                                <label><input type="radio" name="tage" value="50"><div class="sel-item">50대</div></label>
+                                <label><input type="radio" name="tage" value="60"><div class="sel-item">60대</div></label>
+                                <label><input type="radio" name="tage" value="70"><div class="sel-item">70세 이상</div></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="poster_09 footer">
+                        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>
+                    </div>
+                </section>  
                 
+                <section class="page" id="page-4">
+                    <div class="poster_10">
+                        <!-- <div class="paging_btn">
+                            <button type="button" class="pre"><img src="//static.harang-event.com/event/v_${eventSeq}/icon_01.png"></button>
+                            <button type="button" class="last"><img src="//static.harang-event.com/event/v_${eventSeq}/next.png"></button>
+                        </div> -->
+                        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.gif"></div>
+                        <p class="txt_01">▼ <strong>아래 정보</strong>를 입력해주세요</p>
+                        <div class="question_box">
+                            <div class="form-group">
+                                <input type="text" name="name" id="name" value="" class="inp" required="" autocomplete="off" placeholder="이름">
+                                <input type="tel" name="phone" id="phone" value="" class="inp" required="" autocomplete="off" maxlength="11" placeholder="연락처">
+                            </div>		
+                            <div class="submit"><input type="image" class="btn_submit" onclick="fnForm('form-1')" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"></div>
+                        </div>
+                        <div class="description">
+                            <p id="event-period">이벤트 기간 : <?=date("Y년 m월 01일")." ~ ".date("Y년 m월 t일 까지")?></p>
+                            <div class="ad_txt">안심하세요! 본원에서는 고객님의 소중한 개인정보를 <br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
+                            <span>대상 :  ${resVo.target}</span>
+                        </div>
+    
+                        <div class="result-box">
+                            <div class="img-area "><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_03.png"></div>
+                            <span id="result"></span>
+                            <script>$('input[name="name"]').keyup(function(){$("#result").text($('input[name="name"]').val());});</script>
+                        </div>
+    
+                        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_04.gif"></div>
+                    </div>
+                    <div class="poster_11">
+                        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>
+                    </div>
+                </section>
             </div>
             <input type="hidden" id="branch" 		name="branch" value="${resVo.branch}"/>
             <input type="hidden" id="eventSeq" 		name="eventSeq" value="${resVo.eventSeq}"/>
@@ -317,6 +308,7 @@ html, body {font-size: 10px;}
             <input type="hidden" id="checkAgeMin" 	name="checkAgeMin" value="${resVo.checkAgeMin}"/>
             <input type="hidden" id="checkAgeMax" 	name="checkAgeMax" value="${resVo.checkAgeMax}"/>
             <input type="hidden" id="checkGender" 	name="checkGender" value="${resVo.checkGender}"/>
+            <input type="hidden" id="age" 			name="age" value=""/>
             <input type="hidden" id="add1" 			name="add1" value=""/>
             <input type="hidden" id="add2" 			name="add2" value=""/>
             <input type="hidden" id="add3" 			name="add3" value=""/>
@@ -329,127 +321,240 @@ html, body {font-size: 10px;}
             <input type="hidden" id="objectName" 	name="objectName" 	value="${resVo.objectName}"/>
 		</form>
 	</div>
+
+    <div class="container bottom">  
+        <!-- <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.jpg"></div>	 -->
+        <!-- <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	 -->
+    </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->
 <script>
     $(document).ready(function () {
         initDate();/* 기간항목 start */
         blockSourceView();//드래그, 우클릭 방지
-
-        getComment(`${eventSeq}`);
-	})
-
-    // 상단 타이머
-    $(function () {
-        function pad2(n) {
-            return (n < 10 ? '0' : '') + n;
-        }
-
-        function renderNow() {
-            var now = new Date();
-
-            var y = now.getFullYear();
-            var m = pad2(now.getMonth() + 1);
-            var d = pad2(now.getDate());
-
-            // 0=일,1=월,...6=토
-            var week = ['일', '월', '화', '수', '목', '금', '토'][now.getDay()];
-
-            var hh = pad2(now.getHours());
-            var mm = pad2(now.getMinutes());
-
-            $('#year, #year2').text(y + '.');
-            $('#month, #month2').text(m + '.');
-            $('#day, #day2').text(d + '(' + week + ')');
-            $('#week-day, #week-day2').text(''); // day에 요일까지 붙였으니 비워둠(원하면 아래 주석 참고)
-
-            $('#hour, #hour2').text(hh + ':');
-            $('#minute, #minute2').text(mm);
-        }
-
-        renderNow();
-
-        // 매 분 정각에 맞춰 갱신되게(드리프트 최소화)
-        var now = new Date();
-        var msToNextMinute = (60 - now.getSeconds()) * 1000 - now.getMilliseconds();
-
-        setTimeout(function () {
-            renderNow();
-            setInterval(renderNow, 60 * 1000);
-        }, msToNextMinute);
-
-        // 만약 week-day를 따로 쓰고 싶으면 renderNow에서 아래처럼 바꾸면 됨:
-        // $('#day').text(d);
-        // $('#week-day').text('(' + week + ')');
     });
 
-    let today = new Date()
-    let Year = today.getFullYear().toString().slice(-2)
-
-    function returnComment(resultData, meoreData){
-		var today = new Date();
-			var month = today.getMonth() + 1;
-			var dateNum;
-		$('.subscribe').each(function(idx,obj) {
-			var data = resultData;
-			
-			for(v in data) {
-	            var statusText = Math.random() < 0.5 ? '신청 중' : '신청 완료'; // 랜덤으로 '접수중' 또는 '접수완료' 선택
-	            var backgroundClass = statusText === '신청 완료' ? 'color-bg' : '';
-	            var html  = '<div class="content" data-id="'+ data[v].seq +'">';
-	                html += '	<div class="date">'+ Year + '-' + data[v].regDate +'</div>';
-	                html += '	<div class="name">'+ data[v].name + ' 님, ' + statusText + '<img src="//static.harang-event.com/event/v_${eventSeq}/icon.png" alt="" />' + '</div>';
-	                // html += '   <div class="text ' + backgroundClass + '">' + statusText + '</div>'; 
-	                html += '</div>';
-	            $(obj).append(html);
-	        }
-		});
-	}
-
-    setInterval(function(){
-        $('.subscribe .content:first').slideUp(function(){
-            $(this).show().parent().append(this)
-        })
-    },2000);
-
-    // 버튼 페이지 이동 함수 (다음)
-    function pageFuc(num, obj) {
-        // 선택된 라디오 버튼 확인 (section03 페이지일 때)
-        // if (num === 1) {
-        //     const isChecked = $('input[name="tadd1"]:checked').length > 0;
-
-        //     if (!isChecked) {
-        //         alert("설문을 선택해주세요");
-        //         return; // 선택되지 않았으면 페이지 이동 안함
-        //     }
-        // }
-
-        // 페이지 이동 처리
-        $('.section0' + num).fadeOut(function() {
-            $('.section0' + (num + 1)).css({ 'display': 'flex', 'flex-direction': 'column' });
-            $(document).scrollTop(0);
-        });
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
     }
 
-    // 상단 슬라이드
-    var swiper = new Swiper(".mySwiper", {
-        spaceBetween: 30,
-        // centeredSlides: true,
-        // autoplay: {
-        //     delay: 2500,
-        //     disableOnInteraction: false,
-        // },
-        loop:true,
+    let isAnimating = false; // 애니메이션 상태 플래그
+    // 첫번째 페이지
+    function show1pg(){    
+        const animation01 = gsap.timeline();
+        animation01.from('#page-1 .poster_01', { y: +50, delay: 0, opacity: 0, ease: "power1.out"},0);
+        animation01.from('#page-1 .btn-agreement', { y: +50, delay: 0.2, opacity: 0, stagger: 0.1, ease: "power1.out"},0);
+        animation01.from('#page-1 .poster_02', { y: +50, delay: 0.4, opacity: 0, stagger: 0.1, ease: "power1.out"},0);
+        animation01.from('#page-1 .poster_03', { y: +50, delay: 0.6, opacity: 0, stagger: 0.1, ease: "power1.out"},0);
+    }
+    show1pg();
+    // 두번째 페이지
+    function show2pg() {
+        if (isAnimating) return; // 이미 애니메이션 중이면 실행 안 함
+        isAnimating = true; // 애니메이션 시작 상태로 변경
+
+        const animation02 = gsap.timeline({
+            onComplete: () => {
+                isAnimating = false; // 애니메이션 끝나면 플래그 해제
+            }
+        });
+        animation02.to('#page-1 .poster_01', { x: -100, opacity: 0, delay: 0, duration: 0.2, ease: "power1.out"}, 0);
+        // animation02.to('#page-1 .btn-agreement', { x: -100, opacity: 0, delay: 0.4, duration: 0.2, ease: "power1.out"}, 0);
+        animation02.to('#page-1 .poster_02', { x: -100, opacity: 0, delay: 0.2, duration: 0.2, ease: "power1.out"}, 0);
+        animation02.to('#page-1 .poster_03', { x: -100, opacity: 0, delay: 0.4, duration: 0.2, ease: "power1.out"}, 0);
+        animation02.to('#page-1', { display: 'none' });
+        animation02.to('#page-2', { display: 'flex', duration: 0 }, 0.2);
+        // $('.progress i').text('1');
+        animation02.from('#page-2 .poster_04', {x: +200, opacity: 0, duration: 0.2}, 0.2);
+        animation02.from('#page-2 .poster_05', {x: +200, opacity: 0, duration: 0.2}, 0.2);
+        animation02.from('#page-2 .poster_06', {x: +200, opacity: 0, duration: 0.2}, 0.2);
+    }
+    // 세번째 페이지
+    function show3pg() {
+        if (isAnimating) return; // 이미 애니메이션 중이면 실행 안 함
+        isAnimating = true; // 애니메이션 시작 상태로 변경
+
+        const animation03 = gsap.timeline({
+            onComplete: () => {
+                isAnimating = false; // 애니메이션 끝나면 플래그 해제
+            }
+        });
+        animation03.to('#page-2 .poster_04', { x: -100, opacity: 0, delay: 0, duration: 0.2, ease: "power1.out"}, 0);
+        animation03.to('#page-2 .poster_05', { x: -100, opacity: 0, delay: 0.2, duration: 0.2, ease: "power1.out"}, 0);
+        animation03.to('#page-2 .poster_06', { x: -100, opacity: 0, delay: 0.4, duration: 0.2, ease: "power1.out"}, 0);
+        animation03.to('#page-2', { display: 'none' });
+        animation03.to('#page-3', { display: 'flex', duration: 0.1 }, 0.2);
+        // $('.progress i').text('2');
+        animation03.from('#page-3 .poster_07', {x: +200, opacity: 0, duration: 0.2}, 0.2);
+        animation03.from('#page-3 .poster_08', {x: +200, opacity: 0, duration: 0.2}, 0.2);
+        animation03.from('#page-3 .poster_09', {x: +200, opacity: 0, duration: 0.2}, 0.2);
+    }
+    // 마지막 페이지
+    function show4pg() {
+        if (isAnimating) return; // 이미 애니메이션 중이면 실행 안 함
+        isAnimating = true; // 애니메이션 시작 상태로 변경
+        
+        const animation04 = gsap.timeline({
+            onComplete: () => {
+                isAnimating = false; // 애니메이션 끝나면 플래그 해제
+            }
+        });
+        animation04.to('#page-3 .poster_07', { x: -100, opacity: 0, delay: 0, duration: 0.2, ease: "power1.out"}, 0);
+        animation04.to('#page-3 .poster_08', { x: -100, opacity: 0, delay: 0.2, duration: 0.2, ease: "power1.out"}, 0);
+        animation04.to('#page-3 .poster_09', { x: -100, opacity: 0, delay: 0.4, duration: 0.2, ease: "power1.out"}, 0);
+        animation04.to('#page-3', { display: 'none' });
+        animation04.to('#page-4', { display: 'flex', duration: 0.1 }, 0.2);
+        // $('.progress i').text('3');
+        animation04.from('#page-4 .poster_10', {x: +200, opacity: 0, duration: 0.2}, 0.2);
+        animation04.from('#page-4 .poster_11', {x: +200, opacity: 0, duration: 0.2}, 0.2);
+        $('#wrap').css({'height': 'auto','overflowY': 'auto'});
+    }
+
+    $(document).on("change", "input[name^='tadd'], input[name^='tage']", function() {
+        const $form = $(this).closest("form");
+        const name = $(this).attr("name");
+
+        // 같은 form + 같은 name 그룹에서 active 제거
+        $form.find("input[name='" + name + "']").each(function() {
+            $(this).closest("label").find(".sel-item").removeClass("active");
+        });
+
+        // 현재 선택된 항목만 active 추가
+        $(this).closest("label").find(".sel-item").addClass("active");
+    });
+
+
+    // 설문 Click bind
+	$('input[name*=tadd], input[name*=tage], button.first').off('click').on('click', function(){
+        var $btn = $(this);
+
+        // // add 설문을 클릭했다면
+        // if(!$btn.hasClass('first')){
+        //     const $labels = $btn.closest('.q_select').find('label');
+
+        //     $labels.each(function(){
+        //         const $img = $('img', this);
+        //         $img.attr('src', $img.attr('src').replace('_on', '_off'));
+        //     });
+
+        //     const $img = $btn.parent().find('img');
+        //     $img.attr('src', $img.attr('src').replace('_off', '_on'));
+        // }
+
+        // 잠깐 보여주기
+        setTimeout(function(){
+
+            var page_num = $('.page:visible').index() + 1;
+            var $section = $('#page-'+page_num);
+
+            $section.fadeOut(0,function(){
+                var $nextSection = $section.next('.page');
+
+                $section.hide();
+                $nextSection.css('display','flex');
+                // $nextSection.fadeIn(0);
+
+                if(page_num == 1){
+                    // $('.progress i').text('1');
+                    show2pg();
+                }else if(page_num == 2){
+                    // $('.progress i').text('2');
+                    show3pg();
+                }else if(page_num == 3){
+                    // $('.progress i').text('3');
+                    show4pg();
+                }
+
+                $(document).scrollTop(0);
+            });
+
+            $(".paging_btn, .progress").css({display:"flex"});
+
+        },200); // ← 이 시간만큼 on 이미지가 보임
+    });
+
+    // 버튼 페이지 이동 함수
+    // function validator(idx) {
+	// 	var $section = $('#page-'+idx);
+    //     var msg;
+	// 	switch(idx) {
+	// 		case '2' :  msg = '나이대를';  
+    //             if(!$('input:radio', $section).is(':checked')) {
+    //                 alert(`고객님의 ${msg} 선택해 주세요`);
+    //                 $('input:radio', $section).eq(0).focus();
+    //                 return false;
+    //             }
+    //             break;
+	// 		case '3' :            
+    //             msg = '원하는 모발이식 부위를';  
+    //             if(!$('input:radio', $section).is(':checked')) {
+    //                 alert(`고객님의 ${msg} 선택해 주세요`);
+    //                 $('input:radio', $section).eq(0).focus();
+    //                 return false;
+    //             }
+	// 			break;
+	// 	}
+	// 	return true;
+	// }   
+    $('button').on('click', function() {
+		var type = this.className;
+		var idx = $(this).closest('.page').attr('id').substr(-1);  
+        var num = Number(idx);
+        var page_num = $('.page:visible').index() + 1;
+
+		switch(type) {
+            // case 'next': case 'nextBtn' :
+            //     if(!validator(idx)) return;
+
+            //     $(this).closest('.page').fadeOut(function(){ $(this).closest('.page').next().fadeIn(); });
+                
+            //     $('.progress i').text(page_num);
+            //     break;
+                
+            case 'pre' :    
+            // 1. 현재 페이지와 이전 페이지 정의
+            var $currentPage = $(this).closest('.page');
+            var $prevPage = $currentPage.prev('.page');
+
+            if ($prevPage.length > 0) {
+                // 2. 현재 페이지를 즉시 숨김 (fadeOut 대신 hide 사용으로 딜레이 제거)
+                $currentPage.hide();
+                
+                // 3. 이전 페이지를 즉시 보여줌
+                $prevPage.show();
+
+                // 4. 페이지 번호에 따른 상태 리셋 및 애니메이션 실행
+                if(page_num == 4){
+                    // GSAP set으로 위치와 투명도를 즉시 초기화하여 잔상 제거
+                    gsap.set('#page-3 .poster_07, #page-3 .poster_08, #page-3 .poster_09', { x: 0, opacity: 1 });
+                    $('.progress i').text('2');
+                }
+                else if(page_num == 3){
+                    gsap.set('#page-2 .poster_04, #page-2 .poster_05, #page-2 .poster_06', { x: 0, opacity: 1 });
+                    $('.progress i').text('1');
+                }
+                else if(page_num == 2){
+                    $('.progress').hide();
+                    $(".paging_btn").hide();
+                    gsap.set('#page-1 .poster_01, #page-1 .poster_02, #page-1 .poster_03', { x: 0, opacity: 1 });
+                }
+                
+                // 애니메이션 플래그 초기화
+                isAnimating = false;
+            }
+            break;
+        }  
     });
 
     // 개인정보처리방침 팝업 관련
-	$('.btn-agreement').on('click', function(e) {
+    $('.btn-agreement').on('click', function(e) {
         e.preventDefault();
         $('.agreeModalBox').fadeIn();
+        $('.overlay').fadeIn();
     });
     $('.agreeModalBox .closeBtn').on('click', function() {
         $('.agreeModalBox').fadeOut();
+        $('.overlay').fadeOut();
     });
 
     function fnForm(formId){
@@ -458,22 +563,22 @@ html, body {font-size: 10px;}
 		/* form id로 proc */
 		let procForm = document.getElementById(formId);
 		
-		// let selectedRadio1 = procForm.querySelector(`input[name="tadd1"]:checked`);
-		// if (!selectedRadio1) {
-		// 	alert("설문을 선택해주세요.");
-		// 	return;
-		// } else {
-		// 	procForm.querySelector("input[name='add1']").value = selectedRadio1.value;
-		// }
-		
-		// let selectedRadio2 = procForm.querySelector('input[name="tadd2"]:checked');
-		// if (!selectedRadio2) {
-		// 	alert("설문을 선택해주세요.");
-		// 	return;
-		// } else {
-		// 	procForm.querySelector("input[name='add2']").value = selectedRadio2.value;
-		// }
-		
+		let selectedRadio1 = procForm.querySelector(`input[name="tadd1"]:checked`);
+		if (!selectedRadio1) {
+			alert("설문을 선택해주세요.");
+			return;
+		} else {
+			procForm.querySelector("input[name='add1']").value = selectedRadio1.value;
+		}
+
+		let tage = procForm.querySelector('input[name="tage"]:checked');
+		if (!tage) {
+			alert("연령대를 입력해주세요.");
+			return;
+		} else {
+			procForm.querySelector("input[name='age']").value = tage.value;
+		}
+
 		// let selectedRadio3 = procForm.querySelector(`input[name="tadd3"]:checked`);
 		// if (!selectedRadio3) {
 		// 	alert("설문을 선택해주세요.");
@@ -487,13 +592,13 @@ html, body {font-size: 10px;}
 			'name': '이름'
 			,'age': '나이'
 			,'phone': '전화번호'
-			// ,'add1': '설문'
+			,'add1': '설문'
 			// ,'add2': '설문'
 			// ,'add3': '설문'
 			// ,'branch': '지점'
 			,'agBox': '개인정보'
 		};
-		
+
 		validateForm(procForm, required);
 	}
 </script>
