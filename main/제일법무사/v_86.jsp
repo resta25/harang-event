@@ -66,7 +66,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 .page-box .page-num .current {color: #013797;}
 
 /* 이전,다음 버튼 */
-.paging {margin-top: 7.6%; display: flex; align-items: center; column-gap: 7px;}
+.paging {margin-top: 7.6%; display: flex; align-items: center; justify-content: center; column-gap: 7px;}
 .paging button {background-color: transparent;}
 .paging .prev {flex-shrink: 0; width: 32.6%; padding: 3.2% 0; background-color: #dedede; font-family: 'Pretendard'; font-weight: 700; font-size: 170%; border-radius: 10px; color: #222;}
 .paging .next {flex-shrink: 0; width: 65.93%; padding: 3.2% 0; background-color: #013797; font-family: 'Pretendard'; font-weight: 700; font-size: 170%; border-radius: 10px; color: #fff;}
@@ -220,15 +220,15 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                             <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_01.png"></div>
                         </div>
                         <div class="q_select">
-                            <label><input type="radio" name="tadd1" value="네. 사용하고 있습니다">네, 사용하고 있습니다</label>
-                            <label><input type="radio" name="tadd1" value="아니요. 사용하고 있지 않습니다">아니요, 사용하고 있지 않습니다</label>
+                            <label><input type="radio" name="tadd1"  onclick="pageFuc(2,$(this))" value="네. 사용하고 있습니다">네, 사용하고 있습니다</label>
+                            <label><input type="radio" name="tadd1"  onclick="pageFuc(2,$(this))" value="아니요. 사용하고 있지 않습니다">아니요, 사용하고 있지 않습니다</label>
                         </div>
                     </div>
                 </div>
-                <div class="paging">
+                <!-- <div class="paging">
                     <button type="button" class="prev">이전</button>	
                     <button type="button" class="next" onclick="pageFuc(2,$(this))">다음</button>
-                </div>
+                </div> -->
             </section>
 
             <section class="page hide section03" id="page-3">
@@ -241,17 +241,17 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                             <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_02.png"></div>
                         </div>
                         <div class="q_select">
-                            <label><input type="radio" name="tadd2" value="2,000만원~3,000만원">2,000만원~3,000만원</label>
-                            <label><input type="radio" name="tadd2" value="3,000만원~5,000만원">3,000만원~5,000만원</label>
-                            <label><input type="radio" name="tadd2" value="5,000만원~1억원">5,000만원~1억원</label>
-                            <label><input type="radio" name="tadd2" value="1억원 이상">1억원 이상</label>
+                            <label><input type="radio" name="tadd2" onclick="pageFuc(3,$(this))" value="2,000만원~3,000만원">2,000만원~3,000만원</label>
+                            <label><input type="radio" name="tadd2" onclick="pageFuc(3,$(this))" value="3,000만원~5,000만원">3,000만원~5,000만원</label>
+                            <label><input type="radio" name="tadd2" onclick="pageFuc(3,$(this))" value="5,000만원~1억원">5,000만원~1억원</label>
+                            <label><input type="radio" name="tadd2" onclick="pageFuc(3,$(this))" value="1억원 이상">1억원 이상</label>
                         </div>
                     </div>
                 </div>
-                <div class="paging">
+                <!-- <div class="paging">
                     <button type="button" class="prev">이전</button>	
                     <button type="button" class="next" onclick="pageFuc(3,$(this))">다음</button>
-                </div>
+                </div> -->
             </section>
 
             <section class="page hide section04" id="page-4">
@@ -264,15 +264,15 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                             <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_03.png"></div>
                         </div>
                         <div class="q_select">
-                            <label><input type="radio" name="tadd3" value="네">네</label>
-                            <label><input type="radio" name="tadd3" value="아니요">아니요</label>
+                            <label><input type="radio" name="tadd3" onclick="pageFuc(4,$(this))" value="네">네</label>
+                            <label><input type="radio" name="tadd3" onclick="pageFuc(4,$(this))" value="아니요">아니요</label>
                         </div>
                     </div>
                 </div>
-                <div class="paging">
+                <!-- <div class="paging">
                     <button type="button" class="prev">이전</button>	
                     <button type="button" class="next" onclick="pageFuc(4,$(this))">다음</button>
-                </div>
+                </div> -->
                 
                 <div class="popup">
                     <div class="popup-content">
@@ -292,15 +292,15 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                             <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_04.png"></div>
                         </div>
                         <div class="q_select">
-                            <label><input type="radio" name="tadd4" value="네, 알고 있습니다.">네, 알고 있습니다.</label>
-                            <label><input type="radio" name="tadd4" value="아니요">아니요</label>
+                            <label><input type="radio" name="tadd4" onclick="pageFuc(5,$(this))" value="네, 알고 있습니다.">네, 알고 있습니다.</label>
+                            <label><input type="radio" name="tadd4" onclick="pageFuc(5,$(this))" value="아니요">아니요</label>
                         </div>
                     </div>
                 </div>
-                <div class="paging">
+                <!-- <div class="paging">
                     <button type="button" class="prev">이전</button>	
                     <button type="button" class="next" onclick="pageFuc(5,$(this))">다음</button>
-                </div>
+                </div> -->
             </section>
             
             <section class="page hide section06" id="page-6">
@@ -313,15 +313,15 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                             <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_05.png"></div>
                         </div>
                         <div class="q_select">
-                            <label><input type="radio" name="tadd5" value="네, 있습니다.">네, 있습니다.</label>
-                            <label><input type="radio" name="tadd5" value="아니요">아니요</label>
+                            <label><input type="radio" name="tadd5" onclick="pageFuc(6,$(this))" value="네, 있습니다.">네, 있습니다.</label>
+                            <label><input type="radio" name="tadd5" onclick="pageFuc(6,$(this))" value="아니요">아니요</label>
                         </div>
                     </div>
                 </div>
-                <div class="paging">
+                <!-- <div class="paging">
                     <button type="button" class="prev">이전</button>	
                     <button type="button" class="next" onclick="pageFuc(6,$(this))">다음</button>
-                </div>
+                </div> -->
             </section>
 
             <section class="page hide section07" id="page-7">
@@ -342,7 +342,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                     </div>
                 </div>
                 <div class="paging">
-                    <button type="button" class="prev">이전</button>	
+                    <!-- <button type="button" class="prev">이전</button>	 -->
                     <button type="button" class="next" onclick="pageFuc(7,$(this))">다음</button>
                 </div>
             </section>
@@ -399,7 +399,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                     </label>
                 </div>
                 <div class="paging">
-                    <button type="button" class="prev">이전</button>	
+                    <!-- <button type="button" class="prev">이전</button>	 -->
                     <div class="submit"><input type="submit" value="신청 완료하기" onclick="fnForm('form-1');"></div>
                 </div>
 
