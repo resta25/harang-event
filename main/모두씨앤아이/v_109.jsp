@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/jquery.marquee@1.5.0/jquery.marquee.min.js"></script>
+
 <style>
 html, body {font-size: 10px;}
 #wrap {font-family: 'Pretendard'; max-width: 600px; display: flex; flex-direction: column; background-color: #fff; height: 100vh; /* fallback */ height: 100dvh; /* 최신 브라우저용 */
@@ -260,8 +263,6 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
         <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	
     </div>
 </div>
-<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-<script src="https://cdn.jsdelivr.net/npm/jquery.marquee@1.5.0/jquery.marquee.min.js"></script>
 <!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->
 <script>
     $(document).ready(function () {
