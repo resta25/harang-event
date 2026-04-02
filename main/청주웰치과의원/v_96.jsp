@@ -30,33 +30,34 @@ body {background: #000;}
 
 #wrap{letter-spacing: -1px; font-family: 'Pretendard', sans-serif; max-width: 600px;  height: 100vh; /* fallback */ height: 100dvh; /* 최신 브라우저용 */
 padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);}
-.form {height: 100%; background: url("//static.harang-event.com/event/v_${eventSeq}/bg_01.jpg") no-repeat center; background-size: 100% 100%;}
+.form {height: 93.2%; background: url("//static.harang-event.com/event/v_${eventSeq}/bg_01.jpg") no-repeat center; background-size: 100% 100%;}
 #form-1 {height: 100%;}
 .page:not(#page-1){display: none;}
 
 /* 첫번째 페이지 */
-#page-1 {padding: 10% 4.5% 5%; background: url("//static.harang-event.com/event/v_${eventSeq}/bg_01.jpg") no-repeat center top / 100% 100%;}
+#page-1 {padding: 6% 4.5% 5%; background: url("//static.harang-event.com/event/v_${eventSeq}/bg_01.jpg") no-repeat center top / 100% 100%;}
 #page-1 .next_btn {box-shadow: 0 0 15px 0 rgba(108, 170, 208, 0.25); border-radius: 24px;}
 #page-1 .img-area:not(.gif-area) {width: 92.491%; margin: 0 auto;}
-#page-1 .gif-area {margin-top: 7.145%;}
+#page-1 .gif-area {margin-top: 5.145%;}
 #page-1 .gif-area img {border-radius: 24px; box-shadow: 0 0 15px 0 rgba(108, 170, 208, 0.25);}
 #page-1 .paging {padding: 0;}
 
 /* 개인정보처리방침 관련 */
-.form .agBox {margin: 0 auto; padding: 5.861% 0 9.707%; font-size: 125%; font-weight: 500; color: #1f1f1f; font-family: 'SUIT'; line-height: 1.32;}
+.form .agBox {margin: 0 auto; padding: 3.861% 0 5.707%; font-size: 125%; font-weight: 500; color: #1f1f1f; font-family: 'SUIT'; line-height: 1.32;}
 .form .agBox .btn-agreement{text-decoration: underline; font-weight: 700;}
 
 /* paging */
 .paging{display: flex; justify-content: center; padding: 3.5% 5%;}
 .paging button img{width: 100%;}
 
-#page-2 {height: 94.5%; flex-direction: column; padding: 10% 0 0; background: url("//static.harang-event.com/event/v_${eventSeq}/bg_02.jpg") no-repeat center top / 100% 100%;}
-#page-2 .page_inner {flex-grow: 1;}
+#page-2 {height: 95.5%; flex-direction: column; padding: 10% 0 0; background: url("//static.harang-event.com/event/v_${eventSeq}/bg_02.jpg") no-repeat center top / 100% 100%;}
+/* #page-2 .page_inner {flex-grow: 1;} */
 #page-2 .img-area:nth-child(1) {width: 86.167%; margin: 0 auto;}
 #page-2 .open_btn {border-radius: 24px; box-shadow: 0 0 15px 0 rgba(108, 170, 208, 0.25);}
+#page-2 .paging {padding: 2.5% 5% 1.5%;}
 
 /* description */
-.form .description{padding-bottom: 0.7rem; font-family: 'SUIT'; font-size: 100%; font-weight: 500; line-height: 1.5; letter-spacing: -0.32px; text-align: center; color: #fff;}
+.form .description{padding-bottom: 0; font-family: 'SUIT'; font-size: 100%; font-weight: 500; line-height: 1.5; letter-spacing: -0.32px; text-align: center; color: #fff;}
 .form .description #event-period,
 .form .description span,
 .form .description .ad_txt {color: #fff; font-size: 0.7rem;}
@@ -165,7 +166,6 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                 </div>
             </div>
             <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.png"></div>
-            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>
         </section>
 
         <!-- 하단 플로팅 db단 -->
@@ -208,6 +208,9 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
             <input type="hidden" id="objectName" 	name="objectName" 	value="${resVo.objectName}"/>
 		<!-- common input end-->
         </form>
+    </div>
+    <div class="container-bottom">
+        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
