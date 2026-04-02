@@ -18,6 +18,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 
 /* 첫번째 페이지 */
 .page .top-img {position: relative; z-index: 0;}
+.page .top-img:nth-of-type(2) {width: 95%; margin: 0.5% auto;}
 .section01 {text-align: center;}
 .page .sub-img {margin: 0 auto 3rem; width: 80%;}
 .page #location {position: relative; width: 100%; margin: 3% auto; box-sizing: border-box;}
@@ -148,7 +149,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                 <div class="page_inner">
                     <div class="img-area top-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.png"></div>
                     <div class="img-area top-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.png"></div>
-                    <video id="location" playsinline loop autoplay muted src="//static.harang-event.com/event/v_${eventSeq}/video_01.mp4" type="video/mp4"></video>
+                    <video id="location" playsinline loop autoplay muted preload="auto" webkit-playsinline src="//static.harang-event.com/event/v_${eventSeq}/video_01.mp4" type="video/mp4"></video>
                     <script>setTimeout(function(){ $('#location').trigger('play'); },500);</script>
                     <div class="img-area text-img"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_01.png"></div>
                     <div class="timer-box">
