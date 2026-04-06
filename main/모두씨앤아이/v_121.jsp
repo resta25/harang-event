@@ -1,57 +1,57 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/jquery.marquee@1.5.0/jquery.marquee.min.js"></script>
-
 <style>
 html, body {font-size: 10px;}
-#wrap {font-family: 'Pretendard'; max-width: 600px; display: flex; flex-direction: column; background-color: #fff; height: 100vh; /* fallback */ height: 100dvh; /* 최신 브라우저용 */
+#wrap {font-family: 'SUIT'; max-width: 600px; display: flex; flex-direction: column; background-color: #fff; height: 100vh; /* fallback */ height: 100dvh; /* 최신 브라우저용 */
 padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);}
-.form {background: transparent; height: 95%;}
+.form {background: transparent; height: 95.8%;}
 #form-1 {height: 100%;}
 #wrap .formContents {height: 100%;}
 .page {position: relative; box-sizing: border-box; min-height: 94vh; height: 100%;}
 .hide {display: none;}
-.page:not(#page-1):not(#page-4) {background: url("//static.harang-event.com/event/v_${eventSeq}/bg_02.jpg") no-repeat center top / 100% 100%;}
+/* .page:not(#page-1):not(#page-4) {background: url("//static.harang-event.com/event/v_${eventSeq}/bg_02.jpg") no-repeat center top / 100% 100%;} */
 
 /* .page_inner {padding: 11rem 6rem 0; padding-bottom: 0;} */
 
 /* 첫번째 페이지 */
 .page .top-img {position: relative; z-index: 0;}
-.page .top-img:nth-of-type(2) {width: 95%; margin: 0.5% auto;}
-.section01 {text-align: center;}
+/* .page .top-img:nth-of-type(2) {width: 95%; margin: 0.5% auto;} */
+.section01 {text-align: center; padding-top: 3%;}
 .page .sub-img {margin: 0 auto 3rem; width: 80%;}
-.page #location {position: relative; width: 100%; margin: 3% auto; box-sizing: border-box;}
+.page #location {position: relative; display: block; width: 62.167%; margin: 3% auto 0; box-sizing: border-box;}
 .page .touch-img {width: 70%; margin: 0 auto 3rem;}
 .page .text-img {width: 73.5%; margin: 0 auto 1.2rem;}
 .page .next {width: 83.667%; margin: 2.1% auto 0;}
 
-.timer-box {border-radius: 10px; border: solid 2px #ff7b8b; background-color: #fff; font-family: 'Pretendard'; font-size: 280%; font-weight: 500; letter-spacing: -1.4px; text-align: center; color: #000; width: 85.5%; margin: 2% auto;}
-.timer-box .font-yellow {color: #ff2c45; font-weight: 800;}
+.timer-box, .timer-box2 {background-color: #f4f4f4; font-family: 'SUIT'; font-size: 240%; font-weight: 800; letter-spacing: -0.48px; text-align: center; color: #000; width: max-content; margin: 0 auto 3.5%; padding: 2.5% 5.167%; border-radius: 999px; line-height: 1;}
+.timer-box2 {margin-bottom: 2.167%; background-color: #fff;}
+.timer-box .font-pink, .timer-box2 .font-pink {color: #ff2c45; font-weight: 800;}
 
 /* 두번째 페이지 */
-#page-2 .top-img {width: 58%; margin: 4.835% auto 3.335%;}
-.page .bottom-img {padding-bottom: 5rem; width: 80%; margin: 0 auto;}
+/* #page-2 .top-img {width: 58%; margin: 4.835% auto 3.335%;} */
+#page-2 .bottom-img {background-color: #70253e; padding: 4.9% 6.25% 4%;}
+#page-2 .slide-container {padding: 4.191% 13.335% 0;}
+#page-2 .mySwiper img {display: block; width: 100%;}
 
 /* 세번째 페이지 */
-#page-3 .top-img {width: 79.167%; margin: 6.835% auto 5.335%;}
 
 /* 마지막 페이지 */
-#page-4 .top-img.gif-img {width: 85.5%; margin: 7.5% auto 0;}
+#page-4 .top-area {background-color: #ffe3ec; padding: 3% 0 3.5%;}
+#page-4 .top-img.gif-img {width: 100%;}
 
 /* 설문영역 */
-.question_box {padding-top: 5.335%;}
-.question {width: 74.335%; margin: 0 auto 2.6rem;}
-.question_box .q_select {padding: 0 14.085%;}
-.question_box .q_select label {width: 100%;}
-.question_box .q_select label:not(:last-child) {margin-bottom: 1.68rem;}
-.question_box .q_select label img {width: 100%;}
+.question_box {padding-top: 3%; padding-bottom: 4%;}
+.question {width: 88.667%; margin: 0 auto 2.65rem;}
+.question_box .q_select {width: 89.835%; margin: 0 auto; border-radius: 24px; border: solid 1px #de1f5d; background-color: #fff; padding: 4.167% 5.5% 4.917%; box-sizing: border-box;}
+.question_box .q_select label {width: 100%; border-radius: 16px; background-color: #ffe3ec; font-family: 'SUIT'; font-size: 400%; letter-spacing: -2px; text-align: center; color: #181818; padding: 4.78% 0; line-height: 1;}
+.question_box .q_select label.active {color: #fff; font-weight: 800; background-color: #ff3f7d;}
+.question_box .q_select label + label {margin-top: 2.422%;}
 
 /* db 영역 */
-.form .db-box {padding: 4.27% 11.11% 0;}
+.form .db-box {padding: 7.167% 8.917% 0;}
 .form .db-box .legend {display: block; font-family: 'Pretendard'; font-size: 265%; font-weight: 700; line-height: 1; letter-spacing: -1.99px; color: #171717; margin-bottom: 2%}
 .form .db-box .legend .required {color: #ff1442;}
-.form .db-box input {padding: 2.25% 4.05%; font-family: 'Pretendard'; font-size: 265%; font-weight: 600; line-height: 1; letter-spacing: -1.99px; text-align: center; color: #171717; border-radius: 14px; border: solid 2px #adadad; background-color: #fff;}
+.form .db-box input {padding: 2.25% 4.05%; font-family: 'Pretendard'; font-size: 265%; font-weight: 600; line-height: 1; letter-spacing: -1.99px; color: #171717; border-radius: 14px; border: solid 2px #adadad; background-color: #fff;}
 /* .form .db-box input:nth-of-type(1) {margin-top: 3rem;} */
 .form .db-box input::placeholder {color: rgba(47, 47, 47, 0.2);}
 .form .db-box .legend ~ .legend {margin-top: 3%;}
@@ -61,8 +61,8 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 .icon-area {width: 25.5%; margin: 0 auto;}
 
 /* 개인정보 처리방침 */
-.form .agBox {color: #888b91; margin: 0 auto 0; font-size: 120%;}
-.form .agBox span {font-weight: 700;}
+.form .agBox {font-family: 'SUIT'; font-size: 100%; line-height: 1.4; letter-spacing: -0.2px; text-align: center; color: #191919; margin: 2.5% auto 2.667%;}
+.form .agBox a {font-weight: 400;}
 
 /* 대상, 안심문구, 이벤트기간 */
 .form .description {margin: 2rem auto; width: 100%;}
@@ -71,7 +71,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 .form .description .ad_txt {color: #888b91; font-size: 1.5rem; padding: 0;}
 
 .form .description + .img-area {width: 85.5%; margin: 0 auto;}
-.form .description ~ .bottom-area {width: 71%; margin: 4% auto 2%;}
+.form .description ~ .bottom-area {width: 100%;}
 
 #page-4 {background: #fff; height: max-content;}
 #page-4 .page_inner {flex-grow: 1;}
@@ -108,9 +108,6 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
     html, body {font-size: 1.7vw;}
     .form .db-box input {font-size: 3rem;}
     .page {min-height: 87vh;}
-
-    #page-2 .top-img {margin: 4.835% auto 10.335%;}
-    #page-3 .top-img {margin: 6.835% auto 12.335%;}
 }
 @media screen and (max-width: 395px) {
 }
@@ -119,8 +116,15 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 }
 
 </style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/fonts-archive/SUIT/SUIT.css"
+  type="text/css"
+/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard.css" type="text/css"/>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonts-archive/Paperlogy/Paperlogy.css" type="text/css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <div class="overlay"></div>
 <div class="agreeModalBox">
 	<div class="closeBtn">X</div>          
@@ -147,15 +151,16 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
         <div class="formContents">
             <section class="page section01" id="page-1"> 
                 <div class="page_inner">
-                    <div class="img-area top-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.png"></div>
-                    <div class="img-area top-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.png"></div>
-                    <video id="location" playsinline loop autoplay muted preload="auto" webkit-playsinline src="//static.harang-event.com/event/v_${eventSeq}/video_01.mp4" type="video/mp4"></video>
-                    <script>setTimeout(function(){ $('#location').trigger('play'); },500);</script>
-                    <div class="img-area text-img"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_01.png"></div>
                     <div class="timer-box">
                         <!-- <span class="today"></span>  -->
-                        <span class="font-yellow">금일 혜택 마감</span>까지 <span id="timer"></span> 남았습니다
+                        <span class="font-pink">금일 혜택 마감</span>까지 <span id="timer"></span> 남았습니다
                     </div>
+                    <div class="img-area top-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.png"></div>
+                    <!-- <div class="img-area top-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.png"></div> -->
+                    <video id="location" playsinline loop autoplay muted preload="auto" webkit-playsinline src="//static.harang-event.com/event/v_${eventSeq}/video_01.mp4" type="video/mp4"></video>
+                    <script>setTimeout(function(){ $('#location').trigger('play'); },500);</script>
+                    <!-- <div class="img-area text-img"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_01.png"></div> -->
+                    
                     <div class="agBox">
                         * 해당 이벤트는 조기 마감 될 수 있습니다. <br />
                         * <span>혜택 제공을 위한 개인정보 수집 및 이용</span>에 동의해 주세요.
@@ -168,28 +173,42 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 
             <section class="page hide section02" id="page-2">
                 <div class="page_inner">
-                    <div class="img-area top-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_03.png"></div>
+                    <div class="img-area top-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.jpg"></div>
                     <div class="question_box">
                         <div class="img-area question"><img src="//static.harang-event.com/event/v_${eventSeq}/q_01.png"></div>
                         <div class="q_select">
-                            <label><input type="radio" name="tadd1" onclick="pageFuc(2,$(this))" value="기미 · 잡티"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_01.png"></label>
-                            <label><input type="radio" name="tadd1" onclick="pageFuc(2,$(this))" value="주름 · 탄력"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_02.png"></label>
-                            <label><input type="radio" name="tadd1" onclick="pageFuc(2,$(this))" value="피부톤 · 미백"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_03.png"></label>
+                            <label><input type="radio" name="tadd1" value="기미 · 잡티">기미 · 잡티</label>
+                            <label><input type="radio" name="tadd1" value="주름 · 탄력">주름 · 탄력</label>
+                            <label><input type="radio" name="tadd1" value="피부톤 · 미백">피부톤 · 미백</label>
                         </div>
                     </div>
-                    <!-- <div class="img-area bottom-img"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_02.png"></div> -->
+                    <div class="img-area bottom-img">
+                        <img src="//static.harang-event.com/event/v_${eventSeq}/txt_01.png">
+                        <div class="slide-container">
+                            <div class="swiper mySwiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide"><img src="//static.harang-event.com/event/v_${eventSeq}/slide_01.png"></div>
+                                    <div class="swiper-slide"><img src="//static.harang-event.com/event/v_${eventSeq}/slide_02.png"></div>
+                                    <div class="swiper-slide"><img src="//static.harang-event.com/event/v_${eventSeq}/slide_01.png"></div>
+                                    <div class="swiper-slide"><img src="//static.harang-event.com/event/v_${eventSeq}/slide_02.png"></div>
+                                    <div class="swiper-slide"><img src="//static.harang-event.com/event/v_${eventSeq}/slide_01.png"></div>
+                                    <div class="swiper-slide"><img src="//static.harang-event.com/event/v_${eventSeq}/slide_02.png"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
             <section class="page hide section03" id="page-3">
                 <div class="page_inner">
-                    <div class="img-area top-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_04.png"></div>
+                    <div class="img-area top-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.jpg"></div>
                     <div class="question_box">
                         <div class="img-area question"><img src="//static.harang-event.com/event/v_${eventSeq}/q_02.png"></div>
                         <div class="q_select">
-                            <label><input type="radio" name="tage" onclick="pageFuc(3,$(this))" value="40"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_04.png"></label>
-                            <label><input type="radio" name="tage" onclick="pageFuc(3,$(this))" value="50"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_05.png"></label>
-                            <label><input type="radio" name="tage" onclick="pageFuc(3,$(this))" value="60"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_06.png"></label>
-                            <label><input type="radio" name="tage" onclick="pageFuc(3,$(this))" value="70"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_07.png"></label>
+                            <label><input type="radio" name="tage" value="40">40대</label>
+                            <label><input type="radio" name="tage" value="50">50대</label>
+                            <label><input type="radio" name="tage" value="60">60대</label>
+                            <label><input type="radio" name="tage" value="70">70대 이상</label>
                         </div>
                     </div>
                     <!-- <div class="img-area bottom-img"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_02.png"></div> -->
@@ -198,17 +217,22 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 
             <search class="page hide section04" id="page-4">
                 <div class="page_inner">
-                    <div class="img-area top-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_05.png"></div>
-                    <div class="img-area top-img gif-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_06.gif"></div>
+                    <div class="top-area">
+                        <div class="timer-box2">
+                            <!-- <span class="today"></span>  -->
+                            <span class="font-pink">금일 혜택 마감</span>까지 <span id="timer2"></span> 남았습니다
+                        </div>
+                        <div class="img-area top-img gif-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_03.gif"></div>
+                    </div>
                     <div class="db-box">
                         <span class="legend">이름<span class="required">*</span></span>
                         <input type="text" id="name" name="name" class="inp" required="" autocomplete="off" placeholder="이름 ">
                         <span class="legend">연락처<span class="required">*</span></span>
                         <input type="tel" id="phone" name="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="연락처">
                     </div>
-                    <div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_.png"></div>
+                    <div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"></div>
                     <div class="result-box">
-                        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_07.png"></div>
+                        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_03.png"></div>
                         <span id="result"></span>
                         <script>$('input[name="name"]').keyup(function(){$("#result").text($('input[name="name"]').val());});</script>
                     </div>
@@ -217,24 +241,9 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                         <div class="ad_txt">안심하세요! ${resVo.agent}에서는 고객님의 소중한 개인정보를 <br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
                         <span>대상 :  ${resVo.target}</span>
                     </div>
-                    <div class="img-area bottom-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_08.gif"></div>
+                    <div class="img-area bottom-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_04.jpg"></div>
 
-                    <div class="subscribe-box">
-                        <div class="title">선착순 신청자 현황</div>
-                        <div class="marquee-wrap">
-                            <div class="marquee1">
-                                <div class="sign"><div class="subscribe"></div></div>
-                            </div>
-                            <div class="marquee2">
-                                <div class="sign"><div class="subscribe"></div></div>
-                            </div>
-                            <div class="marquee3">
-                                <div class="sign"><div class="subscribe"></div></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.jpg"></div>	
+                    <!-- <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.jpg"></div>	 -->
                 </div>
             </search>
         </div>
@@ -269,43 +278,16 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
     $(document).ready(function () {
         initDate();/* 기간항목 start */
         blockSourceView();//드래그, 우클릭 방지
-
-        getCommentMarquee(`${eventSeq}`); // 댓글 관련 함수
     });
-
-    function returnComment(resultData, meoreData){
-	    ['.marquee1 .subscribe', '.marquee2 .subscribe', '.marquee3 .subscribe'].forEach(function(selector) {
-	        resultData.forEach(function(item) {
-	            var html  = '<div class="content" data-id="'+ item.seq +'">';
-	                html += '   <div class="phone">'+ (item.name || '') + ' ' + (item.phone || '') + '</div>';
-	                html += '   <div class="date">'+ (item.regDate || '') + ' | ' + '</div>';
-	                html += '   <div class="msg">신청했습니다~</div>';
-	                html += '</div>';
-	            $(selector).append(html);
-	        });
-	    });
-        initMarquee();
-	}
-	
-	// 마퀴 초기화 및 재적용
-	function initMarquee() {
-        $('.marquee1, .marquee2, .marquee3').marquee('destroy');
-        $('.marquee1, .marquee2, .marquee3').marquee({
-            duration: 20000,
-            gap: 20,
-            delayBeforeStart: 0,
-            direction: 'left',
-            duplicated: true,
-            startVisible: true
-        });
-    }
 
     $(document).ready(function () {
         // 타이머
         var display = document.querySelector('#timer');
+        var display2 = document.querySelector('#timer2');
         var timer = 7 * 60 * 60 * 1000 + 2 * 60 * 1000 + 36 * 1000; // 07:02:36을 밀리초로 변환
 
         startTimer(timer, display);
+        startTimer(timer, display2);
 
         var today = new Date();
         var month = today.getMonth() + 1;
@@ -347,74 +329,74 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
         }
     });
 
-    // 비디오 소리 켜기
-    // $('#wrap').on('click', function(){
+    var swiper;
 
-    //     var video = $('#location').get(0);
-
-    //     if(video){
-    //         video.muted = false;
-    //         // video.volume = 1;
-    //         // video.play();
-    //     }
-
-    // });
-    // 비디오 소리 멈춤
-    // var video = $('#location').get(0);
-    // $('.next').on('click', function(){
-    //     // 🔹 1. 영상 정지 + 음소거
-    //     if(video){
-    //         video.pause();
-    //         video.muted = true;
-    //         video.currentTime = 0; // 원하면 유지
-    //     }
-    //     // 🔹 2. 기존 함수 실행
-    //     pageFuc(1, $(this));
-
-    // });
+    function initSwiper() {
+        swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+        });
+    }
 
     // 버튼 페이지 이동 함수 (다음)
     function pageFuc(num, obj) {
-        // 선택된 라디오 버튼 확인 (section03 페이지일 때)
-        // if (num === 1) {
-        //     let inputValue = $('input[name="name"]').val();
-        //     const isChecked = inputValue.length > 1;
-
-        //     if (!isChecked) {
-        //         alert("정확한 이름을 입력해주세요.");
-        //         return; // 선택되지 않았으면 페이지 이동 안함
-        //     }
-        // }
-
         if(num == 3){
             $('.form').css({'height': 'max-content'})
             $('.subscribe-box').show();
         }
 
-        // 페이지 이동 처리
         $('.section0' + num).fadeOut(function() {
             var nextSection = $('.section0' + (num + 1));
-            nextSection.css({ 'display': 'flex', 'flex-direction': 'column' });
-            
-            // 4페이지(마지막 페이지)로 진입했을 때 마퀴 재초기화
-            if (num === 3) {
-                $('.subscribe-box').show();
-                // 중요: 요소가 눈에 보이는 상태가 된 후 약간의 지연을 주어 너비를 계산하게 함
-                setTimeout(function() {
-                    initMarquee();
-                }, 100); 
+
+            nextSection.css({ 
+                'display': 'flex', 
+                'flex-direction': 'column' 
+            });
+
+            // ✅ 여기서 초기화해야 정확함
+            if (num === 1) {
+                setTimeout(function () {
+                    initSwiper();
+                }, 50);
             }
-            
+
             $(document).scrollTop(0);
         });
     }
 
     //설문 on/off
-    $('input[name*="tadd"], input[name*="tage"]').on('click', function(){
-        $('label', $(this).parents('.q_select')).each(function(i,t) {
-            $('img', t).attr('src', $('img', t).attr('src').replace('_on', '_off'));
-        });
-        $('img', $(this.parentNode)).attr('src', $('img', $(this.parentNode)).attr('src').replace('_off', '_on'));
+    // $('input[name*="tadd"], input[name*="tage"]').on('click', function(){
+    //     $('label', $(this).parents('.q_select')).each(function(i,t) {
+    //         $('img', t).attr('src', $('img', t).attr('src').replace('_on', '_off'));
+    //     });
+    //     $('img', $(this.parentNode)).attr('src', $('img', $(this.parentNode)).attr('src').replace('_off', '_on'));
+    // });
+
+    //설문 클릭시 이미지 on/off
+    $('input[name="tadd1"]').on('click', function(){
+        const $labels = $('input[name="tadd1"]').parent('label');
+
+        $labels.removeClass('active'); // 전체 제거
+        $(this).parent('label').addClass('active'); // 현재만 추가
+
+        setTimeout(() => {
+            pageFuc(2,$(this));
+        }, 100);
+    });
+
+    $('input[name="tage"]').on('click', function(){
+        const $labels = $('input[name="tage"]').parent('label');
+
+        $labels.removeClass('active'); // 전체 제거
+        $(this).parent('label').addClass('active'); // 현재만 추가
+
+        setTimeout(() => {
+            pageFuc(3,$(this));
+        }, 100);
     });
 
     //이름 텍스트 출력
