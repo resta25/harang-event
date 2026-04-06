@@ -6,10 +6,10 @@ html, body {font-size: 10px;}
 background-size: 100% 100%;}
 .form {background: transparent; height: 100%;}
 #wrap .formContents {height: 100%;}
-.page {position: relative; box-sizing: border-box; height: 140vh;}
+.page {position: relative; box-sizing: border-box;}
 .hide {display: none;}
 
-.page_inner {padding: 11rem 6rem 0; padding-bottom: 0;}
+.page_inner {padding: 11rem 6rem 3rem;}
 
 /* 첫번째 페이지 */
 .page .top-img {width: 50%; margin: 0 auto 3rem;}
@@ -144,7 +144,7 @@ background-size: 100% 100%;}
                 <div class="container-bottom">
                     <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_04.jpg"></div>
                     <!-- <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.png"></div> -->
-                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	
+                    <!-- <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	 -->
                 </div>
             </search>
             
@@ -169,6 +169,9 @@ background-size: 100% 100%;}
             <input type="hidden" id="objectName" 	name="objectName" 	value="${resVo.objectName}"/>
 		</form>
 	</div>
+    <div class="container-bottom">
+        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	
+    </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->

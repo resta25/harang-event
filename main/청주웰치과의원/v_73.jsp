@@ -61,7 +61,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 /* 첫번째 페이지 */
 #page-1 {padding-top: 3.167%;}
 #page-1 .img-area:nth-child(1) {width: 91.667%; margin: 0 auto;}
-#page-1 .img-area:nth-child(2) {width: 38.335%; margin: 0 auto 2.667%;}
+#page-1 .img-area:nth-child(2) {width: 38.335%; margin: 0 auto 1.667%;}
 .video-area {width: 59%;
     padding: 2% 2%;
     margin: 0 auto;
@@ -71,7 +71,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
     background-color: #222021}
 .video-area video {display: block; width: 100%; height: 100%;}
 
-#page-1 .next.img-area {width: 69.835%; margin-top: 2%;}
+#page-1 .next.img-area {width: 69.835%; margin-top: 1%;}
 
 .page-inner-bg {width: 100%; box-sizing: border-box;}
 .page-inner-bg .top-img {margin-bottom: 2rem;}
@@ -112,7 +112,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 .form .description p,
 .form .description span {font-weight: normal; font-size: 1.3rem; padding: 0; margin: 0; color: #fff; letter-spacing: -0.65px;}
 
-.form .agBox { font-size: 1.2rem; padding: 2rem 0 0; width: 100%; margin: 0 auto; color: #fff;}
+.form .agBox { font-size: 1.2rem; padding: 1rem 0 0; width: 100%; margin: 0 auto; color: #fff;}
 
 /* 모달창 - 개인정보처리방침 */
 .overlay {z-index: 888; position: fixed; display: none; width: 100vw; height: 100vh; opacity: 0.5; background-color: #000;}

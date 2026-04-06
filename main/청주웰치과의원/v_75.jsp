@@ -4,7 +4,7 @@ pageEncoding="UTF-8"%>
 html, body {font-size: 10px;}
 #wrap {max-width: 600px; font-family: 'Pretendard'; height: 99.99dvh; background: url("//static.harang-event.com/event/v_${eventSeq}/bg_01.jpg") no-repeat center top;
 background-size: 100% 100%;}
-.form {background: transparent; height: 100%;}
+.form {background: transparent; height: 93.2%;}
 #form-1 {height: 100%;}
 #wrap .formContents {height: 100%;}
 .page { height: 100%; flex-grow: 1; position: relative; box-sizing: border-box;}
@@ -23,8 +23,8 @@ background-size: 100% 100%;}
 /* 첫번째 페이지 */
 .page-inner-bg {position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; box-sizing: border-box;}
 .page-inner-bg .top-img {margin-bottom: 2rem;}
-#page-1 .page_inner {background: #8ee6ff; border-radius: 3.5rem 3.5rem 0 0; padding: 2.8rem 4.5rem 4.2rem; }
-.page_inner .bar {width: 12rem; height: 0.7rem ; border-radius: 5rem; background: #19c6f7; display: block; margin: 0 auto 3rem;}
+#page-1 .page_inner {background: #8ee6ff; border-radius: 3.5rem 3.5rem 0 0; padding: 1.8rem 4.5rem 2.2rem;}
+.page_inner .bar {width: 12rem; height: 0.7rem ; border-radius: 5rem; background: #19c6f7; display: block; margin: 0 auto 2rem;}
 .page_inner .question {line-height: 1.29; letter-spacing: -0.98px; text-align: center; color: #363942; font-size: 2.4rem; font-weight: 800; margin-bottom: 1rem;}
 .page_inner input[name="name"] {background: #fff;  border: solid 2px #36c5ed; border-radius: 1.5rem; font-size: 3rem;  line-height: 1.29; letter-spacing: -1.4px; padding: 1.4rem 0; width: 100%; text-align: center; margin-bottom: 2rem;}
 
@@ -152,7 +152,7 @@ background-size: 100% 100%;}
                 </div>
                 <div class="container-bottom">
                     <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.png"></div>
-                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	
+                    <!-- <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	 -->
                 </div>
             </search>
             
@@ -177,6 +177,9 @@ background-size: 100% 100%;}
             <input type="hidden" id="objectName" 	name="objectName" 	value="${resVo.objectName}"/>
 		</form>
 	</div>
+    <div class="container-bottom">
+        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	
+    </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->

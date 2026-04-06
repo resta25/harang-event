@@ -102,11 +102,11 @@ html, body {font-size: 10px;}
 
 /* 개별 */
 #page-1 .page_inner .img-area:not(.next) {width: 72.134%; margin: 0 auto 8.608%;}
-#page-2 {padding: 7.75% 9% 0; padding-bottom: 0;}
+#page-2 {padding: 5.75% 9% 0; padding-bottom: 0;}
 #page-3 {display: flex; flex-direction: column; height: 99.9%;}
 
 /* 첫번째 페이지 */
-#page-1 .page_inner {background: #1c140d; padding: 7.667% 9.335% 0;}
+#page-1 .page_inner {background: #1c140d; padding: 5.667% 9.335% 0;}
 .page-inner-bg {position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; box-sizing: border-box;}
 .page-inner-bg .top-img {margin-bottom: 2rem;}
 .page_inner .bar {width: 12rem; height: 0.7rem ; border-radius: 5rem; background: #19c6f7; display: block; margin: 0 auto 3rem;}
@@ -122,15 +122,15 @@ html, body {font-size: 10px;}
 /* 마지막 페이지 */
 #page-3 {display: none;}
 /* #page-3 .page_inner {flex-grow: 1;} */
-#page-3 .page_inner {padding: 5.75% 9.4% 0; padding-bottom: 0;}
-#page-3 .page_inner .img-area:not(.next) {width: 78.815%; margin: 0 auto 5%;}
+#page-3 .page_inner {padding: 3.75% 9.4% 0; padding-bottom: 0;}
+#page-3 .page_inner .img-area:not(.next) {width: 78.815%; margin: 0 auto 3%;}
 .page_inner input[name="phone"] {height: inherit; background: #fff; border: solid 2px #f7d9a5; border-radius: 1.3rem; font-family: 'Paperlogy'; font-size: 375%; font-weight: 100; line-height: 1.4; text-align: center; color: #000; padding: 3.177% 3%;}
 .page_inner input[name="phone"]::placeholder {color: #929292;}
 
 .form {position: relative;}
 .form .next {width: 74.591%; margin: 0 auto;}
 .form .next img {width: 100%;}
-.form .submit {width: 74.71%; margin: 5.134% auto 2.26%; padding: 0;}
+.form .submit {width: 74.71%; margin: 2.134% auto 1.26%; padding: 0;}
 .form .submit input[type="image"] {width: 100%;}
 
 /* 안심문구, 대상, 이벤트기간 */
