@@ -254,9 +254,6 @@ html, body {font-size: 10px;}
                         <span>대상 :  ${resVo.target}</span>
                     </div>
                 </div>
-                <div class="container-bottom">
-                    <div class="img-area notice-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.jpg"></div>
-                </div>
             </section>
         </div>
             <input type="hidden" id="branch" 		name="branch" value="${resVo.branch}"/>
@@ -280,6 +277,7 @@ html, body {font-size: 10px;}
 		</form>
 	</div>
     <div class="container-bottom">
+        <div class="img-area notice-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.jpg"></div>
         <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	
     </div>
 </div>

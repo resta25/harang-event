@@ -67,6 +67,8 @@ background-size: 100% 100%;}
     html, body {font-size: 1.7vw;}
     .form .page-inner {top: 20%; width: 90%;}
     .form .db-box {width: 88%;}
+
+    .form {height: 95.2%;}
 }
 @media screen and (max-width: 395px) {
     /* .form .db-box {top: 13%;} */
