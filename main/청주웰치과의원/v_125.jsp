@@ -87,6 +87,8 @@ html, body {font-size: 10px;}
 .page { height: 100%; flex-grow: 1; position: relative; box-sizing: border-box;}
 .hide {display: none;}
 
+.notice-area {border-bottom: 2px solid #5f5f5f;}
+
 /* 공통 */
 .form .name-result {display: block; letter-spacing: -2.48px; text-align: center; color: #fffe3d; font-size: 4.5rem; margin-bottom: 2rem; font-weight: 800;}
 
@@ -288,7 +290,7 @@ html, body {font-size: 10px;}
         initDate();/* 기간항목 start */
         blockSourceView();//드래그, 우클릭 방지
 
-        $('.notice-area').hide();
+        // $('.notice-area').hide();
 	});
 
     // 엔터키 막기
@@ -338,7 +340,7 @@ html, body {font-size: 10px;}
 
     // 버튼 페이지 이동 함수 (다음)
     function pageFuc(num, obj) {
-        console.log(num)
+        // console.log(num);
         // 선택된 라디오 버튼 확인 (section03 페이지일 때)
         
         if (num === 1) {
@@ -351,9 +353,9 @@ html, body {font-size: 10px;}
             }
         }
 
-        if(num === 2) {
-            $('.notice-area').show();
-        }
+        // if(num === 2) {
+        //     $('.notice-area').show();
+        // }
 
         var nextPage = num + 1;
         // 페이지 이동 처리
