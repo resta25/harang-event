@@ -87,8 +87,6 @@ html, body {font-size: 10px;}
 .page { height: 100%; flex-grow: 1; position: relative; box-sizing: border-box;}
 .hide {display: none;}
 
-.notice-area {border-bottom: 2px solid #5f5f5f;}
-
 /* 공통 */
 .form .name-result {display: block; letter-spacing: -2.48px; text-align: center; color: #fffe3d; font-size: 4.5rem; margin-bottom: 2rem; font-weight: 800;}
 
