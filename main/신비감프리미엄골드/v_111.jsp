@@ -111,7 +111,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
     html, body {font-size: 1.7vw;}
     .form .db-box input {font-size: 3rem;}
     .page {min-height: 87vh;}
-    .page .next {width: 83.667%;}
+    .page .next {width: 83.667%; margin-left: 13%;}
 }
 @media screen and (max-width: 395px) {
 }
