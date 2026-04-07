@@ -24,7 +24,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 .page #location {position: relative; width: 70.335%; margin: 1.167% auto 2%; box-sizing: border-box;}
 .page .touch-img {width: 70%; margin: 0 auto 3rem;}
 .page .text-img {width: 90.167%; margin: 0 auto 1.25rem;}
-.page .next {width: 83.667%; margin: 2.1% auto 0;}
+.page .next {width: 64.667%; margin: 2.1% auto 0;}
 
 .timer-box {border-radius: 10px; border: solid 2px #ff7b8b; background-color: #fff; font-family: 'Pretendard'; font-size: 280%; font-weight: 500; letter-spacing: -1.4px; text-align: center; color: #000; width: 85.5%; margin: 2% auto;}
 .timer-box .font-yellow {color: #ff2c45; font-weight: 800;}
@@ -111,6 +111,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
     html, body {font-size: 1.7vw;}
     .form .db-box input {font-size: 3rem;}
     .page {min-height: 87vh;}
+    .page .next {width: 83.667%;}
 }
 @media screen and (max-width: 395px) {
 }
