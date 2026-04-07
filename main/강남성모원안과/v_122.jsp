@@ -8,6 +8,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 #wrap .formContents {height: 100%;}
 .page {position: relative; box-sizing: border-box; background-color: #fff;}
 .page:not(#page-1) .page_inner {padding: 7.825% 6.48% 5%;}
+.page#page-5 .page_inner {padding-bottom: 0;}
 .page#page-3 {padding-bottom: 0;}
 .hide {display: none;}
 
@@ -47,7 +48,13 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 #page-5 .question {width: 89.998%;}
 #page-5 .question + .img-area {display: block; margin: 3.83% auto 3.64%;;}
 
-.icon-area {width: 28.168%; margin: 0 auto;}
+.icon-area {width: 28.168%; margin: 0 auto; height: 7.6rem;}
+.icon-area img {animation: motion 0.3s linear 0s infinite alternate; margin-top: 0;}
+        
+@keyframes motion {
+	0% {margin-top: 0px;}
+	100% {margin-top: 10px;}
+}
 
 .result-box {position: relative; margin: 3% 5.26% 5.5%; padding: 0;}
 #result {position: absolute; top: 50%; transform: translateY(-50%); left: 5%; display: flex; align-items: center; justify-content: center; overflow: hidden; width: 26.91%; height: 60%; font-size: 240%; border-radius: 13px; background-color: #fff;}
@@ -89,6 +96,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
     .form {height: 100%;}
 
     .paging_btn button {width: 12px;}
+    /* .icon-area {height: 4.6rem;} */
 }
 @media screen and (max-width: 395px) {
 }
