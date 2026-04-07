@@ -157,7 +157,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                         <a href="#" class="btn-agreement">[자세히 보기]</a>
                         <input type="hidden" name="agBox" value="Y" checked>
                     </div>
-                    <div class="next img-area" onclick="pageFuc(1,$(this))"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.png"></div>
+                    <div class="next img-area" onclick="pageFuc(1,$(this))"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.gif"></div>
                 </div>
             </section>
 
