@@ -170,6 +170,8 @@ input[type="image"] {width:100%; height: 100%;}
 
 
 @media screen and (max-width: 500px){
+    #wrap {height: 100%;}
+
     /* 공통 폰트 사이즈 */
     .chat_box, .input_box .next_btn, .form .inp {font-size: 4vw;}
     .chat_set.left .progress_box .progress_txt {font-size: 3.2vw;}
