@@ -168,6 +168,7 @@ input[type="image"] {width:100%; height: 100%;}
 .form .description .ad_txt,
 .form .description span {font-size: 75%; font-weight: 500; text-align: left; font-family: 'SUIT'}
 
+.container_bottom img {display: block; width: 100%; height: 100%;}
 
 @media screen and (max-width: 500px){
     #wrap {height: 100%;}
