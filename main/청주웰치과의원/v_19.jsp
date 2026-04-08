@@ -35,13 +35,13 @@ background-size: 100% 100%;}
 .form .db-box input::placeholder {color: #7fac98;}
 
 /* 개인정보 처리방침 */
-.form .agBox {color: #fff; margin: 4rem auto 0; font-size: 1.5rem;}
+.form .agBox {color: #7a7a7a; margin: 4rem auto 0; font-size: 1.5rem;}
 
 /* 대상, 안심문구, 이벤트기간 */
 .form .description {margin: 2rem auto; width: 100%;}
 .form .description p,
 .form .description span,
-.form .description .ad_txt {color: #fff; font-size: 1.5rem; padding: 0;}
+.form .description .ad_txt {color: #7a7a7a; font-size: 1.5rem; padding: 0;}
 
 
 /* 모달창 - 개인정보처리방침 */
