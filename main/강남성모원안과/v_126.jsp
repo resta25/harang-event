@@ -56,7 +56,7 @@
 body::-webkit-scrollbar {display: none;}
 
 .hide {display: none !important;}
-.bg_main {background-color: #e8e8e8;}
+.bg_main {background-color: #e8e8e8; overflow: hidden;}
 .c_red {color:#fff500;}
 .mb_3{margin-bottom: 3%;}
 .bottom{display:none;}
