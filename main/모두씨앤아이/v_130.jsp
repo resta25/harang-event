@@ -58,6 +58,9 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 
 .form .submit {margin: 3% 0;}
 
+/* 동의버튼 */
+.form .next img {animation: pulsating 0.8s linear infinite; -webkit-animation: pulsating 0.8s linear infinite;}
+
 .icon-area {width: 25.5%; margin: 0 auto;}
 
 /* 개인정보 처리방침 */
@@ -103,6 +106,12 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 .agreeModalBox .newAgreement h3 {margin: 1% 0; font-size: 11px;}
 .agreeModalBox .newAgreement ol li {line-height: 12px; font-size: 10px;}
 
+/* submit 버튼 애니메이션 */
+@keyframes pulsating {
+	0% {transform: scale(1);}
+	50% {transform: scale(0.95);}
+	100% {transform: scale(1);}
+}
 
 @media screen and (max-width: 500px) { 
     html, body {font-size: 1.7vw;}
