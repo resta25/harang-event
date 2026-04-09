@@ -270,6 +270,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 	</div>
 
     <div class="container-bottom">
+        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.jpg"></div>	
         <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	
     </div>
 </div>
