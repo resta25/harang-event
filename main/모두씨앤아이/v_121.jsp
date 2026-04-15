@@ -4,7 +4,7 @@ pageEncoding="UTF-8"%>
 html, body {font-size: 10px;}
 #wrap {font-family: 'SUIT'; max-width: 600px; display: flex; flex-direction: column; background-color: #fff; height: 100vh; /* fallback */ height: 100dvh; /* 최신 브라우저용 */
 padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);}
-.form {background: transparent; height: 95.8%;}
+.form {background: transparent; height: calc(100% - 5.96rem);}
 #form-1 {height: 100%;}
 #wrap .formContents {height: 100%;}
 .page {position: relative; box-sizing: border-box; min-height: 94vh; height: 100%;}
@@ -14,14 +14,14 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 /* .page_inner {padding: 11rem 6rem 0; padding-bottom: 0;} */
 
 /* 첫번째 페이지 */
-.page .top-img {position: relative; z-index: 0;}
+.page .top-img {position: relative; z-index: 0; margin-bottom: 4.5%;}
 /* .page .top-img:nth-of-type(2) {width: 95%; margin: 0.5% auto;} */
-.section01 {text-align: center; padding-top: 3%;}
+.section01 {text-align: center;}
 .page .sub-img {margin: 0 auto 3rem; width: 80%;}
-.page #location {position: relative; display: block; width: 62.167%; margin: 3% auto 0; box-sizing: border-box;}
+.page #location {position: relative; display: block; width: 62.167%; margin: 2.834% auto 0; box-sizing: border-box;}
 .page .touch-img {width: 70%; margin: 0 auto 3rem;}
 .page .text-img {width: 73.5%; margin: 0 auto 1.2rem;}
-.page .next {width: 83.667%; margin: 2.1% auto 0;}
+.page .next {width: 83.667%; margin: 1.5% auto 0;}
 
 .timer-box, .timer-box2 {background-color: #f4f4f4; font-family: 'SUIT'; font-size: 240%; font-weight: 800; letter-spacing: -0.48px; text-align: center; color: #000; width: max-content; margin: 0 auto 3.5%; padding: 2.5% 5.167%; border-radius: 999px; line-height: 1;}
 .timer-box2 {margin-bottom: 2.167%; background-color: #fff;}
@@ -58,10 +58,13 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 
 .form .submit {margin: 3% 0;}
 
+/* 동의버튼 */
+.form .next img {animation: pulsating 0.8s linear infinite; -webkit-animation: pulsating 0.8s linear infinite;}
+
 .icon-area {width: 25.5%; margin: 0 auto;}
 
 /* 개인정보 처리방침 */
-.form .agBox {font-family: 'SUIT'; font-size: 100%; line-height: 1.4; letter-spacing: -0.2px; text-align: center; color: #191919; margin: 2.5% auto 2.667%;}
+.form .agBox {font-family: 'SUIT'; font-size: 100%; line-height: 1.4; letter-spacing: -0.2px; text-align: center; color: #191919; margin: 2.5% auto 1.935%;}
 .form .agBox a {font-weight: 400;}
 
 /* 대상, 안심문구, 이벤트기간 */
@@ -103,6 +106,12 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 .agreeModalBox .newAgreement h3 {margin: 1% 0; font-size: 11px;}
 .agreeModalBox .newAgreement ol li {line-height: 12px; font-size: 10px;}
 
+/* submit 버튼 애니메이션 */
+@keyframes pulsating {
+	0% {transform: scale(1);}
+	50% {transform: scale(0.95);}
+	100% {transform: scale(1);}
+}
 
 @media screen and (max-width: 500px) { 
     html, body {font-size: 1.7vw;}
@@ -151,11 +160,12 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
         <div class="formContents">
             <section class="page section01" id="page-1"> 
                 <div class="page_inner">
-                    <div class="timer-box">
-                        <!-- <span class="today"></span>  -->
+                    <!-- <div class="timer-box">
+                        <span class="today"></span> 
                         <span class="font-pink">금일 혜택 마감</span>까지 <span id="timer"></span> 남았습니다
-                    </div>
-                    <div class="img-area top-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.png"></div>
+                    </div> -->
+                    <div class="img-area top-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_00.jpg"></div>
+                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.gif"></div>
                     <!-- <div class="img-area top-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.png"></div> -->
                     <video id="location" playsinline loop autoplay muted preload="auto" webkit-playsinline src="//static.harang-event.com/event/v_${eventSeq}/video_01.mp4" type="video/mp4"></video>
                     <script>setTimeout(function(){ $('#location').trigger('play'); },500);</script>
@@ -182,7 +192,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                             <label><input type="radio" name="tadd1" value="피부톤 · 미백">피부톤 · 미백</label>
                         </div>
                     </div>
-                    <div class="img-area bottom-img">
+                    <!-- <div class="img-area bottom-img">
                         <img src="//static.harang-event.com/event/v_${eventSeq}/txt_01.png">
                         <div class="slide-container">
                             <div class="swiper mySwiper">
@@ -196,7 +206,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </section>
             <section class="page hide section03" id="page-3">
@@ -270,6 +280,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 	</div>
 
     <div class="container-bottom">
+        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.jpg"></div>	
         <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	
     </div>
 </div>
@@ -282,11 +293,11 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 
     $(document).ready(function () {
         // 타이머
-        var display = document.querySelector('#timer');
+        // var display = document.querySelector('#timer');
         var display2 = document.querySelector('#timer2');
         var timer = 7 * 60 * 60 * 1000 + 2 * 60 * 1000 + 36 * 1000; // 07:02:36을 밀리초로 변환
 
-        startTimer(timer, display);
+        // startTimer(timer, display);
         startTimer(timer, display2);
 
         var today = new Date();
@@ -329,18 +340,18 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
         }
     });
 
-    var swiper;
+    // var swiper;
 
-    function initSwiper() {
-        swiper = new Swiper(".mySwiper", {
-            spaceBetween: 30,
-            loop: true,
-            autoplay: {
-                delay: 2000,
-                disableOnInteraction: false,
-            },
-        });
-    }
+    // function initSwiper() {
+    //     swiper = new Swiper(".mySwiper", {
+    //         spaceBetween: 30,
+    //         loop: true,
+    //         autoplay: {
+    //             delay: 2000,
+    //             disableOnInteraction: false,
+    //         },
+    //     });
+    // }
 
     // 버튼 페이지 이동 함수 (다음)
     function pageFuc(num, obj) {
@@ -359,9 +370,9 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 
             // ✅ 여기서 초기화해야 정확함
             if (num === 1) {
-                setTimeout(function () {
-                    initSwiper();
-                }, 50);
+                // setTimeout(function () {
+                //     initSwiper();
+                // }, 50);
             }
 
             $(document).scrollTop(0);
