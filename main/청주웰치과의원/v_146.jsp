@@ -68,7 +68,7 @@ body::-webkit-scrollbar {display: none;}
 .form::-webkit-scrollbar {display: none;}
 
 .video-area {position: relative;}
-#location {position: absolute; bottom: 8.558%; left: 4.035%; width: 55.01222%; border-radius: 4.4%;}
+#location {position: absolute; bottom: 8.658%; left: 4.035%; width: 55.01222%; border-radius: 4.4%;}
 
 /* 공통 폰트 사이즈 */
 .chat_box, .input_box .next_btn, .form .inp{font-size: 28px; letter-spacing: -1px;}
@@ -195,6 +195,8 @@ input[type="image"] {width:100%; height: 100%;}
     .form .agBox, .form .description p, .form .description .ad_txt, .form .description span {padding: 0; font-size: 80%;}
 
     .chat_box + p {font-size: 80%; margin-top: 1%;}
+
+    #location {bottom: 8.458%;}
 }
 
 @media screen and (max-width: 430px){
