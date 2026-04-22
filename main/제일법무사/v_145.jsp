@@ -428,7 +428,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                     <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_05.png"></div>
                     <div class="checkbox confirm">
                         <label>
-                            <input type="checkbox">
+                            <input type="checkbox" checked>
                             <strong>위 필수 사항</strong>을 모두 확인하였습니다.
                         </label>
                     </div>
