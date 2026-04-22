@@ -43,8 +43,8 @@ pageEncoding="UTF-8"%>
          url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Bold.otf') format('opentype');
 }
 html, body {font-size: 10px;}
-#wrap {max-width: 600px; display: flex; flex-direction: column; font-family: 'Pretendard'; height: 100dvh; overflow: hidden; height: 100vh; /* fallback */ height: 100dvh; /* 최신 브라우저용 */
-padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); background: url('//static.harang-event.com/event/v_${eventSeq}/bg_01.png') no-repeat center center / 100% 100%;}
+#wrap {max-width: 600px; display: flex; flex-direction: column; font-family: 'Pretendard'; overflow: hidden; height: 100dvh; height: 100vh;
+padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); background: #111;}
 .form {flex-grow: 1; background: transparent;}
 #form-1 {height: 100%;}
 #wrap .formContents {height: 100%;}
@@ -57,9 +57,8 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 .form strong {color: #f20000; font-weight: 800; font-family: 'SUIT';}
 .form .name-result {}
 .next {cursor: pointer;}
-.page:not(#page-1):not(#page-8) {padding: 7.335% 8.335%; font-size: 16px;}
-.page#page-1 .question .img-area, .page#page-2 .question .img-area {width: 87.8%; margin: 0 auto;}
-.page:not(#page-1):not(#page-2) .question .img-area {width: 98.6%; margin: 0 auto;}
+.page:not(#page-1):not(#page-8) {padding: 0 8.335%; font-size: 16px;}
+/* .page:not(#page-1):not(#page-2) .question .img-area {width: 98.6%; margin: 0 auto;} */
 
 .page-box {text-align: center; margin-bottom: 4.8%;}
 .page-box .page-num {font-family: 'Pretendard'; font-size: 188%; font-weight: 500; letter-spacing: -0.6px; color: #676767;}
@@ -69,22 +68,38 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 .paging {margin-top: 7.6%; display: flex; align-items: center; justify-content: center; column-gap: 7px;}
 .paging button {background-color: transparent;}
 .paging .prev {flex-shrink: 0; width: 32.6%; padding: 3.2% 0; background-color: #dedede; font-family: 'Pretendard'; font-weight: 700; font-size: 170%; border-radius: 10px; color: #222;}
-.paging .next {flex-shrink: 0; width: 65.93%; padding: 3.2% 0; background-color: #013797; font-family: 'Pretendard'; font-weight: 700; font-size: 170%; border-radius: 10px; color: #fff;}
+.paging .next {flex-shrink: 0; width: 65.93%; padding: 0; font-family: 'Pretendard'; font-weight: 700; font-size: 170%; border-radius: 10px; color: #fff;}
 /* .paging button{position: absolute; top: 50%; left: 7.34%; transform: translateY(-50%); max-width: 63px; background-color: transparent; cursor: pointer;} */
 .paging img{ width: 100%;}
 
 /* 첫번째 페이지 */
-#page-1 {height: 100%;}
-#page-1 .video-area {padding: 2.5% 4.585% 0;}
-#page-1 .video-area video {display: block; width: 100%; height: 100%; border-radius: 30px;}
-#page-1 .agBox {font-size: 150%; font-family: 'Pretendard'; font-weight: 500; margin: 3.667% auto 3.585%;}
+#page-1 {height: 100%; box-sizing: border-box; padding-bottom: 7.07rem;}
+#page-1 > .img-area:nth-child(1) {width: 86.5%; margin: 0 auto; padding-top: 2rem;}
+#page-1 > .img-area:nth-child(2) {width: 80.8333%; margin: 0 auto; padding-top: 4.1rem;}
+#page-1 .detail-group {width: 83.3333%; margin: 6.835% auto 0; padding: 2.1rem; border: 2px solid rgb(203, 155, 88); border-radius: 2.6rem; background-color: rgba(89, 59, 16, 0.459); box-sizing: border-box;}
+#page-1 .detail-group > .img-area:not(.btn-detail) {width: 73.205%; margin: 0 auto; padding-bottom: 2.401%;}
+#page-1 .detail-group > .btn-detail {background-color: transparent; padding: 0; margin: 0 auto;}
+#page-1 .detail-group .detail-box {margin-top: 2.401%;}
+#page-1 .detail-group .detail-box .img-area + .img-area {margin-top: 4.301%;}
+#page-1 .agBox {font-size: 150%; font-family: 'Pretendard'; font-weight: 500; margin: 13.667% auto 3.96%; color: #fff;}
 #page-1 .agBox a {text-decoration: underline;}
-#page-1 .next {display: flex; align-items: center; justify-content: center; width: 63.167%; margin: 0 auto; padding: 3.417% 0; font-size: 300%; font-family: 'Pretendard'; color: #fff; background-color: #013797; border-radius: 20px; font-weight: 700; text-align: center;}
+#page-1 .next {width: 80.8333%; margin: 0 auto;}
+
+#page-2 > .img-area:nth-child(1) {width: 86.5%; margin: 0 auto; padding-top: 2rem;}
+
+.page .question .img-area {width: 87.8%; margin: 8.4% auto 0;}
+#page-3 .question .img-area {width: 100%;}
+#page-5 .question .img-area {width: 75.8%;}
+#page-5 .q_select {margin-top: 11.7%;}
+#page-6 .question .img-area {width: 100%;}
+#page-6 .q_select {margin-top: 11.5%;}
+.page > .img-area:nth-child(1) {width: 86.5%; margin: 0 auto; padding-top: 2rem;}
+.page > .img-area:nth-child(2) {width: 80.8333%; margin: 0 auto; padding-top: 4.1rem;}
 
 /* 설문영역 */
 .q_select {display: flex; flex-flow: row wrap; justify-content: center; gap: 1.1rem; margin-top: 5.6%;}
-.q_select label {width: 100%; border: 2px solid #dedede; font-family: 'Pretendard'; font-size: 169%; color: #222; display: flex; align-items: center; justify-content: center; padding: 2.6% 0; border-radius: 10px; font-weight: 500; background-color: #f7f5f2;}
-.q_select label.active {border-color: #013797; background-color: #e1eafa; color: #013797; font-weight: 700;}
+.q_select label {width: 100%; border: 2px solid #dedede; font-family: 'Pretendard'; font-size: 169%; color: #222; display: flex; align-items: center; justify-content: center; padding: 2.6%; border-radius: 10px; font-weight: 500; background-color: #f7f5f2; box-sizing: border-box;}
+.q_select label.active {border-color: #c90000; background-color: #ffd434; color: #c90000; font-weight: 700;}
 .q_select .sub_txt {margin: 0; text-align: center; color: #666; font-size: 130%; font-family: 'Pretendard'; font-weight: 500;}
 
 #page-4 .popup {display: none; position: fixed; top: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 600px; height: 100%; z-index: 998; background-color: rgba(0, 0, 0, 0.7);}
@@ -95,16 +110,16 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 /* #page-8 .q_select label {width: 48.2%;} */
 
 #page-8 {position: relative;}
-#page-8 .paging {padding: 0 8.335%; font-size: 125%;     margin-top: 2.667%;}
+#page-8 .paging {padding: 0 8.335%; font-size: 125%;  margin-top: 2.667%;}
 
 .q_select .inp {background-color: #fff; padding: 2.99%; border: 2px solid #dedede; border-radius: 10px; color: #222; font-size: 150%; font-weight: 700; font-family: 'Pretendard'; text-align: center;}
 .q_select .inp::placeholder {color: #dedede;}
 .q_select textarea {width: 100%; padding: 8.96%; border: 2px solid #dedede; border-radius: 10px; color: #222; font-size: 150%; font-weight: 700; font-family: 'Pretendard'; resize: none; height: 25vh;}
 .q_select textarea::placeholder {color: #dedede;}
 .form .submit {flex-shrink: 0; width: 65.93%; padding: 0;}
-.form .submit input[type="submit"] {width: 100%; padding: 4.305% 0; border: none; background-color: #013797; font-family: 'Pretendard'; font-weight: 700; font-size: 170%; border-radius: 10px; color: #fff;}
+.form .submit input[type="image"] {width: 100%;}
 
-.form .checkbox {text-align: center; display: flex; align-items: center; justify-content: center; font-family: 'Pretendard'; font-size: 220%; font-weight: 700; margin-top: 4.2%;}
+.form .checkbox {text-align: center; display: flex; align-items: center; justify-content: center; font-family: 'Pretendard'; font-size: 220%; font-weight: 700; margin-top: 4.2%; color: #fff;}
 .form .checkbox label {line-height: 1;}
 .form .checkbox input[type="checkbox"] {width: 28px; height: 28px; margin-right: 7px; appearance: none; background: url("//static.harang-event.com/event/v_${eventSeq}/check_off.png") no-repeat center center / 100% 100%; clip: unset; position: static; transition: 0s;}
 .form .checkbox input[type="checkbox"]:checked {background-image: url("//static.harang-event.com/event/v_${eventSeq}/check_on.png");}
@@ -194,236 +209,255 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 	<div class="form">
         <!-- <audio id="location" playsinline="" src="//static.harang-event.com/event/v_${eventSeq}/audio_01.mp3" type="audio/mp3"></audio> -->
 		<form id="form-1" method="POST" accept-charset="utf-8">
-        <div class="formContents">
-            <section class="page section01" id="page-1">
-                <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.png"></div>
-                <div class="img-area video-area">
-                    <video id="location" playsinline loop autoplay muted src="//static.harang-event.com/event/v_${eventSeq}/video.mp4" type="video/mp4"></video>
-                    <script>setTimeout(function(){ $('#location').trigger('play'); },500);</script>
-                </div>
-                <div class="agBox">
-                    <a href="#" class="btn-agreement">개인정보 처리방침</a> 동의 후 확인하세요.
-                    <input type="hidden" name="agBox" value="Y" checked>
-                </div>
-                <div class="page_inner">
-                    <button type="button" class="next" onclick="pageFuc(1,$(this))">동의 후 내 탕감률 % 확인</button>
-                </div>
-            </section>
-            
-            <section class="page hide section02" id="page-2">
-                <div class="page_inner">
-                    <div class="question_box">
-                        <div class="question">
-                            <div class="page-box">
-                                <span class="page-num"><span class="current">1</span>/6</span>
-                            </div>
-                            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_01.png"></div>
-                        </div>
-                        <div class="q_select">
-                            <label><input type="radio" name="tadd1"  onclick="pageFuc(2,$(this))" value="네. 사용하고 있습니다">네, 사용하고 있습니다</label>
-                            <label><input type="radio" name="tadd1"  onclick="pageFuc(2,$(this))" value="아니요. 사용하고 있지 않습니다">아니요, 사용하고 있지 않습니다</label>
+            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.png"></div>
+            <div class="formContents">
+                <section class="page section01" id="page-1">
+                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.gif"></div>
+                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_03.png"></div>
+                    <div class="detail-group">
+                        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_01.png"></div>
+                        <button class="btn-detail img-area" type="button">
+                            <img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.png">
+                        </button>
+                        <div class="detail-box">
+                            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/img_01.png"></div>
+                            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/img_02.png"></div>
+                            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/img_03.png"></div>
+                            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/img_04.png"></div>
+                            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/img_05.png"></div>
                         </div>
                     </div>
-                </div>
-                <!-- <div class="paging">
-                    <button type="button" class="prev">이전</button>	
-                    <button type="button" class="next" onclick="pageFuc(2,$(this))">다음</button>
-                </div> -->
-            </section>
+                    <div class="agBox">
+                        <a href="#" class="btn-agreement">개인정보 처리방침</a> 동의 후 확인하세요.
+                        <input type="hidden" name="agBox" value="Y" checked>
+                    </div>
+                    <div class="page_inner">
+                        <div class="next img-area" onclick="pageFuc(1,$(this))"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_02.png"></div>
+                    </div>
+                </section>
+                
+                <section class="page hide section02" id="page-2">
+                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_04.png"></div>
+                    <div class="page_inner">
+                        <div class="question_box">
+                            <div class="question">
+                                <!-- <div class="page-box">
+                                    <span class="page-num"><span class="current">1</span>/6</span>
+                                </div> -->
+                                <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_01.png"></div>
+                            </div>
+                            <div class="q_select">
+                                <label><input type="radio" name="tadd1"  onclick="pageFuc(2,$(this))" value="네. 사용하고 있습니다">네, 사용하고 있습니다</label>
+                                <label><input type="radio" name="tadd1"  onclick="pageFuc(2,$(this))" value="아니요. 사용하고 있지 않습니다">아니요, 사용하고 있지 않습니다</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="paging">
+                        <button type="button" class="prev">이전</button>	
+                        <button type="button" class="next" onclick="pageFuc(2,$(this))">다음</button>
+                    </div> -->
+                </section>
 
-            <section class="page hide section03" id="page-3">
-                <div class="page_inner">
-                    <div class="question_box">
-                        <div class="question">
-                            <div class="page-box">
-                                <span class="page-num"><span class="current">2</span>/6</span>
+                <section class="page hide section03" id="page-3">
+                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_04.png"></div>
+                    <div class="page_inner">
+                        <div class="question_box">
+                            <div class="question">
+                                <!-- <div class="page-box">
+                                    <span class="page-num"><span class="current">2</span>/6</span>
+                                </div> -->
+                                <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_02.png"></div>
                             </div>
-                            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_02.png"></div>
-                        </div>
-                        <div class="q_select">
-                            <label><input type="radio" name="tadd2" onclick="pageFuc(3,$(this))" value="2,000만원~3,000만원">2,000만원~3,000만원</label>
-                            <label><input type="radio" name="tadd2" onclick="pageFuc(3,$(this))" value="3,000만원~5,000만원">3,000만원~5,000만원</label>
-                            <label><input type="radio" name="tadd2" onclick="pageFuc(3,$(this))" value="5,000만원~1억원">5,000만원~1억원</label>
-                            <label><input type="radio" name="tadd2" onclick="pageFuc(3,$(this))" value="1억원 이상">1억원 이상</label>
+                            <div class="q_select">
+                                <label><input type="radio" name="tadd2" onclick="pageFuc(3,$(this))" value="2,000만원~3,000만원">2,000만원~3,000만원</label>
+                                <label><input type="radio" name="tadd2" onclick="pageFuc(3,$(this))" value="3,000만원~5,000만원">3,000만원~5,000만원</label>
+                                <label><input type="radio" name="tadd2" onclick="pageFuc(3,$(this))" value="5,000만원~1억원">5,000만원~1억원</label>
+                                <label><input type="radio" name="tadd2" onclick="pageFuc(3,$(this))" value="1억원 이상">1억원 이상</label>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- <div class="paging">
-                    <button type="button" class="prev">이전</button>	
-                    <button type="button" class="next" onclick="pageFuc(3,$(this))">다음</button>
-                </div> -->
-            </section>
+                    <!-- <div class="paging">
+                        <button type="button" class="prev">이전</button>	
+                        <button type="button" class="next" onclick="pageFuc(3,$(this))">다음</button>
+                    </div> -->
+                </section>
 
-            <section class="page hide section04" id="page-4">
-                <div class="page_inner">
-                    <div class="question_box">
-                        <div class="question">
-                            <div class="page-box">
-                                <span class="page-num"><span class="current">3</span>/6</span>
+                <section class="page hide section04" id="page-4">
+                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_04.png"></div>
+                    <div class="page_inner">
+                        <div class="question_box">
+                            <div class="question">
+                                <!-- <div class="page-box">
+                                    <span class="page-num"><span class="current">3</span>/6</span>
+                                </div> -->
+                                <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_03.png"></div>
                             </div>
-                            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_03.png"></div>
-                        </div>
-                        <div class="q_select">
-                            <label><input type="radio" name="tadd3" onclick="pageFuc(4,$(this))" value="네">네</label>
-                            <label><input type="radio" name="tadd3" onclick="pageFuc(4,$(this))" value="아니요">아니요</label>
+                            <div class="q_select">
+                                <label><input type="radio" name="tadd3" onclick="pageFuc(4,$(this))" value="네">네</label>
+                                <label><input type="radio" name="tadd3" onclick="alert('소득이 없는 무직자는 신청이 불가능 합니다')" value="아니요">아니요</label>
+                            </div>
                         </div>
                     </div>
+                    <!-- <div class="paging">
+                        <button type="button" class="prev">이전</button>	
+                        <button type="button" class="next" onclick="pageFuc(4,$(this))">다음</button>
+                    </div> -->
+                    
+                    <div class="popup">
+                        <div class="popup-content">
+                            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/popup_txt.png"></div>
+                            <button class="btn-close-popup">확인</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="page hide section05" id="page-5">
+                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_04.png"></div>
+                    <div class="page_inner">
+                        <div class="question_box">
+                            <div class="question">
+                                <!-- <div class="page-box">
+                                    <span class="page-num"><span class="current">4</span>/6</span>
+                                </div> -->
+                                <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_04.png"></div>
+                            </div>
+                            <div class="q_select">
+                                <label><input type="radio" name="tadd4" onclick="pageFuc(5,$(this))" value="아니요, 다른 빚도 있습니다">아니요, 다른 빚도 있습니다</label>
+                                <label><input type="radio" name="tadd4" onclick="alert('담보 및 세금만으로는 신청이 불가능 합니다')" value="네, 담보 및 세금만 있습니다">네, 담보 및 세금만 있습니다</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="paging">
+                        <button type="button" class="prev">이전</button>	
+                        <button type="button" class="next" onclick="pageFuc(5,$(this))">다음</button>
+                    </div> -->
+                </section>
+                
+                <section class="page hide section06" id="page-6">
+                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_04.png"></div>
+                    <div class="page_inner">
+                        <div class="question_box">
+                            <div class="question">
+                                <!-- <div class="page-box">
+                                    <span class="page-num"><span class="current">5</span>/6</span>
+                                </div> -->
+                                <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_05.png"></div>
+                            </div>
+                            <div class="q_select">
+                                <label><input type="radio" name="tadd5" onclick="pageFuc(6,$(this))" value="네, 수임료 지급의사가 있습니다">네, 수임료 지급의사가 있습니다</label>
+                                <label><input type="radio" name="tadd5" onclick="alert('개인 회생 위임시 수임료가 발생하며, 지급의사가 없을 시 진행이 어렵습니다')" value="아니오, 수임료 지급의사가 없습니다">아니오, 수임료 지급의사가 없습니다</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="paging">
+                        <button type="button" class="prev">이전</button>	
+                        <button type="button" class="next" onclick="pageFuc(6,$(this))">다음</button>
+                    </div> -->
+                </section>
+
+                <section class="page hide section07" id="page-7">
+                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_04.png"></div>
+                    <div class="page_inner">
+                        <div class="question_box">
+                            <div class="question">
+                                <!-- <div class="page-box">
+                                    <span class="page-num"><span class="current">6</span>/6</span>
+                                </div> -->
+                                <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_06.png"></div>
+                            </div>
+                            <div class="q_select">
+                                <p class="sub_txt">한글 성함을 입력해주세요</p>
+                                <input type="text" id="name" name="name" class="inp" required="" autocomplete="off" placeholder="성함을 입력해주세요 ">
+                                <p class="sub_txt">010 포함 11자리를 숫자만 입력해주세요</p>
+                                <input type="tel" id="phone" name="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="연락처를 입력해 주세요">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="paging">
+                        <!-- <button type="button" class="prev">이전</button>	 -->
+                        <div class="next img-area" onclick="pageFuc(7,$(this))"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_03.png"></div>
+                        <!-- <button type="button" class="next" onclick="pageFuc(7,$(this))">다음</button> -->
+                    </div>
+                </section>
+
+                <!-- <section class="page hide section08" id="page-8">
+                    <div class="page_inner">
+                        <div class="question_box">
+                            <div class="question">
+                                <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_07.png"></div>
+                            </div>
+                            <div class="q_select">
+                                <label><input type="radio" name="tadd5" value="최대한 빠르게">최대한 빠르게</label>
+                                <label><input type="radio" name="tadd5" value="오전 9~10시">오전 9~10시</label>
+                                <label><input type="radio" name="tadd5" value="오전 10~11시">오전 10~11시</label>
+                                <label><input type="radio" name="tadd5" value="오전 11~12시">오전 11~12시</label>
+                                <label><input type="radio" name="tadd5" value="오후 12~1시">오후 12~1시</label>
+                                <label><input type="radio" name="tadd5" value="오후 1~2시">오후 1~2시</label>
+                                <label><input type="radio" name="tadd5" value="오후 2~3시">오후 2~3시</label>
+                                <label><input type="radio" name="tadd5" value="오후 3~4시">오후 3~4시</label>
+                                <label><input type="radio" name="tadd5" value="오후 4~5시">오후 4~5시</label>
+                                <label><input type="radio" name="tadd5" value="오후 5~6시">오후 5~6시</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="paging">
+                        <button type="button" class="prev">이전</button>	
+                        <button type="button" class="next" onclick="pageFuc(8,$(this))">다음</button>
+                    </div>
+                </section> -->
+
+                <!-- <section class="page hide section09" id="page-9">
+                    <div class="page_inner">
+                        <div class="question_box">
+                            <div class="question">
+                                <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_08.png"></div>
+                            </div>
+                            <div class="q_select">
+                                <textarea name="tadd6" id="tadd6"  autocomplete="off" placeholder="문의내용 입력"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="paging">
+                        <button type="button" class="prev">이전</button>	
+                        <button type="button" class="next" onclick="pageFuc(9,$(this))">다음</button>
+                    </div>
+                </section> -->
+
+                <section class="page hide section08" id="page-8">
+                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_04.png"></div>
+                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_05.png"></div>
+                    <div class="checkbox confirm">
+                        <label>
+                            <input type="checkbox">
+                            <strong>위 필수 사항</strong>을 모두 확인하였습니다.
+                        </label>
+                    </div>
+                    <div class="paging">
+                        <!-- <button type="button" class="prev">이전</button>	 -->
+                        <div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.resta.co.kr/event/v_${eventSeq}/btn_newSb.png"></div>
+                    </div>
+
+                    <div class="toast">
+                        위 필수 사항을 모두 확인 후 <strong>체크를 누르셔야 신청이 완료</strong> 됩니다.
+                    </div>
+                </section>
+
+
+                <!-- <div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"></div>
+
+                <div class="img-area arrow-img"><img src="//static.harang-event.com/event/v_${eventSeq}/arrow.png"></div>
+                <div class="img-area result-area">
+                    <img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.png" alt="">
+                    <span class="name-result"></span>
                 </div>
-                <!-- <div class="paging">
-                    <button type="button" class="prev">이전</button>	
-                    <button type="button" class="next" onclick="pageFuc(4,$(this))">다음</button>
+
+                <div class="description bottom">
+                    <p id="event-period">이벤트 기간 : <?=date("Y년 m월 01일")." ~ ".date("Y년 m월 t일 까지")?></p>
+                    <div class="ad_txt">안심하세요! ${resVo.agent}에서는 고객님의 소중한 개인정보를 <br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
+                    <span>대상 :  ${resVo.target}</span>
                 </div> -->
                 
-                <div class="popup">
-                    <div class="popup-content">
-                        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/popup_txt.png"></div>
-                        <button class="btn-close-popup">확인</button>
-                    </div>
-                </div>
-            </section>
-
-            <section class="page hide section05" id="page-5">
-                <div class="page_inner">
-                    <div class="question_box">
-                        <div class="question">
-                            <div class="page-box">
-                                <span class="page-num"><span class="current">4</span>/6</span>
-                            </div>
-                            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_04.png"></div>
-                        </div>
-                        <div class="q_select">
-                            <label><input type="radio" name="tadd4" onclick="pageFuc(5,$(this))" value="네, 알고 있습니다.">네, 알고 있습니다.</label>
-                            <label><input type="radio" name="tadd4" onclick="pageFuc(5,$(this))" value="아니요">아니요</label>
-                        </div>
-                    </div>
-                </div>
-                <!-- <div class="paging">
-                    <button type="button" class="prev">이전</button>	
-                    <button type="button" class="next" onclick="pageFuc(5,$(this))">다음</button>
-                </div> -->
-            </section>
-            
-            <section class="page hide section06" id="page-6">
-                <div class="page_inner">
-                    <div class="question_box">
-                        <div class="question">
-                            <div class="page-box">
-                                <span class="page-num"><span class="current">5</span>/6</span>
-                            </div>
-                            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_05.png"></div>
-                        </div>
-                        <div class="q_select">
-                            <label><input type="radio" name="tadd5" onclick="pageFuc(6,$(this))" value="네, 있습니다.">네, 있습니다.</label>
-                            <label><input type="radio" name="tadd5" onclick="pageFuc(6,$(this))" value="아니요">아니요</label>
-                        </div>
-                    </div>
-                </div>
-                <!-- <div class="paging">
-                    <button type="button" class="prev">이전</button>	
-                    <button type="button" class="next" onclick="pageFuc(6,$(this))">다음</button>
-                </div> -->
-            </section>
-
-            <section class="page hide section07" id="page-7">
-                <div class="page_inner">
-                    <div class="question_box">
-                        <div class="question">
-                            <div class="page-box">
-                                <span class="page-num"><span class="current">6</span>/6</span>
-                            </div>
-                            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_06.png"></div>
-                        </div>
-                        <div class="q_select">
-                            <p class="sub_txt">한글 성함을 입력해주세요</p>
-                            <input type="text" id="name" name="name" class="inp" required="" autocomplete="off" placeholder="성함을 입력해주세요 ">
-                            <p class="sub_txt">010 포함 11자리를 숫자만 입력해주세요</p>
-                            <input type="tel" id="phone" name="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="연락처를 입력해 주세요">
-                        </div>
-                    </div>
-                </div>
-                <div class="paging">
-                    <!-- <button type="button" class="prev">이전</button>	 -->
-                    <button type="button" class="next" onclick="pageFuc(7,$(this))">다음</button>
-                </div>
-            </section>
-
-            <!-- <section class="page hide section08" id="page-8">
-                <div class="page_inner">
-                    <div class="question_box">
-                        <div class="question">
-                            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_07.png"></div>
-                        </div>
-                        <div class="q_select">
-                            <label><input type="radio" name="tadd5" value="최대한 빠르게">최대한 빠르게</label>
-                            <label><input type="radio" name="tadd5" value="오전 9~10시">오전 9~10시</label>
-                            <label><input type="radio" name="tadd5" value="오전 10~11시">오전 10~11시</label>
-                            <label><input type="radio" name="tadd5" value="오전 11~12시">오전 11~12시</label>
-                            <label><input type="radio" name="tadd5" value="오후 12~1시">오후 12~1시</label>
-                            <label><input type="radio" name="tadd5" value="오후 1~2시">오후 1~2시</label>
-                            <label><input type="radio" name="tadd5" value="오후 2~3시">오후 2~3시</label>
-                            <label><input type="radio" name="tadd5" value="오후 3~4시">오후 3~4시</label>
-                            <label><input type="radio" name="tadd5" value="오후 4~5시">오후 4~5시</label>
-                            <label><input type="radio" name="tadd5" value="오후 5~6시">오후 5~6시</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="paging">
-                    <button type="button" class="prev">이전</button>	
-                    <button type="button" class="next" onclick="pageFuc(8,$(this))">다음</button>
-                </div>
-            </section> -->
-
-            <!-- <section class="page hide section09" id="page-9">
-                <div class="page_inner">
-                    <div class="question_box">
-                        <div class="question">
-                            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_08.png"></div>
-                        </div>
-                        <div class="q_select">
-                            <textarea name="tadd6" id="tadd6"  autocomplete="off" placeholder="문의내용 입력"></textarea>
-                        </div>
-                    </div>
-                </div>
-                <div class="paging">
-                    <button type="button" class="prev">이전</button>	
-                    <button type="button" class="next" onclick="pageFuc(9,$(this))">다음</button>
-                </div>
-            </section> -->
-
-            <section class="page hide section08" id="page-8">
-                <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.png"></div>
-                <div class="checkbox confirm">
-                    <label>
-                        <input type="checkbox">
-                        <strong>위 필수 사항</strong>을 모두 확인하였습니다.
-                    </label>
-                </div>
-                <div class="paging">
-                    <!-- <button type="button" class="prev">이전</button>	 -->
-                    <div class="submit"><input type="submit" value="신청 완료하기" onclick="fnForm('form-1');"></div>
-                </div>
-
-                <div class="toast">
-                    위 필수 사항을 모두 확인 후 <strong>체크를 누르셔야 신청이 완료</strong> 됩니다.
-                </div>
-            </section>
-
-
-            <!-- <div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"></div>
-
-            <div class="img-area arrow-img"><img src="//static.harang-event.com/event/v_${eventSeq}/arrow.png"></div>
-            <div class="img-area result-area">
-                <img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.png" alt="">
-                <span class="name-result"></span>
             </div>
-
-            <div class="description bottom">
-                <p id="event-period">이벤트 기간 : <?=date("Y년 m월 01일")." ~ ".date("Y년 m월 t일 까지")?></p>
-                <div class="ad_txt">안심하세요! ${resVo.agent}에서는 고객님의 소중한 개인정보를 <br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
-                <span>대상 :  ${resVo.target}</span>
-            </div> -->
-            
-        </div>
             <input type="hidden" id="branch" 		name="branch" value="${resVo.branch}"/>
             <input type="hidden" id="eventSeq" 		name="eventSeq" value="${resVo.eventSeq}"/>
             <input type="hidden" id="site" 			name="site" value="${site}"/>
@@ -455,6 +489,8 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
     $(document).ready(function () {
         initDate();/* 기간항목 start */
         blockSourceView();//드래그, 우클릭 방지
+
+        $('.detail-box').hide();
 	});
 
     // 엔터키 막기
@@ -468,8 +504,50 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
         e.stopPropagation();   // ✅ wrap으로 이벤트 전달 차단
     });
 
+$('.btn-detail').on('click', function(){
+    const $btn = $(this);
+    const $box = $('.detail-box');
+    const $items = $box.find('.img-area');
+
+    $btn.hide();
+
+    // 초기 상태
+    $box.css({
+        display: 'block',
+        height: 0,
+        overflow: 'hidden'
+    });
+
+    $items.hide();
+
+    // 🔥 실제 전체 높이 (이게 핵심)
+    const fullHeight = $box[0].scrollHeight;
+
+    // 1️⃣ 박스 펼치기
+    $box.animate({ height: fullHeight }, 400, function(){
+        // 2️⃣ 높이 자동으로 풀어줌 (중요)
+        $box.css({
+            height: 'auto',
+            overflow: ''
+        });
+    });
+
+    // 3️⃣ 내부 순차 등장
+    $items.each(function(index){
+        $(this)
+            .delay(index * 200)
+            .fadeIn(400);
+    });
+
+    $('#page-1 .agBox').css({'margin': '6.1355% auto 3.96%'});
+    $('#wrap').css({'height': '100%'});
+});
+
     // 버튼 페이지 이동 함수 (다음)
     function pageFuc(num, obj) {
+        if(num == 1){
+            $('#wrap').css({'height': '100vh', 'height': '100dvh' });
+        }
         var sectionNum = String(num).padStart(2, '0'); // ✅ 핵심
         var $currentPage = $('.section' + sectionNum);
 
