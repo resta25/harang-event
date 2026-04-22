@@ -434,7 +434,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                     </div>
                     <div class="paging">
                         <!-- <button type="button" class="prev">이전</button>	 -->
-                        <div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.resta.co.kr/event/v_${eventSeq}/btn_newSb.png"></div>
+                        <div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"></div>
                     </div>
 
                     <div class="toast">
