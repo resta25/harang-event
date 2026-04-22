@@ -57,7 +57,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 .form strong {color: #f20000; font-weight: 800; font-family: 'SUIT';}
 .form .name-result {}
 .next {cursor: pointer;}
-.page:not(#page-1):not(#page-8) {padding: 0 8.335%; font-size: 16px;}
+.page:not(#page-1):not(#page-8) .page_inner {padding: 0 8.335%; font-size: 16px;}
 /* .page:not(#page-1):not(#page-2) .question .img-area {width: 98.6%; margin: 0 auto;} */
 
 .page-box {text-align: center; margin-bottom: 4.8%;}
@@ -169,6 +169,8 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
     #page-8 .q_select label {width: 47.7%;}
     .form .checkbox {font-size: 220%; margin-top: 4.335%;}
     .form .checkbox input[type="checkbox"] {width: 22px; height: 22px; margin-right: 4px;}
+
+    .q_select {margin-top: 7.6%; gap: 2.1rem;}
     /* .toast {font-size: 80%;} */
 }
 @media screen and (max-width: 395px) {
