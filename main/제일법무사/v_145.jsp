@@ -170,6 +170,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
     .form .checkbox {font-size: 220%; margin-top: 4.335%;}
     .form .checkbox input[type="checkbox"] {width: 22px; height: 22px; margin-right: 4px;}
 
+    .page > .img-area:nth-child(1) {padding-top: 4rem;}
     .q_select {margin-top: 7.6%; gap: 2.1rem;}
     /* .toast {font-size: 80%;} */
 }
