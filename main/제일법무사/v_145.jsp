@@ -96,6 +96,8 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 .page > .img-area:nth-child(1) {width: 86.5%; margin: 0 auto; padding-top: 2rem;}
 .page > .img-area:nth-child(2) {width: 80.8333%; margin: 0 auto; padding-top: 4.1rem;}
 
+.page#page-8 > .img-area:nth-child(2) {width: 72.8333%; padding-top: 3.1rem;}
+
 /* 설문영역 */
 .q_select {display: flex; flex-flow: row wrap; justify-content: center; gap: 1.1rem; margin-top: 5.6%;}
 .q_select label {width: 100%; border: 2px solid #dedede; font-family: 'Pretendard'; font-size: 169%; color: #222; display: flex; align-items: center; justify-content: center; padding: 2.6%; border-radius: 10px; font-weight: 500; background-color: #f7f5f2; box-sizing: border-box;}
@@ -132,8 +134,8 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 .form .description p,
 .form .description span {font-weight: normal; font-size: 1.3rem; padding: 0; margin: 0; color: #006885; letter-spacing: -0.65px;} */
 
-.form .description {width: 100%; text-align: center; margin: 4.462% auto 8.735%; padding: 0;}
-.form .description p {font-weight: 400; font-size: 83%; color: #1d1d1d; font-family: 'Pretendard';}
+.form .description {width: 100%; text-align: center; margin: 3.462% auto 2.735%; padding: 0; color: #fff; font-size: 130%;}
+.form .description p {font-weight: 400; font-size: 80%; color: #fff; font-family: 'Pretendard';}
 
 /* .form .agBox {font-size: 1.2rem; width: 100%; margin: 0 auto;} */
 
@@ -175,6 +177,8 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
     .page > .img-area:nth-child(1) {padding-top: 4rem;}
     .q_select {margin-top: 7.6%; gap: 2.1rem;}
     /* .toast {font-size: 80%;} */
+
+    .form .description {font-size: 150%;}
 }
 @media screen and (max-width: 395px) {
     /* .form .db-box {top: 13%;} */
@@ -440,6 +444,12 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                     <div class="paging">
                         <!-- <button type="button" class="prev">이전</button>	 -->
                         <div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"></div>
+                    </div>
+
+                    <div class="description bottom">
+                        <p id="event-period">이벤트 기간 : <?=date("Y년 m월 01일")." ~ ".date("Y년 m월 t일 까지")?></p>
+                        <div class="ad_txt">안심하세요! ${resVo.agent}에서는 고객님의 소중한 개인정보를 <br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
+                        <span>대상 :  ${resVo.target}</span>
                     </div>
 
                     <div class="toast">
