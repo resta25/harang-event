@@ -196,7 +196,7 @@ input[type="image"] {width:100%; height: 100%;}
 
     .chat_box + p {font-size: 80%; margin-top: 1%;}
 
-    #location {bottom: 8.458%;}
+    #location {bottom: 9.6%;}
 }
 
 @media screen and (max-width: 430px){
