@@ -311,6 +311,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
             <input type="hidden" id="checkAgeMin" 	name="checkAgeMin" value="${resVo.checkAgeMin}"/>
             <input type="hidden" id="checkAgeMax" 	name="checkAgeMax" value="${resVo.checkAgeMax}"/>
             <input type="hidden" id="checkGender" 	name="checkGender" value="${resVo.checkGender}"/>
+            <input type="hidden" id="age" 			name="age" value=""/>
             <input type="hidden" id="add1" 			name="add1" value=""/>
             <input type="hidden" id="add2" 			name="add2" value=""/>
             <input type="hidden" id="add3" 			name="add3" value=""/>
