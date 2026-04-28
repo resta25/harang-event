@@ -299,7 +299,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                             </div>
                             <div class="q_select">
                                 <label><input type="radio" name="tadd3" onclick="pageFuc(4,$(this))" value="네">네</label>
-                                <label><input type="radio" name="tadd3" onclick="alert('소득이 없는 무직자는 신청이 불가능 합니다')" value="아니요">아니요</label>
+                                <label><input type="radio" name="tadd3" onclick="pageFuc(4,$(this))" value="아니요">아니요</label>
                             </div>
                         </div>
                     </div>
@@ -349,8 +349,10 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                                 <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_05.png"></div>
                             </div>
                             <div class="q_select">
-                                <label><input type="radio" name="tadd5" onclick="pageFuc(6,$(this))" value="네, 수임료 지급의사가 있습니다">네, 수임료 지급의사가 있습니다</label>
-                                <label><input type="radio" name="tadd5" onclick="alert('개인 회생 위임시 수임료가 발생하며, 지급의사가 없을 시 진행이 어렵습니다')" value="아니오, 수임료 지급의사가 없습니다">아니오, 수임료 지급의사가 없습니다</label>
+                                <label><input type="radio" name="tadd5" onclick="pageFuc(6,$(this))" value="200만원 이상">200만원 이상</label>
+                                <label><input type="radio" name="tadd5" onclick="pageFuc(6,$(this))" value="300만원 이상">300만원 이상</label>
+                                <label><input type="radio" name="tadd5" onclick="pageFuc(6,$(this))" value="400만원 이상">400만원 이상</label>
+                                <label><input type="radio" name="tadd5" onclick="alert('개인회생 위임시 수임료가 발생되며, 수임료 지급 의사가 없을 시 이벤트 참여가 불가능 합니다')" value="수임료를 지급할 능력 없음">수임료를 지급할 능력 없음</label>
                             </div>
                         </div>
                     </div>
