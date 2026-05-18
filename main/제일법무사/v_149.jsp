@@ -349,10 +349,10 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                                 <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_05.png"></div>
                             </div>
                             <div class="q_select">
-                                <label><input type="radio" name="tadd5" onclick="pageFuc(6,$(this))" value="200만원 이상">200만원 이상</label>
                                 <label><input type="radio" name="tadd5" onclick="pageFuc(6,$(this))" value="300만원 이상">300만원 이상</label>
                                 <label><input type="radio" name="tadd5" onclick="pageFuc(6,$(this))" value="400만원 이상">400만원 이상</label>
-                                <label><input type="radio" name="tadd5" onclick="alert('개인회생 위임시 수임료가 발생되며, 수임료 지급 의사가 없을 시 이벤트 참여가 불가능 합니다')" value="수임료를 지급할 능력 없음">수임료를 지급할 능력 없음</label>
+                                <label><input type="radio" name="tadd5" onclick="pageFuc(6,$(this))" value="500만원 이상">500만원 이상</label>
+                                <label><input type="radio" name="tadd5" onclick="alert('개인회생 위임시 수임료가 발생되며, 수임료 지급 의사가 없을 시 이벤트 참여가 불가능 합니다')" value="수임료를 지급할 능력이 없습니다">수임료를 지급할 능력이 없습니다</label>
                             </div>
                         </div>
                     </div>
