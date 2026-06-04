@@ -52,6 +52,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 /* .paging .next {flex-shrink: 0; width: 65.93%; padding: 3.2% 0; background-color: #013797; font-family: 'Pretendard'; font-weight: 700; font-size: 170%; border-radius: 10px; color: #fff;} */
 /* .paging button{position: absolute; top: 50%; left: 7.34%; transform: translateY(-50%); max-width: 63px; background-color: transparent; cursor: pointer;} */
 .paging img{ width: 100%;}
+.intro .paging .next {animation: motion 0.3s linear 0s infinite alternate;}
 
 /* 첫번째 페이지 */
 #page-1 {height: 100%; background-color: #fff;}
@@ -120,6 +121,11 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 .agreeModalBox .newAgreement .button a:focus {background-color: #dadada;}
 .agreeModalBox .newAgreement h3 {margin: 1% 0; font-size: 11px;}
 .agreeModalBox .newAgreement ol li {line-height: 12px; font-size: 10px;}
+
+@keyframes motion {
+	0% {margin-top: 0px;}
+	100% {margin-top: 10px;}
+}
 
 
 @media screen and (max-width: 500px) { 
