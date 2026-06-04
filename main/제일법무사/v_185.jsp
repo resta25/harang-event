@@ -6,50 +6,30 @@ pageEncoding="UTF-8"%>
   type="text/css"
 />
 <style>
-@font-face {
-    font-family: 'Pretendard';
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-    src: url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Regular.woff2') format('woff2'),
-         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Regular.woff') format('woff'),
-         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Regular.otf') format('opentype');
-}
-@font-face {
-    font-family: 'Pretendard';
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-    src: url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Medium.woff2') format('woff2'),
-         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Medium.woff') format('woff'),
-         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Medium.otf') format('opentype');
-}
-@font-face {
-    font-family: 'Pretendard';
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-    src: url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-SemiBold.woff2') format('woff2'),
-         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-SemiBold.woff') format('woff'),
-         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-SemiBold.otf') format('opentype');
-}
-@font-face {
-    font-family: 'Pretendard';
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-    src: url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Bold.woff2') format('woff2'),
-         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Bold.woff') format('woff'),
-         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Bold.otf') format('opentype');
-}
+@import url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard.css');
 html, body {font-size: 10px;}
 #wrap {max-width: 600px; display: flex; flex-direction: column; font-family: 'Pretendard'; height: 100dvh; overflow: hidden; height: 100vh; /* fallback */ height: 100dvh; /* 최신 브라우저용 */
-padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); background: url('//static.harang-event.com/event/v_${eventSeq}/bg_01.png') no-repeat center center / 100% 100%;}
+padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);}
 .form {flex-grow: 1; background: transparent;}
 #form-1 {height: 100%;}
 #wrap .formContents {height: 100%;}
 .page { flex-grow: 1; position: relative; box-sizing: border-box;}
 .hide {display: none;}
+
+/* 상단 타이머 */
+.time-content {padding: 0 0 4.2rem;}
+.timer-box {color: #fff; display: flex; align-items: center; justify-content: space-between; gap: 2rem; font-size: 2.4rem; padding: 1.6rem 4.1rem 1.5rem; width: 100%; margin: 0 auto; line-height: 1; letter-spacing: -1.23px; background: #000; box-sizing: border-box;}
+.timer-box .date {display: flex; align-items: center;}
+.timer-box .icon {margin-right: 1rem;}
+.timer-box .text-box {width: 18rem; display: flex; align-items: center; column-gap: 0.9rem;}
+.timer-box .text-box .text {font-weight: 800; letter-spacing: -1.23px;}
+.timer-box .text-box img{ display: inline-block; animation: spin 1.1s linear infinite; transform-origin: 50% 50%; width: 17%;}
+
+@keyframes spin{
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
 
 /* 공통 */
 .container { text-align: center; font-size: 120%; letter-spacing: -0.36px; color: #b77587; font-family: 'Pretendard';}
@@ -66,50 +46,56 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 .page-box .page-num .current {color: #013797;}
 
 /* 이전,다음 버튼 */
-.paging {margin-top: 7.6%; display: flex; align-items: center; justify-content: center; column-gap: 7px;}
-.paging button {background-color: transparent;}
+.paging {display: flex; align-items: center; justify-content: center; column-gap: 7px; width: 88.666667%; margin: 0 auto;}
+.paging button {background-color: transparent; padding: 0;}
 .paging .prev {flex-shrink: 0; width: 32.6%; padding: 3.2% 0; background-color: #dedede; font-family: 'Pretendard'; font-weight: 700; font-size: 170%; border-radius: 10px; color: #222;}
-.paging .next {flex-shrink: 0; width: 65.93%; padding: 3.2% 0; background-color: #013797; font-family: 'Pretendard'; font-weight: 700; font-size: 170%; border-radius: 10px; color: #fff;}
+/* .paging .next {flex-shrink: 0; width: 65.93%; padding: 3.2% 0; background-color: #013797; font-family: 'Pretendard'; font-weight: 700; font-size: 170%; border-radius: 10px; color: #fff;} */
 /* .paging button{position: absolute; top: 50%; left: 7.34%; transform: translateY(-50%); max-width: 63px; background-color: transparent; cursor: pointer;} */
 .paging img{ width: 100%;}
 
 /* 첫번째 페이지 */
-#page-1 {height: 100%;}
-#page-1 .video-area {padding: 2.5% 4.585% 0;}
-#page-1 .video-area video {display: block; width: 100%; height: 100%; border-radius: 30px;}
-#page-1 .agBox {font-size: 150%; font-family: 'Pretendard'; font-weight: 500; margin: 3.667% auto 3.585%;}
+#page-1 {height: 100%; background-color: #fff;}
+#page-1 .intro {padding: 0 0 3.2rem; height: 100vh; height: 100dvh;}
+#page-1 .img-area {width: 86.333333%; margin: 0 auto 3rem;}
+#page-1 .gif-area + .img-area {margin-top: 5.2rem; margin-bottom: 2.2rem;}
+/* #page-1 .video-area {padding: 2.5% 4.585% 0;}
+#page-1 .video-area video {display: block; width: 100%; height: 100%; border-radius: 30px;} */
+#page-1 .agBox {font-size: 1.8rem; font-family: 'Pretendard'; font-weight: 500; margin: 3.5rem auto 3.6rem; line-height: 1; letter-spacing: -0.9px;}
 #page-1 .agBox a {text-decoration: underline;}
-#page-1 .next {display: flex; align-items: center; justify-content: center; width: 63.167%; margin: 0 auto; padding: 3.417% 0; font-size: 300%; font-family: 'Pretendard'; color: #fff; background-color: #013797; border-radius: 20px; font-weight: 700; text-align: center;}
+/* #page-1 .next {display: flex; align-items: center; justify-content: center; width: 63.167%; margin: 0 auto; padding: 3.417% 0; font-size: 300%; font-family: 'Pretendard'; color: #fff; background-color: #013797; border-radius: 20px; font-weight: 700; text-align: center;} */
+
+.q-group {padding: 7rem 5rem 4.3rem; background-color: #f2f2f2;}
+.q-group .q-txt {font-family: 'Pretendard'; font-size: 2.5rem; font-weight: 700; letter-spacing: -1.25px; color: #242424;}
+.q-group .sub-txt {font-family: 'Pretendard'; font-size: 1.8rem; font-weight: 500; letter-spacing: -0.9px; color: #f00;}
+.q-group .page_inner + .page_inner {margin-top: 7rem;}
+.q-group .input_inner + .input_inner {margin-top: 4.8rem;}
+.q-group .input_inner + .page_inner {margin-top: 5rem;}
+.q-group .input_inner .question_box {line-height: 1;}
+.q-group .input_inner .q_select {margin-top: 1.3rem;}
 
 /* 설문영역 */
 .q_select {display: flex; flex-flow: row wrap; justify-content: center; gap: 1.1rem; margin-top: 5.6%;}
-.q_select label {width: 100%; border: 2px solid #dedede; font-family: 'Pretendard'; font-size: 169%; color: #222; display: flex; align-items: center; justify-content: center; padding: 2.6% 0; border-radius: 10px; font-weight: 500; background-color: #f7f5f2;}
+.q_select label {width: 100%; padding: 2.3rem 0 2.1rem; font-family: 'Pretendard'; font-size: 2.7rem; font-weight: 500; line-height: 1; letter-spacing: -0.54px; text-align: center; color: #222;  border-radius: 1rem; border: solid 2px #dedede; background-color: #fff;}
 .q_select label.active {border-color: #013797; background-color: #e1eafa; color: #013797; font-weight: 700;}
 .q_select .sub_txt {margin: 0; text-align: center; color: #666; font-size: 130%; font-family: 'Pretendard'; font-weight: 500;}
 
-#page-4 .popup {display: none; position: fixed; top: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 600px; height: 100%; z-index: 998; background-color: rgba(0, 0, 0, 0.7);}
-#page-4 .popup .popup-content {background: #fff; border-radius: 30px; width: 70%; box-sizing: border-box; padding: 7% 6%; margin: 0 auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
-#page-4 .popup .img-area {width: 70%; margin: 0 auto;}
-#page-4 .popup .btn-close-popup {display: flex; align-items: center; justify-content: center; width: 100%; margin: 7% auto 0; padding: 2.835% 0; font-size: 210%; font-family: 'Pretendard'; color: #fff; background-color: #013797; border-radius: 20px; font-weight: 700; text-align: center;}
-
-/* #page-8 .q_select label {width: 48.2%;} */
-
-#page-8 {position: relative;}
-#page-8 .paging {padding: 0 8.335%; font-size: 125%;     margin-top: 2.667%;}
-
-.q_select .inp {background-color: #fff; padding: 2.99%; border: 2px solid #dedede; border-radius: 10px; color: #222; font-size: 150%; font-weight: 700; font-family: 'Pretendard'; text-align: center;}
+.q_select .inp {width: 100%; padding: 1.65rem 2.4rem 1.45rem; color: #222; font-family: 'Pretendard'; font-size: 2.7rem; font-weight: 500; line-height: 1; letter-spacing: -0.54px; color: #222; border-radius: 1rem; border: solid 2px #dedede; background-color: #fff;}
 .q_select .inp::placeholder {color: #dedede;}
-.q_select textarea {width: 100%; padding: 8.96%; border: 2px solid #dedede; border-radius: 10px; color: #222; font-size: 150%; font-weight: 700; font-family: 'Pretendard'; resize: none; height: 25vh;}
-.q_select textarea::placeholder {color: #dedede;}
-.form .submit {flex-shrink: 0; width: 65.93%; padding: 0;}
-.form .submit input[type="submit"] {width: 100%; padding: 4.305% 0; border: none; background-color: #013797; font-family: 'Pretendard'; font-weight: 700; font-size: 170%; border-radius: 10px; color: #fff;}
+/* .q_select textarea {width: 100%; padding: 8.96%; border: 2px solid #dedede; border-radius: 10px; color: #222; font-size: 150%; font-weight: 700; font-family: 'Pretendard'; resize: none; height: 25vh;}
+.q_select textarea::placeholder {color: #dedede;} */
+.form .submit {flex-shrink: 0; width: 100%; padding: 0;}
+.form .submit input[type="image"] {display: block; width: 100%; height: 100%;}
 
 .form .checkbox {text-align: center; display: flex; align-items: center; justify-content: center; font-family: 'Pretendard'; font-size: 220%; font-weight: 700; margin-top: 4.2%;}
 .form .checkbox label {line-height: 1;}
-.form .checkbox input[type="checkbox"] {width: 28px; height: 28px; margin-right: 7px; appearance: none; background: url("//static.harang-event.com/event/v_${eventSeq}/check_off.png") no-repeat center center / 100% 100%; clip: unset; position: static; transition: 0s;}
+.form .checkbox input[type="checkbox"] {display: inline-block; width: 2.8rem; height: 2.8rem; margin-right: 0.7rem; appearance: none; background: url("//static.harang-event.com/event/v_${eventSeq}/check_off.png") no-repeat center center / 100% 100%; clip: unset; position: relative; transition: 0s;}
 .form .checkbox input[type="checkbox"]:checked {background-image: url("//static.harang-event.com/event/v_${eventSeq}/check_on.png");}
 
-.toast {display: none; position: absolute; left: 50%; bottom: 15%; transform: translateX(-50%); text-align: center; width: 92.5%; background-color: rgba(0, 0, 0, 0.8); color: #fff; font-size: 200%; font-family: 'Pretendard'; font-weight: 600; border-radius: 8px; padding: 2.75% 2%; box-sizing: border-box;}
+.notice_inner .checkbox {position: relative; margin-top: 0;}
+#page-1 .notice_inner .img-area {width: 100%; margin-bottom: 0;}
+.notice_inner .checkbox label {position: absolute; bottom: 2.7rem;}
+
+.toast {display: none; position: absolute; left: 50%; bottom: 4%; transform: translateX(-50%); text-align: center; width: 92.5%; background-color: rgba(0, 0, 0, 0.8); color: #fff; font-size: 200%; font-family: 'Pretendard'; font-weight: 600; border-radius: 8px; padding: 2.75% 2%; box-sizing: border-box;}
 .toast strong {color: #fff949;}
 
 /* 안심문구, 대상, 이벤트기간 */
@@ -121,6 +107,8 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 .form .description p {font-weight: 400; font-size: 83%; color: #1d1d1d; font-family: 'Pretendard';}
 
 /* .form .agBox {font-size: 1.2rem; width: 100%; margin: 0 auto;} */
+
+.grid_inner .q_select {display: grid; grid-template-columns: repeat(2, 1fr);}
 
 /* 모달창 - 개인정보처리방침 */
 .overlay {z-index: 888; position: fixed; display: none; width: 100vw; height: 100vh; opacity: 0.5; background-color: #000;}
@@ -137,28 +125,11 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 @media screen and (max-width: 500px) { 
     html, body {font-size: 1.7vw;}
 
-    #page-1 .next {border-radius: 15px;}
-    .page-box .page-num {font-size: 158%;}
-    .q_select label {font-size: 125%;}
-    .paging .prev, .paging .next {font-size: 125%;}
-    
-    #page-8 .paging {font-size: 175%; margin-top: 4.4%;}
-    #page-8 .prev, .form .submit input[type="submit"]  {font-size: 170%;}
-    .form .submit {padding: 0.045% 0;}
-    .q_select .sub_txt {font-size: 95%;}
-    .q_select .inp {font-size: 105%;}
-    .q_select textarea {font-size: 105%;}
-
-    #page-4 .popup .popup-content {width: 80%;}
-    #page-4 .popup .btn-close-popup {font-size: 145%;}
-    #page-8 .q_select label {width: 47.7%;}
-    .form .checkbox {font-size: 220%; margin-top: 4.335%;}
-    .form .checkbox input[type="checkbox"] {width: 22px; height: 22px; margin-right: 4px;}
+ 
     /* .toast {font-size: 80%;} */
 }
 @media screen and (max-width: 395px) {
     /* .form .db-box {top: 13%;} */
-    .form .page-inner {top: 26%;}
 }
 
 @media screen and (max-width: 375px) {
@@ -194,238 +165,125 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 	<div class="form">
         <!-- <audio id="location" playsinline="" src="//static.harang-event.com/event/v_${eventSeq}/audio_01.mp3" type="audio/mp3"></audio> -->
 		<form id="form-1" method="POST" accept-charset="utf-8">
-        <div class="formContents">
-            <section class="page section01" id="page-1">
-                <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.png"></div>
-                <div class="img-area video-area">
-                    <video id="location" playsinline loop autoplay muted src="//static.harang-event.com/event/v_${eventSeq}/video.mp4" type="video/mp4"></video>
-                    <script>setTimeout(function(){ $('#location').trigger('play'); },500);</script>
-                </div>
-                <div class="agBox">
-                    <a href="#" class="btn-agreement">개인정보 처리방침</a> 동의 후 확인하세요.
-                    <input type="hidden" name="agBox" value="Y" checked>
-                </div>
-                <div class="page_inner">
-                    <button type="button" class="next" onclick="pageFuc(1,$(this))">동의 후 내 탕감률 % 확인</button>
-                </div>
-            </section>
-            
-            <section class="page hide section02" id="page-2">
-                <div class="page_inner">
-                    <div class="question_box">
-                        <div class="question">
-                            <div class="page-box">
-                                <span class="page-num"><span class="current">1</span>/6</span>
+            <div class="formContents">
+                <section class="page section01" id="page-1">
+                <div class="intro">
+                    <div class="time-content">
+                        <div class="timer-box">
+                            <div class="date">
+                                <img class="icon" src="//static.harang-event.com/event/v_${eventSeq}/icon_01.png" alt="">
+                                <span id="year"></span>
+                                <span id="month"></span>
+                                <span id="day"></span>
+                                <span id="week-day"></span>
                             </div>
-                            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_01.png"></div>
-                        </div>
-                        <div class="q_select">
-                            <label><input type="radio" name="tadd1"  onclick="pageFuc(2,$(this))" value="네. 사용하고 있습니다">네, 사용하고 있습니다</label>
-                            <label><input type="radio" name="tadd1"  onclick="pageFuc(2,$(this))" value="아니요. 사용하고 있지 않습니다">아니요, 사용하고 있지 않습니다</label>
+                            <div class="time">
+                                <span id="hour"></span>
+                                <span id="minute"></span>
+                            </div>
+                            <div class="text-box">
+                                <img src="//static.harang-event.com/event/v_${eventSeq}/loading_01.png">
+                                <span class="text">현재 접수 가능</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- <div class="paging">
-                    <button type="button" class="prev">이전</button>	
-                    <button type="button" class="next" onclick="pageFuc(2,$(this))">다음</button>
-                </div> -->
-            </section>
-
-            <section class="page hide section03" id="page-3">
-                <div class="page_inner">
-                    <div class="question_box">
-                        <div class="question">
-                            <div class="page-box">
-                                <span class="page-num"><span class="current">2</span>/6</span>
-                            </div>
-                            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_02.png"></div>
-                        </div>
-                        <div class="q_select">
-                            <label><input type="radio" name="tadd2" onclick="pageFuc(3,$(this))" value="2,000만원~3,000만원">2,000만원~3,000만원</label>
-                            <label><input type="radio" name="tadd2" onclick="pageFuc(3,$(this))" value="3,000만원~5,000만원">3,000만원~5,000만원</label>
-                            <label><input type="radio" name="tadd2" onclick="pageFuc(3,$(this))" value="5,000만원~1억원">5,000만원~1억원</label>
-                            <label><input type="radio" name="tadd2" onclick="pageFuc(3,$(this))" value="1억원 이상">1억원 이상</label>
-                        </div>
+                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.png"></div>
+                    <div class="img-area gif-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.gif"></div>
+                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_03.png"></div>
+                    <div class="paging">
+                        <button type="button" class="next" onclick="pageFuc(1,$(this))"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.png"></button>	
+                        <!-- <button type="button" class="next" onclick="pageFuc(1,$(this))"></button> -->
                     </div>
                 </div>
-                <!-- <div class="paging">
-                    <button type="button" class="prev">이전</button>	
-                    <button type="button" class="next" onclick="pageFuc(3,$(this))">다음</button>
-                </div> -->
-            </section>
-
-            <section class="page hide section04" id="page-4">
-                <div class="page_inner">
-                    <div class="question_box">
-                        <div class="question">
-                            <div class="page-box">
-                                <span class="page-num"><span class="current">3</span>/6</span>
-                            </div>
-                            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_03.png"></div>
+                <div class="q-group">
+                    <div class="page_inner">
+                        <div class="question_box">
+                            <div class="q-txt">1. 현재 카드 사용 중이신가요?</div>
                         </div>
                         <div class="q_select">
-                            <label><input type="radio" name="tadd3" onclick="pageFuc(4,$(this))" value="네">네</label>
-                            <label><input type="radio" name="tadd3" onclick="pageFuc(4,$(this))" value="아니요">아니요</label>
+                            <label><input type="radio" name="tadd1" value="네, 사용하고 있습니다">네, 사용하고 있습니다</label>
+                            <label><input type="radio" name="tadd1" value="아니요, 사용하고 있지 않습니다">아니요, 사용하고 있지 않습니다</label>
                         </div>
                     </div>
-                </div>
-                <!-- <div class="paging">
-                    <button type="button" class="prev">이전</button>	
-                    <button type="button" class="next" onclick="pageFuc(4,$(this))">다음</button>
-                </div> -->
-                
-                <div class="popup">
-                    <div class="popup-content">
-                        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/popup_txt.png"></div>
-                        <button class="btn-close-popup">확인</button>
-                    </div>
-                </div>
-            </section>
-
-            <section class="page hide section05" id="page-5">
-                <div class="page_inner">
-                    <div class="question_box">
-                        <div class="question">
-                            <div class="page-box">
-                                <span class="page-num"><span class="current">4</span>/6</span>
-                            </div>
-                            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_04.png"></div>
+                    <div class="page_inner grid_inner">
+                        <div class="question_box">
+                            <div class="q-txt">2. 현재  채무 총액 수준을 체크해주세요</div>
+                            <div class="sub-txt">※ 채무보다 재산이 많으면 회생을 신청할 수 없습니다.</div>
                         </div>
                         <div class="q_select">
-                            <label><input type="radio" name="tadd4" onclick="pageFuc(5,$(this))" value="아니요, 다른 빚도 있습니다">아니요, 다른 빚도 있습니다</label>
-                            <label><input type="radio" name="tadd4" onclick="alert('담보 및 세금만으로는 신청이 불가능 합니다')" value="네, 담보 및 세금만 있습니다">네, 담보 및 세금만 있습니다</label>
+                            <label><input type="radio" name="tadd2" value="2천만~3천만원">2천만~3천만원</label>
+                            <label><input type="radio" name="tadd2" value="3천만~5천만원">3천만~5천만원</label>
+                            <label><input type="radio" name="tadd2" value="5천만~1억원">5천만~1억원</label>
+                            <label><input type="radio" name="tadd2" value="1억원 이상">1억원 이상</label>
                         </div>
                     </div>
-                </div>
-                <!-- <div class="paging">
-                    <button type="button" class="prev">이전</button>	
-                    <button type="button" class="next" onclick="pageFuc(5,$(this))">다음</button>
-                </div> -->
-            </section>
-            
-            <section class="page hide section06" id="page-6">
-                <div class="page_inner">
-                    <div class="question_box">
-                        <div class="question">
-                            <div class="page-box">
-                                <span class="page-num"><span class="current">5</span>/6</span>
-                            </div>
-                            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_05.png"></div>
+                    <div class="page_inner">
+                        <div class="question_box">
+                            <div class="q-txt">3. 현재 150만원 이상 소득이 있으신가요?</div>
+                            <div class="sub-txt">※ 소득이 없는 무직자 및 기초생활수급자는 신청이 불가능합니다.</div>
                         </div>
                         <div class="q_select">
-                            <label><input type="radio" name="tadd5" onclick="pageFuc(6,$(this))" value="300만원 이상">300만원 이상</label>
-                            <label><input type="radio" name="tadd5" onclick="pageFuc(6,$(this))" value="400만원 이상">400만원 이상</label>
-                            <label><input type="radio" name="tadd5" onclick="pageFuc(6,$(this))" value="500만원 이상">500만원 이상</label>
-                            <label><input type="radio" name="tadd5" onclick="alert('개인회생 위임시 수임료가 발생되며, 수임료 지급 의사가 없을 시 이벤트 참여가 불가능 합니다')" value="수임료를 지급할 능력이 없습니다">수임료를 지급할 능력이 없습니다</label>
+                            <label><input type="radio" name="tadd3" value="네, 소득이 있습니다.">네, 소득이 있습니다.</label>
+                            <label><input type="radio" name="tadd3" value="아니요, 소득이 없습니다.">아니요, 소득이 없습니다.</label>
                         </div>
                     </div>
-                </div>
-                <!-- <div class="paging">
-                    <button type="button" class="prev">이전</button>	
-                    <button type="button" class="next" onclick="pageFuc(6,$(this))">다음</button>
-                </div> -->
-            </section>
-
-            <section class="page hide section07" id="page-7">
-                <div class="page_inner">
-                    <div class="question_box">
-                        <div class="question">
-                            <div class="page-box">
-                                <span class="page-num"><span class="current">6</span>/6</span>
-                            </div>
-                            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_06.png"></div>
+                    <div class="page_inner">
+                        <div class="question_box">
+                            <div class="q-txt">4. 담보나 세금 체납만 해결이 필요하신 상황인가요?</div>
+                            <div class="sub-txt">※ 신용대출&카드대출 없이 담보&세금만으로는 불가능합니다.</div>
                         </div>
                         <div class="q_select">
-                            <p class="sub_txt">한글 성함을 입력해주세요</p>
+                            <label><input type="radio" name="tadd4" value="아니요, 다른 빚도 함께 있습니다.">아니요, 다른 빚도 함께 있습니다.</label>
+                            <label><input type="radio" name="tadd4" value="네, 담보 및 세금만 있습니다.">네, 담보 및 세금만 있습니다.</label>
+                        </div>
+                    </div>
+                    <div class="page_inner">
+                        <div class="question_box">
+                            <div class="q-txt">5. 개인 회생 위임시 수임료가 발생한다는 <br />사실을  알고 계신가요?</div>
+                            <div class="sub-txt">※ 별도 수임료가 발생됩니다.</div>
+                        </div>
+                        <div class="q_select">
+                            <label><input type="radio" name="tadd5" value="네, 알고 있습니다.">네, 알고 있습니다.</label>
+                            <label><input type="radio" name="tadd5" value="아니요, 모릅니다.">아니요, 모릅니다.</label>
+                        </div>
+                    </div>
+                    <div class="page_inner input_inner">
+                        <div class="question_box">
+                            <div class="q-txt">6. 성함을 입력해주세요</div>
+                        </div>
+                        <div class="q_select">
                             <input type="text" id="name" name="name" class="inp" required="" autocomplete="off" placeholder="성함을 입력해주세요 ">
-                            <p class="sub_txt">010 포함 11자리를 숫자만 입력해주세요</p>
+                        </div>
+                    </div>
+                    <div class="page_inner input_inner">
+                        <div class="question_box">
+                            <div class="q-txt">7. 연락처</div>
+                        </div>
+                        <div class="q_select">
                             <input type="tel" id="phone" name="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="연락처를 입력해 주세요">
                         </div>
                     </div>
-                </div>
-                <div class="paging">
-                    <!-- <button type="button" class="prev">이전</button>	 -->
-                    <button type="button" class="next" onclick="pageFuc(7,$(this))">다음</button>
-                </div>
-            </section>
-
-            <!-- <section class="page hide section08" id="page-8">
-                <div class="page_inner">
-                    <div class="question_box">
-                        <div class="question">
-                            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_07.png"></div>
+                    <div class="page_inner notice_inner">
+                        <div class="checkbox confirm">
+                            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_04.png"></div>
+                            <label>
+                                <input type="checkbox">
+                                <strong>위 필수 사항</strong>을 모두 확인하였습니다.
+                            </label>
                         </div>
-                        <div class="q_select">
-                            <label><input type="radio" name="tadd5" value="최대한 빠르게">최대한 빠르게</label>
-                            <label><input type="radio" name="tadd5" value="오전 9~10시">오전 9~10시</label>
-                            <label><input type="radio" name="tadd5" value="오전 10~11시">오전 10~11시</label>
-                            <label><input type="radio" name="tadd5" value="오전 11~12시">오전 11~12시</label>
-                            <label><input type="radio" name="tadd5" value="오후 12~1시">오후 12~1시</label>
-                            <label><input type="radio" name="tadd5" value="오후 1~2시">오후 1~2시</label>
-                            <label><input type="radio" name="tadd5" value="오후 2~3시">오후 2~3시</label>
-                            <label><input type="radio" name="tadd5" value="오후 3~4시">오후 3~4시</label>
-                            <label><input type="radio" name="tadd5" value="오후 4~5시">오후 4~5시</label>
-                            <label><input type="radio" name="tadd5" value="오후 5~6시">오후 5~6시</label>
+                        <div class="agBox">
+                            <a href="#" class="btn-agreement">개인정보 처리방침</a> 동의 후 확인하세요.
+                            <input type="hidden" name="agBox" value="Y" checked>
+                        </div>
+                        <div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"></div>
+
+                        <div class="toast">
+                            위 필수 사항을 모두 확인 후 <strong>체크를 누르셔야 신청이 완료</strong> 됩니다.
                         </div>
                     </div>
                 </div>
-                <div class="paging">
-                    <button type="button" class="prev">이전</button>	
-                    <button type="button" class="next" onclick="pageFuc(8,$(this))">다음</button>
-                </div>
-            </section> -->
-
-            <!-- <section class="page hide section09" id="page-9">
-                <div class="page_inner">
-                    <div class="question_box">
-                        <div class="question">
-                            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_08.png"></div>
-                        </div>
-                        <div class="q_select">
-                            <textarea name="tadd6" id="tadd6"  autocomplete="off" placeholder="문의내용 입력"></textarea>
-                        </div>
-                    </div>
-                </div>
-                <div class="paging">
-                    <button type="button" class="prev">이전</button>	
-                    <button type="button" class="next" onclick="pageFuc(9,$(this))">다음</button>
-                </div>
-            </section> -->
-
-            <section class="page hide section08" id="page-8">
-                <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.png"></div>
-                <div class="checkbox confirm">
-                    <label>
-                        <input type="checkbox">
-                        <strong>위 필수 사항</strong>을 모두 확인하였습니다.
-                    </label>
-                </div>
-                <div class="paging">
-                    <!-- <button type="button" class="prev">이전</button>	 -->
-                    <div class="submit"><input type="submit" value="신청 완료하기" onclick="fnForm('form-1');"></div>
-                </div>
-
-                <div class="toast">
-                    위 필수 사항을 모두 확인 후 <strong>체크를 누르셔야 신청이 완료</strong> 됩니다.
-                </div>
-            </section>
-
-
-            <!-- <div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"></div>
-
-            <div class="img-area arrow-img"><img src="//static.harang-event.com/event/v_${eventSeq}/arrow.png"></div>
-            <div class="img-area result-area">
-                <img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.png" alt="">
-                <span class="name-result"></span>
+                </section> 
             </div>
-
-            <div class="description bottom">
-                <p id="event-period">이벤트 기간 : <?=date("Y년 m월 01일")." ~ ".date("Y년 m월 t일 까지")?></p>
-                <div class="ad_txt">안심하세요! ${resVo.agent}에서는 고객님의 소중한 개인정보를 <br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
-                <span>대상 :  ${resVo.target}</span>
-            </div> -->
-            
-        </div>
             <input type="hidden" id="branch" 		name="branch" value="${resVo.branch}"/>
             <input type="hidden" id="eventSeq" 		name="eventSeq" value="${resVo.eventSeq}"/>
             <input type="hidden" id="site" 			name="site" value="${site}"/>
@@ -448,7 +306,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 	</div>
     <div class="container">
 		<!-- <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.jpg"></div> -->
-		<div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>
+		<!-- <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div> -->
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -458,6 +316,50 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
         initDate();/* 기간항목 start */
         blockSourceView();//드래그, 우클릭 방지
 	});
+
+     // 상단 타이머
+    $(function () {
+        function pad2(n) {
+            return (n < 10 ? '0' : '') + n;
+        }
+
+        function renderNow() {
+            var now = new Date();
+
+            var y = now.getFullYear();
+            var m = pad2(now.getMonth() + 1);
+            var d = pad2(now.getDate());
+
+            // 0=일,1=월,...6=토
+            var week = ['일', '월', '화', '수', '목', '금', '토'][now.getDay()];
+
+            var hh = pad2(now.getHours());
+            var mm = pad2(now.getMinutes());
+
+            $('#year').text(y + '.');
+            $('#month').text(m + '.');
+            $('#day').text(d + '(' + week + ')');
+            $('#week-day').text(''); // day에 요일까지 붙였으니 비워둠(원하면 아래 주석 참고)
+
+            $('#hour').text(hh + ':');
+            $('#minute').text(mm);
+        }
+
+        renderNow();
+
+        // 매 분 정각에 맞춰 갱신되게(드리프트 최소화)
+        var now = new Date();
+        var msToNextMinute = (60 - now.getSeconds()) * 1000 - now.getMilliseconds();
+
+        setTimeout(function () {
+            renderNow();
+            setInterval(renderNow, 60 * 1000);
+        }, msToNextMinute);
+
+        // 만약 week-day를 따로 쓰고 싶으면 renderNow에서 아래처럼 바꾸면 됨:
+        // $('#day').text(d);
+        // $('#week-day').text('(' + week + ')');
+    });
 
     // 엔터키 막기
     document.addEventListener('keydown', function(event) {
@@ -472,110 +374,15 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 
     // 버튼 페이지 이동 함수 (다음)
     function pageFuc(num, obj) {
-        var sectionNum = String(num).padStart(2, '0'); // ✅ 핵심
-        var $currentPage = $('.section' + sectionNum);
+        $('#wrap').css({height: '100%'});
+        // $('.intro').css({height: '100%'});
 
-        var $checked = $currentPage.find('input[name^="tadd"]:checked');
-        var $inputName = $currentPage.find('input[name="name"]');
-        var $inputPhone = $currentPage.find('input[name="phone"]');
+        const formOffset = $('.q-group').offset().top;
 
-        if ($currentPage.find('input[name^="tadd"]').length > 0 && $checked.length === 0) {
-            alert("설문을 선택해주세요.");
-            return;
-        }
-
-        if ($inputName.val() == '') {
-            alert("성함을 입력해주세요.");
-            return;
-        }
-
-        if ($inputPhone.val() == '') {
-            alert("전화번호를 입력해주세요.");
-            return;
-        } 
-
-        if(sectionNum == '04'){
-            if($currentPage.find('input[name^="tadd"]:checked').val() == '2,000만원 이하'){
-                var $popup = $('#page-4 .popup');
-                $popup.fadeIn();
-                return;
-            }
-        }
-
-        if(sectionNum == 7){
-            var phoneValue = $('input[name="phone"]').val();
-    
-           if(phoneValue.length >= 11) {
-               const match = phoneValue.match(/^01[0-9]?(\d{4})\d{4}$/);
-               const middle = parseInt(match[1], 10);
-               if(middle >= 0 && middle <= 1999){
-                   alert('잘못된 전화번호 형식입니다. (0000~1999번은 입력할 수 없습니다.)')
-                   return;
-               }
-           } else {
-               alert('정확한 연락처를 입력해 주세요.');
-               return;
-           }
-        }
-
-        var nextPage = num + 1;
-        var nextSectionNum = String(nextPage).padStart(2, '0'); // ✅ 여기
-        var $nextPage = $('.section' + nextSectionNum);
-
-        $currentPage.fadeOut(function() {
-            $nextPage.css({ 
-                'display': 'flex', 
-                'flex-direction': 'column' 
-            });
-
-            $(document).scrollTop(0);
-
-            restoreCheckedState($nextPage); // ✅ 정상 동작
-        });
+        $('html, body').animate({
+            scrollTop: formOffset
+        }, 700); // 500ms 동안 스크롤 이동
     }
-
-    // 이전 버튼
-    $('.paging button.prev').on('click', function() {
-        var $currentPage = $(this).closest('.page');
-        var $prevPage = $currentPage.prev('.page');
-
-        if ($prevPage.length > 0) {
-            $currentPage.hide();
-            $prevPage.show();
-
-            // ✅ 여기 추가 (핵심)
-            restoreCheckedState($prevPage);
-        }
-
-        var type = this.className;
-		var idx = $(this).closest('.page').attr('id').substr(-1);  
-        var num = Number(idx);
-        var page_num = $('.page:visible').index() + 1;
-        
-		switch(type) {
-            // case 'next': case 'nextBtn' :
-            //     if(!validator(idx)) return;
-            
-            //     $(this).closest('.page').fadeOut(function(){ $(this).closest('.page').next().fadeIn(); });
-            
-            //     $('.progress i').text(page_num);
-            //     break;
-            
-            case 'prev' :    
-            // 1. 현재 페이지와 이전 페이지 정의
-            var $currentPage = $(this).closest('.page');
-            var $prevPage = $currentPage.prev('.page');
-
-            if ($prevPage.length > 0) {
-                // 2. 현재 페이지를 즉시 숨김 (fadeOut 대신 hide 사용으로 딜레이 제거)
-                $currentPage.hide();
-                
-                // 3. 이전 페이지를 즉시 보여줌
-                $prevPage.show();
-            }
-            break;
-        } 
-    });
 
     function restoreCheckedState($page) {
         $page.find('.q_select').each(function () {
@@ -604,6 +411,22 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
         }
     });
 
+    $('input[name="tadd4"]').on('change', function () {
+        if ($(this).val() === '네, 담보 및 세금만 있습니다.') {
+            alert('담보 및 세금만으로는 신청이 불가능 합니다');
+            $(this).prop('checked', false);
+            $(this).closest('.q_select').find('label').removeClass('active');
+        }
+    });
+
+    $('input[name="tadd5"]').on('change', function () {
+        if ($(this).val() === '아니요, 모릅니다.') {
+            alert('개인회생 위임시 수임료가 발생되며 해당 사항을 모르고 계시다면 내 빚 탕감률 알아보기 상담신청이 불가능 합니다');
+            $(this).prop('checked', false);
+            $(this).closest('.q_select').find('label').removeClass('active');
+        }
+    });
+
     // $('#page-4 .popup .btn-close-popup').on('click', function(){
     //     var $popup = $('#page-4 .popup');
     //     $popup.fadeOut();
@@ -611,11 +434,9 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 
     //설문 on/off
     $('input[name*="tadd"]').on('click', function(){
-        $('label', $(this).parents('.q_select')).each(function(i,t) {
-            $('label').removeClass('active');
-            // $('img', t).attr('src', $('img', t).attr('src').replace('_on', '_off'));
-        });
-        $(this).parent().addClass('active');
+        const $group = $(this).closest('.q_select');
+        $group.find('label').removeClass('active');
+        $(this).parent('label').addClass('active');
         // $('img', $(this.parentNode)).attr('src', $('img', $(this.parentNode)).attr('src').replace('_off', '_on'));
     });
 
@@ -647,8 +468,49 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 		/* form id로 proc */
 		let procForm = document.getElementById(formId);
 
-        const isChecked = $('#page-8 .checkbox input[type="checkbox"]').is(':checked');
-        const $toast = $('#page-8 .toast');
+        let selectedRadio1 = procForm.querySelector('input[name="tadd1"]:checked');
+		if (!selectedRadio1) {
+			alert("설문 1번 항목을 선택해주세요.");
+			return;
+		} else {
+			procForm.querySelector("input[name='add1']").value = selectedRadio1.value;
+		}
+
+		let selectedRadio2 = procForm.querySelector('input[name="tadd2"]:checked');
+		if (!selectedRadio2) {
+			alert("설문 2번 항목을 선택해주세요.");
+			return;
+		} else {
+			procForm.querySelector("input[name='add2']").value = selectedRadio2.value;
+		}
+
+        let selectedRadio3 = procForm.querySelector('input[name="tadd3"]:checked');
+		if (!selectedRadio3) {
+			alert("설문 3번 항목을 선택해주세요.");
+			return;
+		} else {
+			procForm.querySelector("input[name='add3']").value = selectedRadio3.value;
+		}
+
+		let selectedRadio4 = procForm.querySelector('input[name="tadd4"]:checked');
+		if (!selectedRadio4) {
+			alert("설문 4번 항목을 선택해주세요.");
+			return;
+		} else {
+			procForm.querySelector("input[name='add4']").value = selectedRadio4.value;
+		}
+
+        let selectedRadio5 = procForm.querySelector('input[name="tadd5"]:checked');
+		if (!selectedRadio5) {
+			alert("설문 5번 항목을 선택해주세요.");
+			return;
+		} else {
+			procForm.querySelector("input[name='add5']").value = selectedRadio5.value;
+		}
+
+        
+        const isChecked = $('#page-1 .notice_inner .checkbox input[type="checkbox"]').is(':checked');
+        const $toast = $('#page-1 .toast');
 
           if (!isChecked) {
             $toast.fadeIn();
@@ -661,46 +523,6 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
         } else {
             $toast.hide();
         }
-
-        let selectedRadio1 = procForm.querySelector('input[name="tadd1"]:checked');
-		if (!selectedRadio1) {
-			alert("설문을 선택해주세요.");
-			return;
-		} else {
-			procForm.querySelector("input[name='add1']").value = selectedRadio1.value;
-		}
-
-		let selectedRadio2 = procForm.querySelector('input[name="tadd2"]:checked');
-		if (!selectedRadio2) {
-			alert("설문을 선택해주세요.");
-			return;
-		} else {
-			procForm.querySelector("input[name='add2']").value = selectedRadio2.value;
-		}
-
-        let selectedRadio3 = procForm.querySelector('input[name="tadd3"]:checked');
-		if (!selectedRadio3) {
-			alert("설문을 선택해주세요.");
-			return;
-		} else {
-			procForm.querySelector("input[name='add3']").value = selectedRadio3.value;
-		}
-
-		let selectedRadio4 = procForm.querySelector('input[name="tadd4"]:checked');
-		if (!selectedRadio4) {
-			alert("설문을 선택해주세요.");
-			return;
-		} else {
-			procForm.querySelector("input[name='add4']").value = selectedRadio4.value;
-		}
-
-        let selectedRadio5 = procForm.querySelector('input[name="tadd5"]:checked');
-		if (!selectedRadio5) {
-			alert("설문을 선택해주세요.");
-			return;
-		} else {
-			procForm.querySelector("input[name='add5']").value = selectedRadio5.value;
-		}
 
         // let selectedRadio6 = procForm.querySelector('textarea[name="tadd6"]').value;
         // procForm.querySelector("input[name='add6']").value = selectedRadio6;
