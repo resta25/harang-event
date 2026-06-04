@@ -75,7 +75,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 
 /* 설문영역 */
 .q_select {display: flex; flex-flow: row wrap; justify-content: center; gap: 1.1rem; margin-top: 5.6%;}
-.q_select label {width: 100%; padding: 2.3rem 0 2.1rem; font-family: 'Pretendard'; font-size: 2.7rem; font-weight: 500; line-height: 1; letter-spacing: -0.54px; text-align: center; color: #222;  border-radius: 1rem; border: solid 2px #dedede; background-color: #fff;}
+.q_select label {width: 100%; padding: 2.3rem 2.6rem 2.1rem; font-family: 'Pretendard'; font-size: 2.7rem; font-weight: 500; line-height: 1; letter-spacing: -0.54px; color: #222; box-sizing: border-box; border-radius: 1rem; border: solid 2px #dedede; background-color: #fff;}
 .q_select label.active {border-color: #013797; background-color: #e1eafa; color: #013797; font-weight: 700;}
 .q_select .sub_txt {margin: 0; text-align: center; color: #666; font-size: 130%; font-family: 'Pretendard'; font-weight: 500;}
 
