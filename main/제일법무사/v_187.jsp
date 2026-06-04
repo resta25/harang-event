@@ -143,7 +143,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
     .paging .prev, .paging .next {font-size: 125%;}
     
     #page-8 .paging {font-size: 175%; margin-top: 4.4%;}
-    #page-8 .prev, .form .submit input[type="submit"]  {font-size: 170%;}
+    #page-8 .prev, .form .submit input[type="submit"]  {font-size: 125%;}
     .form .submit {padding: 0.045% 0;}
     .q_select .sub_txt {font-size: 95%;}
     .q_select .inp {font-size: 105%;}
@@ -343,7 +343,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                 </div>
                 <div class="paging">
                     <!-- <button type="button" class="prev">이전</button>	 -->
-                    <button type="button" class="next" onclick="pageFuc(7,$(this))">다음</button>
+                    <div class="submit"><input type="submit" value="내 탕감률 % 확인하기" onclick="fnForm('form-1');"></div>
                 </div>
             </section>
 
@@ -389,25 +389,6 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                     <button type="button" class="next" onclick="pageFuc(9,$(this))">다음</button>
                 </div>
             </section> -->
-
-            <section class="page hide section08" id="page-8">
-                <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.png"></div>
-                <div class="checkbox confirm">
-                    <label>
-                        <input type="checkbox">
-                        <strong>위 필수 사항</strong>을 모두 확인하였습니다.
-                    </label>
-                </div>
-                <div class="paging">
-                    <!-- <button type="button" class="prev">이전</button>	 -->
-                    <div class="submit"><input type="submit" value="신청 완료하기" onclick="fnForm('form-1');"></div>
-                </div>
-
-                <div class="toast">
-                    위 필수 사항을 모두 확인 후 <strong>체크를 누르셔야 신청이 완료</strong> 됩니다.
-                </div>
-            </section>
-
 
             <!-- <div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"></div>
 
@@ -645,20 +626,20 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 		/* form id로 proc */
 		let procForm = document.getElementById(formId);
 
-        const isChecked = $('#page-8 .checkbox input[type="checkbox"]').is(':checked');
-        const $toast = $('#page-8 .toast');
+        // const isChecked = $('#page-8 .checkbox input[type="checkbox"]').is(':checked');
+        // const $toast = $('#page-8 .toast');
 
-          if (!isChecked) {
-            $toast.fadeIn();
+        //   if (!isChecked) {
+        //     $toast.fadeIn();
 
-            setTimeout(function(){
-                $toast.fadeOut();
-            }, 2000);
+        //     setTimeout(function(){
+        //         $toast.fadeOut();
+        //     }, 2000);
 
-            return; // ❗ 제출 막기
-        } else {
-            $toast.hide();
-        }
+        //     return; // ❗ 제출 막기
+        // } else {
+        //     $toast.hide();
+        // }
 
         let selectedRadio1 = procForm.querySelector('input[name="tadd1"]:checked');
 		if (!selectedRadio1) {

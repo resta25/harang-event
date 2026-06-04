@@ -270,22 +270,22 @@ html, body {font-size: 10px;}
                         </div>
                     </div>
                     <div class="page_inner notice_inner">
-                        <div class="checkbox confirm">
+                        <!-- <div class="checkbox confirm">
                             <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_04.png"></div>
                             <label>
                                 <input type="checkbox">
                                 <strong>위 필수 사항</strong>을 모두 확인하였습니다.
                             </label>
-                        </div>
+                        </div> -->
                         <div class="agBox">
                             <a href="#" class="btn-agreement">개인정보 처리방침</a> 동의 후 확인하세요.
                             <input type="hidden" name="agBox" value="Y" checked>
                         </div>
                         <div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"></div>
 
-                        <div class="toast">
+                        <!-- <div class="toast">
                             위 필수 사항을 모두 확인 후 <strong>체크를 누르셔야 신청이 완료</strong> 됩니다.
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 </section> 
@@ -516,19 +516,19 @@ html, body {font-size: 10px;}
 
         
         const isChecked = $('#page-1 .notice_inner .checkbox input[type="checkbox"]').is(':checked');
-        const $toast = $('#page-1 .toast');
+        // const $toast = $('#page-1 .toast');
 
-          if (!isChecked) {
-            $toast.fadeIn();
+        //   if (!isChecked) {
+        //     $toast.fadeIn();
 
-            setTimeout(function(){
-                $toast.fadeOut();
-            }, 2000);
+        //     setTimeout(function(){
+        //         $toast.fadeOut();
+        //     }, 2000);
 
-            return; // ❗ 제출 막기
-        } else {
-            $toast.hide();
-        }
+        //     return; // ❗ 제출 막기
+        // } else {
+        //     $toast.hide();
+        // }
 
         // let selectedRadio6 = procForm.querySelector('textarea[name="tadd6"]').value;
         // procForm.querySelector("input[name='add6']").value = selectedRadio6;
