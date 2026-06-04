@@ -8,8 +8,7 @@ pageEncoding="UTF-8"%>
 <style>
 @import url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard.css');
 html, body {font-size: 10px;}
-#wrap {max-width: 600px; display: flex; flex-direction: column; font-family: 'Pretendard'; height: 100dvh; overflow: hidden; height: 100vh; /* fallback */ height: 100dvh; /* 최신 브라우저용 */
-padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);}
+#wrap {max-width: 600px; display: flex; flex-direction: column; font-family: 'Pretendard';}
 .form {flex-grow: 1; background: transparent;}
 #form-1 {height: 100%;}
 #wrap .formContents {height: 100%;}
@@ -52,11 +51,12 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 /* .paging .next {flex-shrink: 0; width: 65.93%; padding: 3.2% 0; background-color: #013797; font-family: 'Pretendard'; font-weight: 700; font-size: 170%; border-radius: 10px; color: #fff;} */
 /* .paging button{position: absolute; top: 50%; left: 7.34%; transform: translateY(-50%); max-width: 63px; background-color: transparent; cursor: pointer;} */
 .paging img{ width: 100%;}
-.intro .paging .next {animation: motion 0.3s linear 0s infinite alternate;}
+.intro .paging .next {height: 14rem;}
+.intro .paging .next img {animation: motion 0.3s linear 0s infinite alternate;}
 
 /* 첫번째 페이지 */
 #page-1 {height: 100%; background-color: #fff;}
-#page-1 .intro {padding: 0 0 3.2rem; height: 100vh; height: 100dvh;}
+#page-1 .intro {padding: 0 0 3.2rem;}
 #page-1 .img-area {width: 86.333333%; margin: 0 auto 3rem;}
 #page-1 .gif-area + .img-area {margin-top: 5.2rem; margin-bottom: 2.2rem;}
 /* #page-1 .video-area {padding: 2.5% 4.585% 0;}
@@ -197,7 +197,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                     <div class="img-area gif-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.gif"></div>
                     <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_03.png"></div>
                     <div class="paging">
-                        <button type="button" class="next" onclick="pageFuc(1,$(this))"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.png"></button>	
+                        <button type="button" class="next"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.png"></button>	
                         <!-- <button type="button" class="next" onclick="pageFuc(1,$(this))"></button> -->
                     </div>
                 </div>
@@ -379,16 +379,16 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
     });
 
     // 버튼 페이지 이동 함수 (다음)
-    function pageFuc(num, obj) {
-        $('#wrap').css({height: '100%'});
-        // $('.intro').css({height: '100%'});
+    // function pageFuc(num, obj) {
+    //     $('#wrap').css({height: '100%'});
+    //     // $('.intro').css({height: '100%'});
 
-        const formOffset = $('.q-group').offset().top;
+    //     const formOffset = $('.q-group').offset().top;
 
-        $('html, body').animate({
-            scrollTop: formOffset
-        }, 700); // 500ms 동안 스크롤 이동
-    }
+    //     $('html, body').animate({
+    //         scrollTop: formOffset
+    //     }, 700); // 500ms 동안 스크롤 이동
+    // }
 
     function restoreCheckedState($page) {
         $page.find('.q_select').each(function () {
