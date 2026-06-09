@@ -1,153 +1,127 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+pageEncoding="UTF-8"%>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/fonts-archive/SUIT/SUIT.css"
+  type="text/css"
+/>
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/gh/fonts-archive/SUIT/SUIT.css"
   type="text/css"
 />
 <style>
-@font-face {
-    font-family: 'Pretendard';
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-    src: url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Regular.woff2') format('woff2'),
-         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Regular.woff') format('woff'),
-         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Regular.otf') format('opentype');
-}
-@font-face {
-    font-family: 'Pretendard';
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-    src: url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Medium.woff2') format('woff2'),
-         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Medium.woff') format('woff'),
-         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Medium.otf') format('opentype');
-}
-@font-face {
-    font-family: 'Pretendard';
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-    src: url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-SemiBold.woff2') format('woff2'),
-         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-SemiBold.woff') format('woff'),
-         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-SemiBold.otf') format('opentype');
-}
-@font-face {
-    font-family: 'Pretendard';
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-    src: url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Bold.woff2') format('woff2'),
-         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Bold.woff') format('woff'),
-         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Bold.otf') format('opentype');
-}
-@font-face {
-    font-family: 'Pretendard';
-    font-weight: 800;
-    font-style: normal;
-    font-display: swap;
-    src: url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-ExtraBold.woff2') format('woff2'),
-         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-ExtraBold.woff') format('woff'),
-         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-ExtraBold.otf') format('opentype');
-}
-* {margin: 0; padding: 0; box-sizing: border-box !important; font-family: 'SUIT', sans-serif;}
+html, body {font-size: 10px;}
+#wrap {max-width: 600px; display: flex; flex-direction: column; font-family: 'Pretendard'; overflow: hidden; height: 100vh; height: 100dvh;
+padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); background: url("//static.harang-event.com/event/v_${eventSeq}/bg_01.jpg") no-repeat center top / 100% 100%;}
+.form {flex-grow: 1; background: transparent;}
+/* #form-1 {height: 100%;} */
+/* #wrap .formContents {height: 100%;} */
+.page { flex-grow: 1; position: relative; box-sizing: border-box;}
+.hide {display: none;}
 
-body::-webkit-scrollbar {display: none;}
+/* 공통 */
+.container { text-align: center; font-size: 120%; letter-spacing: -0.36px; color: #b77587; font-family: 'Pretendard';}
+.form .result-box {margin-top: 12.32%; margin-bottom: 8.155%; font-family: 'SUIT'; font-size: 255%; font-weight: 800; line-height: 1.48; letter-spacing: -1.23px; text-align: center; color: #2d2d2d;}
+.form strong {color: #f20000; font-weight: 800; font-family: 'SUIT';}
+.form .name-result {}
+.next {cursor: pointer;}
+.page:not(#page-1):not(#page-4) .page_inner {padding: 9.4rem 3.3rem 0; font-size: 1.6rem;}
 
-.hide {display: none !important;}
-.bg_main {background-color: #e8e8e8; overflow: hidden;}
-.c_red {color:#fff500;}
-.mb_3{margin-bottom: 3%;}
-.bottom{display:none;}
+.video-area {width: 89%; margin: 1.2rem auto 2rem; border-radius: 2.4rem; overflow: hidden;}
+.video-area video {display: block; width: 100%; height: 100%;}
+/* .page:not(#page-1):not(#page-2) .question .img-area {width: 98.6%; margin: 0 auto;} */
 
-.bg_main > .img-area:nth-child(1) {background-color: #fff;}
-.gif-area {position: relative; display: flex; align-items: center;background-color: rgb(250, 250, 250);}
-.gif-area img:nth-child(1) {position: absolute; width: 46.454767%; border-radius: 0 25px 25px 0;}
-.gif-area img:nth-child(2) {width: 100%;}
+.page-box {text-align: center; margin-bottom: 4.8%;}
+.page-box .page-num {font-family: 'Pretendard'; font-size: 188%; font-weight: 500; letter-spacing: -0.6px; color: #676767;}
+.page-box .page-num .current {color: #013797;}
 
-#wrap {height: 100vh; background-color:#e8e8e8;}
-.form {margin-top: 5%; padding: 0 3% 5%; overflow-y: scroll; background-color: transparent;}
-.form::-webkit-scrollbar {display: none;}
-#location {position: absolute; top: 12%; right: 5%; width: 46.5%;}
+/* 이전,다음 버튼 */
+.paging {margin-top: 5.6%; display: flex; align-items: center; justify-content: center; column-gap: 7px;}
+.paging button {background-color: transparent;}
+.paging .prev {flex-shrink: 0; width: 32.6%; padding: 3.2% 0; background-color: #dedede; font-family: 'Pretendard'; font-weight: 700; font-size: 170%; border-radius: 10px; color: #222;}
+.paging .next {flex-shrink: 0; width: 65.93%; padding: 0; font-family: 'Pretendard'; font-weight: 700; font-size: 170%; border-radius: 10px; color: #fff;}
+/* .paging button{position: absolute; top: 50%; left: 7.34%; transform: translateY(-50%); max-width: 63px; background-color: transparent; cursor: pointer;} */
+.paging img{ width: 100%;}
 
-/* 공통 폰트 사이즈 */
-.chat_box, .input_box .next_btn, .form .inp{font-size: 28px; letter-spacing: -1px;}
-.chat_box, .input_box, .chat_set.left .progress_box .progress_txt {border-radius: 0.5em;}
+/* 첫번째 페이지 */
+#page-1 {height: 100%; box-sizing: border-box; padding-top: 3.2rem; padding-bottom: 1.4rem;}
+#page-1 .img-area {width: 89%; margin: 0 auto;}
+#page-1 .video-area + .img-area {width: 93.333333%;}
+#page-1 .detail-group {width: 83.3333%; margin: 6.835% auto 0; padding: 2.1rem; border: 2px solid rgb(203, 155, 88); border-radius: 2.6rem; background-color: rgba(89, 59, 16, 0.459); box-sizing: border-box;}
+#page-1 .detail-group > .img-area:not(.btn-detail) {width: 73.205%; margin: 0 auto; padding-bottom: 2.401%;}
+#page-1 .detail-group > .btn-detail {background-color: transparent; padding: 0; margin: 0 auto;}
+#page-1 .detail-group .detail-box {margin-top: 2.401%;}
+#page-1 .detail-group .detail-box .img-area + .img-area {margin-top: 4.301%;}
+#page-1 .agBox {font-size: 1.2rem; font-family: 'SUIT'; font-weight: 400; margin: 1.1rem auto 1.1rem; color: #202020; letter-spacing: -0.24px; line-height: 1.17;}
+#page-1 .agBox a {}
+#page-1 .next {width: 80.8333%; margin: 0 auto;}
 
-/* 공통 border */
-.chat_set.left .chat_profile_01 img, .chat_set.left .chat_box {border: 1px solid #ddd;}
+#page-2 > .img-area:nth-child(1) {width: 86.5%; margin: 0 auto; padding-top: 2rem;}
 
-.chat_set:not(:last-child) {margin-bottom: 4%;}
+.page .question .img-area {width: 86%; margin: 0 auto 0;}
 
-/* 채팅 left */
-.chat_set.left {display: grid; grid-template-columns: 1fr 9fr; gap: 2%;}
-.chat_set.left .chat_profile_01 img {width: 100%; border-radius: 99em;}
-.chat_set.left .progress_box .progress_txt {display: inline-block; margin-bottom: 1%; padding: 0.2em 0.4em 0.3em; font-size: 24px; font-weight: 700;background-color:#0069fd; color:#fff;}
-.chat_set.left .chat_box {width: 6em; height: 2.3em; display: inline-block; padding: 0.4em 0.7em; background-color: #fff; transform-origin: left top; animation: .3s chatBoxSizeUp 0.5s forwards;}
-.chat_set.left .chat_box .chat_txt {opacity: 0; animation: 0.3s fadeIn 0.6s forwards; line-height: 1.3; color: #282828; font-weight: 500;}
-.chat_set.left .chat_box .chat_txt em {font-weight: 700; text-decoration: none; font-style: normal;}
+#page-4 {padding-top: 2.7rem;}
+#page-4 .page_inner {padding: 1.8rem 3.3rem 1rem;}
+#page-4 .img-area {width: 87%; margin: 0 auto;}
+#page-4 .question .img-area {width: 63.806%; margin: 0 auto;}
+#page-4 .question_box .question {margin-bottom: 2.1rem;}
+#page-4 .paging {margin-top: 1.9rem;}
+#page-4 .result-area {width: calc(100% + 3.6rem); left: 50%; transform: translateX(-50%); bottom: -6%;} 
 
-/* 채팅 right */
-.chat_set.right {display: flex; justify-content: flex-end;}
-.chat_set.right .chat_box {width: 10rem; text-align: center; padding: 0.969rem 0.5rem; text-align: center; font-weight: 600; background-color: #404040; color: #fff;}
-.chat_set.right .chat_box.agree_btn, .chat_set.right .chat_box.disagree_btn {display: block; cursor: pointer;}
-.chat_set.right .chat_box.disagree_btn { background-color: #404040; }
-.chat_set.right .chat_box.agree_btn.selected, .chat_set.right .chat_box.input_box_changed {background-color: #0024ff; color: #fff;}
+/* 설문영역 */
+.q_select {display: flex; flex-flow: row wrap; justify-content: center; gap: 1.2rem; margin-top: 5.8%;}
+.question_box .q_select label img {width: 100%;}
 
-/* chat_box 로딩 */
-.chat_set.left .chat_box {position: relative; overflow: hidden;}
-.loader_box {position: absolute; top: 0; left: 0; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; background-color: #fff;}
-.loader_box .loader {position: relative; z-index: 9; width: 0.5em; height: 0.5em; border-radius: 50%; background-color: #000; box-shadow: 1em 0 #000, -1em 0 #000; animation: flash 0.3s ease-out infinite alternate;}
+/* 설문 영역 */
+.question_box {position: relative; padding: 2.2rem 1.7rem 6rem;  border-radius: 2.4rem; box-shadow: 0px 8px 10px 0 rgba(150, 150, 150, 0.2); background-color: rgba(255, 255, 255, 0.7);}
+.question_box .question {margin-bottom: 7.676%; text-align: center; color: #000; font-size: 250%; font-weight: 500; font-family: 'Pretendard'; letter-spacing: -0.04em; line-height: 1.18;}
+.question_box .question strong {color: #ff4355; font-weight: 700;}
+.question_box .q_select label {width: 100%;}
+/* .question_box .q_select label + label {margin-top: 18px;} */
+.question_box .q_select label .sel-item {padding: 2.1rem 1rem 2rem; text-align: center; border: 1px solid #e9e9e9; font-family: 'SUIT'; background-color: #e9e9e9; font-size: 3.4rem; font-weight: 500; line-height: 1; letter-spacing: -1.02px; text-align: center; color: #3a4265; border-radius: 1.6rem;}
+.question_box .q_select label .sel-item.active {background: #feffb5; font-weight: 800; color: #3a4265; border-color: #ef3f92; font-weight: 700;}
+.result-area {position: absolute; bottom: 0;}
 
-/* 이벤트기간 */
-.form .form_box .description.top{width: 85%; margin: 4% auto 2%; padding: 2%; box-sizing: border-box; background-color: #f4f4f4; border-radius: 0.5em; word-break: keep-all;}
-.form .form_box .description.top > p{color: #00594d; font-size: 110%; font-weight: bold; text-align: left;}
-.form .form_box .description.top .ad_txt{font-size: 100%; word-break: keep-all; text-align: left; color: #000;}
-.form .form_box .description.bottom{color: #fffffc;}
+/* 이름, 연락처 입력칸 */
+/* .formGroup {padding-top: 5%;} */
+.formGroup .user_info {display: flex; align-items: center; padding: 2.5rem 3.1rem 2.4rem;  border-radius: 1rem;
+  border: solid 2px #dedede;
+  background-color: #fff;}
+.formGroup .user_info + .user_info {margin-top: 1rem;}
+.legend {flex-shrink: 0; display: block; width: 8rem; margin-right: 2.5rem; font-family: 'Pretendard'; font-size: 2.6rem; font-weight: 700; letter-spacing: -0.52px; line-height: 1; text-align: left; color: #3a4265;}
+.mark {color: #ff2020;}
+.form .inp {  font-family: 'Pretendard'; font-size: 2.5rem; font-weight: 700; letter-spacing: -0.5px; line-height: 1; text-align: left; color: #222;}
+.form .inp::placeholder {color: #c5c5c5;}
 
-.form .formContents .table_box{padding: 0; width: 85%;}
-.form .formContents .table_box table tr td{background-color: #e8e8e8; height: auto;}
-.form .formContents .table_box.top table{border-collapse: separate; margin: 0;}
-.form .formContents .table_box.top table tr:first-child td{height: auto; padding: 2% 2% 0; border-radius: 0.5em 0.5em 0 0; font-size: 90%; color: #000;}
-.form .formContents .table_box.top table tr:last-child td{padding: 1% 2%; border-radius: 0 0 0.5em 0.5em;}
-.form .formContents .table_box.top table tr td:nth-of-type(2){background-color: transparent; width: 7px;}
+.q_select .inp {background-color: #fff; padding: 2.99%; border: 2px solid #dedede; border-radius: 10px; color: #222; font-size: 150%; font-weight: 700; font-family: 'Pretendard'; text-align: center;}
+.q_select .inp::placeholder {color: #dedede;}
+.q_select textarea {width: 100%; padding: 8.96%; border: 2px solid #dedede; border-radius: 10px; color: #222; font-size: 150%; font-weight: 700; font-family: 'Pretendard'; resize: none; height: 25vh;}
+.q_select textarea::placeholder {color: #dedede;}
+.form .submit {flex-shrink: 0; width: 100%; padding: 0;}
+.form .submit input[type="image"] {width: 100%;}
 
+.form .checkbox {text-align: center; display: flex; align-items: center; justify-content: center; font-family: 'Pretendard'; font-size: 220%; font-weight: 700; margin-top: 4.2%; color: #fff;}
+.form .checkbox label {line-height: 1;}
+.form .checkbox input[type="checkbox"] {width: 28px; height: 28px; margin-right: 7px; appearance: none; background: url("//static.harang-event.com/event/v_${eventSeq}/check_off.png") no-repeat center center / 100% 100%; clip: unset; position: static; transition: 0s;}
+.form .checkbox input[type="checkbox"]:checked {background-image: url("//static.harang-event.com/event/v_${eventSeq}/check_on.png");}
 
-.form .formContents .table_box.tel table tr:first-child td{height: auto; padding: 2% 2% 0; border-radius: 0.5em 0.5em 0 0; font-size: 90%; color: #000;}
-.form .formContents .table_box.tel table tr:last-child td{padding: 1% 2%; border-radius: 0 0 0.5em 0.5em;}
-.form .formContents .table_box.tel table tr:last-child td .inp{width: 85%; padding-left: 1%;}
-.form .table_box table th, .form .table_box table td {background: #eee !important; border-radius: 1rem; padding: 7px 16px !important; font-size:1.75rem;}
+/* .toast {display: none; position: absolute; left: 50%; bottom: 15%; transform: translateX(-50%); text-align: center; width: 92.5%; background-color: rgba(0, 0, 0, 0.8); color: #fff; font-size: 200%; font-family: 'Pretendard'; font-weight: 600; border-radius: 8px; padding: 2.75% 2%; box-sizing: border-box;}
+.toast strong {color: #fff949;} */
 
-.form .table_box {width:100% !important;}
+/* 안심문구, 대상, 이벤트기간 */
+.form .description .ad_txt,
+.form .description p,
+.form .description span {font-weight: 500; font-family: 'Pretendard'; font-size: 1.3rem; padding: 0; margin: 0; color: #3c3c3c; letter-spacing: -0.65px; }
 
-/* 설문 */
-.question_box .q_select {display: flex; flex-flow: row wrap; gap: 1%; justify-content: flex-end; width: 100%;}
-.question_box .q_select label {position: relative; cursor: pointer; width: max-content;}
-.question_box .q_select label input::after {display: none; content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
-.question_box .q_select label input:checked + .chat_box {background-color: #0024ff; color: #fff;}
+.form .description {width: 100%; text-align: center; margin: 4.5rem auto 0; padding: 0;}
+/* .form .description p {font-weight: 400; font-size: 83%; color: #1d1d1d; font-family: 'Pretendard';} */
 
-/* 설문 개별 */
-.chat_set[data-value="2"] .q_select label:nth-child(odd) {margin-bottom: 1%;}
-
-.input_box {width: 60%; display: flex; align-items: center; padding-left: 1em; border-radius: 0.5em; border: 1px solid #999; background-color: #fff; padding: 0.5rem 0.5rem 0.5rem 1rem; box-shadow: 0px 5px 10px 0 rgba(221, 221, 221, 0.3);}
-.input_box .next_btn {padding: 0.5em 0.7em; text-align: center; font-weight: 600; border-radius: 0.5em ; cursor: pointer; background-color: #404040; color:#fff; width: 25%;}
-
-.form .submit {padding:0; width: 35%; margin: 0;}
-input[type="image"] {width:100%; height: 100%;}
-
-.form .agree_txt {text-decoration: none; cursor: pointer;}
-.em {color: #0024ff; font-weight: 800;}
-
-/* 개별 */
-#page-4 {flex-direction: column; align-items: end;}
-#page-4 .chat_box {width: 15rem;}
-#page-4 .input_box {width: 60%;}
-
+/* .form .agBox {font-size: 1.2rem; width: 100%; margin: 0 auto;} */
 
 /* 모달창 - 개인정보처리방침 */
 .overlay {z-index: 888; position: fixed; display: none; width: 100vw; height: 100vh; opacity: 0.5; background-color: #000;}
-.agreeModalBox {z-index: 999; display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 60px 30px 40px; width: 65%; max-width: 500px; box-sizing: border-box; border-radius: 10px; font-family: 'Noto Sans KR', sans-serif; background-color: #f5f6f7; box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;}
+.agreeModalBox {z-index: 999; display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 60px 30px 40px; width: 90%; max-width: 500px; box-sizing: border-box; border-radius: 10px; font-family: 'Noto Sans KR', sans-serif; background-color: #f5f6f7; box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;}
 .agreeModalBox .closeBtn {position: absolute; top: 0; right: 2%; padding: 2%; cursor: pointer; font-size: 25px; color: #5e5e5e;}
 .agreeModalBox .newAgreement {position: relative; padding: 2% 4%; height: 150px; overflow-y: scroll; border: 1px solid #dadada;}
 .agreeModalBox .newAgreement .button {position: absolute; right: 3%; width: 95px;}
@@ -156,77 +130,52 @@ input[type="image"] {width:100%; height: 100%;}
 .agreeModalBox .newAgreement h3 {margin: 1% 0; font-size: 11px;}
 .agreeModalBox .newAgreement ol li {line-height: 12px; font-size: 10px;}
 
-.form .formGroup .table_box table tr:last-child td input::placeholder {color:#afafaf;}
 
-/* 개인정보처리방침 */
-.form .agBox {width: 100%; text-align: left; font-size: 75%; font-family: 'SUIT';}
-/* .form .agBox a {font-weight: normal;} */
+@media screen and (max-width: 500px) { 
+    html, body {font-size: 1.7vw;}
 
-.form .description {text-align: left; border-radius: 1rem; width: auto; margin: 0; font-family: 'SUIT'}
+    #page-1 .agBox {font-size: 1.5rem;}
+    .form .description .ad_txt, .form .description p, .form .description span {font-size: 1.5rem;}
 
-.form .description p,
-.form .description .ad_txt,
-.form .description span {font-size: 75%; font-weight: 500; text-align: left; font-family: 'SUIT'}
+    /* #page-1 .next {border-radius: 15px;}
+    .page-box .page-num {font-size: 158%;}
+    .q_select label {font-size: 125%;}
+    .paging .prev, .paging .next {font-size: 125%;}
+    
+    .form .submit {padding: 0.045% 0;}
+    .q_select .sub_txt {font-size: 95%;}
+    .q_select .inp {font-size: 105%;}
+    .q_select textarea {font-size: 105%;}
 
-.container_bottom img {display: block; width: 100%; height: 100%;}
+    .page > .img-area:nth-child(1) {padding-top: 4rem;}
+    .q_select {margin-top: 7.6%; gap: 2.1rem;} */
+    /* .toast {font-size: 80%;} */
 
-@media screen and (max-width: 500px){
-    #wrap {height: 100%;}
-
-    .gif-area img:nth-child(1) {border-radius: 0 12px 12px 0;}
-
-    /* 공통 폰트 사이즈 */
-    .chat_box, .input_box .next_btn {font-size: 4vw;}
-    .form .inp {font-size: 16px;}
-    .chat_set.left .progress_box .progress_txt {font-size: 3.2vw;}
-    .input_box .next_btn {width: 30%;}
-
-	 .desc {font-size: 150%;}
-	 .timer-box {font-size: 150%;}
-
-    .agreeModalBox {padding: 12% 4% 5%; width: 95%;} /* 모달창 */
-    .form .table_box table th, .form .table_box table td {font-size: 100%;}
-    .form .table_box {padding: 0;}
-	.chat_set.right .chat_box {width: 6rem; padding: 0.5rem 0.2rem;}
-	#page-4 .chat_box {width: 9rem;}
-    .form .submit {width: 45%;}
-    .form .submit input[type="image"] {width: 100%;}
-
-    .form .description p, .form .description .ad_txt, .form .description span {padding: 0;}
+    /* .page#page-4 {height: 100%;}
+    .legend {font-size: 2.1rem;}
+    .form .description p {font-size: 1.3rem;} */
+}
+@media screen and (max-width: 395px) {
+    /* .form .db-box {top: 13%;} */
+    /* .form .page-inner {top: 26%;} */
 }
 
-@media screen and (max-width: 430px){
-    .input_box {padding: 0.3rem;}
-
-}
-/* loader animation */
-@keyframes flash {
-    0% { background-color: #0002; box-shadow: 1em 0 #0002, -1em 0 #000; }
-    50% { background-color: #000; box-shadow: 1em 0 #0002, -1em 0 #0002; }
-    100% { background-color: #0002; box-shadow: 1em 0 #000, -1em 0 #0002;}
+@media screen and (max-width: 375px) {
+    /* .form .page-inner { top: 23%; } */
+    /* .form .db-box {top: 13%;} */
 }
 
-@keyframes chatBoxSizeUp {
-    100% {width: auto; height: auto;}
-}
-
-@keyframes fadeIn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
-}
 </style>
-
-<!-- //INCLUDES -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard.css" type="text/css"/>
-<!-- INCLUDES// -->
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 <div class="overlay"></div>
 <div class="agreeModalBox">
 	<div class="closeBtn">X</div>          
 	<div class="newAgreement">
-		<div class="button"><a href="${resVo.agreementUrl}" target="_agreement" target="_blank">개인정보처리방침 확인하러가기</a></div>
-        <h3>개인정보 수집 및 이용 동의</h3>
-		<ol>
+		<div class="button"><a href="${resVo.agreementUrl}" target="_agreement" onclick="window.open(this.href, this.target,'resizable=no, scrollbars=yes, width=1000, height=800, left=200, top=200'); return false;"  target="_blank">개인정보 처리방침</a></div>
+		<h3>개인정보처리방침</h3>
+        <ol>
             <li>개인정보 수집주체 : ${resVo.agent}</li>
             <li>개인정보 수집항목 : ${resVo.objectItems}</li>
             <li>개인정보 수집 및 이용목적 : ${resVo.agent}에서 ${resVo.objectName} 상담활용(전화,문자)</li>
@@ -238,307 +187,376 @@ input[type="image"] {width:100%; height: 100%;}
             <li>개인정보 취급 위탁을 하는 업무의 내용 : 고객정보 저장 및 서버관리</li>
             <li class="desc">*상기 동의를 거부할 권리가 있으나, 수집 및 이용에 동의하지 않을 경우 ${resVo.objectName} 상담 및 이벤트 참여가 불가능합니다.</li>
         </ol>
-    </div>
+	</div>	
 </div>
 <div id="wrap">
-    <div class="container bg_main">
-        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.png"></div>
-        <div class="img-area gif-area">
-            <img src="//static.harang-event.com/event/v_${eventSeq}/event_main_03.gif">
-            <img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.gif">
-        </div>
-    
-        <div class="form">
-			<form id="form-1" method="POST" accept-charset="utf-8">
-
-			<!-- chat01 -->
-			<div class="chat_set left" data-value="1">
-				<div class="chat_profile_01"><img src="//static.harang-event.com/event/v_${eventSeq}/profile_01.png"></div>
-				<div class="chat_container">
-					<div class="chat_box">
-						<div class="chat_txt">
-							<div class="chat_txt">안녕하세요. <br /><b class="em">노안 백내장 증세</b>가 있으신가요?</div>
-						</div>
-						<div class="loader_box">
-							<span class="loader"></span>
-						</div>                         
-					</div>
-
-					<!-- <div class="chat_box">
-						<div class="chat_txt">
-                            <div class="chat_txt"><b class="em agree_txt">혜택 안내</b>에 동의하시나요?</div>
+	<div class="form">
+        <!-- <audio id="location" playsinline="" src="//static.harang-event.com/event/v_${eventSeq}/audio_01.mp3" type="audio/mp3"></audio> -->
+		<form id="form-1" method="POST" accept-charset="utf-8">
+            <div class="formContents">
+                <section class="page section01" id="page-1">
+                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.png"></div>
+                    <div class="video-area">
+                        <video id="location" playsinline loop autoplay muted src="//static.harang-event.com/event/v_${eventSeq}/260608_vid_01.mp4" type="video/mp4"></video>
+                        <script>setTimeout(function(){ $('#location').trigger('play'); },500);</script>
+                    </div>
+                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.png"></div>
+                    <div class="agBox">
+                        개인정보 수집 및 이용에 관한 내용을 확인하고 동의함 
+                        <a href="#" class="btn-agreement">[자세히 보기]</a>
+                        <input type="hidden" name="agBox" value="Y" checked>
+                    </div>
+                    <div class="page_inner">
+                        <div class="next img-area" onclick="pageFuc(1,$(this))"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.png"></div>
+                    </div>
+                </section>
+                
+                <section class="page hide section02" id="page-2">
+                    <div class="page_inner">
+                        <div class="question_box">
+                            <div class="question">
+                                <!-- <div class="page-box">
+                                    <span class="page-num"><span class="current">1</span>/6</span>
+                                </div> -->
+                                <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_01.png"></div>
+                            </div>
+                            <div class="q_select">
+                                <label><input type="radio" name="tadd1"  onclick="pageFuc(2,$(this))" value="시야가 뿌옇게 보인다"><div class="sel-item">시야가 뿌옇게 보인다</div></label>
+                                <label><input type="radio" name="tadd1"  onclick="pageFuc(2,$(this))" value="눈에 무언가 낀 것 같은 느낌이 든다"><div class="sel-item">눈에 무언가 낀 것 같은 느낌이 든다</div></label>
+                                <label><input type="radio" name="tadd1"  onclick="pageFuc(2,$(this))" value="어두운 곳에서 잘 보이지 않는다"><div class="sel-item">어두운 곳에서 잘 보이지 않는다</div></label>
+                                <label><input type="radio" name="tadd1"  onclick="pageFuc(2,$(this))" value="사물이 겹쳐보이고, 초점이 안잡힌다"><div class="sel-item">사물이 겹쳐보이고, 초점이 안잡힌다</div></label>
+                                <label><input type="radio" name="tadd1"  onclick="pageFuc(2,$(this))" value="기타"><div class="sel-item">기타</div></label>
+                            </div>
                         </div>
-						<div class="loader_box"> <span class="loader"></span> </div>                         
-					</div> -->
-				</div>
-			</div>
+                    </div>
+                    <!-- <div class="paging">
+                        <button type="button" class="prev">이전</button>	
+                        <button type="button" class="next" onclick="pageFuc(2,$(this))">다음</button>
+                    </div> -->
+                </section>
 
-			<div class="chat_set right hide question_box" data-value="1">
-				<div class="q_select">
-					<label><input type="radio" name="tadd1" value="예"><div class="chat_box">예</div></label>
-                    <!-- <input type="checkbox" name="agBox" value="Y" checked> -->
-					<label><input type="radio" name="tadd1" value="아니오"><div class="chat_box">아니오</div></label>
-					<label><input type="radio" name="tadd1" value="잘 모름"><div class="chat_box">잘 모름</div></label>
-				</div>
-			</div>
+                <section class="page hide section03" id="page-3">
+                    <div class="page_inner">
+                        <div class="question_box">
+                            <div class="question">
+                                <!-- <div class="page-box">
+                                    <span class="page-num"><span class="current">2</span>/6</span>
+                                </div> -->
+                                <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_02.png"></div>
+                            </div>
+                            <div class="q_select">
+                                <label><input type="radio" name="tage"  onclick="pageFuc(3,$(this))" value="50"><div class="sel-item">50대</div></label>
+                                <label><input type="radio" name="tage"  onclick="pageFuc(3,$(this))" value="60"><div class="sel-item">60대</div></label>
+                                <label><input type="radio" name="tage"  onclick="pageFuc(3,$(this))" value="70"><div class="sel-item">70대 이상</div></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="paging">
+                        <button type="button" class="prev">이전</button>	
+                        <button type="button" class="next" onclick="pageFuc(3,$(this))">다음</button>
+                    </div> -->
+                </section>
 
-            <!-- chat02 -->
-			<div class="chat_set left hide" data-value="2">
-				<div class="chat_profile_01"><img src="//static.harang-event.com/event/v_${eventSeq}/profile_01.png"></div>
-				<div class="chat_container">
-					<div class="chat_box">
-						<div class="chat_txt">
-							<div class="chat_txt">현재 <b class="em">거주하시는 지역</b>을 선택해주세요</div>
-						</div>
-						<div class="loader_box">
-							<span class="loader"></span>
-						</div>                         
-					</div>
-				</div>
-			</div>
-
-			<div class="chat_set right hide question_box" data-value="2">
-				<div class="q_select">
-					<label><input type="radio" name="tadd2" value="서울"><div class="chat_box">서울</div></label>
-					<label><input type="radio" name="tadd2" value="경기"><div class="chat_box">경기</div></label>
-					<label><input type="radio" name="tadd2" value="인천"><div class="chat_box">인천</div></label>
-				</div>
-			</div>
-
-			<!-- chat03 -->
-			<div class="chat_set left hide" data-value="3">
-				<div class="chat_profile_01"><img src="//static.harang-event.com/event/v_${eventSeq}/profile_01.png"></div>
-				<div class="">
-					<div class="chat_container">
-						<div class="chat_box">
-							<div class="chat_txt">노안 백내장 혜택을 받을 <br />귀하의 <b class="em">성함</b>을 적어주세요</div>
-							<div class="loader_box">
-								<span class="loader"></span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="chat_set right hide" id="page-3" data-value="3">
-				<div class="input_box">
-					<input type="text" name="name" id="name" class="inp" required autocomplete="off" placeholder="성함"/>
-					<span class="next_btn">다음</span>
-				</div>
-				<div class="chat_box input_box_changed hide"></div>
-			</div>
-
-			<!-- chat04 -->
-			<div class="chat_set left hide" data-value="4">
-				<div class="chat_profile_01"><img src="//static.harang-event.com/event/v_${eventSeq}/profile_01.png"></div>
-				<div class="">
-					<div class="chat_container">
-						<div class="chat_box">
-							<div class="chat_txt">노안 백내장 혜택을 받을 <br />귀하의 <b class="em">연락처</b>를 적어주세요</div>
-							<div class="loader_box">
-								<span class="loader"></span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="chat_set right hide" id="page-4" data-value="4">
-				<div class="input_box">
-					<input type="tel" name="phone" id="phone" class="inp" autocomplete="off" aria-autocomplete="none" maxlength="11" placeholder="연락처">
-					<span class="next_btn">다음</span>
-				</div>
-				<div class="chat_box input_box_changed hide"></div>
-			</div>
-
-			<!-- chat05 -->
-			<div class="chat_set left hide" data-value="5">
-				<div class="chat_profile_01"><img src="//static.harang-event.com/event/v_${eventSeq}/profile_01.png"></div>
-				<div class="">
-					<div class="chat_container">
-						<div class="chat_box">
-							<div class="chat_txt">
-								<div class="agBox">
-									<input name="agBox" type="checkbox" checked value="Y">개인정보 수집 및 이용에 관한 내용을<br> 확인하고 동의함<a href="#" class="agree_txt">[자세히 보기]</a>
-								</div>
-								<div class="description">
-									<p id="event-period"></p>
-									<div class="ad_txt">안심하세요! 본원에서는 고객님의 소중한 개인정보를 <br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
-									<span class="target">대상 : ${resVo.target}</span>
-								</div>
-							</div>
-							<div class="loader_box">
-								<span class="loader"></span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="chat_set right hide" id="page-5" data-value="5">
-				<div class="submit submit_agree">
-					<input type="image" value="" class="btn_submit" onclick="fnForm('form-1');" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"/>
-				</div>
-			</div>
-            
+                <section class="page hide section04" id="page-4">
+                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_03.png"></div>
+                    <div class="page_inner">
+                        <div class="question_box">
+                            <div class="question">
+                                <!-- <div class="page-box">
+                                    <span class="page-num"><span class="current">6</span>/6</span>
+                                </div> -->
+                                <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_03.png"></div>
+                            </div>
+                            <div class="formGroup">
+                                <div class="user_info user_name">
+                                    <span class="legend">이름<span class="mark">*</span></span>
+                                    <input type="text" name="name" id="name" class="inp" required autocomplete="off" placeholder="이름을 입력해주세요">
+                                </div>
+                                <div class="user_info user_phone">
+                                    <span class="legend">연락처<span class="mark">*</span></span>
+                                    <input type="tel" name="phone" id="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="연락처를 입력해주세요">
+                                </div>
+                            </div>
+                            <div class="paging">
+                                <!-- <button type="button" class="prev">이전</button>	 -->
+                                <div class="submit">
+                                    <input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png">
+                                </div>
+                            </div>
+                            <div class="img-area result-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_04.png"></div>
+                        </div>
+                        <div class="description bottom">
+                            <p id="event-period"></p>
+                            <div class="ad_txt">안심하세요! 본페이지에서는 고객님의 소중한 개인정보를 <br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
+                            <span class="target">대상 : ${resVo.target}</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
             <input type="hidden" id="branch" 		name="branch" value="${resVo.branch}"/>
-			<input type="hidden" id="eventSeq" 		name="eventSeq" value="${resVo.eventSeq}"/>
-			<input type="hidden" id="site" 			name="site" value="${site}"/>
-			<input type="hidden" id="media" 		name="media" value="${media}"/>
-			<input type="hidden" id="interlock" 	name="interlock" value="${resVo.interlock}"/>
-			<input type="hidden" id="checkAgeMin" 	name="checkAgeMin" value="${resVo.checkAgeMin}"/>
-			<input type="hidden" id="checkAgeMax" 	name="checkAgeMax" value="${resVo.checkAgeMax}"/>
-			<input type="hidden" id="checkGender" 	name="checkGender" value="${resVo.checkGender}"/>
-			<input type="hidden" id="add1" 			name="add1" value=""/>
-			<input type="hidden" id="add2" 			name="add2" value=""/>
-			<input type="hidden" id="add3" 			name="add3" value=""/>
-			<input type="hidden" id="add4" 			name="add4" value=""/>
-			<input type="hidden" id="add5" 			name="add5" value=""/>
-			<input type="hidden" id="add6" 			name="add6" value=""/>
-
-			<input type="hidden" id="agent" 		name="agent" 		value="${resVo.agent}"/>
-			<input type="hidden" id="objectItems" 	name="objectItems" 	value="${resVo.objectItems}"/>
-			<input type="hidden" id="objectName" 	name="objectName" 	value="${resVo.objectName}"/>
-            </form>
-        </div>
-		<div class="container_bottom">
-			<!-- <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.jpg"></div> -->
-			<div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>
-		</div>
+            <input type="hidden" id="eventSeq" 		name="eventSeq" value="${resVo.eventSeq}"/>
+            <input type="hidden" id="site" 			name="site" value="${site}"/>
+            <input type="hidden" id="media" 		name="media" value="${media}"/>
+            <input type="hidden" id="interlock" 	name="interlock" value="${resVo.interlock}"/>
+            <input type="hidden" id="checkAgeMin" 	name="checkAgeMin" value="${resVo.checkAgeMin}"/>
+            <input type="hidden" id="checkAgeMax" 	name="checkAgeMax" value="${resVo.checkAgeMax}"/>
+            <input type="hidden" id="checkGender" 	name="checkGender" value="${resVo.checkGender}"/>
+            <input type="hidden" id="age" 			name="age" value=""/>
+            <input type="hidden" id="add1" 			name="add1" value=""/>
+            <input type="hidden" id="add2" 			name="add2" value=""/>
+            <input type="hidden" id="add3" 			name="add3" value=""/>
+            <input type="hidden" id="add4" 			name="add4" value=""/>
+            <input type="hidden" id="add5" 			name="add5" value=""/>
+            <input type="hidden" id="add6" 			name="add6" value=""/>
+            
+            <input type="hidden" id="agent" 		name="agent" 		value="${resVo.agent}"/>
+            <input type="hidden" id="objectItems" 	name="objectItems" 	value="${resVo.objectItems}"/>
+            <input type="hidden" id="objectName" 	name="objectName" 	value="${resVo.objectName}"/>
+		</form>
+	</div>
+    <div class="container">
+		<div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.png"></div>
+		<div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->
-<script>   
-    $(document).ready(function(){
+<script>
+    $(document).ready(function () {
         initDate();/* 기간항목 start */
         blockSourceView();//드래그, 우클릭 방지
-    });
 
-    // 개인정보처리방침 클릭 시 오픈
-    $('.agree_txt').on('click', function() {
-        $('.agreeModalBox').fadeIn();
-        $('.overlay').fadeIn();
-    });
-
-    // 개인정보처리방침 닫기 버튼 클릭 시 클로징
-    $('.agreeModalBox .closeBtn').on('click', function() {
-        $('.agreeModalBox').fadeOut();
-        $('.overlay').fadeOut();
-    });
-
-    // 설문 답변 셀렉 시, 나머지 셀렉 없애기
-    $('.question_box .q_select label input').on('click', function() {
-        var selectedInputName = $(this).attr('name');
-        let inputValue = $('input[name="tadd1"]:checked').val();
-
-        // if (inputValue === '아니오'){
-        //     $(this).prop('disabled', true); 
-        //     return;
-        // }
-
-        $('.question_box .q_select label input[name="' + selectedInputName + '"]:not(:checked) + .chat_box').closest('label').css('display', 'none');
-    });
-
-    function showNextComment(currentValue, nextValue, isLeft) {
-        var selector = isLeft ? '.chat_set.left' : '.chat_set.right';
-        $('.chat_set.left[data-value="' + nextValue + '"]').removeClass('hide').hide().fadeIn(function() {
-            $(this).find('.loader_box').delay(200).fadeOut(); // loader
-        });
-
-        if (selector) {
-            setTimeout(function () {
-                $('.chat_set.right[data-value="' + nextValue + '"]').removeClass('hide').hide().fadeIn(function () {
-                });
-            }, 1000);
-        }
-    }
-    showNextComment(0, 1, false); // 맨 처음 대화창 이펙트
-
-    // add 설문 셀렉 시
-    $('input[name*="tadd"]').on('change', function () {
-        var currentValue = $(this).closest('.chat_set').data('value');
-        var nextValue = currentValue + 1;
-
-        // let inputValue = $('input[name="tadd1"]:checked').val();
-        // if (inputValue === '아니오'){
-        //     return; 
-        // }
-
-        showNextComment(currentValue, nextValue, true); // Show next chat_set.left
-        showNextComment(currentValue, nextValue, false); // Show next chat_set.right
-        scrollToBottom();
-    });
-
-    // 이름 입력란 - 다음 버튼 클릭 시
-    $('.chat_set[data-value="3"] .input_box .next_btn').on('click', function () {
-        var nameValue = $('input[name="name"]').val();
-
-        if(nameValue.length > 1) {
-            $('.chat_set[data-value="3"] .chat_box.input_box_changed').text(nameValue).removeClass('hide').hide().fadeIn();
-            $('.chat_set[data-value="3"] .input_box').addClass('hide');
-
-            showNextComment(3,4, true); // Show next chat_set.left
-            showNextComment(3,4, false); // Show next chat_set.right
-            $('.bottom').show();
-            scrollToBottom();
-        } else {
-            alert('정확한 이름을 입력해 주세요.');
-        }
-    });
-
-    // 연락처 입력란 - 다음 버튼 클릭 시
-    $('.chat_set[data-value="4"] .input_box .next_btn').on('click', function () {
-        var phoneValue = $('input[name="phone"]').val();
-
-        if(phoneValue.length >= 11) {
-            const match = phoneValue.match(/^01[0-9]?(\d{4})\d{4}$/);
-            const middle = parseInt(match[1], 10);
-            if(middle >= 0 && middle <= 1999){
-                alert('잘못된 전화번호 형식입니다. (0000~1999번은 입력할 수 없습니다.)')
-            } else {
-                $('.chat_set[data-value="4"] .chat_box.input_box_changed').text(phoneValue).removeClass('hide').hide().fadeIn();
-                $('.chat_set[data-value="4"] .input_box').addClass('hide');
-
-                showNextComment(4,5, true); // Show next chat_set.left
-                showNextComment(4,5, false); // Show next chat_set.right
-                $('.container_bottom').removeClass('hide')
-                $('.bottom').show();
-                scrollToBottom();
-            }
-        } else {
-            alert('정확한 연락처를 입력해 주세요.');
-        }
-    });
-
-    // 원하는 위치로 이동
-    function scrollToBottom() {
-        $("html, body").delay(1200).animate({ scrollTop: $(document).height() }, 1000, 'linear');
-    }
-
-    // 버튼 클릭 시 현재 열린 창 닫기
-    function windowClose() {
-        window.close();
-        self.close();
-        window.opener = window.location.href;
-        window.open('about:blank', '_self').close();
-    }
+        $('.detail-box').hide();
+	});
 
     // 엔터키 막기
     document.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
-            event.preventDefault(); // 기본 전송 동작 방지
+        event.preventDefault(); // 기본 전송 동작 방지
         }
     });
 
-	function fnForm(formId){
+    $(document).on('click', '.next', function(e){
+        e.stopPropagation();   // ✅ wrap으로 이벤트 전달 차단
+    });
+
+$('.btn-detail').on('click', function(){
+    const $btn = $(this);
+    const $box = $('.detail-box');
+    const $items = $box.find('.img-area');
+
+    $btn.hide();
+
+    // 초기 상태
+    $box.css({
+        display: 'block',
+        height: 0,
+        overflow: 'hidden'
+    });
+
+    $items.hide();
+
+    // 🔥 실제 전체 높이 (이게 핵심)
+    const fullHeight = $box[0].scrollHeight;
+
+    // 1️⃣ 박스 펼치기
+    $box.animate({ height: fullHeight }, 400, function(){
+        // 2️⃣ 높이 자동으로 풀어줌 (중요)
+        $box.css({
+            height: 'auto',
+            overflow: ''
+        });
+    });
+
+    // 3️⃣ 내부 순차 등장
+    $items.each(function(index){
+        $(this)
+            .delay(index * 200)
+            .fadeIn(400);
+    });
+
+    $('#page-1 .agBox').css({'margin': '6.1355% auto 3.96%'});
+    $('#wrap').css({'height': '100%'});
+});
+
+    // 버튼 페이지 이동 함수 (다음)
+    function pageFuc(num, obj) {
+        if(num == 1){
+            $('#wrap').css({'height': '100vh', 'height': '100dvh' });
+        }
+        var sectionNum = String(num).padStart(2, '0'); // ✅ 핵심
+        var $currentPage = $('.section' + sectionNum);
+
+        var $checked = $currentPage.find('input[name^="tadd"]:checked');
+        var $inputName = $currentPage.find('input[name="name"]');
+        var $inputPhone = $currentPage.find('input[name="phone"]');
+
+        if ($currentPage.find('input[name^="tadd"]').length > 0 && $checked.length === 0) {
+            alert("설문을 선택해주세요.");
+            return;
+        }
+
+        if ($inputName.val() == '') {
+            alert("성함을 입력해주세요.");
+            return;
+        }
+
+        if ($inputPhone.val() == '') {
+            alert("전화번호를 입력해주세요.");
+            return;
+        } 
+
+        if(sectionNum == '04'){
+            if($currentPage.find('input[name^="tadd"]:checked').val() == '2,000만원 이하'){
+                var $popup = $('#page-4 .popup');
+                $popup.fadeIn();
+                return;
+            }
+        }
+
+        if(sectionNum == 7){
+            var phoneValue = $('input[name="phone"]').val();
+    
+           if(phoneValue.length >= 11) {
+               const match = phoneValue.match(/^01[0-9]?(\d{4})\d{4}$/);
+               const middle = parseInt(match[1], 10);
+               if(middle >= 0 && middle <= 1999){
+                   alert('잘못된 전화번호 형식입니다. (0000~1999번은 입력할 수 없습니다.)')
+                   return;
+               }
+           } else {
+               alert('정확한 연락처를 입력해 주세요.');
+               return;
+           }
+        }
+
+        var nextPage = num + 1;
+        var nextSectionNum = String(nextPage).padStart(2, '0'); // ✅ 여기
+        var $nextPage = $('.section' + nextSectionNum);
+
+        $currentPage.fadeOut(function() {
+            $nextPage.css({ 
+                'display': 'flex', 
+                'flex-direction': 'column',
+            });
+
+            $(document).scrollTop(0);
+
+            restoreCheckedState($nextPage); // ✅ 정상 동작
+        });
+    }
+
+    // 이전 버튼
+    $('.paging button.prev').on('click', function() {
+        var $currentPage = $(this).closest('.page');
+        var $prevPage = $currentPage.prev('.page');
+
+        if ($prevPage.length > 0) {
+            $currentPage.hide();
+            $prevPage.show();
+
+            // ✅ 여기 추가 (핵심)
+            restoreCheckedState($prevPage);
+        }
+
+        var type = this.className;
+		var idx = $(this).closest('.page').attr('id').substr(-1);  
+        var num = Number(idx);
+        var page_num = $('.page:visible').index() + 1;
+        
+		switch(type) {
+            // case 'next': case 'nextBtn' :
+            //     if(!validator(idx)) return;
+            
+            //     $(this).closest('.page').fadeOut(function(){ $(this).closest('.page').next().fadeIn(); });
+            
+            //     $('.progress i').text(page_num);
+            //     break;
+            
+            case 'prev' :    
+            // 1. 현재 페이지와 이전 페이지 정의
+            var $currentPage = $(this).closest('.page');
+            var $prevPage = $currentPage.prev('.page');
+
+            if ($prevPage.length > 0) {
+                // 2. 현재 페이지를 즉시 숨김 (fadeOut 대신 hide 사용으로 딜레이 제거)
+                $currentPage.hide();
+                
+                // 3. 이전 페이지를 즉시 보여줌
+                $prevPage.show();
+            }
+            break;
+        } 
+    });
+
+    function restoreCheckedState($page) {
+        $page.find('.q_select').each(function () {
+            const $group = $(this);
+
+            // 기존 active 제거
+            $group.find('label').removeClass('active');
+
+            // checked 된 input 찾기
+            const $checked = $group.find('input:checked');
+
+            if ($checked.length > 0) {
+                $checked.parent('label').addClass('active');
+            }
+        });
+    }
+
+    $(document).on("change", "input[name^='tadd'], input[name^='tage']", function() {
+        const $form = $(this).closest("form");
+        const name = $(this).attr("name");
+
+        // 같은 form + 같은 name 그룹에서 active 제거
+        $form.find("input[name='" + name + "']").each(function() {
+            $(this).closest("label").find(".sel-item").removeClass("active");
+        });
+
+        // 현재 선택된 항목만 active 추가
+        $(this).closest("label").find(".sel-item").addClass("active");
+    });
+
+
+
+    //설문 on/off
+    // $('input[name*="tadd"], input[name*="tage"]').on('click', function(){
+    //     $('label', $(this).parents('.q_select')).each(function(i,t) {
+    //         $('img', t).attr('src', $('img', t).attr('src').replace('_on', '_off'));
+    //     });
+    //     $('img', $(this.parentNode)).attr('src', $('img', $(this.parentNode)).attr('src').replace('_off', '_on'));
+    // });
+
+    //이름 텍스트 출력
+    // $('input[name="name"]').on('keyup', function(){
+    //     var nameValue = $(this).val();
+    //     $('.name-result').text(nameValue + '님');
+    //     $('.result-area .name-result').text(nameValue);
+    // });
+
+    // 설문 텍스트 출력
+    // $('input[name="tadd1"]').on('click', function(){
+    //     var nameValue = $(this).val();
+    //     $('.add-result').text(nameValue);
+    // });
+
+    // 개인정보처리방침 팝업 관련
+	$('.btn-agreement').on('click', function(e) {
+        e.preventDefault();
+        $('.agreeModalBox').fadeIn();
+    });
+    $('.agreeModalBox .closeBtn').on('click', function() {
+        $('.agreeModalBox').fadeOut();
+    });
+
+    function fnForm(formId){
 		/* form 자동 처리 방지 */
 		event.preventDefault();
 		/* form id로 proc */
 		let procForm = document.getElementById(formId);
-		
-		// 라디오버튼에 대한 필수값 확인 - 체크된게 하나도 없을때 경고창
-		let selectedRadio1 = procForm.querySelector('input[name="tadd1"]:checked');
+
+        let selectedRadio1 = procForm.querySelector('input[name="tadd1"]:checked');
 		if (!selectedRadio1) {
 			alert("설문을 선택해주세요.");
 			return;
@@ -546,30 +564,45 @@ input[type="image"] {width:100%; height: 100%;}
 			procForm.querySelector("input[name='add1']").value = selectedRadio1.value;
 		}
 
-		let selectedRadio2 = procForm.querySelector('input[name="tadd2"]:checked');
-		if (!selectedRadio2) {
+		let tage = procForm.querySelector('input[name="tage"]:checked');
+		if (!tage) {
 			alert("설문을 선택해주세요.");
 			return;
 		} else {
-			procForm.querySelector("input[name='add2']").value = selectedRadio2.value;
+			procForm.querySelector("input[name='age']").value = tage.value;
 		}
-	
-		/*
-		let selectedRadio2 = procForm.querySelector(`input[name="tadd2"]:checked`).value;
-		procForm.querySelector("input[name='add2']").value = selectedRadio2;
+
+        // let selectedRadio6 = procForm.querySelector('textarea[name="tadd6"]').value;
+        // procForm.querySelector("input[name='add6']").value = selectedRadio6;
+
+		// let selectedRadio2 = procForm.querySelector(`input[name="tadd2"]:checked`);
+		// if (!selectedRadio2) {
+		// 	alert("설문을 선택해주세요.");
+		// 	return;
+		// } else {
+		// 	procForm.querySelector("input[name='add2']").value = selectedRadio2.value;
+		// }
 		
-		let selectedRadio3 = procForm.querySelector(`input[name="tadd3"]:checked`).value;
-		procForm.querySelector("input[name='add3']").value = selectedRadio3;
-		*/
-		
-		// 필수값 체크 항목
+		// let selectedRadio3 = procForm.querySelector(`input[name="tadd3"]:checked`);
+		// if (!selectedRadio3) {
+		// 	alert("설문을 선택해주세요.");
+		// 	return;
+		// } else {
+		// 	procForm.querySelector("input[name='add3']").value = selectedRadio3.value;
+		// }
+
+
 		var required = {
 			'name': '이름'
-			// , 'age': '나이'
-			,'phone': '전화번호'
+			,'age': '나이'
+			,'phone': '연락처'
 			,'add1': '설문1'
-			,'add2': '설문2'
+			// ,'add2': '설문2'
 			// ,'add3': '설문3'
+			// ,'add4': '설문4'
+			// ,'add5': '설문5'
+			// ,'add6': '설문'
+			// ,'branch': '지점'
 			,'agBox': '개인정보'
 		};
 		
