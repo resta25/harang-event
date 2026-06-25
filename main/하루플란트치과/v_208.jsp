@@ -196,7 +196,7 @@ html, body {font-size: 10px;}
 <div id="wrap">
     <div class="form">
         <form id="form-1" method="POST" accept-charset="utf-8">
-        <div class="top_txt"><strong>신사역</strong>에 위치한 치과</div>
+        <!-- <div class="top_txt"><strong>신사역</strong>에 위치한 치과</div> -->
         <div class="progress-wrap" role="progressbar" aria-label="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="33">
             <div class="progress-bar" style="width: 33.3333%"></div>
         </div>
@@ -307,9 +307,9 @@ html, body {font-size: 10px;}
 
     <div class="container">
         <!-- <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.png"></div> -->
-        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>
+        <!-- <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div> -->
     </div>
-    
+
     <div class="toast">
         <p><strong>혜택 제공</strong>을 위해 <strong>동의 버튼</strong>을 터치해주세요</p>
     </div>
