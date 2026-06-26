@@ -1,50 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/fonts-archive/SUIT/SUIT.css"
-  type="text/css"
-/>
 <style>
-@font-face {
-    font-family: 'Pretendard';
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-    src: url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Regular.woff2') format('woff2'),
-         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Regular.woff') format('woff'),
-         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Regular.otf') format('opentype');
-}
-@font-face {
-    font-family: 'Pretendard';
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-    src: url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Medium.woff2') format('woff2'),
-         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Medium.woff') format('woff'),
-         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Medium.otf') format('opentype');
-}
-@font-face {
-    font-family: 'Pretendard';
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-    src: url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-SemiBold.woff2') format('woff2'),
-         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-SemiBold.woff') format('woff'),
-         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-SemiBold.otf') format('opentype');
-}
-@font-face {
-    font-family: 'Pretendard';
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-    src: url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Bold.woff2') format('woff2'),
-         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Bold.woff') format('woff'),
-         url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard-Bold.otf') format('opentype');
-}
+@import url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/subsets/Pretendard-dynamic-subset.css');
+@import url("https://cdn.jsdelivr.net/gh/fonts-archive/Paperlogy/subsets/Paperlogy-dynamic-subset.css");
 html, body {font-size: 10px;}
-#wrap {max-width: 600px; display: flex; flex-direction: column; font-family: 'Pretendard'; overflow: hidden; height: 100dvh; height: 100vh;
-padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); background: url("//static.harang-event.com/event/v_${eventSeq}/bg_01.jpg") no-repeat center top / 100% 100%;}
+#wrap {max-width: 600px; display: flex; flex-direction: column; font-family: 'Pretendard'; overflow: hidden; height: 100vh; height: 100dvh; 
+padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); background: #fff;}
 .form {flex-grow: 1; background: transparent;}
 #form-1 {height: 100%;}
 #wrap .formContents {height: 100%;}
@@ -53,17 +14,20 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 
 /* 공통 */
 .container { text-align: center; font-size: 120%; letter-spacing: -0.36px; color: #b77587; font-family: 'Pretendard';}
-.form .result-box {margin-top: 12.32%; margin-bottom: 8.155%; font-family: 'SUIT'; font-size: 255%; font-weight: 800; line-height: 1.48; letter-spacing: -1.23px; text-align: center; color: #2d2d2d;}
-.form strong {color: #f20000; font-weight: 800; font-family: 'SUIT';}
+.form .result-box {margin-top: 12.32%; margin-bottom: 8.155%; font-family: 'Paperlogy'; font-size: 255%; font-weight: 800; line-height: 1.48; letter-spacing: -1.23px; text-align: center; color: #2d2d2d;}
+.form strong {color: #f20000; font-weight: 800; font-family: 'Paperlogy';}
 .form .name-result {}
 .next {cursor: pointer;}
-.page:not(#page-1) .page_inner {padding: 0 8.667%; font-size: 16px;}
+.page:not(#page-1) .page_inner {padding: 0 5.1rem;}
 .top-img {width: 87.8333333%; margin: 3% auto 0;}
 /* .page:not(#page-1):not(#page-2) .question .img-area {width: 98.6%; margin: 0 auto;} */
 
 .page-box {text-align: center; margin-bottom: 4.8%;}
 .page-box .page-num {font-family: 'Pretendard'; font-size: 188%; font-weight: 500; letter-spacing: -0.6px; color: #676767;}
 .page-box .page-num .current {color: #013797;}
+
+/* 비디오 영역 */
+.video-box video {display: block; width: 100%; height: 100%;}
 
 /* 이전,다음 버튼 */
 .paging {margin-top: 5.6%; display: flex; align-items: center; justify-content: center; column-gap: 7px;}
@@ -74,40 +38,38 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 .paging img{ width: 100%;}
 
 /* 첫번째 페이지 */
-#page-1 {height: 100%; box-sizing: border-box; padding-bottom: 7.07rem;}
-#page-1 > .img-area:nth-child(1) {width: 100%; margin: 0 auto; padding-top: 3rem; box-shadow: 0px 3px 13px 0px rgba(150, 195, 240, 0.004)}
-#page-1 > .img-area:nth-child(2) {width: 80.8333%; margin: 0 auto; padding-top: 4.1rem;}
+#page-1 {height: 100%; box-sizing: border-box;}
+#page-1 > .img-area:nth-child(1) {width: 52.333333%; margin: 0 auto; padding-top: 2.8rem;}
+#page-1 > .img-area:nth-child(2) {width: 97.33333%; margin: 0 auto; padding-top: 1.8rem;}
 #page-1 .detail-group {width: 83.3333%; margin: 6.835% auto 0; padding: 2.1rem; border: 2px solid rgb(203, 155, 88); border-radius: 2.6rem; background-color: rgba(89, 59, 16, 0.459); box-sizing: border-box;}
 #page-1 .detail-group > .img-area:not(.btn-detail) {width: 73.205%; margin: 0 auto; padding-bottom: 2.401%;}
 #page-1 .detail-group > .btn-detail {background-color: transparent; padding: 0; margin: 0 auto;}
 #page-1 .detail-group .detail-box {margin-top: 2.401%;}
 #page-1 .detail-group .detail-box .img-area + .img-area {margin-top: 4.301%;}
-#page-1 .agBox {font-size: 140%; font-family: 'Pretendard'; font-weight: 500; margin: 11.667% auto 3.96%; color: #383838; letter-spacing: -0.7px}
-#page-1 .agBox a {}
+#page-1 .agBox {font-size: 1.4rem; font-family: 'Pretendard'; font-weight: 500; margin: 3.8rem auto 1.5rem; color: #383838; letter-spacing: -0.5px;}
+#page-1 .agBox a {font-weight: 800;}
 #page-1 .next {width: 80.8333%; margin: 0 auto;}
 
-#page-2 > .img-area:nth-child(1) {width: 86.5%; margin: 0 auto; padding-top: 2rem;}
-
-.page .question .img-area {width: 72.98387%; margin: 1.5% auto 0;}
-#page-3 .question .img-area {width: 35.48387%; margin: 1.5% auto 0;}
-.page > .img-area:nth-child(1) {width: 86.5%; margin: 0 auto; padding-top: 2rem;}
-.page#page-4 {height: 74%;}
-.page#page-4 .page_inner {flex-grow: 1; background-color: #fff; padding: 3.2rem 8.667% 0;}
-.page#page-4 > .img-area:nth-child(1) {width: 75.333333%; margin: 1.5rem auto 2.4rem; padding: 0;}
-.page#page-4 .question .img-area {width: 91.129032%; margin: 0 auto;}
-#page-4 .paging {margin-top: 3.6%;}
+#page-2 .img-area:nth-child(1) {width: 59.437751%; margin: 0 auto; padding-top: 7.4rem;}
+#page-3 .img-area:nth-child(1) {width: 59.437751%;  margin: 0 auto; padding-top: 7.4rem;}
+/* .page > .img-area:nth-child(1) {width: 86.5%; margin: 0 auto; padding-top: 2rem;} */
+#page-4 {padding: 3.3rem 2.7rem 1rem;}
+#page-4 .img-area:nth-child(1) {margin-bottom: 1.4rem;}
+.page#page-4 .page_inner {border: 2px solid #e3e3e3; border-radius: 2.2rem; padding: 2.2rem 2rem;}
+#page-4 .paging {margin: 2.3rem 0 1.5rem;}
 
 /* 설문영역 */
-.q_select {display: flex; flex-flow: row wrap; justify-content: center; gap: 2.3rem; margin-top: 5.8%;}
+.q_select {display: flex; flex-flow: row wrap; justify-content: center; gap: 2.2rem; margin-top: 3.8rem;}
 .question_box .q_select label img {width: 100%;}
+.question .q-txt {font-family: 'Paperlogy'; color: #18245c; text-align: center; font-size: 4rem; font-weight: 700;}
 
 /* 이름, 연락처 입력칸 */
 .formGroup {padding-top: 5%;}
-.formGroup .user_info {}
+.formGroup .user_info {display: flex; align-items: center; column-gap: 2.9rem; border-radius: 1.4rem; border: solid 2px #e3e3e3; padding: 2.1rem 2.6rem; overflow: hidden;}
 .formGroup .user_info + .user_info {margin-top: 1rem;}
-.legend {display: block; font-family: 'Pretendard'; font-size: 1.8rem; font-weight: 700; letter-spacing: -1.05px; color: #3c3c3c; margin-bottom: 1rem;}
+.legend {flex-shrink: 0; display: block; width: 6.3rem; font-family: 'Pretendard'; font-size: 2.1rem; font-weight: 700; letter-spacing: -1.05px; color: #3c3c3c;}
 .mark {color: #ff2020;}
-.formGroup .user_info input {padding: 0.925rem; font-family: 'Pretendard'; font-size: 2.8rem; font-weight: 700; line-height: 1; letter-spacing: -1.53px; text-align: center; color: #111; border-radius: 1.4rem; border: solid 2px #e3e3e3; background-color: #fff;}
+.formGroup .user_info input {font-family: 'Pretendard'; font-size: 3rem; font-weight: 700; line-height: 1; letter-spacing: -0.5px; color: #111;}
 .formGroup .user_info input::placeholder {font-weight: 500; color: rgba(60, 60, 60, 0.5);}
 
 .q_select .inp {background-color: #fff; padding: 2.99%; border: 2px solid #dedede; border-radius: 10px; color: #222; font-size: 150%; font-weight: 700; font-family: 'Pretendard'; text-align: center;}
@@ -126,13 +88,10 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 .toast strong {color: #fff949;}
 
 /* 안심문구, 대상, 이벤트기간 */
+.form .description {margin-top: 3rem;}
 .form .description .ad_txt,
 .form .description p,
-.form .description span {font-weight: 500; font-family: 'Pretendard'; font-size: 1.3rem; padding: 0; margin: 0; color: #3c3c3c; letter-spacing: -0.65px; }
-
-.form .description {width: 100%; text-align: center; margin: 2.462% auto 0; padding: 0;}
-.form .description p {font-weight: 400; font-size: 83%; color: #1d1d1d; font-family: 'Pretendard';}
-
+.form .description span {font-weight: 500; font-family: 'Pretendard'; font-size: 1.2rem; padding: 0; margin: 0; color: #3c3c3c; letter-spacing: -0.5px; }
 /* .form .agBox {font-size: 1.2rem; width: 100%; margin: 0 auto;} */
 
 /* 모달창 - 개인정보처리방침 */
@@ -150,7 +109,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 @media screen and (max-width: 500px) { 
     html, body {font-size: 1.7vw;}
 
-    #page-1 .next {border-radius: 15px;}
+    /* #page-1 .next {border-radius: 15px;}
     .page-box .page-num {font-size: 158%;}
     .q_select label {font-size: 125%;}
     .paging .prev, .paging .next {font-size: 125%;}
@@ -162,15 +121,14 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 
     .page > .img-area:nth-child(1) {padding-top: 4rem;}
     .q_select {margin-top: 7.6%; gap: 2.1rem;}
-    /* .toast {font-size: 80%;} */
 
     .page#page-4 {height: 100%;}
     .legend {font-size: 2.1rem;}
-    .form .description p {font-size: 1.3rem;}
+    .form .description p {font-size: 1.3rem;} */
 }
 @media screen and (max-width: 395px) {
     /* .form .db-box {top: 13%;} */
-    .form .page-inner {top: 26%;}
+    /* .form .page-inner {top: 26%;} */
 }
 
 @media screen and (max-width: 375px) {
@@ -206,11 +164,15 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 	<div class="form">
         <!-- <audio id="location" playsinline="" src="//static.harang-event.com/event/v_${eventSeq}/audio_01.mp3" type="audio/mp3"></audio> -->
 		<form id="form-1" method="POST" accept-charset="utf-8">
-            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.jpg"></div>
-            <div class="img-area top-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.png"></div>
             <div class="formContents">
                 <section class="page section01" id="page-1">
-                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_03.gif"></div>
+                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.png"></div>
+                    <div class="img-area top-img"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.png"></div>
+                    <div class="video-box">
+                        <video id="location" playsinline loop autoplay muted src="//static.harang-event.com/event/v_${eventSeq}/video_01.mp4" type="video/mp4"></video>
+                        <script>setTimeout(function(){ $('#location').trigger('play'); },500);</script>
+                    </div>
+                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_03.png"></div>
                     <div class="agBox">
                         개인정보 수집 및 이용에 관한 내용을 확인하고 동의함 
                         <a href="#" class="btn-agreement">[자세히 보기]</a>
@@ -234,8 +196,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                                 <label><input type="radio" name="tadd1"  onclick="pageFuc(2,$(this))" value="가까이 있는 물체가 잘 안보인다"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_01.png"></label>
                                 <label><input type="radio" name="tadd1"  onclick="pageFuc(2,$(this))" value="시야가 뿌옇게 보인다"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_02.png"></label>
                                 <label><input type="radio" name="tadd1"  onclick="pageFuc(2,$(this))" value="눈에 무언가 낀 것 같은 느낌이 든다"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_03.png"></label>
-                                <label><input type="radio" name="tadd1"  onclick="pageFuc(2,$(this))" value="어두운 곳에서는 잘 보이지 않는다"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_04.png"></label>
-                                <label><input type="radio" name="tadd1"  onclick="pageFuc(2,$(this))" value="사물이 겹쳐보이고, 초점이 안 잡힌다"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_05.png"></label>
+                                <label><input type="radio" name="tadd1"  onclick="pageFuc(2,$(this))" value="기타"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_04.png"></label>
                             </div>
                         </div>
                     </div>
@@ -255,10 +216,10 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                                 <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_02.png"></div>
                             </div>
                             <div class="q_select">
-                                <label><input type="radio" name="tage"  onclick="pageFuc(3,$(this))" value="40"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_06.png"></label>
-                                <label><input type="radio" name="tage"  onclick="pageFuc(3,$(this))" value="50"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_07.png"></label>
-                                <label><input type="radio" name="tage"  onclick="pageFuc(3,$(this))" value="60"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_08.png"></label>
-                                <label><input type="radio" name="tage"  onclick="pageFuc(3,$(this))" value="70"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_09.png"></label>
+                                <label><input type="radio" name="tage"  onclick="pageFuc(3,$(this))" value="40"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_05.png"></label>
+                                <label><input type="radio" name="tage"  onclick="pageFuc(3,$(this))" value="50"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_06.png"></label>
+                                <label><input type="radio" name="tage"  onclick="pageFuc(3,$(this))" value="60"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_07.png"></label>
+                                <label><input type="radio" name="tage"  onclick="pageFuc(3,$(this))" value="70"><img src="//static.harang-event.com/event/v_${eventSeq}/select_off_08.png"></label>
                             </div>
                         </div>
                     </div>
@@ -269,14 +230,15 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                 </section>
 
                 <section class="page hide section04" id="page-4">
-                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_01.png"></div>
+                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_04.png"></div>
                     <div class="page_inner">
                         <div class="question_box">
                             <div class="question">
                                 <!-- <div class="page-box">
                                     <span class="page-num"><span class="current">6</span>/6</span>
                                 </div> -->
-                                <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_02.png"></div>
+                                <div class="q-txt">이름과 연락처를 <br />정확하게 남겨주세요.</div>
+                                <!-- <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_02.png"></div> -->
                             </div>
                             <div class="formGroup">
                                 <div class="user_info user_name">
@@ -295,6 +257,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                                 <input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png">
                             </div>
                         </div>
+                        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_05.png"></div>
                         <div class="description bottom">
                             <p id="event-period"></p>
                             <div class="ad_txt">안심하세요! 본페이지에서는 고객님의 소중한 개인정보를 <br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
@@ -325,7 +288,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 		</form>
 	</div>
     <div class="container">
-		<!-- <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.jpg"></div> -->
+		<div class="img-area notice-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.jpg"></div>
 		<div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>
     </div>
 </div>
@@ -394,6 +357,7 @@ $('.btn-detail').on('click', function(){
         if(num == 1){
             $('#wrap').css({'height': '100vh', 'height': '100dvh' });
         }
+        $('.notice-area').hide();
         var sectionNum = String(num).padStart(2, '0'); // ✅ 핵심
         var $currentPage = $('.section' + sectionNum);
 
