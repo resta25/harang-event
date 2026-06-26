@@ -156,7 +156,28 @@ html, body {font-size: 62.5%;}
                     <div class="subscribe_container">
                         <div class="subscribe_bg">
                             <div class="title">실시간 신청 현황</div>
-                            <div class="subscribe" data-limit="10"></div>
+                            <div class="subscribe" data-limit="10">
+                                <div class="content">
+                                    <div class="name">이**</div>
+                                    <div class="statusText">신청완료</div>
+                                    <div class="date">06-14 11:01</div>
+                                </div>
+                                <div class="content">
+                                    <div class="name">김**</div>
+                                    <div class="statusText yellow-bg">신청중</div>
+                                    <div class="date">06-17 10:01</div>
+                                </div>
+                                <div class="content">
+                                    <div class="name">오**</div>
+                                    <div class="statusText yellow-bg">신청중</div>
+                                    <div class="date">06-26 11:06</div>
+                                </div>
+                                <div class="content">
+                                    <div class="name">이**</div>
+                                    <div class="statusText">신청완료</div>
+                                    <div class="date">06-26 12:13</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
