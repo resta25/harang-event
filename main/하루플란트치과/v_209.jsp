@@ -232,7 +232,7 @@ html, body {font-size: 10px;}
                     </div>
                     <p class="q-text">
                         <strong>거주하시는 곳</strong>을 체크해주시면<br />
-                        <strong>임플란트 개당 20만원 병원</strong><br />
+                        <strong>임플란트 20만원 병원</strong>을<br />
                         안내해드립니다
                     </p>
                     <p class="paging">	
