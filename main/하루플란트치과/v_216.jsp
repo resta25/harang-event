@@ -54,7 +54,7 @@ input[type="radio"] {
 .agreeModalBox .newAgreement ol li {line-height: 12px; font-size: 10px;}
 
 /* 이벤트 기간, 대상 */
-.form .description {margin-top: 5%;}
+.form .description {margin-top: 5%; color: #fff;}
 
 @media screen and (max-width: 500px){
     .agreeModalBox {padding: 12% 4% 5%; width: 95%;} /* 모달창 */
