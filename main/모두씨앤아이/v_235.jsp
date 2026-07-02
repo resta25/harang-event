@@ -180,7 +180,7 @@ box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.35);  width: 100%;
                         </div>
                     </div>
 
-                    <div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"></div>
+                    <div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.gif"></div>
 
                     <div class="agBox">
                         <label><input name="agBox" type="checkbox" checked><span>개인정보 수집 및 이용에 관한 내용을 확인하고 동의함</span></label> <a href="#" class="btn-agreement">[자세히 보기]</a>
@@ -233,7 +233,7 @@ box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.35);  width: 100%;
 		<div class="img-area notice-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.jpg"></div>
 		<div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>
     </div>
-    <div class="img-area fixed db_btn"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.png"></div>
+    <div class="img-area fixed db_btn"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.gif"></div>
     <!-- <a href="javascript:void(0);"><img class="floatingImg" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.png"></a> -->
 
 </div>
