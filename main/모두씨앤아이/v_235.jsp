@@ -265,7 +265,7 @@ box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.35);  width: 100%;
         spaceBetween: 0,
         // centeredSlides: true,
         autoplay: {
-            delay: 2000,
+            delay: 1500,
             disableOnInteraction: false,
         },
         loop:true,
