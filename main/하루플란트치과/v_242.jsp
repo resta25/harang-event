@@ -205,7 +205,7 @@ html, body {font-size: 10px;}
                 <div class="page_inner">
                     <div class="page-num">
                         <span class="current">1</span> of
-                        <span class="total">3</span>
+                        <span class="total">2</span>
                     </div>
                     <p class="q-text"><strong>임플란트</strong>가 필요하신가요?</p>
                     <p class="paging">	
@@ -224,7 +224,7 @@ html, body {font-size: 10px;}
                 </div>
             </section>
 
-            <section class="page hide section02" id="page-2">
+            <!-- <section class="page hide section02" id="page-2">
                 <div class="page_inner">
                     <div class="page-num">
                         <span class="current">2</span> of
@@ -250,13 +250,13 @@ html, body {font-size: 10px;}
                         </label>
                     </p>
                 </div>
-            </section>
+            </section> -->
 
-            <section class="page hide section03" id="page-3">
+            <section class="page hide section02" id="page-2">
 				<div class="page_inner">
 					<div class="page-num">
-                        <span class="current">3</span> of
-                        <span class="total">3</span>
+                        <span class="current">2</span> of
+                        <span class="total">2</span>
                     </div>
 					<div class="db-box">
                         <div class="question">
@@ -468,13 +468,13 @@ html, body {font-size: 10px;}
 		/* form id로 proc */
 		let procForm = document.getElementById(formId);
 		
-		let selectedRadio1 = procForm.querySelector(`input[name="tadd1"]:checked`);
-		if (!selectedRadio1) {
-			alert("설문을 선택해주세요.");
-			return;
-		} else {
-			procForm.querySelector("input[name='add1']").value = selectedRadio1.value;
-		}
+		// let selectedRadio1 = procForm.querySelector(`input[name="tadd1"]:checked`);
+		// if (!selectedRadio1) {
+		// 	alert("설문을 선택해주세요.");
+		// 	return;
+		// } else {
+		// 	procForm.querySelector("input[name='add1']").value = selectedRadio1.value;
+		// }
 		
 		// let selectedRadio2 = procForm.querySelector(`input[name="tadd2"]:checked`);
 		// if (!selectedRadio2) {
@@ -497,7 +497,7 @@ html, body {font-size: 10px;}
 			'name': '이름'
 			// ,'age': '나이'
 			,'phone': '전화번호'
-			,'add1': '설문'
+			// ,'add1': '설문'
 			// ,'add2': '설문'
 			// ,'add3': '설문'
 			// ,'branch': '지점'
