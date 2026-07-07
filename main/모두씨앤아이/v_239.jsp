@@ -113,7 +113,7 @@ html, body {font-size: 10px;}
             
             <div class="description">
                 <p id="event-period"></p>
-                <div class="ad_txt">안심하세요! ${resVo.agent}에서는 고객님의 소중한 개인정보를 <br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
+                <div class="ad_txt">안심하세요! 본원에서는 고객님의 소중한 개인정보를 <br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
                 <span>대상 : ${resVo.target}</span>
             </div>
         </div>
