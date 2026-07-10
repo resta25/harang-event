@@ -169,8 +169,14 @@ input[type="image"] {width:100%; height: 100%;}
 
 .container_bottom img {display: block; width: 100%; height: 100%;}
 
-.form input[type="checkbox"] + span:before, .form input[type="radio"] + span:before {top: 25%;}
+.form input[type="checkbox"]:hover + span:before, .form input[type="checkbox"]:focus + span:before, .form input[type="radio"]:hover + span:before, .form input[type="radio"]:focus + span:before {border-color: #00bbb5;}
+.form input[type="checkbox"] + span:before, .form input[type="radio"] + span:before {top: 25%; border-color: #00bbb5; animation: checkboxAni 0.5s ease-in-out infinite alternate; transform-origin: center center;}
 .form input[type="checkbox"] + span:after, .form input[type="radio"] + span:after {top: 25%}
+
+@keyframes checkboxAni {
+    0% {transform: scale(1) translateY(-50%);}
+    100% {transform: scale(1.2) translateY(-50%);}
+}
 
 @media screen and (max-width: 500px){
     #wrap {height: 100%;}
