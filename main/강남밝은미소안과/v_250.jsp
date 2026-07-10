@@ -61,9 +61,9 @@ body::-webkit-scrollbar {display: none;}
 .mb_3{margin-bottom: 3%;}
 .bottom{display:none;}
 
-.gif-area {display: flex; align-items: center;}
-.gif-area img:nth-child(1) {width: 48.9%;}
-.gif-area img:nth-child(2) {width: 51.1%;}
+.gif-area {display: flex; align-items: center; position: relative; overflow: hidden;}
+.gif-area img {width: 100%;}
+.gif-area img:nth-child(1) {position: absolute; left: 0; top: 0; width: 50%;}
 
 #wrap {height: 100vh; background-color:#e8e8e8;}
 .form {margin-top: 5%; padding: 0 3% 5%; overflow-y: scroll; background-color: transparent;}
@@ -92,7 +92,7 @@ body::-webkit-scrollbar {display: none;}
 .chat_set.right .chat_box {width: 10rem; text-align: center; padding: 0.969rem 0.5rem; text-align: center; font-weight: 600; background-color: #404040; color: #fff;}
 .chat_set.right .chat_box.agree_btn, .chat_set.right .chat_box.disagree_btn {display: block; cursor: pointer;}
 .chat_set.right .chat_box.disagree_btn { background-color: #404040; }
-.chat_set.right .chat_box.agree_btn.selected, .chat_set.right .chat_box.input_box_changed {background-color: #ff4f2c; color: #fff;}
+.chat_set.right .chat_box.agree_btn.selected, .chat_set.right .chat_box.input_box_changed {background-color: #00bbb5; color: #fff;}
 
 /* chat_box 로딩 */
 .chat_set.left .chat_box {position: relative; overflow: hidden;}
@@ -124,7 +124,7 @@ body::-webkit-scrollbar {display: none;}
 .question_box .q_select {display: flex; flex-flow: row wrap; gap: 1%; justify-content: flex-end; width: 100%;}
 .question_box .q_select label {position: relative; cursor: pointer; width: max-content;}
 .question_box .q_select label input::after {display: none; content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
-.question_box .q_select label input:checked + .chat_box {background-color: #ff4f2c; color: #fff;}
+.question_box .q_select label input:checked + .chat_box {background-color: #00bbb5; color: #fff;}
 
 /* 설문 개별 */
 .chat_set[data-value="2"] .q_select label:nth-child(odd) {margin-bottom: 1%;}
@@ -136,7 +136,7 @@ body::-webkit-scrollbar {display: none;}
 input[type="image"] {width:100%; height: 100%;}
 
 .form .agree_txt {text-decoration: none; cursor: pointer;}
-.em {color: #ff4f2c; font-weight: 800;}
+.em {color: #00bbb5; font-weight: 800;}
 
 /* 개별 */
 #page-4 {flex-direction: column; align-items: end;}
@@ -169,11 +169,14 @@ input[type="image"] {width:100%; height: 100%;}
 
 .container_bottom img {display: block; width: 100%; height: 100%;}
 
+.form input[type="checkbox"] + span:before, .form input[type="radio"] + span:before {top: 25%;}
+.form input[type="checkbox"] + span:after, .form input[type="radio"] + span:after {top: 25%}
+
 @media screen and (max-width: 500px){
     #wrap {height: 100%;}
 
     /* 공통 폰트 사이즈 */
-    .chat_box, .input_box .next_btn, .form .inp {font-size: 4vw;}
+    .chat_box, .input_box .next_btn, .form .inp {font-size: 16px;}
     .chat_set.left .progress_box .progress_txt {font-size: 3.2vw;}
     .input_box .next_btn {width: 30%;}
 
@@ -238,10 +241,10 @@ input[type="image"] {width:100%; height: 100%;}
 </div>
 <div id="wrap">
     <div class="container bg_main">
-        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.jpg"></div>
+        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/hr_260709_GBMS_01.jpg"></div>
         <div class="img-area gif-area">
-            <img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.gif">
-            <img src="//static.harang-event.com/event/v_${eventSeq}/event_main_03.gif">
+            <img src="//static.harang-event.com/event/v_${eventSeq}/hr_260709_GBMS_03.gif">
+            <img src="//static.harang-event.com/event/v_${eventSeq}/hr_260709_GBMS_02.gif">
         </div>
     
         <div class="form">
@@ -249,7 +252,7 @@ input[type="image"] {width:100%; height: 100%;}
 
 			<!-- chat01 -->
 			<div class="chat_set left" data-value="1">
-				<div class="chat_profile_01"><img src="//static.harang-event.com/event/v_${eventSeq}/profile_01.png"></div>
+				<div class="chat_profile_01"><img src="//static.harang-event.com/event/v_${eventSeq}/hr_260709_GBMS_04.png"></div>
 				<div class="chat_container">
 					<div class="chat_box">
 						<div class="chat_txt">
@@ -280,7 +283,7 @@ input[type="image"] {width:100%; height: 100%;}
 
             <!-- chat02 -->
 			<div class="chat_set left hide" data-value="2">
-				<div class="chat_profile_01"><img src="//static.harang-event.com/event/v_${eventSeq}/profile_01.png"></div>
+				<div class="chat_profile_01"><img src="//static.harang-event.com/event/v_${eventSeq}/hr_260709_GBMS_04.png"></div>
 				<div class="chat_container">
 					<div class="chat_box">
 						<div class="chat_txt">
@@ -303,7 +306,7 @@ input[type="image"] {width:100%; height: 100%;}
 
 			<!-- chat03 -->
 			<div class="chat_set left hide" data-value="3">
-				<div class="chat_profile_01"><img src="//static.harang-event.com/event/v_${eventSeq}/profile_01.png"></div>
+				<div class="chat_profile_01"><img src="//static.harang-event.com/event/v_${eventSeq}/hr_260709_GBMS_04.png"></div>
 				<div class="">
 					<div class="chat_container">
 						<div class="chat_box">
@@ -326,7 +329,7 @@ input[type="image"] {width:100%; height: 100%;}
 
 			<!-- chat04 -->
 			<div class="chat_set left hide" data-value="4">
-				<div class="chat_profile_01"><img src="//static.harang-event.com/event/v_${eventSeq}/profile_01.png"></div>
+				<div class="chat_profile_01"><img src="//static.harang-event.com/event/v_${eventSeq}/hr_260709_GBMS_04.png"></div>
 				<div class="">
 					<div class="chat_container">
 						<div class="chat_box">
@@ -349,13 +352,15 @@ input[type="image"] {width:100%; height: 100%;}
 
 			<!-- chat05 -->
 			<div class="chat_set left hide" data-value="5">
-				<div class="chat_profile_01"><img src="//static.harang-event.com/event/v_${eventSeq}/profile_01.png"></div>
+				<div class="chat_profile_01"><img src="//static.harang-event.com/event/v_${eventSeq}/hr_260709_GBMS_04.png"></div>
 				<div class="">
 					<div class="chat_container">
 						<div class="chat_box">
 							<div class="chat_txt">
 								<div class="agBox">
-									<input name="agBox" type="checkbox" checked value="Y">개인정보 수집 및 이용에 관한 내용을<br> 확인하고 동의함<a href="#" class="agree_txt">[자세히 보기]</a>
+                                    <label>
+                                        <input name="agBox" type="checkbox"><span>개인정보 수집 및 이용에 관한 내용을<br> 확인하고 동의함</span><a href="#" class="agree_txt">[자세히 보기]</a>
+                                    </label>
 								</div>
 								<div class="description">
 									<p id="event-period"></p>
@@ -373,7 +378,7 @@ input[type="image"] {width:100%; height: 100%;}
 
 			<div class="chat_set right hide" id="page-5" data-value="5">
 				<div class="submit submit_agree">
-					<input type="image" value="" class="btn_submit" onclick="fnForm('form-1');" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"/>
+					<input type="image" value="" class="btn_submit" onclick="fnForm('form-1');" src="//static.harang-event.com/event/v_${eventSeq}/hr_260709_GBMS_05.png"/>
 				</div>
 			</div>
             
@@ -399,7 +404,7 @@ input[type="image"] {width:100%; height: 100%;}
         </div>
 		<div class="container_bottom">
 			<!-- <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.jpg"></div> -->
-			<div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>
+			<div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/hr_260709_GBMS_06.jpg"></div>
 		</div>
     </div>
 </div>
@@ -433,7 +438,7 @@ input[type="image"] {width:100%; height: 100%;}
         //     return;
         // }
 
-        $('.question_box .q_select label input[name="' + selectedInputName + '"]:not(:checked) + .chat_box').css('display', 'none');
+        $('.question_box .q_select label input[name="' + selectedInputName + '"]:not(:checked) + .chat_box').closest('label').css('display', 'none');
     });
 
     function showNextComment(currentValue, nextValue, isLeft) {
