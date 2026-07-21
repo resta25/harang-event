@@ -216,7 +216,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                     <div class="question_box">
                         <div class="question">
                             <div class="page-box">
-                                <span class="page-num"><span class="current">1</span>/7</span>
+                                <span class="page-num"><span class="current">1</span>/6</span>
                             </div>
                             <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_01.png"></div>
                         </div>
@@ -237,7 +237,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                     <div class="question_box">
                         <div class="question">
                             <div class="page-box">
-                                <span class="page-num"><span class="current">2</span>/7</span>
+                                <span class="page-num"><span class="current">2</span>/6</span>
                             </div>
                             <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_02.png"></div>
                         </div>
@@ -260,7 +260,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                     <div class="question_box">
                         <div class="question">
                             <div class="page-box">
-                                <span class="page-num"><span class="current">3</span>/7</span>
+                                <span class="page-num"><span class="current">3</span>/6</span>
                             </div>
                             <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_03.png"></div>
                         </div>
@@ -288,7 +288,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                     <div class="question_box">
                         <div class="question">
                             <div class="page-box">
-                                <span class="page-num"><span class="current">4</span>/7</span>
+                                <span class="page-num"><span class="current">4</span>/6</span>
                             </div>
                             <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_04.png"></div>
                         </div>
@@ -304,12 +304,12 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                 </div> -->
             </section>
             
-            <section class="page hide section06" id="page-6">
+            <!-- <section class="page hide section06" id="page-6">
                 <div class="page_inner">
                     <div class="question_box">
                         <div class="question">
                             <div class="page-box">
-                                <span class="page-num"><span class="current">5</span>/7</span>
+                                <span class="page-num"><span class="current">5</span>/6</span>
                             </div>
                             <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_05.png"></div>
                         </div>
@@ -319,10 +319,25 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                         </div>
                     </div>
                 </div>
-                <!-- <div class="paging">
-                    <button type="button" class="prev">이전</button>	
-                    <button type="button" class="next" onclick="pageFuc(6,$(this))">다음</button>
-                </div> -->
+            </section> -->
+
+            <section class="page hide section06" id="page-6">
+                <div class="page_inner">
+                    <div class="question_box">
+                        <div class="question">
+                            <div class="page-box">
+                                <span class="page-num"><span class="current">5</span>/6</span>
+                            </div>
+                            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_06.png"></div>
+                        </div>
+                        <div class="q_select">
+                            <label><input type="radio" name="tadd5" onclick="pageFuc(6,$(this))" value="300만원">300만원</label>
+                            <label><input type="radio" name="tadd5" onclick="pageFuc(6,$(this))" value="400만원">400만원</label>
+                            <label><input type="radio" name="tadd5" onclick="pageFuc(6,$(this))" value="500만원">500만원</label>
+                            <label><input type="radio" name="tadd5" onclick="pageFuc(6,$(this))" value="잘 모르겠습니다">잘 모르겠습니다</label>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <section class="page hide section07" id="page-7">
@@ -330,15 +345,13 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                     <div class="question_box">
                         <div class="question">
                             <div class="page-box">
-                                <span class="page-num"><span class="current">6</span>/7</span>
+                                <span class="page-num"><span class="current">6</span>/6</span>
                             </div>
-                            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_06.png"></div>
+                            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_07.png"></div>
                         </div>
                         <div class="q_select">
-                            <label><input type="radio" name="tadd6" onclick="pageFuc(7,$(this))" value="300만원">300만원</label>
-                            <label><input type="radio" name="tadd6" onclick="pageFuc(7,$(this))" value="400만원">400만원</label>
-                            <label><input type="radio" name="tadd6" onclick="pageFuc(7,$(this))" value="500만원">500만원</label>
-                            <label><input type="radio" name="tadd6" onclick="pageFuc(7,$(this))" value="잘 모르겠습니다">잘 모르겠습니다</label>
+                            <label><input type="radio" name="tadd6" onclick="pageFuc(7,$(this))" value="아니요, 다른 빚도 있습니다">아니요, 다른 빚도 있습니다</label>
+                            <label><input type="radio" name="tadd6" onclick="alert('죄송합니다. 신용대출이나 카드대출 없이 담보 및 세금 체납만으로는 신청이 불가합니다.')" value="네, 담보 및 세금만 있습니다">네, 담보 및 세금만 있습니다</label>
                         </div>
                     </div>
                 </div>
@@ -349,24 +362,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                     <div class="question_box">
                         <div class="question">
                             <div class="page-box">
-                                <span class="page-num"><span class="current">7</span>/7</span>
-                            </div>
-                            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_07.png"></div>
-                        </div>
-                        <div class="q_select">
-                            <label><input type="radio" name="tadd7" onclick="pageFuc(8,$(this))" value="아니요, 다른 빚도 있습니다">아니요, 다른 빚도 있습니다</label>
-                            <label><input type="radio" name="tadd7" onclick="alert('죄송합니다. 신용대출이나 카드대출 없이 담보 및 세금 체납만으로는 신청이 불가합니다.')" value="네, 담보 및 세금만 있습니다">네, 담보 및 세금만 있습니다</label>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="page hide section09" id="page-9">
-                <div class="page_inner">
-                    <div class="question_box">
-                        <div class="question">
-                            <div class="page-box">
-                                <!-- <span class="page-num"><span class="current">6</span>/7</span> -->
+                                <!-- <span class="page-num"><span class="current">6</span>/6</span> -->
                             </div>
                             <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_08.png"></div>
                         </div>
@@ -518,7 +514,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
             }
         }
 
-        if(sectionNum == 9){
+        if(sectionNum == 8){
             var phoneValue = $('input[name="phone"]').val();
     
            if(phoneValue.length >= 11) {
@@ -718,6 +714,14 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 			procForm.querySelector("input[name='add5']").value = selectedRadio5.value;
 		}
 
+        let selectedRadio6 = procForm.querySelector('input[name="tadd6"]:checked');
+		if (!selectedRadio6) {
+			alert("설문을 선택해주세요.");
+			return;
+		} else {
+			procForm.querySelector("input[name='add6']").value = selectedRadio6.value;
+		}
+
         // let selectedRadio6 = procForm.querySelector('textarea[name="tadd6"]').value;
         // procForm.querySelector("input[name='add6']").value = selectedRadio6;
 
@@ -747,7 +751,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 			,'add3': '설문3'
 			,'add4': '설문4'
 			,'add5': '설문5'
-			// ,'add6': '설문'
+			,'add6': '설문'
 			// ,'branch': '지점'
 			,'agBox': '개인정보'
 		};
