@@ -74,7 +74,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 .question_box .q_select label img {width: 100%;}
 
 /* 설문 영역 */
-.question_box {position: relative; padding: 2.2rem 1.7rem 6rem;  border-radius: 2.4rem; box-shadow: 0px 8px 10px 0 rgba(150, 150, 150, 0.2); background-color: rgba(255, 255, 255, 0.7);}
+.question_box {position: relative; padding: 2.1rem 1.7rem 6rem;  border-radius: 2.4rem; box-shadow: 0px 8px 10px 0 rgba(150, 150, 150, 0.2); background-color: rgba(255, 255, 255, 0.7);}
 .question_box .question {margin-bottom: 7.676%; text-align: center; color: #000; font-size: 250%; font-weight: 500; font-family: 'Pretendard'; letter-spacing: -0.04em; line-height: 1.18;}
 .question_box .question strong {color: #ff4355; font-weight: 700;}
 .question_box .q_select label {width: 100%;}
@@ -85,7 +85,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 
 /* 이름, 연락처 입력칸 */
 /* .formGroup {padding-top: 5%;} */
-.formGroup .user_info {display: flex; align-items: center; padding: 2.5rem 3.1rem 2.4rem;  border-radius: 1rem;
+.formGroup .user_info {display: flex; align-items: center; padding: 2rem 3.1rem 1.9rem;  border-radius: 1rem;
   border: solid 2px #dedede;
   background-color: #fff;}
 .formGroup .user_info + .user_info {margin-top: 1rem;}
@@ -117,7 +117,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 .form .description {width: 100%; text-align: center; margin: 4.5rem auto 0; padding: 0;}
 /* .form .description p {font-weight: 400; font-size: 83%; color: #1d1d1d; font-family: 'Pretendard';} */
 
-/* .form .agBox {font-size: 1.2rem; width: 100%; margin: 0 auto;} */
+.form .agBox {font-size: 1.2rem; width: 100%; margin: 1rem auto 0;}
 
 /* 모달창 - 개인정보처리방침 */
 .overlay {z-index: 888; position: fixed; display: none; width: 100vw; height: 100vh; opacity: 0.5; background-color: #000;}
@@ -201,11 +201,11 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                         <script>setTimeout(function(){ $('#location').trigger('play'); },500);</script>
                     </div>
                     <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.png"></div>
-                    <div class="agBox">
+                    <!-- <div class="agBox">
                         개인정보 수집 및 이용에 관한 내용을 확인하고 동의함 
                         <a href="#" class="btn-agreement">[자세히 보기]</a>
                         <input type="hidden" name="agBox" value="Y" checked>
-                    </div>
+                    </div> -->
                     <div class="page_inner">
                         <div class="next img-area" onclick="pageFuc(1,$(this))"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.png"></div>
                     </div>
@@ -276,6 +276,9 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                                     <span class="legend">연락처<span class="mark">*</span></span>
                                     <input type="tel" name="phone" id="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="연락처를 입력해주세요">
                                 </div>
+                            </div>
+                            <div class="agBox">
+                                <label><input type="checkbox" name="agBox"><span>개인정보 수집 및 이용에 관한 내용을 확인하고 동의함 </span><a href="#" class="btn-agreement">[자세히 보기]</a></label>
                             </div>
                             <div class="paging">
                                 <!-- <button type="button" class="prev">이전</button>	 -->

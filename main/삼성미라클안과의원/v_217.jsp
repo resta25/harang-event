@@ -161,6 +161,8 @@ input[type="image"] {width:100%; height: 100%;}
 /* 개인정보처리방침 */
 .form .agBox {width: 100%; text-align: left; font-size: 75%; font-family: 'SUIT';}
 /* .form .agBox a {font-weight: normal;} */
+.form input[type="checkbox"] + span:before, .form input[type="radio"] + span:before,
+.form input[type="checkbox"] + span:after, .form input[type="radio"] + span:after {top: 25%;}
 
 .form .description {text-align: left; border-radius: 1rem; width: auto; margin: 0; font-family: 'SUIT'}
 
@@ -176,7 +178,7 @@ input[type="image"] {width:100%; height: 100%;}
     .gif-area img:nth-child(1) {border-radius: 0 12px 12px 0;}
 
     /* 공통 폰트 사이즈 */
-    .chat_box, .input_box .next_btn {font-size: 4vw;}
+    .chat_box, .input_box .next_btn {font-size: 16px;}
     .form .inp {font-size: 16px;}
     .chat_set.left .progress_box .progress_txt {font-size: 3.2vw;}
     .input_box .next_btn {width: 30%;}
@@ -359,8 +361,8 @@ input[type="image"] {width:100%; height: 100%;}
 						<div class="chat_box">
 							<div class="chat_txt">
 								<div class="agBox">
-									<input name="agBox" type="checkbox" checked value="Y">개인정보 수집 및 이용에 관한 내용을<br> 확인하고 동의함<a href="#" class="agree_txt">[자세히 보기]</a>
-								</div>
+								    <label><input type="checkbox" name="agBox"><span>개인정보 수집 및 이용에 관한 내용을 <br />확인하고 동의함 </span><a href="#" class="agree_txt">[자세히 보기]</a></label>
+                                </div>
 								<div class="description">
 									<p id="event-period"></p>
 									<div class="ad_txt">안심하세요! 본원에서는 고객님의 소중한 개인정보를 <br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
