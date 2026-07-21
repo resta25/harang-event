@@ -57,7 +57,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 .form strong {color: #f20000; font-weight: 800; font-family: 'SUIT';}
 .form .name-result {}
 .next {cursor: pointer;}
-.page:not(#page-1):not(#page-8) {padding: 7.335% 8.335%; font-size: 16px;}
+.page:not(#page-1) {padding: 7.335% 8.335%; font-size: 16px;}
 .page#page-1 .question .img-area, .page#page-2 .question .img-area {width: 87.8%; margin: 0 auto;}
 .page:not(#page-1):not(#page-2) .question .img-area {width: 98.6%; margin: 0 auto;}
 
@@ -94,8 +94,8 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 
 /* #page-8 .q_select label {width: 48.2%;} */
 
-#page-8 {position: relative;}
-#page-8 .paging {padding: 0 8.335%; font-size: 125%;     margin-top: 2.667%;}
+/* #page-10 {position: relative;} */
+/* #page-10 .paging {padding: 0 8.335%; font-size: 125%;     margin-top: 2.667%;} */
 
 .q_select .inp {background-color: #fff; padding: 2.99%; border: 2px solid #dedede; border-radius: 10px; color: #222; font-size: 150%; font-weight: 700; font-family: 'Pretendard'; text-align: center;}
 .q_select .inp::placeholder {color: #dedede;}
@@ -142,16 +142,17 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
     .q_select label {font-size: 125%;}
     .paging .prev, .paging .next {font-size: 125%;}
     
-    #page-8 .paging {font-size: 175%; margin-top: 4.4%;}
-    #page-8 .prev, .form .submit input[type="submit"]  {font-size: 125%;}
-    .form .submit {padding: 0.045% 0;}
+    /* #page-8 .paging {font-size: 175%; margin-top: 4.4%;}
+    #page-8 .prev, .form .submit input[type="submit"]  {font-size: 125%;} */
+    /* .form .submit {padding: 0.045% 0;} */
+    .form .submit input[type="submit"] {font-size: 130%;}
     .q_select .sub_txt {font-size: 95%;}
     .q_select .inp {font-size: 105%;}
     .q_select textarea {font-size: 105%;}
 
     #page-4 .popup .popup-content {width: 80%;}
     #page-4 .popup .btn-close-popup {font-size: 145%;}
-    #page-8 .q_select label {width: 47.7%;}
+    /* #page-8 .q_select label {width: 47.7%;} */
     .form .checkbox {font-size: 220%; margin-top: 4.335%;}
     .form .checkbox input[type="checkbox"] {width: 22px; height: 22px; margin-right: 4px;}
     /* .toast {font-size: 80%;} */
@@ -215,7 +216,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                     <div class="question_box">
                         <div class="question">
                             <div class="page-box">
-                                <span class="page-num"><span class="current">1</span>/6</span>
+                                <span class="page-num"><span class="current">1</span>/7</span>
                             </div>
                             <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_01.png"></div>
                         </div>
@@ -236,7 +237,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                     <div class="question_box">
                         <div class="question">
                             <div class="page-box">
-                                <span class="page-num"><span class="current">2</span>/6</span>
+                                <span class="page-num"><span class="current">2</span>/7</span>
                             </div>
                             <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_02.png"></div>
                         </div>
@@ -259,13 +260,13 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                     <div class="question_box">
                         <div class="question">
                             <div class="page-box">
-                                <span class="page-num"><span class="current">3</span>/6</span>
+                                <span class="page-num"><span class="current">3</span>/7</span>
                             </div>
                             <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_03.png"></div>
                         </div>
                         <div class="q_select">
                             <label><input type="radio" name="tadd3" onclick="pageFuc(4,$(this))" value="네">네</label>
-                            <label><input type="radio" name="tadd3" onclick="pageFuc(4,$(this))" value="아니요">아니요</label>
+                            <label><input type="radio" name="tadd3" onclick="alert('죄송합니다. 소득이 없으신 경우 개인회생 진행이 불가능합니다.')" value="아니요">아니요</label>
                         </div>
                     </div>
                 </div>
@@ -287,13 +288,13 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                     <div class="question_box">
                         <div class="question">
                             <div class="page-box">
-                                <span class="page-num"><span class="current">4</span>/6</span>
+                                <span class="page-num"><span class="current">4</span>/7</span>
                             </div>
                             <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_04.png"></div>
                         </div>
                         <div class="q_select">
-                            <label><input type="radio" name="tadd4" onclick="pageFuc(5,$(this))" value="아니요, 다른 빚도 있습니다">아니요, 다른 빚도 있습니다</label>
-                            <label><input type="radio" name="tadd4" onclick="alert('담보 및 세금만으로는 신청이 불가능 합니다')" value="네, 담보 및 세금만 있습니다">네, 담보 및 세금만 있습니다</label>
+                            <label><input type="radio" name="tadd4" onclick="pageFuc(5,$(this))" value="네 알고 있습니다">네 알고 있습니다</label>
+                            <label><input type="radio" name="tadd4" onclick="alert('개인회생 위임시 수임료가 발생되며 해당 사항을 모르고 계시다면 내 빚 탕감률 알아보기 상담신청이 불가 합니다')" value="아니요  모릅니다">아니요  모릅니다</label>
                         </div>
                     </div>
                 </div>
@@ -308,13 +309,13 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                     <div class="question_box">
                         <div class="question">
                             <div class="page-box">
-                                <span class="page-num"><span class="current">5</span>/6</span>
+                                <span class="page-num"><span class="current">5</span>/7</span>
                             </div>
                             <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_05.png"></div>
                         </div>
                         <div class="q_select">
-                            <label><input type="radio" name="tadd5" onclick="pageFuc(6,$(this))" value="네 알고 있습니다">네 알고 있습니다</label>
-                            <label><input type="radio" name="tadd5" onclick="alert('개인회생 위임시 수임료가 발생되며 해당 사항을 모르고 계시다면 내 빚 탕감률 알아보기 상담신청이 불가 합니다')" value="아니요  모릅니다">아니요  모릅니다</label>
+                            <label><input type="radio" name="tadd5" onclick="pageFuc(6,$(this))" value="네, 있습니다">네, 있습니다</label>
+                            <label><input type="radio" name="tadd5" onclick="alert('죄송합니다. 수임료 지급 의사가 없으신 경우 진행이 불가능합니다.')" value="아니요">아니요</label>
                         </div>
                     </div>
                 </div>
@@ -329,9 +330,45 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                     <div class="question_box">
                         <div class="question">
                             <div class="page-box">
-                                <span class="page-num"><span class="current">6</span>/6</span>
+                                <span class="page-num"><span class="current">6</span>/7</span>
                             </div>
                             <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_06.png"></div>
+                        </div>
+                        <div class="q_select">
+                            <label><input type="radio" name="tadd6" onclick="pageFuc(7,$(this))" value="300만원">300만원</label>
+                            <label><input type="radio" name="tadd6" onclick="pageFuc(7,$(this))" value="400만원">400만원</label>
+                            <label><input type="radio" name="tadd6" onclick="pageFuc(7,$(this))" value="500만원">500만원</label>
+                            <label><input type="radio" name="tadd6" onclick="pageFuc(7,$(this))" value="잘 모르겠습니다">잘 모르겠습니다</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page hide section08" id="page-8">
+                <div class="page_inner">
+                    <div class="question_box">
+                        <div class="question">
+                            <div class="page-box">
+                                <span class="page-num"><span class="current">7</span>/7</span>
+                            </div>
+                            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_07.png"></div>
+                        </div>
+                        <div class="q_select">
+                            <label><input type="radio" name="tadd7" onclick="pageFuc(8,$(this))" value="아니요, 다른 빚도 있습니다">아니요, 다른 빚도 있습니다</label>
+                            <label><input type="radio" name="tadd7" onclick="alert('죄송합니다. 신용대출이나 카드대출 없이 담보 및 세금 체납만으로는 신청이 불가합니다.')" value="네, 담보 및 세금만 있습니다">네, 담보 및 세금만 있습니다</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page hide section09" id="page-9">
+                <div class="page_inner">
+                    <div class="question_box">
+                        <div class="question">
+                            <div class="page-box">
+                                <!-- <span class="page-num"><span class="current">6</span>/7</span> -->
+                            </div>
+                            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_08.png"></div>
                         </div>
                         <div class="q_select">
                             <p class="sub_txt">한글 성함을 입력해주세요</p>
@@ -481,7 +518,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
             }
         }
 
-        if(sectionNum == 7){
+        if(sectionNum == 9){
             var phoneValue = $('input[name="phone"]').val();
     
            if(phoneValue.length >= 11) {
