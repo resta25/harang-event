@@ -27,6 +27,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 .page-box .page-num .current {color: #013797;}
 
 /* 비디오 영역 */
+.video-box {display: block; width: 100%; overflow: hidden;}
 .video-box video {display: block; width: 100%; height: 100%;}
 
 /* 이전,다음 버튼 */
@@ -48,7 +49,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 #page-1 .detail-group .detail-box .img-area + .img-area {margin-top: 4.301%;}
 #page-1 .agBox {font-size: 1.4rem; font-family: 'Pretendard'; font-weight: 500; margin: 3.8rem auto 1.5rem; color: #383838; letter-spacing: -0.5px;}
 #page-1 .agBox a {font-weight: 800;}
-#page-1 .next {width: 80.8333%; margin: 0 auto;}
+#page-1 .next {width: 80.8333%; margin: 3rem auto 0;}
 
 #page-2 .img-area:nth-child(1) {width: 59.437751%; margin: 0 auto; padding-top: 7.4rem;}
 #page-3 .img-area:nth-child(1) {width: 59.437751%;  margin: 0 auto; padding-top: 7.4rem;}
@@ -56,7 +57,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 #page-4 {padding: 3.3rem 2.7rem 1rem;}
 #page-4 .img-area:nth-child(1) {margin-bottom: 1.4rem;}
 .page#page-4 .page_inner {border: 2px solid #e3e3e3; border-radius: 2.2rem; padding: 2.2rem 2rem;}
-#page-4 .paging {margin: 2.3rem 0 1.5rem;}
+#page-4 .paging {margin: 1.3rem 0 1.5rem;}
 
 /* 설문영역 */
 .q_select {display: flex; flex-flow: row wrap; justify-content: center; gap: 2.2rem; margin-top: 3.8rem;}
@@ -88,11 +89,11 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 .toast strong {color: #fff949;}
 
 /* 안심문구, 대상, 이벤트기간 */
-.form .description {margin-top: 3rem;}
+.form .description {margin-top: 2rem;}
 .form .description .ad_txt,
 .form .description p,
 .form .description span {font-weight: 500; font-family: 'Pretendard'; font-size: 1.2rem; padding: 0; margin: 0; color: #3c3c3c; letter-spacing: -0.5px; }
-/* .form .agBox {font-size: 1.2rem; width: 100%; margin: 0 auto;} */
+.form .agBox {font-size: 1.2rem; width: 100%; margin: 1.3rem auto;}
 
 /* 모달창 - 개인정보처리방침 */
 .overlay {z-index: 888; position: fixed; display: none; width: 100vw; height: 100vh; opacity: 0.5; background-color: #000;}
@@ -173,11 +174,11 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                         <script>setTimeout(function(){ $('#location').trigger('play'); },500);</script>
                     </div>
                     <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_03.png"></div>
-                    <div class="agBox">
+                    <!-- <div class="agBox">
                         개인정보 수집 및 이용에 관한 내용을 확인하고 동의함 
                         <a href="#" class="btn-agreement">[자세히 보기]</a>
                         <input type="hidden" name="agBox" value="Y" checked>
-                    </div>
+                    </div> -->
                     <div class="page_inner">
                         <div class="next img-area" onclick="pageFuc(1,$(this))"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.png"></div>
                     </div>
@@ -250,6 +251,9 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                                     <input type="tel" name="phone" id="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="연락처를 입력해주세요">
                                 </div>
                             </div>
+                        </div>
+                        <div class="agBox">
+                            <label><input type="checkbox" name="agBox"><span>개인정보 수집 및 이용에 관한 내용을 확인하고 동의함 </span><a href="#" class="btn-agreement">[자세히 보기]</a></label>
                         </div>
                         <div class="paging">
                             <!-- <button type="button" class="prev">이전</button>	 -->
