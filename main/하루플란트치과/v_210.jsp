@@ -307,7 +307,7 @@ html, body {font-size: 10px;}
 
     <div class="container">
         <!-- <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.png"></div> -->
-        <!-- <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div> -->
+        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>
     </div>
     
     <div class="toast">

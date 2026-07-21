@@ -183,10 +183,10 @@ input[type="radio"] {
 		</form>
 	</div>
 
-    <!-- <div class="container">  
-        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.jpg"></div>	
+    <div class="container">  
+        <!-- <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.jpg"></div>	 -->
         <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>	
-    </div> -->
+    </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->
