@@ -6,6 +6,7 @@
 <title>개인정보처리방침</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <style>
+body{background: #fff !important;}
 h1{font-size:150%;}
 pre{white-space:pre-wrap;}
 </style>
