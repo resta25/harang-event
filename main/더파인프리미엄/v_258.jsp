@@ -24,7 +24,7 @@ html, body {font-size: 62.5%;}
 
 .gif-area {position: relative;}
 .gif-area .gif {position: absolute; left: 50%; transform: translateX(-50%); width: 78.973105%;}
-.gif-area .gif_00 {top: 22.55%; width: 100%;}
+.gif-area .gif_00 {top: 0%; width: 100%;}
 .gif-area .gif_01 {top: 3.35%; width: 25.061125%; left: 19.5%;}
 .gif-area .gif_02 {top: 39.9%; width: 25.061125%; left: 19.5%;}
 .gif-area .gif_03 {width: 100%; bottom: 15%;}
@@ -32,7 +32,7 @@ html, body {font-size: 62.5%;}
 /* 초기화 */
 .form .form_inner {background-color: #282828;}
 
-.notice-area {padding: 2.4rem 0 1.8rem; background-color: #282828;}
+.notice-area {padding: 2.4rem 0 0; background-color: #282828;}
 
 /* 이름, 나이, 연락처 입력칸 */
 .form .form_inner .formGroup {padding: 5.1rem 6rem 4rem;}
@@ -94,26 +94,26 @@ html, body {font-size: 62.5%;}
 <!-- include end -->
 <div id="wrap">
     <div class="container">
-        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.jpg"></div>
+        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/260716_DFPM(hr)_01.jpg"></div>
         <div class="img-area gif-area">
-            <img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.jpg">
-            <img class="gif gif_00" src="//static.harang-event.com/event/v_${eventSeq}/img_01.gif">
+            <img src="//static.harang-event.com/event/v_${eventSeq}/260716_DFPM(hr)_03.jpg">
+            <img class="gif gif_00" src="//static.harang-event.com/event/v_${eventSeq}/260716_DFPM(hr)_02.gif">
         </div>
-        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_03.jpg"></div>
+        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/260716_DFPM(hr)_04.jpg"></div>
         <div class="img-area gif-area">
-            <img src="//static.harang-event.com/event/v_${eventSeq}/event_main_04.jpg">
-            <img class="gif gif_01" src="//static.harang-event.com/event/v_${eventSeq}/img_02.gif">
-            <img class="gif gif_02" src="//static.harang-event.com/event/v_${eventSeq}/img_03.gif">
+            <img src="//static.harang-event.com/event/v_${eventSeq}/260716_DFPM(hr)_05.jpg">
+            <!-- <img class="gif gif_01" src="//static.harang-event.com/event/v_${eventSeq}/img_02.gif">
+            <img class="gif gif_02" src="//static.harang-event.com/event/v_${eventSeq}/img_03.gif"> -->
         </div>
-        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_05.jpg"></div>
-        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_06.gif"></div>
-        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_07.jpg"></div>
-        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_08.gif"></div>
-        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_09.jpg"></div>
+        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/260716_DFPM(hr)_06.jpg"></div>
+        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/260716_DFPM(hr)_07.gif"></div>
+        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/260716_DFPM(hr)_08.jpg"></div>
+        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/260716_DFPM(hr)_09.gif"></div>
+        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/260716_DFPM(hr)_10.jpg"></div>
         <div class="time-content">
             <div class="timer-box">
                 <div class="date">
-                    <img class="icon" src="//static.harang-event.com/event/v_${eventSeq}/icon_01.png" alt="">
+                    <img class="icon" src="//static.harang-event.com/event/v_${eventSeq}/260716_DFPM(hr)_11.png" alt="">
                     <span id="year"></span>
                     <span id="month"></span>
                     <span id="day"></span>
@@ -124,7 +124,7 @@ html, body {font-size: 62.5%;}
                     <span id="minute"></span>
                 </div>
                 <div class="text-box">
-                    <img src="//static.harang-event.com/event/v_${eventSeq}/loading_01.png">
+                    <img src="//static.harang-event.com/event/v_${eventSeq}/260716_DFPM(hr)_12.png">
                     <span class="text">현재 신청 가능</span>
                 </div>
             </div>
@@ -189,7 +189,7 @@ html, body {font-size: 62.5%;}
                             </li>
                         </ol>
                     </div>
-                    <div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.gif"></div>
+                    <div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/260716_DFPM(hr)_13.gif"></div>
                     <div class="description">
                         <p id="event-period"></p>
                         <div class="ad_txt">안심하세요 고객님의 소중한 개인정보를 상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
@@ -219,11 +219,11 @@ html, body {font-size: 62.5%;}
 	</div>
 
     <div class="container">
-		<div class="img-area notice-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.jpg"></div>
-		<div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>
+		<div class="img-area notice-area"><img src="//static.harang-event.com/event/v_${eventSeq}/260716_DFPM(hr)_14.png"></div>
+		<div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/260716_DFPM(hr)_15.jpg"></div>
     </div>
     <!-- <div class="img-area fixed db_btn"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.gif"></div> -->
-    <a href="javascript:void(0);"><img class="floatingImg" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.png"></a>
+    <a href="javascript:void(0);"><img class="floatingImg" src="//static.harang-event.com/event/v_${eventSeq}/260716_DFPM(hr)_16.png"></a>
 
 </div>
 <!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->
