@@ -61,7 +61,7 @@ html, body {font-size: 10px;}
 #page-1 .gif-area + .img-area {margin-top: 5.2rem; margin-bottom: 2.2rem;}
 /* #page-1 .video-area {padding: 2.5% 4.585% 0;}
 #page-1 .video-area video {display: block; width: 100%; height: 100%; border-radius: 30px;} */
-#page-1 .agBox {font-size: 1.8rem; font-family: 'Pretendard'; font-weight: 500; margin: 3.5rem auto 3.6rem; line-height: 1; letter-spacing: -0.9px;}
+#page-1 .agBox {width: 100%; font-size: 1.8rem; font-family: 'Pretendard'; font-weight: 500; margin: 3.5rem auto 3.6rem; line-height: 1; letter-spacing: -0.9px;}
 #page-1 .agBox a {text-decoration: underline;}
 /* #page-1 .next {display: flex; align-items: center; justify-content: center; width: 63.167%; margin: 0 auto; padding: 3.417% 0; font-size: 300%; font-family: 'Pretendard'; color: #fff; background-color: #013797; border-radius: 20px; font-weight: 700; text-align: center;} */
 
@@ -278,8 +278,7 @@ html, body {font-size: 10px;}
                             </label>
                         </div> -->
                         <div class="agBox">
-                            <a href="#" class="btn-agreement">개인정보 처리방침</a> 동의 후 확인하세요.
-                            <input type="hidden" name="agBox" value="Y" checked>
+                            <label><input type="checkbox" name="agBox"><span>개인정보 수집 및 이용에 관한 내용을 확인하고 동의함 </span><a href="#" class="btn-agreement">[자세히 보기]</a></label>
                         </div>
                         <div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"></div>
 

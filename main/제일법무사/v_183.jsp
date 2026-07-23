@@ -81,9 +81,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 #page-1 .detail-group > .btn-detail {background-color: transparent; padding: 0; margin: 0 auto;}
 #page-1 .detail-group .detail-box {margin-top: 2.401%;}
 #page-1 .detail-group .detail-box .img-area + .img-area {margin-top: 4.301%;}
-#page-1 .agBox {font-size: 150%; font-family: 'Pretendard'; font-weight: 500; margin: 13.667% auto 3.96%; color: #fff;}
-#page-1 .agBox a {text-decoration: underline;}
-#page-1 .next {width: 80.8333%; margin: 0 auto;}
+#page-1 .next {width: 80.8333%; margin: 3rem auto 0;}
 
 #page-2 > .img-area:nth-child(1) {width: 86.5%; margin: 0 auto; padding-top: 2rem;}
 
@@ -135,7 +133,11 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 .form .description {width: 100%; text-align: center; margin: 4.462% auto 8.735%; padding: 0;}
 .form .description p {font-weight: 400; font-size: 83%; color: #1d1d1d; font-family: 'Pretendard';}
 
-/* .form .agBox {font-size: 1.2rem; width: 100%; margin: 0 auto;} */
+.form .agBox {font-size: 1.6rem; width: 100%; margin: 1.4rem auto 0; font-family: 'Pretendard'; font-weight: 500; color: #fff;}
+.agBox a {text-decoration: underline;}
+.agBox + .paging {margin-top: 4.6%;}
+
+.form input[type="checkbox"] + span:after, .form input[type="radio"] + span:after {border-color: #fff;}
 
 /* 모달창 - 개인정보처리방침 */
 .overlay {z-index: 888; position: fixed; display: none; width: 100vw; height: 100vh; opacity: 0.5; background-color: #000;}
@@ -231,10 +233,6 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                             <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/img_04.png"></div>
                             <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/img_05.png"></div>
                         </div>
-                    </div>
-                    <div class="agBox">
-                        <a href="#" class="btn-agreement">개인정보 처리방침</a> 동의 후 확인하세요.
-                        <input type="hidden" name="agBox" value="Y" checked>
                     </div>
                     <div class="page_inner">
                         <div class="next img-area" onclick="pageFuc(1,$(this))"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_02.png"></div>
@@ -379,6 +377,9 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                                 <input type="tel" id="phone" name="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="연락처를 입력해 주세요">
                             </div>
                         </div>
+                    </div>
+                    <div class="agBox">
+                        <label><input type="checkbox" name="agBox"><span>개인정보 수집 및 이용에 관한 내용을 확인하고 동의함 </span><a href="#" class="btn-agreement">[자세히 보기]</a></label>
                     </div>
                     <div class="paging">
                         <!-- <button type="button" class="prev">이전</button>	 -->
@@ -599,6 +600,12 @@ $('.btn-detail').on('click', function(){
                alert('정확한 연락처를 입력해 주세요.');
                return;
            }
+
+           // ✅ agBox 체크해야 다음 페이지 이동
+            if (!$currentPage.find('input[name="agBox"]').is(':checked')) {
+                alert('개인정보 수집 및 이용에 동의해 주세요.');
+                return;
+            }
         }
 
         var nextPage = num + 1;
