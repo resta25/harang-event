@@ -203,7 +203,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                     <script>setTimeout(function(){ $('#location').trigger('play'); },500);</script>
                 </div>
                 <div class="page_inner">
-                    <button type="button" class="next" onclick="pageFuc(1,$(this))">동의 후 내 탕감률 % 확인</button>
+                    <button type="button" class="next" onclick="pageFuc(1,$(this))">내 탕감률 % 확인</button>
                 </div>
             </section>
             
