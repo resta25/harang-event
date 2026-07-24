@@ -171,11 +171,11 @@ html, body {font-size: 10px;}
                     <p class="q-text"><strong>임플란트</strong>가 필요하신가요?</p>
                     <p class="paging">	
                         <label class="label-agree" onclick="pageFuc(1,$(this))">
-                            <input type="radio" name="agBox" value="예" class="first"><img src="//static.harang-event.com/event/v_${eventSeq}/img_01.png"></input>
+                            <input type="radio" name="add1" value="예" class="first"><img src="//static.harang-event.com/event/v_${eventSeq}/img_01.png"></input>
                             <span class="agree">예</span>
                         </label>
                         <label class="label-disagree">
-                            <input type="radio"  name="agBox" value="아니요" class="close"><img src="//static.harang-event.com/event/v_${eventSeq}/img_02.png"></input>
+                            <input type="radio"  name="add1" value="아니요" class="close"><img src="//static.harang-event.com/event/v_${eventSeq}/img_02.png"></input>
                             <span class="disagree">아니요</span>
                         </label>
                     </p>
