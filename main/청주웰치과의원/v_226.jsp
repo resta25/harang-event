@@ -40,7 +40,7 @@ html, body {font-size: 10px;}
 /* 설문영역 */
 .form .next {width: 80%; margin: 0 auto;}
 .form .next img {width: 100%;}
-.form .submit {width: 51.143%; margin: 2.2rem auto; padding: 0;}
+.form .submit {width: 51.143%; margin: 1.2rem auto 2.2rem; padding: 0;}
 .form .submit input[type="image"] {width: 100%;}
 
 /* 설문영역 */
@@ -64,7 +64,7 @@ html, body {font-size: 10px;}
 .form .description p {display: inline-block; margin-right: 0.8rem;}
 
 
-.form .agBox {font-family: 'SUIT'; font-size: 1.2rem; letter-spacing: -0.24px; text-align: center; color: rgba(22, 22, 22, 0.5); text-decoration: underline;}
+.form .agBox {margin: 1rem auto 0; font-family: 'SUIT'; font-size: 1.6rem; letter-spacing: -0.24px; text-align: center; color: rgba(22, 22, 22, 0.5); text-decoration: underline;}
 .form .agBox a {font-weight: 400;}
 
 /* 모달창 - 개인정보처리방침 */
@@ -110,7 +110,7 @@ html, body {font-size: 10px;}
     #wrap .formContents {display: flex; flex-direction: column; flex-grow: 1;}
     .page {height: 100%; flex-grow: 1; flex-direction: column;}
     /* .page_inner {padding: 3.9% 3.335% 1.335%;} */
-    .form .agBox {padding: 2rem 0;}
+    .form .agBox {margin: 1.5rem auto;}
 
     .page_inner .img-area:not(.next) + .img-area:not(.next) {margin-top: 3.68%;}
 
@@ -119,6 +119,8 @@ html, body {font-size: 10px;}
     /* .form .user-box .user-info:not(:last-child) {margin-bottom: 5%;} */
     .form .user-box {margin-top: 7%;}
     .form .submit {padding: 2px 0;}
+    .form .user-box .user-info .legend,
+    .form .user-box .user-info input {font-size: 16px;}
     /* .form .description .ad_txt {margin-top: 0;} */
     /* .form .user-box .user-info input {font-size: 240%; padding: 1.25rem 2rem;} */
 
@@ -169,17 +171,17 @@ html, body {font-size: 10px;}
                     <p class="q-text"><strong>임플란트</strong>가 필요하신가요?</p>
                     <p class="paging">	
                         <label class="label-agree" onclick="pageFuc(1,$(this))">
-                            <input type="radio" name="agBox" value="예 (동의)" class="first"><img src="//static.harang-event.com/event/v_${eventSeq}/img_01.png"></input>
-                            <span class="agree">예 (동의)</span>
+                            <input type="radio" name="agBox" value="예" class="first"><img src="//static.harang-event.com/event/v_${eventSeq}/img_01.png"></input>
+                            <span class="agree">예</span>
                         </label>
                         <label class="label-disagree">
                             <input type="radio"  name="agBox" value="아니요" class="close"><img src="//static.harang-event.com/event/v_${eventSeq}/img_02.png"></input>
                             <span class="disagree">아니요</span>
                         </label>
                     </p>
-                    <div class="agBox">
+                    <!-- <div class="agBox">
                         <a href="#" class="agree_txt">개인정보 처리방침 [자세히 보기]</a>
-                    </div>            
+                    </div>             -->
                 </div>
             </section>
 
@@ -229,6 +231,9 @@ html, body {font-size: 10px;}
 								<input type="tel" id="phone" name="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="'-'없이 입력">
 							</div>
 						</div>
+                        <div class="agBox">
+                            <label><input type="checkbox" name="agBox"><span>개인정보 수집 및 이용에 관한 내용을 확인하고 동의함 </span><a href="#" class="agree_txt">[자세히 보기]</a></label>
+                        </div>
 						<div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"></div>
 						<div class="description bottom">
 							<p id="event-period">이벤트 기간 : <?=date("Y년 m월 01일")." ~ ".date("Y년 m월 t일 까지")?></p> <span>대상 :  ${resVo.target}</span>
@@ -265,7 +270,7 @@ html, body {font-size: 10px;}
     </div>
 
     <div class="toast">
-        <p><strong>혜택 제공</strong>을 위해 <strong>신청 버튼</strong>을 터치해주세요</p>
+        <p><strong>혜택 제공</strong>을 위해 <strong>"예"</strong>를 터치해주세요</p>
     </div>
 </div>
 
@@ -386,7 +391,7 @@ html, body {font-size: 10px;}
         let message = '';
 
         if (pageId === 'page-1') {
-            message = '<p><strong>혜택 제공</strong>을 위해 <strong>동의 버튼</strong>을 터치해주세요</p>';
+            message = '<p><strong>혜택 제공</strong>을 위해 <strong>"예"</strong>를 터치해주세요</p>';
         } else if (pageId === 'page-2') {
             message = '<p><strong>혜택 제공</strong>을 위해 <strong>확인 버튼</strong>을 터치해주세요</p>';
         }
