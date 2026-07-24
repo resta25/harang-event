@@ -61,7 +61,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 .timer_03_pointer .count_box {font-size: 1rem; text-align: center; font-size: 1.5rem; font-weight: 800; font-family: 'Pretendard'; color: #0059FF;}
 .timer_03_pointer .font-red {color: #FF8A00 ;}
 /* .timer_03_pointer .gauge-box {background-color: #274fe8;} */
-.timer_03_pointer .gauge-box .gauge {width: 100%; display: block; height: 35px; background: #0d89e7; border-radius: 999px;}
+.timer_03_pointer .gauge-box .gauge {width: 100%; display: block; height: 30px; background: #0d89e7; border-radius: 999px;}
 .timer_03_pointer .gauge-box .progress {position: relative; display: block; width: 0%; height: 100%; border-radius: 999px; background: #F6FF0D ;
 background: linear-gradient(90deg, rgba(255, 255, 255, 1)  0%, rgba(246, 255, 13, 1)  100%); animation: gaugeAni 1s forwards;}
 .timer_03_pointer .gauge-box .progress.active1 {animation: gaugeAni1 1s forwards;}
@@ -100,7 +100,7 @@ background: linear-gradient(90deg, rgba(255, 255, 255, 1)  0%, rgba(246, 255, 13
 .question_box .q_select label img {width: 100%;}
 
 /* 두번째 페이지 */
-.page:not(#page-1) .page_inner {padding: 9.167% 5.834% 1.667%;}
+.page:not(#page-1) .page_inner {padding: 7.167% 5.834% 1.467%;}
 .page .bottom-img {padding-bottom: 5rem; width: 80%; margin: 0 auto;}
 #page-2 .question_box .q_select {display: flex; align-items: center; column-gap: 13px; padding: 0;}
 #page-2 .question_box .q_select label {width: max-content;}
@@ -108,7 +108,7 @@ background: linear-gradient(90deg, rgba(255, 255, 255, 1)  0%, rgba(246, 255, 13
 
 /* db 영역 */
 .form .db-box {font-size: 150%;}
-.form .db-box input {border-radius: 20px; background-color: #fff; padding: 1.9% 0; margin-bottom: 1rem; font-family: 'Pretendard'; font-size: 290%; font-weight: 700; letter-spacing: -0.71px; text-align: center;}
+.form .db-box input {border-radius: 20px; background-color: #fff; padding: 1.9% 0; margin-bottom: 1rem; font-family: 'Pretendard'; font-size: 250%; font-weight: 700; letter-spacing: -0.71px; text-align: center;}
 .form .db-box input::placeholder {color: rgba(47, 47, 47, 0.2);}
 
 .icon-area {width: 25.5%; margin: 0 auto;}
@@ -117,10 +117,10 @@ background: linear-gradient(90deg, rgba(255, 255, 255, 1)  0%, rgba(246, 255, 13
 .form .agBox {color: #fff; margin: 0 auto 0; font-size: 175%; font-weight: 600; text-decoration: underline; font-family: 'Pretendard';}
 
 /* 대상, 안심문구, 이벤트기간 */
-.form .description {margin: 2rem auto; width: 100%;}
+.form .description {margin: 1rem auto; width: 100%;}
 .form .description p,
 .form .description span,
-.form .description .ad_txt {color: #fff; font-size: 1.5rem; padding: 0;}
+.form .description .ad_txt {color: #fff; font-size: 1.4rem; padding: 0; line-height: 1.27;}
 
 .form .description + .img-area {width: 85.5%; margin: 0 auto;}
 .form .description ~ .bottom-area {width: 71%; margin: 4% auto 2%;}
@@ -152,7 +152,7 @@ background: linear-gradient(90deg, rgba(255, 255, 255, 1)  0%, rgba(246, 255, 13
     html, body {font-size: 1.7vw;}
     .form .db-box input {font-size: 3rem; border-radius: 10px;}
 
-    .timer_03_pointer .gauge-box .gauge {height: 21px;}
+    .timer_03_pointer .gauge-box .gauge {height: 16px;}
     .timer_03_pointer .gauge-box .pointer {top: calc(-100% - 5px);}
     .timer_03_pointer .gauge-box .img-area {width: 80%; margin: 0 auto;}
 }
