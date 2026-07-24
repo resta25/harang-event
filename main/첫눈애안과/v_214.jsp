@@ -114,7 +114,10 @@ background: linear-gradient(90deg, rgba(255, 255, 255, 1)  0%, rgba(246, 255, 13
 .icon-area {width: 25.5%; margin: 0 auto;}
 
 /* 개인정보 처리방침 */
-.form .agBox {color: #fff; margin: 0 auto 0; font-size: 175%; font-weight: 600; text-decoration: underline; font-family: 'Pretendard';}
+.form .agBox {color: #fff; margin: 0 auto 0; font-size: 150%; font-weight: 600; text-decoration: underline; font-family: 'Pretendard';}
+
+.form input[type="checkbox"]:hover + span:before, .form input[type="checkbox"]:focus + span:before, .form input[type="radio"]:hover + span:before, .form input[type="radio"]:focus + span:before,
+.form input[type="checkbox"]:checked + span:after, .form input[type="radio"]:checked + span:after {border-color: #fff;}
 
 /* 대상, 안심문구, 이벤트기간 */
 .form .description {margin: 1rem auto; width: 100%;}
@@ -262,8 +265,7 @@ background: linear-gradient(90deg, rgba(255, 255, 255, 1)  0%, rgba(246, 255, 13
                             <input type="tel" id="phone" name="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="연락처">
                         </div>
                         <div class="agBox">
-                            <a href="#" class="btn-agreement">개인정보 처리방침</a>
-                            <input type="hidden" name="agBox" value="Y" checked>
+                            <label><input type="checkbox" name="agBox"><span>개인정보 수집 및 이용에 관한 내용을 확인하고 동의함 </span><a href="#" class="btn-agreement">[자세히 보기]</a></label>
                         </div>
                         <div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"></div>
                         <div class="img-area gif-area"><img src="//static.harang-event.com/event/v_${eventSeq}/arrow_01.gif"></div>
