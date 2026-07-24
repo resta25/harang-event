@@ -75,7 +75,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 
 /* 첫번째 페이지 */
 #page-1 {height: 100%;}
-#page-1 .video-area {padding: 2.5% 4.585% 0;}
+#page-1 .video-area {padding: 2.5% 4.585% 7%;}
 #page-1 .video-area video {display: block; width: 100%; height: 100%; border-radius: 30px;}
 #page-1 .agBox {font-size: 150%; font-family: 'Pretendard'; font-weight: 500; margin: 3.667% auto 3.585%;}
 #page-1 .agBox a {text-decoration: underline;}
@@ -120,7 +120,8 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 .form .description {width: 100%; text-align: center; margin: 4.462% auto 8.735%; padding: 0;}
 .form .description p {font-weight: 400; font-size: 83%; color: #1d1d1d; font-family: 'Pretendard';}
 
-/* .form .agBox {font-size: 1.2rem; width: 100%; margin: 0 auto;} */
+.form .agBox {font-size: 1.6rem; width: 100%; margin: 1rem auto 0;}
+.form .agBox + .paging {margin-top: 4.6%;}
 
 /* 모달창 - 개인정보처리방침 */
 .overlay {z-index: 888; position: fixed; display: none; width: 100vw; height: 100vh; opacity: 0.5; background-color: #000;}
@@ -202,12 +203,8 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                     <video id="location" playsinline loop autoplay muted src="//static.harang-event.com/event/v_${eventSeq}/video.mp4" type="video/mp4"></video>
                     <script>setTimeout(function(){ $('#location').trigger('play'); },500);</script>
                 </div>
-                <div class="agBox">
-                    <a href="#" class="btn-agreement">개인정보 처리방침</a> 동의 후 확인하세요.
-                    <input type="hidden" name="agBox" value="Y" checked>
-                </div>
                 <div class="page_inner">
-                    <button type="button" class="next" onclick="pageFuc(1,$(this))">동의 후 내 탕감률 % 확인</button>
+                    <button type="button" class="next" onclick="pageFuc(1,$(this))">내 탕감률 % 확인</button>
                 </div>
             </section>
             
@@ -373,6 +370,9 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
                             <input type="tel" id="phone" name="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="연락처를 입력해 주세요">
                         </div>
                     </div>
+                </div>
+                <div class="agBox">
+                    <label><input type="checkbox" name="agBox"><span>개인정보 수집 및 이용에 관한 내용을 확인하고 동의함 </span><a href="#" class="btn-agreement">[자세히 보기]</a></label>
                 </div>
                 <div class="paging">
                     <!-- <button type="button" class="prev">이전</button>	 -->
