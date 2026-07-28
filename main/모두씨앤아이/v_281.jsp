@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonts-archive/Paperlogy/Paperlogy.css" type="text/css"/>
 <style>
 @import url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard.css');
 * {box-sizing: border-box;}
@@ -10,6 +11,15 @@ html, body {font-size: 62.5%;}
 
 .benefit-area {padding: 7.5rem 3.2rem 7.2rem;}
 .benefit-area .img-area:not(.swiper) {width: 94.694960%; margin: 0 auto 3rem;}
+
+/* 설문 영역 */
+.question_box .question {margin: 4.5rem 0 1.6rem;text-align: center; color: #0c174b; font-size: 4.3rem; font-weight: 500; font-family: 'Paperlogy'; letter-spacing: -0.04em; line-height: 1.27;}
+.question_box .question strong {color: #868dac; font-weight: 600;}
+.question_box .q_select {display: flex; column-gap: 1.1rem;}
+.question_box .q_select label {width: 100%;}
+.question_box .q_select label .sel-item {padding: 2.2rem 1rem; background-color: #0c174b; border-radius: 1.3rem; font-size: 3.2rem; font-weight: 600; letter-spacing: -0.63px; text-align: center; color: #fff; line-height: 1;}
+.question_box .q_select label.active .sel-item {background: #f07478; color: #fff;}
+
 
 /* 상단 슬라이드 */
 .swiper-slide img {width: 100%;}
@@ -45,13 +55,13 @@ html, body {font-size: 62.5%;}
 /* .notice-area {padding: 2.4rem 0 1.8rem; background-color: #282828;} */
 
 /* 이름, 나이, 연락처 입력칸 */
-.form .form_inner .formGroup {padding: 9rem 8.8rem 4.2rem;}
+.form .form_inner .formGroup {padding: 9rem 7.2rem 4.2rem;}
 .form .form_inner .question .img-area {width: 81.464174%; margin: 0 auto;}
 .form .form_inner .formGroup .legend {position: relative; flex-shrink: 0; width: 9.71rem; padding-right: 1.4rem; font-family: 'Pretendard'; font-size: 3.4rem; font-weight: 800; letter-spacing: -1.7px; color: #0c174b;}
 .form .form_inner .formGroup .legend::after {content: ''; width: 0.7rem; height: 0.7rem; border-radius: 50%; position: absolute; right: 0; top: 0.3rem; background-color: #ec0001;}
 .form .form_inner .formGroup .user_info.name .legend::after {right: 2.1rem;}
 /* .form .form_inner .formGroup .legend .mark {color: #43d866;} */
-.form .form_inner .formGroup .input_box {display: flex; flex-wrap: wrap; column-gap: 2.4rem; row-gap: 2.1rem; margin-top: 5rem;} 
+.form .form_inner .formGroup .input_box {display: flex; flex-wrap: wrap; column-gap: 2.4rem; row-gap: 2.1rem; margin-top: 5rem; padding: 0 1.6rem;} 
 .form .form_inner .formGroup .user_info {display: flex; align-items: center; column-gap: 2rem; width: 100%;}
 /* .form .form_inner .formGroup .user_info.name {width: 52.724%;}
 .form .form_inner .formGroup .user_info.age {width: 43.8%;}
@@ -59,7 +69,7 @@ html, body {font-size: 62.5%;}
 .form .form_inner .formGroup .inp {flex-grow: 1; padding: 1.7rem 2.8rem; font-family: 'Pretendard'; font-size: 3.2rem; line-height: 1; letter-spacing: -1px; text-align: left; color: #111; border-radius: 1.5rem; background-color: #f1f1f1;}
 
 /* 개인정보처리방침 영역 */
-.form .agBox {margin: 2.8rem auto; font-size: 1.65rem; line-height: 1.45; letter-spacing: -0.83px; text-align: center; color: #000;}
+.form .agBox {margin: 2.8rem auto; font-size: 1.8rem; line-height: 1.45; letter-spacing: -0.83px; text-align: center; color: #000;}
 .form .agreement {color: #000; font-size: 1.6rem;}
 .form input[type="checkbox"] + span:after, .form input[type="radio"] + span:after,
 .form input[type="checkbox"] + span:before, .form input[type="radio"] + span:before {border-color: #000;}
@@ -91,7 +101,9 @@ box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.35);  width: 100%;
 @media screen and (max-width: 480px){
     html, body {font-size: 1.5vw;}
 
+    .question_box .question {font-size: 3.6rem;}
     .form .form_inner .formGroup {padding: 7rem 6.8rem 4.2rem;}
+    .question_box .q_select label .sel-item {font-size: 2.5rem;}
 }
 
 @media screen and (max-width: 395px){
@@ -165,41 +177,58 @@ box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.35);  width: 100%;
         <form id="form-1" method="POST" accept-charset="utf-8"> 
             <div class="form_inner">
                 <div class="formGroup">
-                    <div class="question">
-                        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_02.png"></div>
-                    </div>
-                    <div class="input_box">
-                        <!-- <div class="img-area pc-img notice-img"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_01_pc.png"></div> -->
-                        <div class="user_info name">
-                            <span class="legend">이름</span>
-                            <input type="text" name="name" id="name" class="inp" required autocomplete="off" placeholder="이름을 입력해주세요">
+                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_02.png"></div>
+                    <div class="question_box">
+                        <div class="question">
+                            <div class="question"><strong>Q1.</strong><br />현재 가장 큰 피부 고민을 선택해주세요</div>
+                            <div class="q_select">
+                                <label><input type="radio" name="tadd1" value="주름+탄력"><div class="sel-item">주름+탄력</div></label>
+                                <label><input type="radio" name="tadd1" value="기미+잡티"><div class="sel-item">기미+잡티</div></label>
+                                <label><input type="radio" name="tadd1" value="모공+기타"><div class="sel-item">모공+기타</div></label>
+                            </div>
                         </div>
-                        <div class="user_info phone">
-                            <span class="legend">연락처</span>
-                            <input type="tel" name="phone" id="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="연락처를 입력해주세요">
+                        <div class="question">
+                            <div class="question"><strong>Q2.</strong><br />귀하의 연령대를 선택해주세요</div>
+                            <div class="q_select">
+                                <label><input type="radio" name="tadd2" value="50대"><div class="sel-item">50대</div></label>
+                                <label><input type="radio" name="tadd2" value="60대"><div class="sel-item">60대</div></label>
+                                <label><input type="radio" name="tadd2" value="70대"><div class="sel-item">70대</div></label>
+                                <label><input type="radio" name="tadd2" value="80대 이상"><div class="sel-item">80대 이상</div></label>
+                            </div>
                         </div>
-                    </div>
+                        <div class="input_box">
+                            <!-- <div class="img-area pc-img notice-img"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_01_pc.png"></div> -->
+                            <div class="user_info name">
+                                <span class="legend">이름</span>
+                                <input type="text" name="name" id="name" class="inp" required autocomplete="off" placeholder="이름을 입력해주세요">
+                            </div>
+                            <div class="user_info phone">
+                                <span class="legend">연락처</span>
+                                <input type="tel" name="phone" id="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="연락처를 입력해주세요">
+                            </div>
+                        </div>
+    
+                        <div class="agBox">
+                            <label><input name="agBox" type="checkbox"><span>개인정보 수집 및 이용에 관한 내용을 확인하고 동의함</span></label> <a href="#" class="btn-agreement">[자세히 보기]</a>
+                        </div>
+                        <div class="agreement">
+                            <div class="button"><a href="${resVo.agreementUrl}" target="_agreement" onclick="window.open(this.href, this.target,'resizable=no, scrollbars=yes, width=1000, height=800, left=200, top=200'); return false;"  target="_blank">개인정보 처리방침</a></div>
+                            <h3>개인정보처리방침</h3>
+                            <ol>
+                                <li>개인정보 수집주체 : ${resVo.agent}</li>
+                                <li>개인정보 수집항목 : ${resVo.objectItems}</li>
+                                <li>개인정보 수집 및 이용목적 : ${resVo.agent}에서 ${resVo.objectName} 상담활용(전화,문자)</li>
+                                <li>개인정보 보유 및 이용기간 : 수집일로부터 6개월 (고객 동의 철회시 지체없이 파기)</li>
+                            </ol><br/>
+                            <h3>개인정보 취급 위탁</h3>
+                            <ol>
+                                <li>개인정보 취급 위탁을 받는자 : (주)하랑고치</li>
+                                <li>개인정보 취급 위탁을 하는 업무의 내용 : 고객정보 저장 및 서버관리</li>
+                                <li class="desc">*상기 동의를 거부할 권리가 있으나, 수집 및 이용에 동의하지 않을 경우 ${resVo.objectName} 상담 및 이벤트 참여가 불가능합니다.</li>
+                            </ol>
+                        </div>
 
-                    <div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.gif"></div>
-
-                    <div class="agBox">
-                        <label><input name="agBox" type="checkbox"><span>개인정보 수집 및 이용에 관한 내용을 확인하고 동의함</span></label> <a href="#" class="btn-agreement">[자세히 보기]</a>
-                    </div>
-                    <div class="agreement">
-                        <div class="button"><a href="${resVo.agreementUrl}" target="_agreement" onclick="window.open(this.href, this.target,'resizable=no, scrollbars=yes, width=1000, height=800, left=200, top=200'); return false;"  target="_blank">개인정보 처리방침</a></div>
-                        <h3>개인정보처리방침</h3>
-                        <ol>
-                            <li>개인정보 수집주체 : ${resVo.agent}</li>
-                            <li>개인정보 수집항목 : ${resVo.objectItems}</li>
-                            <li>개인정보 수집 및 이용목적 : ${resVo.agent}에서 ${resVo.objectName} 상담활용(전화,문자)</li>
-                            <li>개인정보 보유 및 이용기간 : 수집일로부터 6개월 (고객 동의 철회시 지체없이 파기)</li>
-                        </ol><br/>
-                        <h3>개인정보 취급 위탁</h3>
-                        <ol>
-                            <li>개인정보 취급 위탁을 받는자 : (주)하랑고치</li>
-                            <li>개인정보 취급 위탁을 하는 업무의 내용 : 고객정보 저장 및 서버관리</li>
-                            <li class="desc">*상기 동의를 거부할 권리가 있으나, 수집 및 이용에 동의하지 않을 경우 ${resVo.objectName} 상담 및 이벤트 참여가 불가능합니다.</li>
-                        </ol>
+                        <div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.gif"></div>
                     </div>
                     <div class="description">
                         <p id="event-period"></p>
@@ -316,21 +345,29 @@ box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.35);  width: 100%;
         /* form id로 proc */
         let procForm = document.getElementById(formId);
 
-        // let selectedRadio1 = procForm.querySelector('input[name="tadd1"]:checked');
-		// if (!selectedRadio1) {
-		// 	alert("설문을 선택해주세요.");
-		// 	return;
-		// } else {
-		// 	procForm.querySelector("input[name='add1']").value = selectedRadio1.value;
-		// }
+		let selectedRadio1 = procForm.querySelector(`input[name="tadd1"]:checked`);
+		if (!selectedRadio1) {
+			alert("피부 고민을 선택해주세요.");
+			return;
+		} else {
+			procForm.querySelector("input[name='add1']").value = selectedRadio1.value;
+		}
+
+		let selectedRadio2 = procForm.querySelector(`input[name="tadd2"]:checked`);
+		if (!selectedRadio2) {
+			alert("연령대를 선택해주세요.");
+			return;
+		} else {
+			procForm.querySelector("input[name='add2']").value = selectedRadio2.value;
+		}
 			
         // 필수값 체크 항목
         var required = {
             'name': '이름'
             // ,'age': '나이'
             ,'phone': '전화번호'
-            // ,'add1': '설문1'
-            // ,'add2': '설문2'
+            ,'add1': '설문1'
+            ,'add2': '설문2'
             // ,'add3': '설문3'
             ,'agBox': '개인정보'
         };
