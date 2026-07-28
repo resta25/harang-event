@@ -56,16 +56,16 @@
 body::-webkit-scrollbar {display: none;}
 
 .hide {display: none !important;}
-.bg_main {background-color: #e8e8e8; overflow: hidden;}
+.bg_main {background-color: #1a202b; overflow: hidden;}
 .c_red {color:#fff500;}
 .mb_3{margin-bottom: 3%;}
 .bottom{display:none;}
 
 .gif-area {display: flex; align-items: center; position: relative; overflow: hidden;}
 .gif-area img {width: 100%;}
-.gif-area img:nth-child(1) {position: absolute; left: 0; top: 0; width: 50%;}
+.gif-area img:nth-child(1) {position: absolute; left: 4.646%; bottom: 0; width: 48.9%;}
 
-#wrap {height: 100vh; background-color:#e8e8e8;}
+#wrap {height: 100vh; background-color:#1a202b;}
 .form {margin-top: 5%; padding: 0 3% 5%; overflow-y: scroll; background-color: transparent;}
 .form::-webkit-scrollbar {display: none;}
 #location {position: absolute; top: 12%; right: 5%; width: 46.5%;}
@@ -75,7 +75,7 @@ body::-webkit-scrollbar {display: none;}
 .chat_box, .input_box, .chat_set.left .progress_box .progress_txt {border-radius: 0.5em;}
 
 /* 공통 border */
-.chat_set.left .chat_profile_01 img, .chat_set.left .chat_box {border: 1px solid #ddd;}
+/* .chat_set.left .chat_profile_01 img, .chat_set.left .chat_box {border: 1px solid #ddd;} */
 
 .chat_set:not(:last-child) {margin-bottom: 4%;}
 
@@ -83,20 +83,20 @@ body::-webkit-scrollbar {display: none;}
 .chat_set.left {display: grid; grid-template-columns: 1fr 9fr; gap: 2%;}
 .chat_set.left .chat_profile_01 img {width: 100%; border-radius: 99em;}
 .chat_set.left .progress_box .progress_txt {display: inline-block; margin-bottom: 1%; padding: 0.2em 0.4em 0.3em; font-size: 24px; font-weight: 700;background-color:#0069fd; color:#fff;}
-.chat_set.left .chat_box {width: 6em; height: 2.3em; display: inline-block; padding: 0.4em 0.7em; background-color: #fff; transform-origin: left top; animation: .3s chatBoxSizeUp 0.5s forwards;}
-.chat_set.left .chat_box .chat_txt {opacity: 0; animation: 0.3s fadeIn 0.6s forwards; line-height: 1.3; color: #282828; font-weight: 500;}
+.chat_set.left .chat_box {width: 6em; height: 2.3em; display: inline-block; padding: 0.4em 0.7em; background-color: #25334b; transform-origin: left top; animation: .3s chatBoxSizeUp 0.5s forwards;}
+.chat_set.left .chat_box .chat_txt {opacity: 0; animation: 0.3s fadeIn 0.6s forwards; line-height: 1.3; color: #fff; font-weight: 500;}
 .chat_set.left .chat_box .chat_txt em {font-weight: 700; text-decoration: none; font-style: normal;}
 
 /* 채팅 right */
 .chat_set.right {display: flex; justify-content: flex-end;}
-.chat_set.right .chat_box {width: 10rem; text-align: center; padding: 0.969rem 0.5rem; text-align: center; font-weight: 600; background-color: #404040; color: #fff;}
+.chat_set.right .chat_box {width: 10rem; text-align: center; padding: 0.969rem 0.5rem; text-align: center; font-weight: 600; background-color: #404040; color: #fff; border: 1px solid #404040;}
 .chat_set.right .chat_box.agree_btn, .chat_set.right .chat_box.disagree_btn {display: block; cursor: pointer;}
 .chat_set.right .chat_box.disagree_btn { background-color: #404040; }
-.chat_set.right .chat_box.agree_btn.selected, .chat_set.right .chat_box.input_box_changed {background-color: #00bbb5; color: #fff;}
+.chat_set.right .chat_box.agree_btn.selected, .chat_set.right .chat_box.input_box_changed {background-color: #343b8b; color: #fff; border-color: #ffd800;}
 
 /* chat_box 로딩 */
 .chat_set.left .chat_box {position: relative; overflow: hidden;}
-.loader_box {position: absolute; top: 0; left: 0; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; background-color: #fff;}
+.loader_box {position: absolute; top: 0; left: 0; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; background-color: #25334b;}
 .loader_box .loader {position: relative; z-index: 9; width: 0.5em; height: 0.5em; border-radius: 50%; background-color: #000; box-shadow: 1em 0 #000, -1em 0 #000; animation: flash 0.3s ease-out infinite alternate;}
 
 /* 이벤트기간 */
@@ -124,7 +124,7 @@ body::-webkit-scrollbar {display: none;}
 .question_box .q_select {display: flex; flex-flow: row wrap; gap: 1%; justify-content: flex-end; width: 100%;}
 .question_box .q_select label {position: relative; cursor: pointer; width: max-content;}
 .question_box .q_select label input::after {display: none; content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
-.question_box .q_select label input:checked + .chat_box {background-color: #00bbb5; color: #fff;}
+.question_box .q_select label input:checked + .chat_box {background-color: #343b8b; color: #fff; border-color: #ffd800;}
 
 /* 설문 개별 */
 .chat_set[data-value="2"] .q_select label:nth-child(odd) {margin-bottom: 1%;}
@@ -132,11 +132,11 @@ body::-webkit-scrollbar {display: none;}
 .input_box {width: 60%; display: flex; align-items: center; padding-left: 1em; border-radius: 0.5em; border: 1px solid #999; background-color: #fff; padding: 0.5rem 0.5rem 0.5rem 1rem; box-shadow: 0px 5px 10px 0 rgba(221, 221, 221, 0.3);}
 .input_box .next_btn {padding: 0.5em 0.7em; text-align: center; font-weight: 600; border-radius: 0.5em ; cursor: pointer; background-color: #404040; color:#fff; width: 25%;}
 
-.form .submit {padding:0; width: 35%; margin: 0;}
+.form .submit {padding:0; width: 65%; margin: 0;}
 input[type="image"] {width:100%; height: 100%;}
 
 .form .agree_txt {text-decoration: none; cursor: pointer;}
-.em {color: #00bbb5; font-weight: 800;}
+.em {color: #ffd800; font-weight: 800;}
 
 /* 개별 */
 #page-4 {flex-direction: column; align-items: end;}
@@ -169,9 +169,10 @@ input[type="image"] {width:100%; height: 100%;}
 
 .container_bottom img {display: block; width: 100%; height: 100%;}
 
-.form input[type="checkbox"]:hover + span:before, .form input[type="checkbox"]:focus + span:before, .form input[type="radio"]:hover + span:before, .form input[type="radio"]:focus + span:before {border-color: #00bbb5;}
-.form input[type="checkbox"] + span:before, .form input[type="radio"] + span:before {top: 25%; border-color: #00bbb5; animation: checkboxAni 0.5s ease-in-out infinite alternate; transform-origin: center center;}
+.form input[type="checkbox"]:hover + span:before, .form input[type="checkbox"]:focus + span:before, .form input[type="radio"]:hover + span:before, .form input[type="radio"]:focus + span:before {border-color: #fff;}
+.form input[type="checkbox"] + span:before, .form input[type="radio"] + span:before {top: 25%; border-color: #fff; animation: checkboxAni 0.5s ease-in-out infinite alternate; transform-origin: center center;}
 .form input[type="checkbox"] + span:after, .form input[type="radio"] + span:after {top: 25%}
+.form input[type="checkbox"]:checked + span:after, .form input[type="radio"]:checked + span:after {border-color: #fff;}
 
 @keyframes checkboxAni {
     0% {transform: scale(1) translateY(-50%);}
@@ -194,8 +195,6 @@ input[type="image"] {width:100%; height: 100%;}
     .form .table_box {padding: 0;}
 	.chat_set.right .chat_box {width: 6rem; padding: 0.5rem 0.2rem;}
 	#page-4 .chat_box {width: 9rem;}
-    .form .submit {width: 45%;}
-    .form .submit input[type="image"] {width: 100%;}
 
     .form .description p, .form .description .ad_txt, .form .description span {padding: 0;}
 }
@@ -206,9 +205,9 @@ input[type="image"] {width:100%; height: 100%;}
 }
 /* loader animation */
 @keyframes flash {
-    0% { background-color: #0002; box-shadow: 1em 0 #0002, -1em 0 #000; }
-    50% { background-color: #000; box-shadow: 1em 0 #0002, -1em 0 #0002; }
-    100% { background-color: #0002; box-shadow: 1em 0 #000, -1em 0 #0002;}
+    0% { background-color: #fff2; box-shadow: 1em 0 #fff2, -1em 0 #fff; }
+    50% { background-color: #fff; box-shadow: 1em 0 #fff2, -1em 0 #fff2; }
+    100% { background-color: #fff2; box-shadow: 1em 0 #fff, -1em 0 #fff2;}
 }
 
 @keyframes chatBoxSizeUp {
