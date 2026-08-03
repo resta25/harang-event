@@ -135,7 +135,27 @@ body::-webkit-scrollbar {display: none;}
 .input_box .next_btn {padding: 0.5em 0.7em; text-align: center; font-weight: 600; border-radius: 0.5em ; cursor: pointer; background-color: #404040; color:#fff; width: 25%;}
 
 .form .submit {padding:0; width: 35%; margin: 5% 0 0;}
-input[type="image"] {width:100%; height: 100%;}
+.form .submit .btn_submit,
+.form .submit input[type="image"] {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform-origin: center center;
+  -webkit-animation: pulsating 0.8s linear infinite;
+  animation: pulsating 0.8s linear infinite;
+  will-change: transform;
+}
+
+@-webkit-keyframes pulsating {
+  0% { -webkit-transform: scale(1); transform: scale(1); }
+  50% { -webkit-transform: scale(0.95); transform: scale(0.95); }
+  100% { -webkit-transform: scale(1); transform: scale(1); }
+}
+@keyframes pulsating {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
 
 .form .agree_txt {text-decoration: none; cursor: pointer;}
 .em {color: #ff4f2c; font-weight: 800;}
@@ -160,8 +180,8 @@ input[type="image"] {width:100%; height: 100%;}
 .form .formGroup .table_box table tr:last-child td input::placeholder {color:#afafaf;}
 
 /* 개인정보처리방침 */
-.form .agBox {width: 100%; text-align: left; font-size: 75%; font-family: 'SUIT';}
-/* .form .agBox a {font-weight: normal;} */
+.form .agBox {width: 100%; text-align: left; font-size: 100%; font-family: 'SUIT';}
+.form .agBox a {display: block; font-size: 75%;}
 .form input[type="checkbox"] + span:before, .form input[type="radio"] + span:before,
 .form input[type="checkbox"] + span:after, .form input[type="radio"] + span:after {top: 25%;}
 
@@ -172,6 +192,12 @@ input[type="image"] {width:100%; height: 100%;}
 .form .description span {font-size: 75%; font-weight: 500; text-align: left; font-family: 'SUIT'}
 
 .container_bottom img {display: block; width: 100%; height: 100%;}
+
+@keyframes pulsating {
+	0% {transform: scale(1);}
+	50% {transform: scale(0.95);}
+	100% {transform: scale(1);}
+}
 
 @media screen and (max-width: 500px){
     #wrap {height: 100%;}
@@ -363,7 +389,7 @@ input[type="image"] {width:100%; height: 100%;}
                                 </div>
 								<div class="description">
 									<p id="event-period"></p>
-									<div class="ad_txt">안심하세요! 본원에서는 고객님의 소중한 개인정보를 <br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
+									<!-- <div class="ad_txt">안심하세요! 본원에서는 고객님의 소중한 개인정보를 <br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div> -->
 									<span class="target">대상 : ${resVo.target}</span>
 								</div>
 							</div>
@@ -488,17 +514,17 @@ input[type="image"] {width:100%; height: 100%;}
             alert('개인정보처리방침에 동의해주세요.');
             $('input[name="tadd5"]').prop('checked', false);
             $agBox.prop('checked', false);
-            $submit.removeClass('hide');
+            // $submit.addClass('hide');
             $labels.show(); // 다시 둘 다 보이게
             return;
         }
 
         if (value === '예') {
             $agBox.prop('checked', true);
-            $submit.removeClass('hide');
+            // $submit.removeClass('hide');
 
             // 예만 남기고 아니오 숨김 (기존 question_box 동작과 동일)
-            $labels.has('input:not(:checked)').show();
+            $labels.has('input:not(:checked)').hide();
             scrollToBottom();
         }
     });
