@@ -160,10 +160,10 @@ input[type="image"] {width:100%; height: 100%;}
 .form .formGroup .table_box table tr:last-child td input::placeholder {color:#afafaf;}
 
 /* 개인정보처리방침 */
-.form .agBox {width: 100%; text-align: right; font-size: 85%; font-family: 'SUIT';}
+.form .agBox {width: 100%; text-align: right; font-size: 125%; font-family: 'SUIT';}
 /* .form .agBox a {font-weight: normal;} */
 .form input[type="checkbox"] + span:before, .form input[type="radio"] + span:before,
-.form input[type="checkbox"] + span:after, .form input[type="radio"] + span:after {top: 25%;}
+.form input[type="checkbox"] + span:after, .form input[type="radio"] + span:after {top: 25%; border-color: #000;}
 
 .form .description {text-align: left; border-radius: 1rem; width: auto; margin: 0; font-family: 'SUIT'}
 
@@ -186,6 +186,8 @@ input[type="image"] {width:100%; height: 100%;}
 
 	 .desc {font-size: 150%;}
 	 .timer-box {font-size: 150%;}
+
+     .form .agBox {font-size: 85%;}
 
     .agreeModalBox {padding: 12% 4% 5%; width: 95%;} /* 모달창 */
     .form .table_box table th, .form .table_box table td {font-size: 100%;}
