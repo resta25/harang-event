@@ -94,6 +94,7 @@ body::-webkit-scrollbar {display: none;}
 .chat_set.right .chat_box.agree_btn, .chat_set.right .chat_box.disagree_btn {display: block; cursor: pointer;}
 .chat_set.right .chat_box.disagree_btn { background-color: #404040; }
 .chat_set.right .chat_box.agree_btn.selected, .chat_set.right .chat_box.input_box_changed {background-color: #0024ff; color: #fff;}
+#page-5.chat_set.right {flex-direction: column; align-items: flex-end;}
 
 /* chat_box 로딩 */
 .chat_set.left .chat_box {position: relative; overflow: hidden;}
@@ -131,9 +132,9 @@ body::-webkit-scrollbar {display: none;}
 .chat_set[data-value="2"] .q_select label:nth-child(odd) {margin-bottom: 1%;}
 
 .input_box {width: 60%; display: flex; align-items: center; padding-left: 1em; border-radius: 0.5em; border: 1px solid #999; background-color: #fff; padding: 0.5rem 0.5rem 0.5rem 1rem; box-shadow: 0px 5px 10px 0 rgba(221, 221, 221, 0.3);}
-.input_box .next_btn {padding: 0.5em 0.7em; text-align: center; font-weight: 600; border-radius: 0.5em ; cursor: pointer; background-color: #404040; color:#fff; width: 25%;}
+.input_box .next_btn {flex-shrink: 0; padding: 0.5em 0.7em; text-align: center; font-weight: 600; border-radius: 0.5em ; cursor: pointer; background-color: #404040; color:#fff; width: max-content;}
 
-.form .submit {padding:0; width: 35%; margin: 0;}
+.form .submit {padding:0; width: 35%; margin: 0; margin-top: 3%;}
 input[type="image"] {width:100%; height: 100%;}
 
 .form .agree_txt {text-decoration: none; cursor: pointer;}
@@ -159,7 +160,7 @@ input[type="image"] {width:100%; height: 100%;}
 .form .formGroup .table_box table tr:last-child td input::placeholder {color:#afafaf;}
 
 /* 개인정보처리방침 */
-.form .agBox {width: 100%; text-align: left; font-size: 75%; font-family: 'SUIT';}
+.form .agBox {width: 100%; text-align: right; font-size: 85%; font-family: 'SUIT';}
 /* .form .agBox a {font-weight: normal;} */
 .form input[type="checkbox"] + span:before, .form input[type="radio"] + span:before,
 .form input[type="checkbox"] + span:after, .form input[type="radio"] + span:after {top: 25%;}
@@ -181,7 +182,7 @@ input[type="image"] {width:100%; height: 100%;}
     .chat_box, .input_box .next_btn {font-size: 16px;}
     .form .inp {font-size: 16px;}
     .chat_set.left .progress_box .progress_txt {font-size: 3.2vw;}
-    .input_box .next_btn {width: 30%;}
+    /* .input_box .next_btn {width: 30%;} */
 
 	 .desc {font-size: 150%;}
 	 .timer-box {font-size: 150%;}
@@ -360,9 +361,6 @@ input[type="image"] {width:100%; height: 100%;}
 					<div class="chat_container">
 						<div class="chat_box">
 							<div class="chat_txt">
-								<div class="agBox">
-								    <label><input type="checkbox" name="agBox"><span>개인정보 수집 및 이용에 관한 내용을 <br />확인하고 동의함 </span><a href="#" class="agree_txt">[자세히 보기]</a></label>
-                                </div>
 								<div class="description">
 									<p id="event-period"></p>
 									<div class="ad_txt">안심하세요! 본원에서는 고객님의 소중한 개인정보를 <br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
@@ -378,6 +376,9 @@ input[type="image"] {width:100%; height: 100%;}
 			</div>
 
 			<div class="chat_set right hide" id="page-5" data-value="5">
+                <div class="agBox">
+                    <label><input type="checkbox" name="agBox"><span>개인정보 수집 및 이용에 관한 내용을 <br />확인하고 동의함 </span><a href="#" class="agree_txt">[자세히 보기]</a></label>
+                </div>
 				<div class="submit submit_agree">
 					<input type="image" value="" class="btn_submit" onclick="fnForm('form-1');" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"/>
 				</div>
