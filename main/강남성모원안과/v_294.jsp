@@ -94,6 +94,7 @@ body::-webkit-scrollbar {display: none;}
 .chat_set.right .chat_box.agree_btn, .chat_set.right .chat_box.disagree_btn {display: block; cursor: pointer;}
 .chat_set.right .chat_box.disagree_btn { background-color: #404040; }
 .chat_set.right .chat_box.agree_btn.selected, .chat_set.right .chat_box.input_box_changed {background-color: #ff4f2c; color: #fff;}
+#page-5.chat_set.right {flex-direction: column; align-items: flex-end;}
 
 /* chat_box 로딩 */
 .chat_set.left .chat_box {position: relative; overflow: hidden;}
@@ -133,7 +134,7 @@ body::-webkit-scrollbar {display: none;}
 .input_box {width: 60%; display: flex; align-items: center; padding-left: 1em; border-radius: 0.5em; border: 1px solid #999; background-color: #fff; padding: 0.5rem 0.5rem 0.5rem 1rem; box-shadow: 0px 5px 10px 0 rgba(221, 221, 221, 0.3);}
 .input_box .next_btn {padding: 0.5em 0.7em; text-align: center; font-weight: 600; border-radius: 0.5em ; cursor: pointer; background-color: #404040; color:#fff; width: 25%;}
 
-.form .submit {padding:0; width: 35%; margin: 0;}
+.form .submit {padding:0; width: 35%; margin: 5% 0 0;}
 input[type="image"] {width:100%; height: 100%;}
 
 .form .agree_txt {text-decoration: none; cursor: pointer;}
@@ -188,7 +189,7 @@ input[type="image"] {width:100%; height: 100%;}
     .form .table_box {padding: 0;}
 	.chat_set.right .chat_box {width: 6rem; padding: 0.5rem 0.2rem;}
 	#page-4 .chat_box {width: 9rem;}
-    .form .submit {width: 45%;}
+    .form .submit {width: 40%;}
     .form .submit input[type="image"] {width: 100%;}
 
     .form .description p, .form .description .ad_txt, .form .description span {padding: 0;}
@@ -358,7 +359,7 @@ input[type="image"] {width:100%; height: 100%;}
 						<div class="chat_box">
 							<div class="chat_txt">
 								<div class="agBox">
-                                    <label><input type="checkbox" name="agBox"><span>개인정보 수집 및 이용에 관한 내용을 <br />확인하고 동의함 </span><a href="#" class="agree_txt">[자세히 보기]</a></label>
+                                    <label><input type="checkbox" name="agBox">개인정보 수집 및 이용에 관한 내용을 <br />확인하고 동의하시겠습니까? <a href="#" class="agree_txt">[자세히 보기]</a></label>
                                 </div>
 								<div class="description">
 									<p id="event-period"></p>
@@ -375,10 +376,20 @@ input[type="image"] {width:100%; height: 100%;}
 			</div>
 
 			<div class="chat_set right hide" id="page-5" data-value="5">
-				<div class="submit submit_agree">
-					<input type="image" value="" class="btn_submit" onclick="fnForm('form-1');" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"/>
-				</div>
-			</div>
+                <div class="q_select">
+                    <label>
+                        <input type="radio" name="tadd5" value="예">
+                        <div class="chat_box">예</div>
+                    </label>
+                    <label>
+                        <input type="radio" name="tadd5" value="아니오">
+                        <div class="chat_box">아니오</div>
+                    </label>
+                </div>
+                <div class="submit submit_agree hide">
+                    <input type="image" value="" class="btn_submit" onclick="fnForm('form-1');" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"/>
+                </div>
+            </div>
             
             <input type="hidden" id="branch" 		name="branch" value="${resVo.branch}"/>
 			<input type="hidden" id="eventSeq" 		name="eventSeq" value="${resVo.eventSeq}"/>
@@ -467,6 +478,29 @@ input[type="image"] {width:100%; height: 100%;}
         showNextComment(currentValue, nextValue, true); // Show next chat_set.left
         showNextComment(currentValue, nextValue, false); // Show next chat_set.right
         scrollToBottom();
+    });
+
+    // 개인정보 동의 예/아니오
+    $('input[name="tadd5"]').on('change', function () {
+        var value = $(this).val();
+        var $agBox = $('input[name="agBox"]');
+        var $submit = $('#page-5 .submit_agree');
+
+        if (value === '아니오') {
+            alert('개인정보처리방침에 동의해주세요.');
+            // 예 선택 해제
+            $('input[name="tadd5"][value="예"]').prop('checked', false);
+            $(this).prop('checked', false);
+            $agBox.prop('checked', false);
+            $submit.addClass('hide');
+            return;
+        }
+
+        if (value === '예') {
+            $agBox.prop('checked', true);
+            $submit.removeClass('hide');
+            scrollToBottom();
+        }
     });
 
     // 이름 입력란 - 다음 버튼 클릭 시
