@@ -1,17 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <style>
-#wrap{position: relative;}
+#wrap{position: relative; background: url('//static.harang-event.com/event/v_${eventSeq}/bg_01.jpg') no-repeat center center / 100% 100%;}
 .page:not(#page-1){display: none;}
 
 .television{padding:2% 10% 1%;}
 .television .screen{width: 100%;}
 
-.form {position: absolute; top: 10%; left: 50%; transform: translateX(-50%); width: 90%; background: none;}
+.form {width: 90%; padding-top: 10%; background: none; margin: 0 auto;}
 .form .formContents {padding:5% 0 10%;}
 
 /* 이름, 연락처 */
-.form .formGroup .user_info {margin: 5% 0;}
+.form .formGroup .user_info {margin: 5% 0 3%;}
 .form .formGroup .user_info input {background: #e1e1e1; padding: 5%; border-radius: 0.5em; font-size: 150%;}
 .form .formGroup .user_info .user_name {margin-bottom: 3%;}
 
@@ -56,10 +56,15 @@ input[type="radio"] {
 /* 이벤트 기간, 대상 */
 .form .description {margin-top: 5%;}
 
+.form .agBox {margin-bottom: 15px; font-size: 90%;}
+
 @media screen and (max-width: 500px){
     .agreeModalBox {padding: 12% 4% 5%; width: 95%;} /* 모달창 */
-    .form .formContents .description{font-size:90%; letter-spacing: -1px;}
+    .form .agBox {font-size: 85%; width: 100%; margin-bottom: 7px;}
+    .form .formContents {padding: 3% 0 5%;}
+    .form .formContents .description{margin-top: 0%; margin-bottom: 7px; font-size:90%; letter-spacing: -1px;}
     .agBox_box {width: 80%;}
+    .television{padding:2% 5% 1%;}
 }
 
 @media screen and (max-width: 415px){
@@ -92,7 +97,7 @@ input[type="radio"] {
 	</div>	
 </div>
 <!-- 개인정보처리방침 동의/ 미동의 팝업창 -->
-<div class="agBox_bg"></div>
+<!-- <div class="agBox_bg"></div>
 <div class="agBox_box">
     <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/q_02.png"></div>
     <div class="agBox">
@@ -106,13 +111,12 @@ input[type="radio"] {
             <input type="radio"  name="agBox" value="미동의" class="close"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_02.png"></input>
         </label>
     </p>
-    <!-- <audio id="location2" playsinline><source src="//static.harang-event.com/event/v_${eventSeq}/audio_02.mp3" type="audio/mp3"></source></audio> -->
-</div>
+</div> -->
 
 <div id="wrap"> 
-	<div class="container">
+	<!-- <div class="container">
         <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/bg_01.jpg"></div>
-    </div>
+    </div> -->
     <audio id="location" playsinline><source src="//static.harang-event.com/event/v_${eventSeq}/audio_01.mp3" type="audio/mp3"></source></audio> 
     
     <div class="form">
@@ -149,6 +153,9 @@ input[type="radio"] {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="agBox">
+                        <label><input name="agBox" type="checkbox"><span>개인정보 수집 및 이용에 관한 내용을 확인하고 동의함</span><a href="#" class="agree_txt">[자세히 보기]</a></label>
                     </div>
                     <div class="submit"><input type="image" onclick="fnForm('form-1')" class="btn_submit" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_03.png" /></div>
                 </div>
@@ -198,14 +205,14 @@ input[type="radio"] {
 	});
 	
     // 첫페이지 음성 재생
-    document.getElementById("wrap").addEventListener("click", () => {
-        var page_num = $('.page:visible').index() + 1;
-        if(page_num == 1){
-            setTimeout(function(){
-                setTimeout(function(){ $('#location').trigger('play'); },500);
-            },500); 
-        }  
-    }, {once: true});   
+    // document.getElementById("wrap").addEventListener("click", () => {
+    //     var page_num = $('.page:visible').index() + 1;
+    //     if(page_num == 1){
+    //         setTimeout(function(){
+    //             setTimeout(function(){ $('#location').trigger('play'); },500);
+    //         },500); 
+    //     }  
+    // }, {once: true});   
 
     $('input[name*=tadd]').bind('click', function(){
 		$('label', $(this).parents('.q_select')).each(function(i,t) {
@@ -214,49 +221,47 @@ input[type="radio"] {
 		$('img', $(this.parentNode)).attr('src', $('img', $(this.parentNode)).attr('src').replace('_off', '_on'));
 	});
 
-    $('input[name=tadd1]').bind('click', function(){
-        $('.agBox_bg').fadeIn();
-        $('.agBox_box').fadeIn();
-        setTimeout(function() {
-            $('#location').trigger('play');
-        }, 300);
-        $('#location').attr('src', '//static.harang-event.com/event/v_' + `${eventSeq}` + '/audio_02.mp3');
-    });
+    // $('input[name=tadd1]').bind('click', function(){
+    //     $('.agBox_bg').fadeIn();
+    //     $('.agBox_box').fadeIn();
+    //     setTimeout(function() {
+    //         $('#location').trigger('play');
+    //     }, 300);
+    //     $('#location').attr('src', '//static.harang-event.com/event/v_' + `${eventSeq}` + '/audio_02.mp3');
+    // });
 
 
 	// 설문 Click bind
-	$('button.first').bind('click', function(){	
+	$('input[name=tadd1]').bind('click', function(){	
         var page_num = $('.page:visible').index() + 1;
         var $section = $('#page-'+page_num).closest('section');
 
         setTimeout(function() {
-            $('.agBox_bg').hide();
-            $('.agBox_box').hide();
             $section.hide();
             $section.next().show();
             setTimeout(function() { 
                 $('#location').trigger('play'); 
-            }, 300);
+            }, 100);
             $('#location').attr('src', '//static.harang-event.com/event/v_' + `${eventSeq}` + '/audio_03.mp3');
         }, 300);
 	});
 
 	// 설문 Click bind
-	$('input.first').bind('click', function(){	
-        var page_num = $('.page:visible').index() + 1;
-        var $section = $('#page-'+page_num).closest('section');
+	// $('input.first').bind('click', function(){	
+    //     var page_num = $('.page:visible').index() + 1;
+    //     var $section = $('#page-'+page_num).closest('section');
 
-        setTimeout(function() {
-            $('.agBox_bg').hide();
-            $('.agBox_box').hide();
-            $section.hide();
-            $section.next().show();
-            setTimeout(function() {
-                $('#location').trigger('play');
-            }, 300);
-            $('#location').attr('src', '//static.harang-event.com/event/v_' + `${eventSeq}` + '/audio_03.mp3');
-        }, 300);
-	});
+    //     setTimeout(function() {
+    //         // $('.agBox_bg').hide();
+    //         // $('.agBox_box').hide();
+    //         $section.hide();
+    //         $section.next().show();
+    //         setTimeout(function() {
+    //             $('#location').trigger('play');
+    //         }, 300);
+    //         $('#location').attr('src', '//static.harang-event.com/event/v_' + `${eventSeq}` + '/audio_03.mp3');
+    //     }, 300);
+	// });
 
     $('input[type="radio"].close').click(function(){
         alert('미동의 시 설문에 참여하실 수 없습니다.')
@@ -304,7 +309,7 @@ input[type="radio"] {
 			,'add1': '설문1'
 			// ,'add2': '설문2'
 			// ,'add3': '설문3'
-			// ,'agBox': '개인정보'
+			,'agBox': '개인정보'
 		};
 		
 		validateForm(procForm, required);
