@@ -375,7 +375,7 @@ input[type="image"] {width:100%; height: 100%;}
 				</div>
 			</div>
 
-			<div class="chat_set right hide" id="page-5" data-value="5">
+			<div class="chat_set right question_box hide" id="page-5" data-value="5">
                 <div class="q_select">
                     <label>
                         <input type="radio" name="tadd5" value="예">
@@ -386,7 +386,7 @@ input[type="image"] {width:100%; height: 100%;}
                         <div class="chat_box">아니오</div>
                     </label>
                 </div>
-                <div class="submit submit_agree hide">
+                <div class="submit submit_agree">
                     <input type="image" value="" class="btn_submit" onclick="fnForm('form-1');" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.png"/>
                 </div>
             </div>
@@ -467,16 +467,13 @@ input[type="image"] {width:100%; height: 100%;}
 
     // add 설문 셀렉 시
     $('input[name*="tadd"]').on('change', function () {
+        if ($(this).attr('name') === 'tadd5') return; // 동의 예/아니오는 다음 단계 진행 X
+
         var currentValue = $(this).closest('.chat_set').data('value');
         var nextValue = currentValue + 1;
 
-        // let inputValue = $('input[name="tadd1"]:checked').val();
-        // if (inputValue === '아니오'){
-        //     return; 
-        // }
-
-        showNextComment(currentValue, nextValue, true); // Show next chat_set.left
-        showNextComment(currentValue, nextValue, false); // Show next chat_set.right
+        showNextComment(currentValue, nextValue, true);
+        showNextComment(currentValue, nextValue, false);
         scrollToBottom();
     });
 
@@ -485,20 +482,23 @@ input[type="image"] {width:100%; height: 100%;}
         var value = $(this).val();
         var $agBox = $('input[name="agBox"]');
         var $submit = $('#page-5 .submit_agree');
+        var $labels = $('#page-5 .q_select label');
 
         if (value === '아니오') {
             alert('개인정보처리방침에 동의해주세요.');
-            // 예 선택 해제
-            $('input[name="tadd5"][value="예"]').prop('checked', false);
-            $(this).prop('checked', false);
+            $('input[name="tadd5"]').prop('checked', false);
             $agBox.prop('checked', false);
-            $submit.addClass('hide');
+            $submit.removeClass('hide');
+            $labels.show(); // 다시 둘 다 보이게
             return;
         }
 
         if (value === '예') {
             $agBox.prop('checked', true);
             $submit.removeClass('hide');
+
+            // 예만 남기고 아니오 숨김 (기존 question_box 동작과 동일)
+            $labels.has('input:not(:checked)').show();
             scrollToBottom();
         }
     });
