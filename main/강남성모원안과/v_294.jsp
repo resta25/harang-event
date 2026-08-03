@@ -218,6 +218,8 @@ body::-webkit-scrollbar {display: none;}
     .form .submit {width: 40%;}
     .form .submit input[type="image"] {width: 100%;}
 
+    .gif-area {column-gap: 12px;}
+
     .form .description p, .form .description .ad_txt, .form .description span {padding: 0;}
 }
 
