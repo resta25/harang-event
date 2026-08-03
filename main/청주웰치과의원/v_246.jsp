@@ -91,7 +91,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 .question-box .q_select label .sel-item {display: flex; align-items: center; justify-content: center; height: 11.6rem; box-sizing: border-box; font-family: 'Pretendard'; font-size: 2.8rem; line-height: 1; padding: 1.6rem; font-weight: 700; letter-spacing: -0.85px; text-align: center; color: #2f2f2f;}
 .question-box .q_select label .sel-item.active {background: #ffda1e; color: #000;}
 
-.form .next {width: 92.046%; margin: 0 auto;}
+.form .next {width: 92.046%; margin: 2.1rem auto 0;}
 .form .next img {width: 100%;}
 .form .submit {width: 94.187%; margin: 2.1rem auto 2.4rem; padding: 0;}
 .form .submit input[type="image"] {width: 100%;}
@@ -129,7 +129,8 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 .form .description p,
 .form .description span {font-weight: 400; font-size: 1.2rem; padding: 0; margin: 0; color: #000; letter-spacing: -0.49px;}
 
-.form .agBox {color: #fff; font-family: 'Pretendard'; font-size: 1.7rem; font-weight: 400; line-height: 1; padding: 2.2rem 0 2.4rem; width: 100%; margin-bottom: 0;}
+.form .agBox {color: #000; font-family: 'Pretendard'; font-size: 1.6rem; font-weight: 400; line-height: 1; width: 100%; margin-bottom: 0;}
+.form input[type="checkbox"] + span:before, .form input[type="radio"] + span:before {border-color: #000;}
 
 /* 모달창 - 개인정보처리방침 */
 .overlay {z-index: 888; position: fixed; display: none; width: 100vw; height: 100vh; opacity: 0.5; background-color: #000;}
@@ -224,11 +225,6 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 						<img src="//static.harang-event.com/event/v_${eventSeq}/260707_CJWL(hr)_04.gif">
 						<!-- <span class="q-text"><strong>임플란트 얼마나 </strong> 필요하신가요?</span> -->
 					</div>
-					<div class="agBox">
-						개인정보 처리방침
-						<a href="#" class="btn-agreement">[자세히 보기]</a>
-						<input type="hidden" name="agBox" value="Y" checked>
-					</div>
 					<div class="next img-area"  onclick="pageFuc(1,$(this))"><img src="//static.harang-event.com/event/v_${eventSeq}/260707_CJWL(hr)_05.png"></div>
                 </div>
             </section>
@@ -308,6 +304,9 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 								<span class="legend">전화번호</span>
 								<input type="tel" id="phone" name="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="연락처 ('-'없이 입력)">
 							</div>
+                            <div class="agBox">
+                                <label><input name="agBox" type="checkbox"><span>개인정보 수집 및 이용에 관한 내용을 확인하고 동의함</span></label> <a href="#" class="btn-agreement">[자세히 보기]</a>
+                            </div>
                             <div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/260707_CJWL(hr)_09.png"></div>
                             <div class="description bottom">
                                 <p id="event-period">이벤트 기간 : <?=date("Y년 m월 01일")." ~ ".date("Y년 m월 t일 까지")?></p>
