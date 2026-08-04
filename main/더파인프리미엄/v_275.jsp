@@ -220,7 +220,7 @@ html, body {font-size: 62.5%;}
 		<div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/260724_DFPM_10.jpg"></div>
     </div>
     <!-- <div class="img-area fixed db_btn"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.gif"></div> -->
-    <!-- <a href="javascript:void(0);"><img class="floatingImg" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.png"></a> -->
+    <a href="javascript:void(0);"><img class="floatingImg" src="//static.harang-event.com/event/v_${eventSeq}/260730_DFPM(hr)_01.png"></a>
 
 </div>
 <!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->
@@ -296,22 +296,22 @@ html, body {font-size: 62.5%;}
 
 
     // 스크롤 시 따라오는 이미지
-    // var currentPosition = parseInt($(".floatingImg").css("bottom"));
-    // $(window).scroll(function() {
-    //     var position = $(window).scrollTop();
-    //     $(".floatingImg").stop().animate({
-    //         bottom : currentPosition + "px"
-    //     },500);
-    // });
+    var currentPosition = parseInt($(".floatingImg").css("bottom"));
+    $(window).scroll(function() {
+        var position = $(window).scrollTop();
+        $(".floatingImg").stop().animate({
+            bottom : currentPosition + "px"
+        },500);
+    });
 
     // 플로팅버튼 클릭시 db단 이동
-    // $('.floatingImg').on('click',function(){
-    //     const formOffset = $('#form-1').offset().top;
+    $('.floatingImg').on('click',function(){
+        const formOffset = $('#form-1').offset().top;
 
-    //     $('html, body').animate({
-    //         scrollTop: formOffset
-    //     }, 500); // 500ms 동안 스크롤 이동
-    // })
+        $('html, body').animate({
+            scrollTop: formOffset
+        }, 500); // 500ms 동안 스크롤 이동
+    })
 
 	function fnForm(formId){
         /* form 자동 처리 방지 */
