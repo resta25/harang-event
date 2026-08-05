@@ -45,7 +45,7 @@ html, body {font-size: clamp(6px, calc(100vw / 81.8), 10px);}
 /* .notice-area {padding: 2.4rem 0 1.8rem; background-color: #282828;} */
 
 /* 이름, 나이, 연락처 입력칸 */
-.form .form_inner .formGroup {padding: 2.9rem 4.2rem 2.3rem;}
+.form .form_inner .formGroup {padding: 2.9rem 4.2rem 4.3rem;}
 .form .form_inner .formGroup .question:nth-child(1) .img-area {width: 65.9400545%; margin: 0 auto 5.9rem;}
 .form .form_inner .formGroup .question:nth-child(2) .img-area {width: 53.4059945%; margin: 5.9rem auto;}
 /* .form .form_inner .question .img-area {width: 81.464174%; margin: 0 auto;} */
@@ -77,6 +77,8 @@ box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.35);  width: 100%;
 
 /* 플로팅 이미지 영역 */
 /* .floatingImg{z-index:999; position: fixed; bottom: 1.7rem; right: max(1.3rem, calc((100vw - 818px) / 2)); margin-left:2%; width:30%; max-width: 197px; cursor: pointer; animation: upDown 1s infinite;} */
+
+.call-num {color: #fff; text-align: center; font-size: 1.5rem; padding-bottom: 3rem;}
 
 @keyframes upDown {
     0% { transform: translateY(0); }
@@ -222,6 +224,7 @@ box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.35);  width: 100%;
         </form>
 	</div>
 
+    <div class="call-num">문의전화 : 1566-7970 </div>
     <div class="container">
 		<div class="img-area notice-area"><img src="//static.harang-event.com/event/v_${eventSeq}/260803_MST_21.png"></div>
 		<div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/260803_MST_22.png"></div>
