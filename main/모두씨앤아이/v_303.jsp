@@ -13,7 +13,7 @@ html, body {font-size: 10px;}
 .video-area video {display: block; width: 100%; height: 100%;}
 
 /* 이름, 나이, 연락처 입력칸 */
-.form .form_inner {background: #473839; padding: 6rem 4rem;}
+.form .form_inner {background: #473839; padding: 6rem 4rem 4rem;}
 .form .form_inner .input_box {display: flex; align-items: center; justify-content: space-between; flex-flow: row wrap;}
 .form .form_inner .input_box input {width: 100%; background: #fff; border-radius: 1.5rem; font-size: 3.8rem; font-weight: 500; text-align: center; padding: 3.2rem 0; letter-spacing: -1.54px;}
 .form .form_inner .input_box input + input {margin-top: 1rem;}
@@ -41,6 +41,9 @@ html, body {font-size: 10px;}
 /* 하단푸터 */
 .container {position: relative;}
 .container .btn-call {position: absolute; bottom: 15%; left: 50%; transform: translateX(-50%); width: 45%;}
+
+/* 문의전화 */
+.call-num {font-size: 1.5rem; text-align: center; background: #473839; color: #fff; padding-bottom: 3rem;}
 
 @media screen and (max-width: 500px){
     html, body {font-size: 1.5vw;}
@@ -139,6 +142,7 @@ html, body {font-size: 10px;}
         </form>
 	</div>
 
+    <div class="call-num">문의전화 : 1566-7970 </div>
     <div class="container bottom">
 		<!-- <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.png"></div> -->
 		<div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/260706_MST(hr)_07.jpg"></div>

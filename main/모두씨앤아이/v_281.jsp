@@ -92,6 +92,8 @@ box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.35);  width: 100%;
 /* 플로팅 이미지 영역 */
 /* .floatingImg{z-index:999; position: fixed; bottom: 1.7rem; right: max(1.3rem, calc((100vw - 818px) / 2)); margin-left:2%; width:30%; max-width: 197px; cursor: pointer; animation: upDown 1s infinite;} */
 
+.call-num {font-size: 1.6rem; text-align: center; color: #777; padding-bottom: 2rem;}
+
 @keyframes upDown {
     0% { transform: translateY(0); }
     50% { transform: translateY(7%); }
@@ -258,6 +260,7 @@ box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.35);  width: 100%;
         </form>
 	</div>
 
+    <div class="call-num">문의전화 : 1566-7970 </div>
     <div class="container">
 		<div class="img-area notice-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.jpg"></div>
 		<div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>
