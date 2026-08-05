@@ -14,8 +14,8 @@ html, body {font-size: clamp(6px, calc(100vw / 81.8), 10px);}
 .question_box .q_select {display: flex; column-gap: 1.1rem;}
 .question:nth-child(2) .q_select {display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.6rem;}
 .question_box .q_select label {width: 100%;}
-.question_box .q_select label .sel-item {padding: 2rem 1.1rem; font-family: 'Pretendard'; font-size: 4rem; font-weight: 900; line-height: 1; letter-spacing: -1.6px; text-align: center; color: #000; background-color: #fff;}
-.question_box .q_select label.active .sel-item {background: #ffd400; color: #fff; color: #000;}
+.question_box .q_select label .sel-item {padding: 2rem 1.1rem; font-family: 'Pretendard'; font-size: 4rem; font-weight: 900; line-height: 1; letter-spacing: -1.6px; text-align: center; color: #000; background-color: #fff; border: 1px solid #fff;}
+.question_box .q_select label.active .sel-item {background: #ffd400; color: #fff; color: #000; border: 1px solid #b8853a;}
 
 
 /* 상단 슬라이드 */
@@ -66,7 +66,7 @@ html, body {font-size: clamp(6px, calc(100vw / 81.8), 10px);}
 .form .description span {font-size: 1.65rem; line-height: 1.45; letter-spacing: -0.83px; font-weight: 400; text-align: center; color: #fff;}
 
 /* submit */
-.form .submit {width: 90.402%; margin: 2.8rem auto 2.6rem; padding: 0;}
+.form .submit {width: 90.402%; margin: 2.8rem auto 2.6rem; padding: 0; border-radius: 999px; overflow: hidden;}
 .form .submit input[type="image"] {width: 100%;}
 
 /* 고정버튼 */
