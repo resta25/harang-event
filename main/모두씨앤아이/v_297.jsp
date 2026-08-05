@@ -9,11 +9,12 @@ html, body {font-size: 62.5%;}
 .img-area {line-height: 0;}
 .img-area > img {display: block; width: 100%; height: auto;}
 
-.benefit-area {padding: 7.5rem 3.2rem 7.2rem;}
+.benefit-area {padding: 4.7rem 3.2rem 7.2rem; background-color: #374c8a;}
 .benefit-area .img-area:not(.swiper) {width: 94.694960%; margin: 0 auto 3rem;}
+.benefit-area .swiper-slide {border-radius: 1.4rem;}
 
 /* 설문 영역 */
-.question_box .question {margin: 4.5rem 0 1.6rem;text-align: center; color: #0c174b; font-size: 4.3rem; font-weight: 500; font-family: 'Paperlogy'; letter-spacing: -0.04em; line-height: 1.27;}
+.question_box .question {margin: 4.5rem 0 3.9rem;text-align: center; color: #0c174b; font-size: 4.3rem; font-weight: 500; font-family: 'Paperlogy'; letter-spacing: -0.04em; line-height: 1.27;}
 .question_box .question strong {color: #868dac; font-weight: 600;}
 .question_box .q_select {display: flex; column-gap: 1.1rem;}
 .question_box .q_select label {width: 100%;}
@@ -24,17 +25,31 @@ html, body {font-size: 62.5%;}
 /* 상단 슬라이드 */
 .swiper-slide img {width: 100%;}
 
-.video-area {position: relative;}
-.video-area .video-group {position: absolute; top: 47.5%; left: 50%; transform: translate(-50%, -50%); display: flex; column-gap: 1.7rem; width: 75.427873%;}
-.video-area .video-box {width: 100%;}
-.video-area .video-box video {display: block; width: 100%; height: 100%;}
-.video-area .video-box.box02 {border: 0.5rem solid rgb(144, 241, 255);}
+.video-area {position: relative; display: block; width: 100%; height: 100%;}
+.video-area video {display: block; width: 100%; height: 100%;}
 
 .round-video-area {position: relative;}
-.round-video-area .video-box {position: absolute; width: 75.794621%; left: 50%; transform: translateX(-50%); border-radius: 2.4rem; overflow: hidden;}
+.round-video-area .video-box {
+    position: absolute;
+    width: 75.794621%;
+    aspect-ratio: 620 / 349; /* 디자인 시안에서 실제 원형 영상 영역의 W:H 비율로 교체 */
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2.4rem;
+    overflow: hidden;
+}
+.round-video-area video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 영상 원본 비율이 달라도 박스를 항상 꽉 채움 */
+}
+
 .round-video-area .box03 {top: 29.5%;}
 .round-video-area .box04 {top: 8%;}
 .round-video-area .box05 {top: 7%;}
+
+.video-area .video-group {position: absolute; top: 24.74%; left: 50%; transform: translateX(-50%); display: flex; align-items: center; justify-content: center; column-gap: 1.9rem; width: 75.183374%;}
+.video-area .video-box:last-child {border: 0.5rem solid #90f1ff; box-sizing: border-box;}
 
 /* 타이머 */
 .timer-box {color: #fff; display: flex; align-items: center; justify-content: space-between; gap: 2rem; font-size: 2.4rem; padding: 1.6rem 4.1rem 1.5rem; width: 100%; margin: 0 auto; line-height: 1; letter-spacing: -1.23px; background: #000; box-sizing: border-box;}
@@ -55,7 +70,7 @@ html, body {font-size: 62.5%;}
 /* .notice-area {padding: 2.4rem 0 1.8rem; background-color: #282828;} */
 
 /* 이름, 나이, 연락처 입력칸 */
-.form .form_inner .formGroup {padding: 9rem 7.2rem 4.2rem;}
+.form .form_inner .formGroup {padding: 0rem 7.2rem 4.2rem;}
 .form .form_inner .question .img-area {width: 81.464174%; margin: 0 auto;}
 .form .form_inner .formGroup .legend {position: relative; flex-shrink: 0; width: 9.71rem; padding-right: 1.4rem; font-family: 'Pretendard'; font-size: 3.4rem; font-weight: 800; letter-spacing: -1.7px; color: #0c174b;}
 .form .form_inner .formGroup .legend::after {content: ''; width: 0.7rem; height: 0.7rem; border-radius: 50%; position: absolute; right: 0; top: 0.3rem; background-color: #ec0001;}
@@ -70,6 +85,9 @@ html, body {font-size: 62.5%;}
 
 /* 개인정보처리방침 영역 */
 .form .agBox {margin: 2.8rem auto; font-size: 1.8rem; line-height: 1.45; letter-spacing: -0.83px; text-align: center; color: #000;}
+.form .agreement h3,
+.form .agreement .button,
+.form .agreement ol li {font-size: 100%;}
 .form .agreement {color: #000; font-size: 1.6rem;}
 .form input[type="checkbox"] + span:after, .form input[type="radio"] + span:after,
 .form input[type="checkbox"] + span:before, .form input[type="radio"] + span:before {border-color: #000;}
@@ -80,17 +98,18 @@ html, body {font-size: 62.5%;}
 .form .description span {font-size: 1.65rem; line-height: 1.45; letter-spacing: -0.83px; font-weight: 400; text-align: center; color: #000;}
 
 /* submit */
-.form .submit {width: 90.402%; margin: 2.8rem auto 2.6rem; padding: 0;}
+.form .submit {width: 90.402%; margin: 2.8rem auto 2.6rem; padding: 0; border-radius: 999px; overflow: hidden;}
 .form .submit input[type="image"] {width: 100%;}
 
 /* 고정버튼 */
-.fixed {position: fixed; z-index: 9; bottom: 1rem; cursor: pointer; left: max(0px, calc((100vw - 818px) / 2)); text-align: center; width: 100%; max-width: 800px;}
+/* .fixed {position: fixed; z-index: 9; bottom: 1rem; cursor: pointer; left: max(0px, calc((100vw - 818px) / 2)); text-align: center; width: 100%; max-width: 800px;} */
 /* .fixed img {border-radius: 999px; -webkit-box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.35);
 box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.35);  width: 100%;
     margin-bottom: 16px} */
 
 /* 플로팅 이미지 영역 */
-/* .floatingImg{z-index:999; position: fixed; bottom: 1.7rem; right: max(1.3rem, calc((100vw - 818px) / 2)); margin-left:2%; width:30%; max-width: 197px; cursor: pointer; animation: upDown 1s infinite;} */
+.floatingImg {z-index:999; position: fixed; bottom: 1.7rem; right: max(1.3rem, calc((100vw - 818px) / 2)); width: 19.7rem; height: 19.7rem; cursor: pointer; animation: upDown 1s infinite; border-radius: 999px; overflow: hidden;}
+.floatingImg img {display: block; width: 100%; height: 101%;}
 
 @keyframes upDown {
     0% { transform: translateY(0); }
@@ -102,7 +121,7 @@ box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.35);  width: 100%;
     html, body {font-size: 1.5vw;}
 
     .question_box .question {font-size: 3.6rem;}
-    .form .form_inner .formGroup {padding: 7rem 6.8rem 4.2rem;}
+    .form .form_inner .formGroup {padding: 0 6.8rem 4.2rem;}
     .question_box .q_select label .sel-item {font-size: 2.5rem;}
 }
 
@@ -120,40 +139,19 @@ box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.35);  width: 100%;
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <!-- include end -->
 <div id="wrap">
-    <div class="container">
-        <div class="img-area video-area">
-            <img src="//static.harang-event.com/event/v_${eventSeq}/event_main_01.jpg">
-            <div class="video-group">
-                <div class="video-box">
-                    <video id="location" playsinline loop autoplay muted src="//static.harang-event.com/event/v_${eventSeq}/260701_vid_01.mp4" type="video/mp4"></video>
-                    <script>setTimeout(function(){ $('#location').trigger('play'); },500);</script>
-                </div>
-                <div class="video-box box02">
-                    <video id="location02" playsinline loop autoplay muted src="//static.harang-event.com/event/v_${eventSeq}/260701_vid_02.mp4" type="video/mp4"></video>
-                    <script>setTimeout(function(){ $('#location02').trigger('play'); },500);</script>
-                </div>
+        <div class="container">
+            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/260803_MST_(hr)_01.jpg"></div>
+            <div class="video-area">
+                <video id="location" playsinline loop autoplay muted src="//static.harang-event.com/event/v_${eventSeq}/260803_MST_(hr)_02.mp4" type="video/mp4"></video>
+                <script>setTimeout(function(){ $('#location').trigger('play'); },500);</script>
             </div>
-        </div>
-        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_02.jpg"></div>
-        <div class="benefit-area slide-area">
-            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_01.png"></div>
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="//static.harang-event.com/event/v_${eventSeq}/slide_01.png"></div>
-                    <div class="swiper-slide"><img src="//static.harang-event.com/event/v_${eventSeq}/slide_02.png"></div>
-                    <div class="swiper-slide"><img src="//static.harang-event.com/event/v_${eventSeq}/slide_03.png"></div>
-                </div>
-            </div>
+            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/260803_MST_(hr)_03.jpg"></div>
         </div>
 
-        <div class="img-area gif-area">
-            <img src="//static.harang-event.com/event/v_${eventSeq}/event_main_04.jpg">
-            <img class="gif" src="//static.harang-event.com/event/v_${eventSeq}/event_main_03.gif">
-        </div>
         <div class="img-area round-video-area">
-            <img src="//static.harang-event.com/event/v_${eventSeq}/event_main_05.jpg">
+            <img src="//static.harang-event.com/event/v_${eventSeq}/260803_MST_(hr)_04.jpg">
             <div class="video-box box03">
-                <video id="location03" playsinline loop autoplay muted src="//static.harang-event.com/event/v_${eventSeq}/260701_vid_03.mp4" type="video/mp4"></video>
+                <video id="location03" playsinline loop autoplay muted src="//static.harang-event.com/event/v_${eventSeq}/260803_MST_(hr)_07.mp4" type="video/mp4"></video>
                 <script>setTimeout(function(){ $('#location03').trigger('play'); },500);</script>
             </div>
         </div>
@@ -171,13 +169,39 @@ box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.35);  width: 100%;
                 <script>setTimeout(function(){ $('#location05').trigger('play'); },500);</script>
             </div>
         </div>
-        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/event_main_08.gif"></div>
-    </div>
+        <div class="benefit-area slide-area">
+            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/260803_MST_(hr)_10.png"></div>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="//static.harang-event.com/event/v_${eventSeq}/260803_MST_(hr)_11.png"></div>
+                    <div class="swiper-slide"><img src="//static.harang-event.com/event/v_${eventSeq}/260803_MST_(hr)_12.png"></div>
+                    <div class="swiper-slide"><img src="//static.harang-event.com/event/v_${eventSeq}/260803_MST_(hr)_13.png"></div>
+                </div>
+            </div>
+        </div>
+        <div class="img-area video-area">
+            <img src="//static.harang-event.com/event/v_${eventSeq}/260803_MST_(hr)_14.jpg">
+            <div class="video-group">
+                <div class="video-box">
+                    <video id="location06" playsinline loop autoplay muted src="//static.harang-event.com/event/v_${eventSeq}/260803_MST_(hr)_15.mp4" type="video/mp4"></video>
+                    <script>setTimeout(function(){ $('#location06').trigger('play'); },500);</script>
+                </div>
+                <div class="video-box">
+                    <video id="location07" playsinline loop autoplay muted src="//static.harang-event.com/event/v_${eventSeq}/260803_MST_(hr)_16.mp4" type="video/mp4"></video>
+                    <script>setTimeout(function(){ $('#location07').trigger('play'); },500);</script>
+                </div>
+            </div>
+        </div>
+        <div class="img-area gif-area">
+            <img src="//static.harang-event.com/event/v_${eventSeq}/260803_MST_(hr)_17.jpg">
+            <img class="gif" src="//static.harang-event.com/event/v_${eventSeq}/260803_MST_(hr)_18.gif">
+        </div>
+        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/260803_MST_(hr)_19.gif"></div>
     <div class="form">
         <form id="form-1" method="POST" accept-charset="utf-8"> 
             <div class="form_inner">
                 <div class="formGroup">
-                    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_02.png"></div>
+                    <!-- <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_02.png"></div> -->
                     <div class="question_box">
                         <div class="question">
                             <div class="question"><strong>Q1.</strong><br />현재 가장 큰 피부 고민을 선택해주세요</div>
@@ -197,7 +221,6 @@ box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.35);  width: 100%;
                             </div>
                         </div>
                         <div class="input_box">
-                            <!-- <div class="img-area pc-img notice-img"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_01_pc.png"></div> -->
                             <div class="user_info name">
                                 <span class="legend">이름</span>
                                 <input type="text" name="name" id="name" class="inp" required autocomplete="off" placeholder="이름을 입력해주세요">
@@ -228,7 +251,7 @@ box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.35);  width: 100%;
                             </ol>
                         </div>
 
-                        <div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb.gif"></div>
+                        <div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/260803_MST_(hr)_20.gif"></div>
                     </div>
                     <div class="description">
                         <p id="event-period"></p>
@@ -259,11 +282,11 @@ box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.35);  width: 100%;
 	</div>
 
     <div class="container">
-		<div class="img-area notice-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.jpg"></div>
-		<div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/footer.jpg"></div>
+		<div class="img-area notice-area"><img src="//static.harang-event.com/event/v_${eventSeq}/260803_MST_(hr)_22.jpg"></div>
+		<div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/260803_MST_(hr)_23.jpg"></div>
     </div>
-    <div class="img-area fixed db_btn"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.gif"></div>
-    <!-- <a href="javascript:void(0);"><img class="floatingImg" src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.png"></a> -->
+    <!-- <div class="img-area fixed db_btn"><img src="//static.harang-event.com/event/v_${eventSeq}/btn_newSb_01.gif"></div> -->
+    <a href="javascript:void(0);" class="floatingImg"><img src="//static.harang-event.com/event/v_${eventSeq}/260803_MST_(hr)_21.gif"></a>
 
 </div>
 <!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->
@@ -321,16 +344,16 @@ box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.35);  width: 100%;
 
 
     // 스크롤 시 따라오는 이미지
-    // var currentPosition = parseInt($(".floatingImg").css("bottom"));
-    // $(window).scroll(function() {
-    //     var position = $(window).scrollTop();
-    //     $(".floatingImg").stop().animate({
-    //         bottom : currentPosition + "px"
-    //     },500);
-    // });
+    var currentPosition = parseInt($(".floatingImg").css("bottom"));
+    $(window).scroll(function() {
+        var position = $(window).scrollTop();
+        $(".floatingImg").stop().animate({
+            bottom : currentPosition + "px"
+        },500);
+    });
 
     // 플로팅버튼 클릭시 db단 이동
-    $('.db_btn').on('click',function(){
+    $('.floatingImg').on('click',function(){
         const formOffset = $('#form-1').offset().top;
 
         $('html, body').animate({
