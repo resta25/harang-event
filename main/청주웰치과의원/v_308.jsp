@@ -194,7 +194,7 @@ input[type="image"] {width:100%; height: 100%;}
     .form .table_box table th, .form .table_box table td {font-size: 100%;}
     .form .table_box {padding: 0;}
 	.chat_set.right .chat_box {width: 6rem; padding: 0.5rem 0.2rem;}
-	#page-4 .chat_box {width: 9rem;}
+	#page-3 .chat_box {width: 9rem;}
     .form .submit {width: 45%;}
     .form .submit input[type="image"] {width: 100%;}
 
