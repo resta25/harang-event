@@ -121,15 +121,15 @@ input[type="radio"] {
     </div>
 </div>
 <div id="wrap">
-    <audio id="location" playsinline><source src="//static.harang-event.com/event/v_${eventSeq}/260715_GNSR_14.mp3" type="audio/mp3"></source></audio> 
+    <audio id="location" playsinline><source src="//static.harang-event.com/event/v_${eventSeq}/260727_GNSR_audio_02.mp3" type="audio/mp3"></source></audio> 
 
     <div class="form">
         <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/260715_GNSR_02.png" alt="" /></div>
-        <div class="img-area" style="margin: 5% auto 0; width: 60%;"><img src="//static.harang-event.com/event/v_${eventSeq}/260715_GNSR_03.png" alt="" /></div>
+        <div class="img-area audio-area" style="margin: 5% auto 0; width: 60%;"><img src="//static.harang-event.com/event/v_${eventSeq}/260715_GNSR_03.png" alt="" /></div>
         <div class="img-area" style="margin-top: 5%;"><img src="//static.harang-event.com/event/v_${eventSeq}/260715_GNSR_04.png" alt="" /></div>
         <form id="form-1" method="POST" accept-charset="utf-8">
             <div class="formContents">
-                <section class="page" id="page-1">
+                <!-- <section class="page" id="page-1">
                     <div class="question_box">
                         <div class="question"><img src="//static.harang-event.com/event/v_${eventSeq}/260715_GNSR_05.png" alt="" /></div>	
                         <div class="q_select">
@@ -139,9 +139,9 @@ input[type="radio"] {
                             <label><input type="radio" name="tadd1" value="기타"><img src="//static.harang-event.com/event/v_${eventSeq}/260715_GNSR_12.png" alt="" /></label>
                         </div>
                     </div>
-                </section>
+                </section> -->
 
-                <section class="page" id="page-2">
+                <section class="page" id="page-1">
                     <div class="img-area question"><img src="//static.harang-event.com/event/v_${eventSeq}/260727_GNSR_01.png" alt="" /></div>
                     <div class="television">
                         <div class="screen">
@@ -241,14 +241,14 @@ input[type="radio"] {
     });
         
     // 첫페이지 음성 재생
-    document.getElementById("wrap").addEventListener("click", () => {
-        var page_num = $('.page:visible').index() + 1;
-        if(page_num == 1){
-            setTimeout(function(){
-                setTimeout(function(){ $('#location').trigger('play'); },500);
-            },500); 
-        }  
-    }, {once: true});   
+    // document.getElementById("wrap").addEventListener("click", () => {
+    //     var page_num = $('.page:visible').index() + 1;
+    //     if(page_num == 1){
+    //         setTimeout(function(){
+    //             setTimeout(function(){ $('#location').trigger('play'); },500);
+    //         },500); 
+    //     }  
+    // }, {once: true});   
 
     $('input[name*=tadd]').bind('click', function(){
 		$('label', $(this).parents('.q_select')).each(function(i,t) {
@@ -257,15 +257,15 @@ input[type="radio"] {
 		$('img', $(this.parentNode)).attr('src', $('img', $(this.parentNode)).attr('src').replace('_off', '_on'));
 	});
 
-    $('input[name=tadd1]').bind('click', function(){
+    $('.audio-area').bind('click', function(){
         var page_num = $('.page:visible').index() + 1;
         var $section = $('#page-'+page_num).closest('section');
 
         setTimeout(function() {
-            $('.agBox_bg').hide();
-            $('.agBox_box').hide();
-            $section.hide();
-            $section.next().show();
+            // $('.agBox_bg').hide();
+            // $('.agBox_box').hide();
+            // $section.hide();
+            // $section.next().show();
             setTimeout(function() { 
                 $('#location').trigger('play'); 
             }, 300);
@@ -297,13 +297,13 @@ input[type="radio"] {
 		/* form id로 proc */
 		let procForm = document.getElementById(formId);
 		
-		let selectedRadio1 = procForm.querySelector(`input[name="tadd1"]:checked`);
-		if (!selectedRadio1) {
-			alert("설문을 선택해주세요.");
-			return;
-		} else {
-			procForm.querySelector("input[name='add1']").value = selectedRadio1.value;
-		}
+		// let selectedRadio1 = procForm.querySelector(`input[name="tadd1"]:checked`);
+		// if (!selectedRadio1) {
+		// 	alert("설문을 선택해주세요.");
+		// 	return;
+		// } else {
+		// 	procForm.querySelector("input[name='add1']").value = selectedRadio1.value;
+		// }
 
 		/*
 		let selectedRadio2 = procForm.querySelector(`input[name="tadd2"]:checked`).value;
@@ -317,7 +317,7 @@ input[type="radio"] {
 			'name': '이름'
 			//,'age': '나이'
 			,'phone': '전화번호'
-			,'add1': '설문1'
+			// ,'add1': '설문1'
 			// ,'add2': '설문2'
 			// ,'add3': '설문3'
 			,'agBox': '개인정보'
