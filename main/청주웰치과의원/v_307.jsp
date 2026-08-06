@@ -222,7 +222,7 @@
                      <span id="minute" class="minute"></span>
                  </div>
                  <div class="text-box">
-                     <img src="//static.harang-event.com/event/v_${eventSeq}/loading.png">
+                     <img src="//static.harang-event.com/event/v_${eventSeq}/260804_CJWL_(hr)_10.png">
                     <span class="text">현재 접수 가능</span>
                  </div>
              </div>
