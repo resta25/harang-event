@@ -470,8 +470,8 @@ input[type="image"] {width:100%; height: 100%;}
         var nextValue = currentValue + 1;
         var inputValue = $(this).val();
 
-        // 개인정보 동의 질문(4번째 채팅)에서 "아니오" 선택 시 다음으로 넘어가지 않음
-        if (currentValue === 4 && inputValue === '아니오') {
+        // 개인정보 동의 질문(4번째 채팅)에서 "미동의" 선택 시 다음으로 넘어가지 않음
+        if (currentValue === 4 && inputValue === '미동의') {
             alert('개인정보처리방침에 동의해주세요.');
             $(this).prop('checked', false);
             return;
