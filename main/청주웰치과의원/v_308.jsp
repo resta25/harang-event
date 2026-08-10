@@ -441,12 +441,14 @@ input[type="image"] {width:100%; height: 100%;}
     $('.question_box .q_select label input').on('click', function() {
         var currentValue = $(this).closest('.chat_set').data('value');
         var inputValue = $(this).val();
-
-        // 개인정보 동의 질문에서 "아니오"를 클릭한 경우엔 숨기지 않음 (다시 선택할 수 있게)
-        if (currentValue === 4 && inputValue === '아니오') return;
-
+        // 개인정보 동의 질문에서 미동의는 다른 선택지를 숨기지 않음
+        if (currentValue === 4 && inputValue === '미동의') {
+            return;
+        }
         var selectedInputName = $(this).attr('name');
-        $('.question_box .q_select label input[name="' + selectedInputName + '"]:not(:checked) + .chat_box').closest('label').css('display', 'none');
+        $('.question_box .q_select label input[name="' + selectedInputName + '"]:not(:checked) + .chat_box')
+            .closest('label')
+            .css('display', 'none');
     });
 
     function showNextComment(currentValue, nextValue, isLeft) {
