@@ -104,7 +104,7 @@ body.form-db-open {overflow:hidden;}
     .btn.submit_btn.static, .form_db .submit_btn {min-width: max-content;}
     .form.two .form_db .txt {font-size: 4.8rem;}
     .form.two .form_db .banner {font-size: 3.3rem;}
-    .formGroup .legend {width: 7.5rem; font-size: 2.4rem;}
+    .formGroup .legend {font-size: 2.4rem;}
     .formGroup .inp {padding-left: 3rem; font-size: 2.4rem;}
     .formGroup .user_info {padding: 2.6rem 2.8rem;}
     .formGroup .user_info.user-agree {padding: 1.4rem 2.8rem;}
