@@ -269,13 +269,13 @@ html, body {font-size: 62.5%;}
     </div>
 
     <!-- 실시간 신청현황 -->
-    <div class="swiper-overlay">
+    <!-- <div class="swiper-overlay">
         <div class="subscribe-title">실시간 신청자 현황</div>
         <div class="swiper mySwiper">
             <div class="subscribe swiper-wrapper" data-limit="10">
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div class="container">
 		<!-- <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.jpg"></div> -->
