@@ -100,6 +100,7 @@ body.form-db-open {overflow:hidden;}
     .formGroup .legend {width: 9.5rem; font-size: 2.6rem;}
     .formGroup .inp {padding-left: 3.2rem; font-size: 2.6rem;}
     .formGroup .user_info {padding: 2.6rem 3.1rem;}
+    .form.two .form_db .txt {font-size: 5.2rem;}
     .formGroup .user_info.user-agree {padding: 1.4rem 3.1rem;}
     .formGroup .user_info.user-agree .legend {width: 24.7rem;}
     .formGroup .user_info.user-agree .ag_btn {padding-left: 3.2rem;}
@@ -108,7 +109,7 @@ body.form-db-open {overflow:hidden;}
 }
 @media screen and (max-width: 415px){
     .btn.submit_btn.static, .form_db .submit_btn {min-width: max-content;}
-    .form.two .form_db .txt {font-size: 4.8rem;}
+    .form.two .form_db .txt {font-size: 4.3rem;}
     .form.two .form_db .banner {font-size: 3.3rem;}
     .formGroup .legend {font-size: 2.4rem;}
     .formGroup .inp {padding-left: 3rem; font-size: 2.4rem;}
