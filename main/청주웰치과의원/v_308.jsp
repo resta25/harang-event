@@ -362,8 +362,8 @@ input[type="image"] {width:100%; height: 100%;}
 
 			<div class="chat_set right hide question_box" data-value="4">
                 <div class="q_select">
-                    <label><input type="radio" name="privacyAgree" value="네"><div class="chat_box">네</div></label>
-                    <label><input type="radio" name="privacyAgree" value="아니오"><div class="chat_box">아니오</div></label>
+                    <label><input type="radio" name="privacyAgree" value="동의"><div class="chat_box">동의</div></label>
+                    <label><input type="radio" name="privacyAgree" value="미동의"><div class="chat_box">미동의</div></label>
                 </div>
             </div>
 
