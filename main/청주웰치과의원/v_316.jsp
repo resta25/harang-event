@@ -180,7 +180,7 @@ body.form-db-open {overflow:hidden;}
 
                         <div class="form_box" id="form_check">
                             <div class="topB">
-                                <div class="txt"><em>청주</em>에 위치한 <strong>임플란트 특가</strong></div>
+                                <div class="txt"><em>청주</em>에 위치한 <strong>치과에서</strong><br /><strong>진행하는 이벤트</strong></div>
                                 <div class="banner"><strong>모든 상담은 무료입니다.</strong><br />편하게 무료 상담 받아보세요!</div>
                             </div>
 
