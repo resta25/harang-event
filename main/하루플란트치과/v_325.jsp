@@ -22,7 +22,7 @@ body {margin:0;background:#111;}
 .form.two {height:100svh;background:rgba(0,0,0,.6);}
 body.form-db-open {overflow:hidden;}
 .form .form_inner {display:flex;flex-direction:column;align-items:center;gap:1.2rem;width:100%;padding:1.2rem;}
-.form.two .form_inner {justify-content:flex-end;min-height:100%;}
+.form.two .form_inner {justify-content:flex-end;min-height:100dvh;}
 .form .form_db {display:flex;flex-direction:column;gap:1.2rem;width:auto;}
 .form.two .form_db {width:100%; padding: 4rem 2.7rem 2.7rem; border-radius: 2.4rem; border: solid 5px #fe782e; background-color: #05070a;}
 .form.two .form_db .txt {font-family: 'Paperlogy'; font-size: 5.55rem; font-weight: 300; text-align: center; color: #fff; line-height: 1.18;}
