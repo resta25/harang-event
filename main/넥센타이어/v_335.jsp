@@ -1,171 +1,289 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonts-archive/Paperlogy/Paperlogy.css" type="text/css"/>
 <style>
 @import url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard.css');
-* {box-sizing: border-box;}
-html, body {font-size: 62.5%;}
-#wrap {font-family: "Pretendard", sans-serif; background: #fff;} 
-.img-area {line-height: 0;}
-.img-area > img {display: block; width: 100%; height: auto;}
+@import url("https://cdn.jsdelivr.net/gh/fonts-archive/SUIT/subsets/SUIT-dynamic-subset.css");
 
-/* 이름, 나이, 연락처 입력칸 */
-.form .form_inner .formGroup {padding: 7rem 6.5rem 6.8rem; background-color: #101524;}
-.form .form_inner .question {font-family: 'Pretendard'; font-size: 5.25rem; font-weight: 700; letter-spacing: -1.31px; text-align: center; color: #fff; line-height: 1.05714;}
-.form .form_inner .question strong {font-weight: 700; color: #ec95ff;}
-.form .form_inner .formGroup .legend {position: relative; flex-shrink: 0; width: 9.2rem; font-family: 'NotoSansKR'; font-size: 3.05rem; font-weight: 500; letter-spacing: -1.53px; color: #fff; text-align: center;}
-.form .form_inner .formGroup .legend::after {content: ''; width: 0.7rem; height: 0.7rem; border-radius: 50%; position: absolute; right: -0.35rem; top: 0.35rem; background-color: #ec0001;}
-.form .form_inner .formGroup .user_info.name .legend::after,
-.form .form_inner .formGroup .user_info.add .legend::after {right: 1rem;}
-/* .form .form_inner .formGroup .legend .mark {color: #43d866;} */
-.form .form_inner .formGroup .input_box {display: flex; flex-wrap: wrap; row-gap: 1.6rem; margin-top: 6.3rem;} 
-.form .form_inner .formGroup .user_info {display: flex; align-items: center; column-gap: 2rem; width: 100%;}
-/* .form .form_inner .formGroup .user_info.name {width: 52.724%;}
-.form .form_inner .formGroup .user_info.age {width: 43.8%;}
-.form .form_inner .formGroup .user_info.phone {width: 100%;} */
-.form .form_inner .formGroup .inp {flex-grow: 1; padding: 1.7rem 2.8rem; font-family: 'Pretendard'; font-size: 3.2rem; line-height: 1; letter-spacing: -1px; text-align: left; color: #111; border-radius: 1.5rem; background-color: #f1f1f1;}
+:root {--main-color:#43ea80;--sub-color:#e5f5ff;--gap20:2rem;--gap12:1.2rem;--r20:2rem;--r24:2.4rem;}
+* {box-sizing:border-box;}
+html, body {font-size: clamp(6px, calc(100vw / 81.8), 10px);}
+body {margin:0;background:#111;}
+#wrap {margin:0 auto;background:#030608;font-family:"Pretendard",sans-serif;}
+.img-area {line-height:0;}
+.img-area > img {display:block;width:100%;height:auto;}
 
-/* 개인정보처리방침 영역 */
-.form .agBox {margin: 3.2rem auto 2.1rem; font-family: 'NotoSansKR'; font-size: 2.05rem; font-weight: 500; letter-spacing: -1.03px; text-align: center; color: #fff;}
-.form .agreement {font-size: 1.6rem;}
-/* .form input[type="checkbox"] + span:after, .form input[type="radio"] + span:after,
-.form input[type="checkbox"] + span:before, .form input[type="radio"] + span:before {border-color: #000;} */
-.form input[type="checkbox"]:checked + span:after {border-color: #fff;}
+/* sticky 신청폼 */
+.form {position:sticky;bottom:0;z-index:3;width:100%;background:transparent;}
+.form.two {height:100svh;background:rgba(0,0,0,.6);}
+body.form-db-open {overflow:hidden;}
+.form .form_inner {display:flex;flex-direction:column;align-items:center;gap:1.2rem;width:100%;padding:1.2rem 2.2rem;}
+.form.two .form_inner {justify-content:flex-end;min-height:100%;}
+.form .form_db {display:flex;flex-direction:column;gap:1.2rem;width:auto;}
+.form.two .form_db {width:100%; padding: 2rem 0.7rem 2rem 1.7rem; border-radius: 2.4rem; border: solid 5px #64ffca; background-color: #05070a;}
+.form.two .form_db .txt {font-family: 'Paperlogy'; font-size: 5.55rem; font-weight: 300; text-align: center; color: #fff; line-height: 1;}
+.form.two .form_db .txt em {font-style: normal; font-weight: 800; color: #3fd9f8;}
+.form.two .form_db .txt strong {font-weight: 800;}
 
-/* 이벤트기간, 안심문구, 대상 영역 */
-.form .description p, 
-.form .description .ad_txt, 
-.form .description span {font-size: 1.8rem; line-height: 1.22; letter-spacing: -0.9px; text-align: center; color: #fff;}
+.form.two .form_db .banner {padding: 1.2rem; padding-top: 0; padding-bottom: 0; border-radius: 2.4rem; font-family: 'SUIT'; font-size: 3.8rem; font-weight: 300; line-height: 1.21; letter-spacing: -0.76px; text-align: center; color: #fff;}
+.form.two .form_db .banner strong {font-weight: 800;}
 
-/* submit */
-.form .submit {width: 90.402%; margin: 2.8rem auto 2.6rem; padding: 0;}
-.form .submit input[type="image"] {width: 100%;}
+/* 이름, 연락처 입력칸 */
+.formGroup {padding: 0 3.3rem;}
+.formGroup .user_info {width: 100%; display: flex; align-items: center; column-gap: 3.3rem;}
+.formGroup .user_info + .user_info {margin-top: 1rem;}
+.formGroup .user_info.active {border-color: #64ffca;}
+.formGroup .legend {flex-shrink: 0; display: flex; justify-content: flex-end; column-gap: 0.7rem; line-height: 1; width: 9.1rem; font-size: 2.8rem; font-weight: 500; color: #fff; letter-spacing: -0.6px; text-align: right;}
+.formGroup .user_info.active .legend {color: #64ffca;}
+.formGroup .user_info .legend .mark {display: block; width: 0.7rem; height: 0.7rem; border-radius: 50%; background-color: #ec0001;}
+.formGroup .user_info .legend a {display: block; padding-left: 5rem; font-size: 2rem; letter-spacing: -0.4px;}
+.formGroup .inp {line-height: 1; padding: 1.5rem; background-color: #fff; font-size: 2.8rem; font-weight: 600; letter-spacing: -0.62px; text-align: left; color: #0d0d0d; border-radius: 1.5rem;}
+.formGroup .inp::placeholder {color: #c7c7c7;}
+.formGroup .user_info.user-agree {padding: 1.4rem 4.1rem;}
+.formGroup .user_info.user-agree .legend {width: 28.7rem;}
+.formGroup .user_info.user-agree .legend span {font-size: 2.8rem; font-weight: 700; line-height: 1.07; letter-spacing: -0.6px; text-align: center; color: #0d0d0d;}
+.formGroup .user_info.user-agree .ag_btn {display: flex; align-items: center; column-gap: 1.1rem; padding-left: 3.8rem;}
+.formGroup .user-agree .ag_btn .agree-label, .formGroup .user-agree .ag_btn a {display: block; width: 12.9rem; padding: 1.2rem 0; text-align: center; font-family: 'SUIT'; font-size: 2.8rem; font-weight: 700; letter-spacing: -0.6px; color: #969696;   border: solid 2px #dadada; background-color: #fff; line-height: 1; border-radius: 999px; transition: 0s;}
+.formGroup .user-agree .ag_btn .agree-label.active, .formGroup .user-agree .ag_btn a.active {color: #0060ff; border-color: #0060ff;}
 
-.notice {margin-top: 5rem; margin-bottom: 0; font-family: 'Pretendard'; font-size: 1.8rem; letter-spacing: -0.9px; text-align: center; color: #fff;}
 
+.form_db > .box {padding:2.6rem 1.9rem 2.1rem;border:solid .5rem #64ffca;border-radius:var(--r24);background:rgba(5,7,10,.9);transition:all .25s cubic-bezier(0,.78,.26,1.11);}
+.form.two .form_db > .box {width:100%; max-height: 91dvh; overflow: hidden; overflow-y: auto; padding: 0; padding-right: 1rem; border:0;border-radius:0;}
+.form.two .form_db > .box::-webkit-scrollbar {display: none;}
+.form.two .step1 {display:none;}
 
-/* 실시간 신청현황 02 */
-.swiper-overlay {padding: 5.7rem 0 4.2rem;}
-.subscribe-title {margin-bottom: 2.2rem; font-family: 'Pretendard'; font-size: 5.6rem; font-weight: 700; letter-spacing: -2.8px; text-align: center; color: #101524; line-height: 1;}
-/* .swiper-overlay {overflow: hidden; padding-top: 51px; height: 400px;} */
-.swiper.mySwiper {height: 42.5rem; background-color: #fff; box-sizing: border-box; align-items: center;}
-.subscribe {padding: 0; background-color: #fff;}
-.mySwiper .swiper-wrapper {align-items: center;}
-.mySwiper .swiper-slide {max-width: 800px; width: 95%; max-height: 10rem !important; height: 100% !important;} 
-.mySwiper .swiper-slide:nth-child(1) {margin-top: 2rem;}
-.mySwiper .swiper-slide + .swiper-slide {margin-top: 0.74rem;}
-.mySwiper .swiper-slide .inner {display: flex; align-items: center; justify-content: space-around; gap: 2rem;width: 100%; height: 100%; background: #fff;border: 1px solid #ddd; padding: 1.4rem; border-radius: 1.2rem; letter-spacing: -0.31px; transform: scale(0.95);transition: background 0.2s 0.2s linear, border 0.2s 0.2s linear, transform 0.2s 0.2s linear, opacity 0.2s 0.2s linear, font-weight 0.2s 0.2s linear; box-sizing: border-box;} 
-.mySwiper .swiper-slide.active .inner {position: relative; z-index: 1; background: #eff0ff; border: 1px solid #504dd1; color: #242424; font-weight: 500; transform: scale(1) translateY(-2rem
-); opacity: 1; overflow: hidden;} 
-.swiper.mySwiper .check {flex-shrink: 0; position: relative; display: inline-block; width: 6.7rem; height: 6.7rem; background: url("//static.harang-event.com/event/v_${eventSeq}/260727_NXTR_06.png") no-repeat center / 100%;} 
-.mySwiper .swiper-slide .inner span {font-family: 'NotoSansKR'; font-size: 2.8rem; font-weight: 500; letter-spacing: -0.28px; text-align: left; color: #242424;}
+#typing-text {margin:0;font-family:"SUIT",sans-serif;font-size:3rem;font-weight:500;letter-spacing:-.12rem;text-align:center;color:#fff;}
 
-@keyframes rolling {
-    10% {
-        opacity: 0;
-        transform: scale(0.7);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
+.form_db > .box > .form_box {display:none;flex-direction:column;gap:var(--gap12);opacity:0;}
+.form.two .form_db > .box > .form_box {display:flex;opacity:1;}
+
+.input_box {display:flex;flex-direction:column;gap:1.2rem;}
+.form_row {display:flex;align-items:center;gap:1.2rem;}
+.form_row label {display:flex;align-items:center;justify-content:center;flex-shrink:0;width:9rem;height:6rem;padding:var(--gap12);border-radius:var(--r20);background:rgba(255,255,255,.6);color:#000;font-size:1.6rem;}
+.form_row input {width:100%;height:6rem;padding:0 var(--gap20);border:solid 1px #fff;border-radius:var(--r20);background:transparent;color:#fff;font-family:inherit;font-size:1.8rem;}
+.form_row input::placeholder {color:#fff;}
+
+.form .description p,
+.form .description .ad_txt,
+.form .description span  {  font-family: SUIT;
+  font-size: 1.4rem;
+  letter-spacing: -0.56px;
+  text-align: center;
+  color: #fff;}
+
+/* btn submit_btn static */
+/* btn submit_btn static */
+.btn.submit_btn.static,
+.form_db .submit_btn {
+  min-width: 58.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.7rem;
+  width: 100%;
+  margin: 0;
+  padding: 2.7rem;
+  border: 0;
+  border-radius: var(--r24);
+  font-family: inherit;
+  font-size: 4.45rem;
+  font-weight: 800;
+  line-height: 1;
+  cursor: pointer;
+   background: linear-gradient(180deg, #38f8d4 0%, #43ea80 100%);
+  color: #09061b;
+  animation: submit_btn_blink .8s steps(2, end) infinite alternate;
+}
+/* 필요하면 화살표도 같이 유지 */
+.submit_btn > div {
+  position: relative;
+  width: 2.8rem;
+  height: .4rem;
+  flex-shrink: 0;
+  border-radius: .2rem;
+  background: currentColor;
+}
+.submit_btn > div::before,
+.submit_btn > div::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 1.8rem;
+  height: .4rem;
+  border-radius: inherit;
+  background: currentColor;
+  transform-origin: right center;
+}
+.submit_btn > div::before {
+  top: calc(50% + .1rem);
+  transform: translateY(-50%) rotate(45deg);
+}
+.submit_btn > div::after {
+  top: calc(50% - .1rem);
+  transform: translateY(-50%) rotate(-45deg);
+}
+@keyframes submit_btn_blink {
+  0%, 49.999% {
+    background: linear-gradient(180deg, #38f8d4 0%, #43ea80 100%);
+    color: #09061b;
+  }
+  50%, 100% {
+    background: linear-gradient(180deg, #ff0032 0%, #8a22ff 100%);
+    color: #fff;
+  }
 }
 
-/* 플로팅 이미지 영역 */
-/* .floatingImg{z-index:999; position: fixed; bottom: 1.7rem; right: max(1.3rem, calc((100vw - 818px) / 2)); margin-left:2%; width:30%; max-width: 197px; cursor: pointer; animation: upDown 1s infinite;} */
+.form .agBox {margin: 0 auto; font-size: 1.6rem; line-height: 1.45; letter-spacing: -0.83px; text-align: center; color: #fff;}
+.form input[type="checkbox"]:checked + span:after, .form input[type="radio"]:checked + span:after {border-color: #fff;}
 
-@keyframes upDown {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(7%); }
-    100% { transform: translateY(0); }
-}
+/* 모달창 - 개인정보처리방침 */
+.overlay {z-index: 888; position: fixed; display: none; width: 100vw; height: 100vh; opacity: 0.5; background-color: #000;}
+.agreeModalBox {z-index: 999; display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 60px 30px 40px; width: 85%; max-width: 500px; box-sizing: border-box; border-radius: 10px; font-family: 'Noto Sans KR', sans-serif; background-color: #f5f6f7; box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;}
+.agreeModalBox .closeBtn {position: absolute; top: 0; right: 2%; padding: 2%; cursor: pointer; font-size: 25px; color: #5e5e5e;}
+.agreeModalBox .newAgreement {position: relative; padding: 2% 4%; height: 150px; overflow-y: scroll; border: 1px solid #dadada;}
+.agreeModalBox .newAgreement .button {position: absolute; right: 3%; width: 95px;}
+.agreeModalBox .newAgreement .button a {display: block; padding: 1%; text-align: center; font-size: 10px; background-color: #e2e2e2;}
+.agreeModalBox .newAgreement .button a:focus {background-color: #dadada;}
+.agreeModalBox .newAgreement h3 {margin: 1% 0; font-size: 11px;}
+.agreeModalBox .newAgreement ol li {line-height: 12px; font-size: 10px;}
 
 @media screen and (max-width: 480px){
-    html, body {font-size: 1.5vw;}
+    .formGroup .legend {width: 8.5rem; font-size: 2.4rem;}
+    .formGroup .inp {font-size: 2.4rem;}
+    .formGroup .user_info.user-agree {padding: 1.4rem 3.1rem;}
+    .formGroup .user_info.user-agree .legend {width: 24.7rem;}
+    .formGroup .user_info.user-agree .ag_btn {padding-left: 3.2rem;}
+    .formGroup .user_info.user-agree .legend span {font-size: 2.4rem;}
+    .formGroup .user-agree .ag_btn .agree-label, .formGroup .user-agree .ag_btn a {width: 9.9rem; font-size: 2.6rem;}
 
-    .form .form_inner .formGroup {padding: 6rem 5.5rem 5.8rem;}
-    .form .form_inner .question {font-size: 4.7rem;}
-    .form .agBox {font-size: 1.9rem;}
-    .swiper.mySwiper .check {width: 4.7rem; height: 4.7rem;}
-    .mySwiper .swiper-slide .inner {column-gap: 1rem;}
-    .mySwiper .swiper-slide .inner span {font-size: 2.4rem;}
+    .form .form_inner {padding:1.2rem;}
+    .form.two .form_db > .box {max-height: 87dvh;}
 }
-
-@media screen and (max-width: 395px){
-
-}
-
-@media screen and (max-width: 375px){
+@media screen and (max-width: 415px){
+    .btn.submit_btn.static, .form_db .submit_btn {min-width: max-content;}
+    .form.two .form_db .txt {font-size: 4.8rem;}
+    .form.two .form_db .banner {font-size: 3.3rem;}
+    .formGroup .legend {font-size: 2.4rem;}
+    .formGroup .inp {padding-left: 3rem; font-size: 2.4rem;}
+    .formGroup .user_info.user-agree {padding: 1.4rem 2.8rem;}
+    .formGroup .user_info.user-agree .legend {width: 21.7rem;}
+    .formGroup .user_info.user-agree .ag_btn {padding-left: 2.8rem;}
+    .formGroup .user_info.user-agree .legend span {font-size: 2.4rem;}
+    .formGroup .user-agree .ag_btn .agree-label, .formGroup .user-agree .ag_btn a {width: 9.9rem; font-size: 2.4rem;}
 }
 </style>
-<!-- include -->
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard.css" type="text/css"/>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<!-- include end -->
-<div id="wrap">
-    <div class="container">
-        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/260727_NXTR_01.gif"></div>
-        <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/260727_NXTR_02.jpg"></div>
+
+<div class="overlay"></div>
+<div class="agreeModalBox">
+	<div class="closeBtn">X</div>          
+	<div class="newAgreement">
+		<div class="button"><a href="${resVo.agreementUrl}" target="_agreement" target="_blank">개인정보처리방침 확인하러가기</a></div>
+        <h3>개인정보 수집 및 이용 동의</h3>
+		<ol>
+            <li>개인정보 수집주체 : ${resVo.agent}</li>
+            <li>개인정보 수집항목 : ${resVo.objectItems}</li>
+            <li>개인정보 수집 및 이용목적 : ${resVo.agent}에서 ${resVo.objectName} 상담활용(전화,문자)</li>
+            <li>개인정보 보유 및 이용기간 : 수집일로부터 6개월 (고객 동의 철회시 지체없이 파기)</li>
+        </ol><br/>
+        <h3>개인정보 취급 위탁</h3>
+        <ol>
+            <li>개인정보 취급 위탁을 받는자 : (주)하랑고치</li>
+            <li>개인정보 취급 위탁을 하는 업무의 내용 : 고객정보 저장 및 서버관리</li>
+            <li class="desc">*상기 동의를 거부할 권리가 있으나, 수집 및 이용에 동의하지 않을 경우 ${resVo.objectName} 상담 및 이벤트 참여가 불가능합니다.</li>
+        </ol>
     </div>
-    <div class="form">
-        <form id="form-1" method="POST" accept-charset="utf-8"> 
+</div>
+<div id="wrap">
+    <form id="form-1" method="POST" accept-charset="utf-8">
+        <div class="container">
+            <div class="img-area">
+                <img src="//static.harang-event.com/event/v_${eventSeq}/260818_NXTR_(hr)_01.jpg" alt="">
+            </div>
+            <div class="img-area">
+                <img src="//static.harang-event.com/event/v_${eventSeq}/260818_NXTR_(hr)_02.gif" alt="">
+            </div>
+            <div class="img-area">
+                <img src="//static.harang-event.com/event/v_${eventSeq}/260818_NXTR_(hr)_03.jpg" alt="">
+            </div>
+            <div class="img-area">
+                <img src="//static.harang-event.com/event/v_${eventSeq}/260818_NXTR_(hr)_04.gif" alt="">
+            </div>
+            <div class="img-area">
+                <img src="//static.harang-event.com/event/v_${eventSeq}/260818_NXTR_(hr)_05.jpg" alt="">
+            </div>
+            <div class="img-area">
+                <img src="//static.harang-event.com/event/v_${eventSeq}/260818_NXTR_(hr)_06.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="img-area">
+                <img src="//static.harang-event.com/event/v_${eventSeq}/260818_NXTR_(hr)_09.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="form one">
             <div class="form_inner">
-                <div class="formGroup">
-                    <div class="question">
-                        타이어 렌탈 받을 분의<br />
-                        <strong>성함과 연락처를 입력</strong>해 주세요
-                    </div>
-                    <div class="input_box">
-                        <!-- <div class="img-area pc-img notice-img"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_01_pc.png"></div> -->
-                        <div class="user_info name">
-                            <span class="legend">이름</span>
-                            <input type="text" name="name" id="name" class="inp" required autocomplete="off" placeholder="이름을 입력해주세요">
+                <div class="form_db">
+                    
+                    <div class="box">
+                        <div class="step1">
+                            <p id="typing-text"></p>
+
+                            <button type="button" class="btn submit_btn static" onclick="openDB()">
+                                <!-- <div aria-hidden="true"></div> -->
+                                월 2천원 타이어렌탈 확인
+                            </button>
                         </div>
-                        <div class="user_info phone">
-                            <span class="legend">연락처</span>
-                            <input type="tel" name="phone" id="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="연락처를 입력해주세요">
+
+                        <div class="form_box" id="form_check">
+                            <div class="topB">
+                                <!-- <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/260818_NXTR_(hr)_07.png" alt=""></div> -->
+                                <div class="banner"><strong>모든 상담은 무료입니다.</strong><br />편하게 무료 상담 받아보세요!</div>
+                            </div>
+
+                            <div class="formGroup">
+                                <div class="user_info name">
+                                    <span class="legend">이름<span class="mark"></span></span>
+                                    <input type="text" name="name" id="name" class="inp" required autocomplete="off" placeholder="이름">
+                                </div>
+                                <div class="user_info phone">
+                                    <span class="legend">연락처<span class="mark"></span></span>
+                                    <input type="tel"  name="phone" id="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="연락처">
+                                </div>
+                                <div class="user_info add">
+                                    <span class="legend">차종<span class="mark"></span></span>
+                                    <input type="text" name="tadd1" id="add1" class="inp" required autocomplete="off" placeholder="차종을 입력해주세요">
+                                </div>
+                            </div>
+
+                            <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/260818_NXTR_(hr)_08.png" alt=""></div>
+
+                            <div class="agBox">
+                                <label>
+                                    <input name="agBox" type="checkbox"><span>개인정보 수집 및 이용에 관한 내용을 확인하고 동의함</span><a href="#" class="agree_txt btn-agreement">[자세히 보기]</a>
+                                </label>
+                            </div>
+
+                            <div class="description">
+                                <p id="event-period"></p>
+                                <!-- <div class="ad_txt">안심하세요! 본원에서는 고객님의 소중한 개인정보를 <br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div> -->
+                                <span>대상 : ${resVo.target} </span>
+                            </div>
+
+                            <button type="button" class="btn submit_btn static" onclick="fnForm('form-1')">
+                                <!-- <div aria-hidden="true"></div> -->
+                                월 2천원 타이어렌탈 확인
+                            </button>
                         </div>
-                        <div class="user_info add">
-                            <span class="legend">차종</span>
-                            <input type="text" name="tadd1" id="add1" class="inp" required autocomplete="off" placeholder="차종을 입력해주세요">
-                        </div>
                     </div>
-
-                    <div class="agBox">
-                        <label><input name="agBox" type="checkbox"><span>개인정보 수집 및 이용에 관한 내용을 확인하고 동의함</span></label> <a href="#" class="btn-agreement">[자세히 보기]</a>
-                    </div>
-                    <div class="agreement">
-                        <div class="button"><a href="${resVo.agreementUrl}" target="_agreement" onclick="window.open(this.href, this.target,'resizable=no, scrollbars=yes, width=1000, height=800, left=200, top=200'); return false;"  target="_blank">개인정보 처리방침</a></div>
-                        <h3>개인정보처리방침</h3>
-                        <ol>
-                            <li>개인정보 수집주체 : ${resVo.agent}</li>
-                            <li>개인정보 수집항목 : ${resVo.objectItems}</li>
-                            <li>개인정보 수집 및 이용목적 : ${resVo.agent}에서 ${resVo.objectName} 상담활용(전화,문자)</li>
-                            <li>개인정보 보유 및 이용기간 : 수집일로부터 6개월 (고객 동의 철회시 지체없이 파기)</li>
-                        </ol><br/>
-                        <h3>개인정보 취급 위탁</h3>
-                        <ol>
-                            <li>개인정보 취급 위탁을 받는자 : (주)하랑고치</li>
-                            <li>개인정보 취급 위탁을 하는 업무의 내용 : 고객정보 저장 및 서버관리</li>
-                            <li class="desc">*상기 동의를 거부할 권리가 있으나, 수집 및 이용에 동의하지 않을 경우 ${resVo.objectName} 상담 및 이벤트 참여가 불가능합니다.</li>
-                        </ol>
-                    </div>
-
-                    <div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.harang-event.com/event/v_${eventSeq}/260727_NXTR_04.png"></div>
-
-                    <div class="description">
-                        <p id="event-period"></p>
-                        <div class="ad_txt">안심하세요! ${resVo.agent}에서는 고객님의 소중한 개인정보를 <br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
-                        <span class="target">대상 : ${resVo.target}</span>
-                    </div>
-
-                    <p class="notice">
-                        ※ 렌탈 불가 차종: 1톤, 봉고, 포터, 트럭, 21인치 이상 타이어, 콜로라도, 벤 등... <br />
-                        ※ 본 제품은 전화 상담 후 진행되는 제품으로 일부차량은 불가 할 수 있습니다.
-                    </p>
                 </div>
             </div>
+        </div>
+
             <input type="hidden" id="branch" 		name="branch" value="${resVo.branch}"/>
 			<input type="hidden" id="eventSeq" 		name="eventSeq" value="${resVo.eventSeq}"/>
 			<input type="hidden" id="site" 			name="site" value="${site}"/>
@@ -184,276 +302,125 @@ html, body {font-size: 62.5%;}
 			<input type="hidden" id="agent" 		name="agent" 		value="${resVo.agent}"/>
 			<input type="hidden" id="objectItems" 	name="objectItems" 	value="${resVo.objectItems}"/>
 			<input type="hidden" id="objectName" 	name="objectName" 	value="${resVo.objectName}"/>
-        </form>
-	</div>
-
-    <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/260727_NXTR_03.jpg"></div>
-
-    <div class="form">
-        <form id="form-2" method="POST" accept-charset="utf-8"> 
-            <div class="form_inner">
-                <div class="formGroup">
-                    <div class="question">
-                        타이어 렌탈 받을 분의<br />
-                        <strong>성함과 연락처를 입력</strong>해 주세요
-                    </div>
-                    <div class="input_box">
-                        <!-- <div class="img-area pc-img notice-img"><img src="//static.harang-event.com/event/v_${eventSeq}/txt_01_pc.png"></div> -->
-                        <div class="user_info name">
-                            <span class="legend">이름</span>
-                            <input type="text" name="name" id="name" class="inp" required autocomplete="off" placeholder="이름을 입력해주세요">
-                        </div>
-                        <div class="user_info phone">
-                            <span class="legend">연락처</span>
-                            <input type="tel" name="phone" id="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="연락처를 입력해주세요">
-                        </div>
-                        <div class="user_info add">
-                            <span class="legend">차종</span>
-                            <input type="text" name="tadd1" id="add1" class="inp" required autocomplete="off" placeholder="차종을 입력해주세요">
-                        </div>
-                    </div>
-
-                    <div class="agBox">
-                        <label><input name="agBox" type="checkbox"><span>개인정보 수집 및 이용에 관한 내용을 확인하고 동의함</span></label> <a href="#" class="btn-agreement">[자세히 보기]</a>
-                    </div>
-                    <div class="agreement">
-                        <div class="button"><a href="${resVo.agreementUrl}" target="_agreement" onclick="window.open(this.href, this.target,'resizable=no, scrollbars=yes, width=1000, height=800, left=200, top=200'); return false;"  target="_blank">개인정보 처리방침</a></div>
-                        <h3>개인정보처리방침</h3>
-                        <ol>
-                            <li>개인정보 수집주체 : ${resVo.agent}</li>
-                            <li>개인정보 수집항목 : ${resVo.objectItems}</li>
-                            <li>개인정보 수집 및 이용목적 : ${resVo.agent}에서 ${resVo.objectName} 상담활용(전화,문자)</li>
-                            <li>개인정보 보유 및 이용기간 : 수집일로부터 6개월 (고객 동의 철회시 지체없이 파기)</li>
-                        </ol><br/>
-                        <h3>개인정보 취급 위탁</h3>
-                        <ol>
-                            <li>개인정보 취급 위탁을 받는자 : (주)하랑고치</li>
-                            <li>개인정보 취급 위탁을 하는 업무의 내용 : 고객정보 저장 및 서버관리</li>
-                            <li class="desc">*상기 동의를 거부할 권리가 있으나, 수집 및 이용에 동의하지 않을 경우 ${resVo.objectName} 상담 및 이벤트 참여가 불가능합니다.</li>
-                        </ol>
-                    </div>
-
-                    <div class="submit"><input type="image" onclick="fnForm('form-2');" value="" src="//static.harang-event.com/event/v_${eventSeq}/260727_NXTR_04.png"></div>
-
-                    <div class="description">
-                        <p id="event-period"></p>
-                        <div class="ad_txt">안심하세요! ${resVo.agent}에서는 고객님의 소중한 개인정보를 <br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
-                        <span class="target">대상 : ${resVo.target}</span>
-                    </div>
-
-                    <p class="notice">
-                        ※ 렌탈 불가 차종: 1톤, 봉고, 포터, 트럭, 21인치 이상 타이어, 콜로라도, 벤 등... <br />
-                        ※ 본 제품은 전화 상담 후 진행되는 제품으로 일부차량은 불가 할 수 있습니다.
-                    </p>
-                </div>
-            </div>
-            <input type="hidden" id="branch" 		name="branch" value="${resVo.branch}"/>
-            <input type="hidden" id="eventSeq" 		name="eventSeq" value="${resVo.eventSeq}"/>
-            <input type="hidden" id="site" 			name="site" value="${site}"/>
-            <input type="hidden" id="media" 		name="media" value="${media}"/>
-            <input type="hidden" id="interlock" 	name="interlock" value="${resVo.interlock}"/>
-            <input type="hidden" id="checkAgeMin" 	name="checkAgeMin" value="${resVo.checkAgeMin}"/>
-            <input type="hidden" id="checkAgeMax" 	name="checkAgeMax" value="${resVo.checkAgeMax}"/>
-            <input type="hidden" id="checkGender" 	name="checkGender" value="${resVo.checkGender}"/>
-            <input type="hidden" id="add1" 			name="add1" value=""/>
-            <input type="hidden" id="add2" 			name="add2" value=""/>
-            <input type="hidden" id="add3" 			name="add3" value=""/>
-            <input type="hidden" id="add4" 			name="add4" value=""/>
-            <input type="hidden" id="add5" 			name="add5" value=""/>
-            <input type="hidden" id="add6" 			name="add6" value=""/>
-
-            <input type="hidden" id="agent" 		name="agent" 		value="${resVo.agent}"/>
-            <input type="hidden" id="objectItems" 	name="objectItems" 	value="${resVo.objectItems}"/>
-            <input type="hidden" id="objectName" 	name="objectName" 	value="${resVo.objectName}"/>
-        </form>
-    </div>
-
-    <!-- 실시간 신청현황 -->
-    <!-- <div class="swiper-overlay">
-        <div class="subscribe-title">실시간 신청자 현황</div>
-        <div class="swiper mySwiper">
-            <div class="subscribe swiper-wrapper" data-limit="10">
-            </div>
-        </div>
-    </div> -->
-
-    <div class="container">
-		<!-- <div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/notice.jpg"></div> -->
-		<div class="img-area"><img src="//static.harang-event.com/event/v_${eventSeq}/260727_NXTR_05.jpg"></div>
-    </div>
-
+    </form>
 </div>
-<!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->
-<script>
-    $(document).ready(function(){
-        initDate();/* 기간항목 start */
-        blockSourceView();//드래그, 우클릭 방지3
 
-        getCommentToast(`${eventSeq}`);
+<script src="/js/form-event.js"></script>
+
+<script>
+$(document).ready(function () {
+    initDate();
+    // blockSourceView();
+});
+        // 개인정보 처리방침 모달창
+    $('.btn-agreement').on('click', function(e) {
+        e.preventDefault();
+        $('.agreeModalBox').fadeIn();
+        $('.overlay').fadeIn();
     });
 
-    let swiper; // 전역 변수로 선언
-    function triggerActiveAnimation(slide) {
-        document.querySelectorAll(".mySwiper .swiper-slide").forEach((el) => el.classList.remove("active")); // 먼저 모두 제거
-        void slide.offsetWidth;
-        slide.classList.add("active");
-        setTimeout(() => {
-        slide.classList.remove("active");
-        }, 2500);
-    }
+    // 개인정보처리방침 닫기 버튼 클릭 시 클로징
+    $('.agreeModalBox .closeBtn').on('click', function() {
+        $('.agreeModalBox').fadeOut();
+        $('.overlay').fadeOut();
+    });
 
-    // Swiper 초기화 함수
-    function initSwiper() {
-        const slideLength = document.querySelectorAll(".mySwiper .swiper-slide").length;
-        const swiperW = document.querySelector(".mySwiper .swiper-wrapper");
+function openDB() {
+    var form = document.querySelector(".form");
 
-        const enableLoop = slideLength > 1;
-        const slidesPerView = slideLength >= 4 ? 4 : slideLength;
+    form.classList.remove("one");
+    form.classList.add("two");
+    document.body.classList.add("form-db-open");
+}
 
-        if (slideLength < 4) {
-            // swiperW.style.justifyContent = "flex-end";
-        } else {
-            swiperW.style.justifyContent = "flex-start";
+function closeDB() {
+    var form = document.querySelector(".form");
+
+    form.classList.remove("two");
+    form.classList.add("one");
+    document.body.classList.remove("form-db-open");
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    var form = document.querySelector(".form");
+    var formInner = form.querySelector(".form_inner");
+    var formDb = form.querySelector(".form_db");
+    var formBox = form.querySelector(".form_db > .box");
+    var target = document.getElementById("typing-text");
+
+    form.addEventListener("click", function (e) {
+        if (!form.classList.contains("two")) return;
+        if (formBox.contains(e.target)) return;
+
+        if (
+            e.target === form ||
+            e.target === formInner ||
+            e.target === formDb
+        ) {
+            closeDB();
+        }
+    });
+
+    var message = "지금 신청하고 무료상담 받으세요!";
+    var index = 0;
+    var deleting = false;
+
+    function typeEffect() {
+        /* 입력이 재시작되기 전 여백 복구 */
+        if (!deleting && index === 0) {
+            target.style.marginBottom = "2.6rem";
         }
 
-        // 기존 swiper가 있으면 제거 (중복 초기화 방지)
-        if (swiper) {
-            swiper.destroy(true, true);
-            swiper = null;
+        target.textContent = deleting
+            ? message.substring(0, index--)
+            : message.substring(0, index++);
+
+        var speed = 50;
+
+        if (!deleting && index > message.length) {
+            deleting = true;
+            speed = 1000;
+        } else if (deleting && index < 0) {
+            /* 빈 문자열이 된 직후 여백 제거 */
+            deleting = false;
+            index = 0;
+            target.style.marginBottom = "0";
+            speed = 2000;
         }
 
-        swiper = new Swiper(".mySwiper", {
-            direction: "vertical",
-            slidesPerView: slidesPerView,
-            spaceBetween: 0,
-            loop: enableLoop,
-            mousewheel: true,
-            // speed: 500,
-            autoplay: {
-                delay: 2000,
-                disableOnInteraction: false,
-            },
-            on: {
-                init: function () {
-                    setTimeout(() => {
-                        let lastVisibleIndex = swiper.activeIndex + swiper.params.slidesPerView - 1;
-                        let targetSlide = swiper.slides[lastVisibleIndex];
-                        if (targetSlide) {
-                        triggerActiveAnimation(targetSlide);
-                        }
-                    }, 100);
-                },
-                slideChangeTransitionStart: function () {
-                    setTimeout(() => {
-                        document.querySelectorAll(".mySwiper .swiper-slide").forEach((el) => el.classList.remove("active"));
-
-                        let visibleSlides = Math.min(swiper.slides.length, swiper.params.slidesPerView);
-                        let lastVisibleIndex = swiper.activeIndex + visibleSlides - 1;
-                        if (lastVisibleIndex >= swiper.slides.length) {
-                            lastVisibleIndex = swiper.slides.length - 1;
-                        }
-                        let targetSlide = swiper.slides[lastVisibleIndex];
-                            if (targetSlide) {
-                            triggerActiveAnimation(targetSlide);
-                        }
-                    }, 20);
-                },
-            },
-        });
+        setTimeout(typeEffect, speed);
     }
 
-    function returnComment(resultData, meoreData){
-        var today = new Date();   
-        var month = today.getMonth() + 1;
-        var dateNum;
-        
-        $('.subscribe').each(function(idx,obj) {
-            var data = resultData;
-            
-            for(v in data) {
-                var statusText = '신청완료'
-                var backgroundClass = statusText === '신청완료' ? 'color-bg' : '';
-                var html  = '<div class="swiper-slide" data-id="'+ data[v].seq +'">';
-                    html += '    <div class="inner">';
-                    html += '        <span class="check"></span>';
-                    html += '        <span class="name">'+ data[v].name +'</span>';
-                    html += '        <span class="text">신청했습니다~</span>';
-                    html += '        <span class="text">'+ data[v].phone +'</span>';
-                    html += '        <span class="text">'+ ' | ' +'</span>';
-                    html += '        <span class="date">'+ data[v].regDate +'</span>';
-                    html += '    </div>';
-                    html += '</div>';
-                $(obj).append(html);
-            }
-        });
+    typeEffect();
+});
 
-        initSwiper();
+/* 기존 fnForm 유지 */
+function fnForm(formId){
+    /* form 자동 처리 방지 */
+    event.preventDefault();
+
+    /* form id로 proc */
+    let procForm = document.getElementById(formId);
+
+    let selectedRadio1 = procForm.querySelector(`input[name="tadd1"]`);
+    if (!selectedRadio1) {
+        alert("차종을 입력해주세요.");
+        return;
+    } else {
+        procForm.querySelector("input[name='add1']").value = selectedRadio1.value;
     }
 
-    //설문 클릭시 이미지 on/off
-    // $('input[name="tadd1"]').on('click', function(){
-    //     $('label', $(this).parents('.q_select')).each(function(i,t) {
-    //         $('img', t).attr('src', $('img', t).attr('src').replace('_on', '_off'));
-    //     });
-    //     $('img', $(this.parentNode)).attr('src', $('img', $(this.parentNode)).attr('src').replace('_off', '_on'));
-    // });
+    // 필수값 체크 항목
+    var required = {
+        'name': '이름'
+        // ,'age': '나이'
+        ,'phone': '전화번호'
+        ,'add1': '차종'
+        // ,'add2': '설문2'
+        // ,'add3': '설문3'
+        ,'agBox': '개인정보'
+    };
 
-    // ✅ 설문 클릭 시 이미지 on/off (선택 토글)
-    // $('input[name*="tadd"]').on('click', function () {
-    //     const $parent = $(this).closest('.q_select'); // 부모 영역 지정
-
-    //     // 모든 label에서 active 클래스 제거
-    //     $parent.find('label').removeClass('active');
-
-    //     // 클릭한 input의 label에 active 클래스 추가
-    //     $(this).closest('label').addClass('active');
-    // });
-
-
-    // 스크롤 시 따라오는 이미지
-    // var currentPosition = parseInt($(".floatingImg").css("bottom"));
-    // $(window).scroll(function() {
-    //     var position = $(window).scrollTop();
-    //     $(".floatingImg").stop().animate({
-    //         bottom : currentPosition + "px"
-    //     },500);
-    // });
-
-    // 플로팅버튼 클릭시 db단 이동
-    $('.db_btn').on('click',function(){
-        const formOffset = $('#form-1').offset().top;
-
-        $('html, body').animate({
-            scrollTop: formOffset
-        }, 500); // 500ms 동안 스크롤 이동
-    })
-
-	function fnForm(formId){
-        /* form 자동 처리 방지 */
-        event.preventDefault();
-        
-        /* form id로 proc */
-        let procForm = document.getElementById(formId);
-
-		let selectedRadio1 = procForm.querySelector(`input[name="tadd1"]`);
-		if (!selectedRadio1) {
-			alert("차종을 입력해주세요.");
-			return;
-		} else {
-			procForm.querySelector("input[name='add1']").value = selectedRadio1.value;
-		}
-			
-        // 필수값 체크 항목
-        var required = {
-            'name': '이름'
-            // ,'age': '나이'
-            ,'phone': '전화번호'
-            ,'add1': '차종'
-            // ,'add2': '설문2'
-            // ,'add3': '설문3'
-            ,'agBox': '개인정보'
-        };
-        
-        validateForm(procForm, required);
-    }
+    validateForm(procForm, required);
+}
 </script>
